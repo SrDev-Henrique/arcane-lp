@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Button = ({
   title,
@@ -13,7 +13,7 @@ const Button = ({
   rightIcon?: React.ReactNode;
   leftIcon?: React.ReactNode;
   containerClass?: string;
-  onClick?: () => void;
+    onClick?: () => void;
 }) => {
 
   return (
@@ -24,7 +24,7 @@ const Button = ({
     >
       <div
         id="first-text"
-        className="flex-center gap-1 transition-all duration-300 ease-in-out group-hover:-translate-y-4 group-hover:text-white group-hover:opacity-0"
+        className="flex-center gap-1 transition-all duration-300 ease-in-out group-hover:-translate-y-4 group-hover:opacity-0"
       >
         {leftIcon}
         <span className="relative incline-flex overflow-hidden font-general text-xs uppercase">
@@ -34,7 +34,7 @@ const Button = ({
       </div>
       <div
         id="second-text"
-        className="absolute flex-center gap-1 opacity-0 transform translate-y-4 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:text-white group-hover:opacity-100"
+        className="absolute flex-center gap-1 opacity-0 transform translate-y-4 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100"
       >
         {leftIcon}
         <span className="relative incline-flex overflow-hidden font-general text-xs uppercase">
@@ -44,6 +44,5 @@ const Button = ({
       </div>
     </button>
   );
-};
-export default Button
 
+};export default Button;

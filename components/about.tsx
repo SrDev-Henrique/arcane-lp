@@ -85,12 +85,14 @@ const About: React.FC = () => {
 
         <AnimatedTitle
           title="conhe<b>c</b>a o <br/> i<b>n</b>crivel <br/> m<b>u</b>ndo de <b>a</b>rcane"
-          containerClass="mt-5 !text-black text-center special-font"
+          containerClass="mt-5 !text-black text-center special-font px-10"
         />
 
         <div className="about-subtext">
           <p>
-            Composto por duas cidades-estado, chamadas <b className="text-piltover-dark">Piltover</b> e <b className="text-zaun-light">Zaun</b>
+            Composto por duas cidades-estado, chamadas{" "}
+            <b className="text-piltover-dark">Piltover</b> e{" "}
+            <b className="text-zaun-light">Zaun</b>
           </p>
           <p className="text-neutral-dark">
             O progresso e a decadência, a riqueza e a pobreza, a busca pelo

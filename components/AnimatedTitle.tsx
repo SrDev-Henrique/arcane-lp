@@ -11,12 +11,14 @@ interface AnimatedTitleProps {
   title: string;
   containerClass: string;
   sectionId?: string;
+  delay?: number;
 }
 
 const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
   title,
   containerClass,
   sectionId,
+  delay,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -37,18 +39,19 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
         duration: 0.5,
         ease: "power1.inOut",
         stagger: 0.03,
+        delay: delay,
       });
     }, [containerRef]);
 
     return () => ctx.revert();
-  }, []);
+  }, [delay]);
 
   return (
     <div ref={containerRef} className={`animated-title ${containerClass}`}>
       {title.split("<br/>").map((line, index) => (
         <div
           key={index}
-          className={`flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3`}
+          className={`flex-center max-w-full flex-wrap gap-2 md:gap-3`}
         >
           {line.split(" ").map((word, index) => (
             <span

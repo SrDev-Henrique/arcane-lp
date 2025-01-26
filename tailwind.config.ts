@@ -41,7 +41,7 @@ export default {
         },
         arcane: {
           pink: "#C71585",
-          blue: "#8A2BE2",
+          purple: "#8A2BE2",
         },
       },
       fontFamily: {
