@@ -41,6 +41,14 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
         stagger: 0.03,
         delay: delay,
       });
+
+      titleAnimation.to(".animated-icon", {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power1.inOut",
+        stagger: 0.03,
+        delay: delay,
+      });
     }, [containerRef]);
 
     return () => ctx.revert();
@@ -51,7 +59,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
       {title.split("<br/>").map((line, index) => (
         <div
           key={index}
-          className={`flex-center max-w-full flex-wrap gap-2 md:gap-3`}
+          className={`flex justify-center max-w-full gap-2 px-10 md:gap-3`}
         >
           {line.split(" ").map((word, index) => (
             <span

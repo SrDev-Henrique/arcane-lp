@@ -85,7 +85,7 @@ const About: React.FC = () => {
 
         <AnimatedTitle
           title="conhe<b>c</b>a o <br/> i<b>n</b>crivel <br/> m<b>u</b>ndo de <b>a</b>rcane"
-          containerClass="mt-5 !text-black text-center special-font px-10"
+          containerClass="mt-5 !text-black text-center special-font"
         />
 
         <div className="about-subtext">
