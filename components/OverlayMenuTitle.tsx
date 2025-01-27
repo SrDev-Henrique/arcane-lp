@@ -4,19 +4,18 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import React, { useEffect, useRef } from "react";
+import { TiArrowSortedDown } from "react-icons/ti";
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface AnimatedTitleProps {
   title: string;
-  containerClass: string;
   sectionId?: string;
   delay?: number;
 }
 
 const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
   title,
-  containerClass,
   sectionId,
   delay,
 }) => {
@@ -41,18 +40,23 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
         stagger: 0.03,
         delay: delay,
       });
+
+      titleAnimation.to(".animated-icon", {
+        opacity: 1,
+        duration: 0.5,
+        ease: "power1.inOut",
+        stagger: 0.03,
+        delay: delay,
+      });
     }, [containerRef]);
 
     return () => ctx.revert();
   }, [delay]);
 
   return (
-    <div ref={containerRef} className={`animated-title ${containerClass}`}>
+    <div ref={containerRef} className="animated-title">
       {title.split("<br/>").map((line, index) => (
-        <div
-          key={index}
-          className={`flex justify-center max-w-full gap-2 px-10 md:gap-3`}
-        >
+        <div key={index} className={`group flex justify-center cursor-pointer`}>
           {line.split(" ").map((word, index) => (
             <span
               key={index}
@@ -60,6 +64,9 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
               dangerouslySetInnerHTML={{ __html: word }}
             />
           ))}
+          <div className="animated-icon border border-neutral text-accent-light w-[30px] h-[30px] flex-center transition-transform rounded-full mt-1 group-hover:text-arcane-purple">
+            <TiArrowSortedDown />
+          </div>
         </div>
       ))}
     </div>

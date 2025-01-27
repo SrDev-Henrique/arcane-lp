@@ -128,11 +128,11 @@ body {
   }
 
   .animated-title {
-    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] text-white sm:px-32 md:text-[6rem];
+    @apply flex flex-col gap-1 text-7xl uppercase leading-[.8] sm:px-32 md:text-[6rem];
   }
 
   .animated-word {
-    @apply special-font font-zentry font-black opacity-0;
+    @apply special-font font-zentry font-black opacity-100;
     transform: translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-45deg);
     transform-origin: 50% 50% -100px !important;
     will-change: opacity, transform;

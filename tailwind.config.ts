@@ -20,7 +20,6 @@ export default {
           dark: "#2E8B57",
         },
         neutral: {
-          white: "#FFFFFF",
           light: "#F0F0F0",
           DEFAULT: "#808080",
           dark: "#333333",
@@ -42,6 +41,11 @@ export default {
         arcane: {
           pink: "#C71585",
           purple: "#8A2BE2",
+        },
+        white: {
+          DEFAULT: "#FFFFFF",
+          dark: "#e8e8ed",
+          darker: "#d4d4d4",
         },
       },
       fontFamily: {
