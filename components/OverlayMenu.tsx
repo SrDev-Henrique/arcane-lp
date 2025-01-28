@@ -1,8 +1,12 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
-import AnimatedTitle from "./AnimatedTitle";
 import { TiArrowSortedDown } from "react-icons/ti";
 import gsap from "gsap";
 import Link from "next/link";
+
+import OverlayMenuTitle from "./OverlayMenuTitle";
+import { useMenu } from "@/contexts/MenuContext";
 
 const navitems = [
   {
@@ -23,6 +27,8 @@ const navitems = [
 ];
 
 const OverlayMenu = () => {
+  const { isMenuOpen } = useMenu();
+
   const overlayMenuRef = useRef<HTMLDivElement>(null);
   const accordionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   // const menuTitleRef = useRef<HTMLDivElement>(null);
@@ -76,7 +82,7 @@ const OverlayMenu = () => {
   return (
     <div
       ref={overlayMenuRef}
-      className="absolute md:flex justify-between top-0 left-0 z-40 size-full menu-nav overflow-hidden"
+      className="absolute md:flex justify-between z-40 h-dvh w-dvw menu-nav overflow-hidden"
     >
       <div className="flex flex-col pl-10 md:pl-0 gap-14 h-full w-[100%] md:w-[30%] justify-center">
         {navitems.map((item, index) => (
@@ -89,7 +95,7 @@ const OverlayMenu = () => {
               }`}
               onClick={() => handleTitleClick(item.title)}
             >
-              <AnimatedTitle
+              <OverlayMenuTitle
                 title={item.title}
                 containerClass={`!px-0 special-font text-center transition-all duration-300 md:group-hover:text-accent-light ${
                   focusedTitle === item.title
@@ -123,7 +129,7 @@ const OverlayMenu = () => {
                   overflow: "hidden",
                   transition: "all 0.5s ease",
                 }}
-                className="flex flex-col pl-10 mt-3 gap-2 text-white-darker font-robert-regular font-bold text-2xl"
+                className="flex flex-col pl-5 md:pl-10 mt-3 gap-2 text-white-darker font-robert-regular font-bold text-2xl"
               >
                 {item.conteudo.map((content) => (
                   <p
@@ -140,8 +146,8 @@ const OverlayMenu = () => {
         ))}
       </div>
       <div className="w-full relative">
-        <div className="absolute bottom-16 px-20 w-full md:px-0 md:top-20 md:right-24 md:w-fit ">
-          <div className="flex flex-col items-start ">
+        <div className="absolute bottom-12 px-20 w-full md:px-0 md:top-20 md:right-24 md:w-fit ">
+          <div className="hidden md:flex flex-col items-start ">
             <h2 className="font-general font-bold text-xs md:text-lg text-neutral-dark uppercase">
               Desenvolvido por
             </h2>
@@ -157,9 +163,7 @@ const OverlayMenu = () => {
           </div>
         </div>
         <div className="hidden md:flex absolute translate-y-[420px] right-1 m-0 p-0">
-          <h2 className="font-zentry arcane text-[400px]">
-              arcane
-          </h2>
+          <h2 className="font-zentry arcane text-[400px]">arcane</h2>
         </div>
       </div>
     </div>

@@ -1,24 +1,19 @@
 "use client";
 
-import Image from "next/image";
-import { useRef, useState } from "react";
-import Button from "./Button";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
+
+import Image from "next/image";
+
+import { useMenu } from "@/contexts/MenuContext";
 import OverlayMenu from "./OverlayMenu";
+import Button from "./Button";
 
 const Navbar = () => {
-const navContainerRef = useRef<HTMLDivElement>(null);
-
-  const [isClicked, setIsClicked] = useState(false);
-
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
 
   return (
     <>
       <div
-        ref={navContainerRef}
         className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
       >
         <header className="absolute top-1/2 w-full -translate-y-1/2 flex justify-center">
@@ -35,12 +30,12 @@ const navContainerRef = useRef<HTMLDivElement>(null);
             <div className="flex items-center mx-3">
               <Button
                 id="navigation-button"
-                title="Navegar"
+                title={ isMenuOpen ? "Fechar" : "Navegar" }
                 rightIcon={
-                  isClicked ? <TiArrowSortedUp /> : <TiArrowSortedDown />
+                  isMenuOpen ? <TiArrowSortedUp /> : <TiArrowSortedDown />
                 }
                 containerClass="bg-blue-50 flex w-[128px] md:w-[176px] items-center justify-center gap-1"
-                onClick={handleClick}
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
               />
             </div>
           </nav>
