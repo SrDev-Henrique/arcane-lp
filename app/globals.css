@@ -134,7 +134,7 @@ body {
     color: transparent;
     background-size: 300%;
     background-position: 0%;
-    animation: change-color 4s infinite alternate-reverse;
+    animation: change-color 6s;
   }
 
   .current-video {
