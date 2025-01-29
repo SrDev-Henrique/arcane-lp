@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 
@@ -26,12 +27,16 @@ const navitems = [
   },
 ];
 
-const OverlayMenu = () => {
-  const { isMenuOpen } = useMenu();
+const OverlayMenu = memo(() => {
+  const isIphoneSE = window.innerWidth <= 340;
+
+  const { isMenuOpen, setIsMenuOpen } = useMenu();
 
   const overlayMenuRef = useRef<HTMLDivElement>(null);
   const accordionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+  const tl = useRef<gsap.core.Timeline | null>(null);
   // const menuTitleRef = useRef<HTMLDivElement>(null);
+
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [focusedTitle, setFocusedTitle] = useState<string | null>(null);
 
@@ -79,16 +84,78 @@ const OverlayMenu = () => {
     });
   }, [openAccordion]);
 
+  console.log(isMenuOpen);
+
+  useGSAP(
+    () => {
+      gsap.set([".overlay-menu-title", ".icon"], {
+        opacity: 0,
+        y: 35,
+      });
+
+      gsap.set(".arcane", {
+        x: 1100,
+      });
+
+      gsap.set(".dev", {
+        clipPath: "circle(0% at 50% 50%)",
+      });
+
+      if (!overlayMenuRef.current) return;
+
+      tl.current = gsap
+        .timeline({ paused: true })
+        .to(
+          [".overlay-menu-title", ".icon"],
+          {
+            opacity: 1,
+            y: 0,
+            stagger: 0.08,
+            duration: 1,
+            ease: "power2.out",
+          },
+          "-=0.4"
+        )
+        .to(
+          ".arcane",
+          {
+            x: 0,
+            duration: 0.8,
+            ease: "power2.out",
+          },
+          "-=0.3"
+        )
+        .to(
+          ".dev",
+          {
+            clipPath: "circle(100% at 50% 50%)",
+            duration: 0.8,
+            ease: "power2.inOut",
+          },
+          "-=0.1"
+        );
+    },
+    { scope: overlayMenuRef }
+  );
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      tl.current?.play();
+    } else {
+      tl.current?.reverse();
+    }
+  }, [isMenuOpen]);
+
   return (
     <div
       ref={overlayMenuRef}
-      className="absolute md:flex justify-between z-40 h-dvh w-dvw menu-nav overflow-hidden"
+      className="menu-nav"
     >
-      <div className="flex flex-col pl-10 md:pl-0 gap-14 h-full w-[100%] md:w-[30%] justify-center">
+      <div className="flex flex-col pl-10 md:pl-0 gap-7 md:gap-8 h-full w-[100%] md:w-[30%] justify-center">
         {navitems.map((item, index) => (
-          <div key={item.title} className="flex flex-col items-start">
+          <div key={item.title} className="flex flex-col w-full items-start">
             <div
-              className={`group flex justify-center cursor-pointer transition-brightness duration-300 ${
+              className={`group flex cursor-pointer transition-brightness duration-300 ${
                 focusedTitle !== null && focusedTitle !== item.title
                   ? "filter brightness-50"
                   : ""
@@ -97,7 +164,7 @@ const OverlayMenu = () => {
             >
               <OverlayMenuTitle
                 title={item.title}
-                containerClass={`!px-0 special-font text-center transition-all duration-300 md:group-hover:text-accent-light ${
+                containerClass={`!px-0 overlay-menu-title special-font !text-6xl md:!text-8xl text-center transition-colors duration-300 md:group-hover:text-accent-light ${
                   focusedTitle === item.title
                     ? "text-accent-light"
                     : "text-arcane-purple"
@@ -105,7 +172,7 @@ const OverlayMenu = () => {
                 delay={index * 0.1}
               />
               {item.conteudo && (
-                <div className="animated-icon border-hsla w-[30px] h-[30px] flex-center transition-all duration-300 rounded-full mt-1">
+                <div className="border-hsla icon w-[30px] h-[30px] flex-center rounded-full mt-1">
                   <TiArrowSortedDown
                     className={`transform ${
                       openAccordion === item.title
@@ -129,12 +196,17 @@ const OverlayMenu = () => {
                   overflow: "hidden",
                   transition: "all 0.5s ease",
                 }}
-                className="flex flex-col pl-5 md:pl-10 mt-3 gap-2 text-white-darker font-robert-regular font-bold text-2xl"
+                className="flex flex-col ml-5 md:ml-10 gap-1 text-white-darker font-robert-regular font-bold text-xl md:text-2xl"
+                onClick={() => {
+                  setIsMenuOpen(!isMenuOpen);
+                  setOpenAccordion(null);
+                  setFocusedTitle(null);
+                }}
               >
                 {item.conteudo.map((content) => (
                   <p
                     key={content}
-                    className="transition-color duration-200 cursor-pointer filter hover:text-arcane-purple hover:brightness-90"
+                    className="transition-color duration-200 first-of-type:mt-3 cursor-pointer filter hover:text-arcane-purple hover:brightness-90"
                     // onClick={() => scrollToSection(item.title, content)}
                   >
                     {content}
@@ -145,9 +217,21 @@ const OverlayMenu = () => {
           </div>
         ))}
       </div>
-      <div className="w-full relative">
-        <div className="absolute bottom-12 px-20 w-full md:px-0 md:top-20 md:right-24 md:w-fit ">
-          <div className="hidden md:flex flex-col items-start ">
+      <div
+        className={`w-full relative transition-all duration-300 ${
+          focusedTitle !== null ? "filter brightness-50" : ""
+        }`}
+      >
+        <div
+          className={`absolute bottom-12 px-16 w-full md:px-0 md:top-20 md:right-24 md:w-fit transition-transform duration-300 ${
+            focusedTitle !== null && !isIphoneSE
+              ? "translate-y-10 pointer-events-none md:translate-y-0 md:flex"
+              : isIphoneSE
+              ? "hidden"
+              : ""
+          }`}
+        >
+          <div className="dev flex flex-col items-start">
             <h2 className="font-general font-bold text-xs md:text-lg text-neutral-dark uppercase">
               Desenvolvido por
             </h2>
@@ -168,6 +252,7 @@ const OverlayMenu = () => {
       </div>
     </div>
   );
-};
+});
 
+OverlayMenu.displayName = "OverlayMenu";
 export default OverlayMenu;

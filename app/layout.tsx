@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { MenuProvider } from "@/contexts/MenuContext";
-import OverlayMenu from "@/components/OverlayMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +31,6 @@ export default function RootLayout({
       >
         <MenuProvider>
           <Navbar />
-          <OverlayMenu />
           {children}
         </MenuProvider>
       </body>

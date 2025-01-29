@@ -77,6 +77,15 @@ body {
   }
 
   .menu-nav {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: 99;
+    justify-content: space-between;
     background-image: radial-gradient(circle at 65%, #100731 20%, #080315 60%);
   }
 
@@ -93,18 +102,18 @@ body {
   .srdev {
     background: linear-gradient(
       90deg,
-      #b376ec,
-      #b376ec,
-      #b376ec,
-      #b376ec,
-      #b376ec,
-      #b376ec,
       #b0e0e6,
       #b0e0e6,
       #b0e0e6,
       #b0e0e6,
       #b0e0e6,
-      #b0e0e6
+      #b0e0e6,
+      #b376ec,
+      #b376ec,
+      #b376ec,
+      #b376ec,
+      #b376ec,
+      #b376ec
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

@@ -22,7 +22,7 @@ export default {
         neutral: {
           light: "#F0F0F0",
           DEFAULT: "#808080",
-          dark: "#FFFFFF33",
+          dark: "#333333",
         },
         accent: {
           light: "#dfdff2",
@@ -45,7 +45,7 @@ export default {
         white: {
           DEFAULT: "#FFFFFF",
           dark: "#e8e8ed",
-          darker: "#d4d4d4",
+          darker: "#FFFFFF33",
         },
       },
       fontFamily: {

@@ -5,17 +5,16 @@ import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import Image from "next/image";
 
 import { useMenu } from "@/contexts/MenuContext";
-import OverlayMenu from "./OverlayMenu";
 import Button from "./Button";
+import React, { memo } from "react";
+import OverlayMenu from "./OverlayMenu";
 
-const Navbar = () => {
+const Navbar = memo(() => {
   const { isMenuOpen, setIsMenuOpen } = useMenu();
 
   return (
     <>
-      <div
-        className="fixed inset-x-0 top-4 z-50 h-16 border-none transition-all duration-700 sm:inset-x-6"
-      >
+      <div className="fixed inset-x-0 top-4 z-[100] h-16 border-none transition-all duration-700 sm:inset-x-6">
         <header className="absolute top-1/2 w-full -translate-y-1/2 flex justify-center">
           <nav className="relative flex w-full md:w-[90%] h-full items-center justify-between padding-4">
             <div className="flex items-center gap-7 opacity-0">
@@ -30,7 +29,7 @@ const Navbar = () => {
             <div className="flex items-center mx-3">
               <Button
                 id="navigation-button"
-                title={ isMenuOpen ? "Fechar" : "Navegar" }
+                title={isMenuOpen ? "Fechar" : "Navegar"}
                 rightIcon={
                   isMenuOpen ? <TiArrowSortedUp /> : <TiArrowSortedDown />
                 }
@@ -41,9 +40,10 @@ const Navbar = () => {
           </nav>
         </header>
       </div>
-      <OverlayMenu />
+      {isMenuOpen && <OverlayMenu />}
     </>
   );
-};
+});
 
+Navbar.displayName = 'Navbar';
 export default Navbar;
