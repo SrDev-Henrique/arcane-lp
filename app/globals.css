@@ -63,6 +63,10 @@ body {
     @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
   }
 
+  .absolute-bottom-center {
+    @apply absolute bottom-40 left-1/2 translate-x-[-50%] translate-y-[-50%];
+  }
+
   .flex-center {
     @apply flex justify-center items-center;
   }
