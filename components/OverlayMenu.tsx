@@ -111,19 +111,9 @@ const OverlayMenu = memo(() => {
             opacity: 1,
             y: 0,
             stagger: 0.08,
-            duration: 1,
-            ease: "power2.out",
-          },
-          "-=0.4"
-        )
-        .to(
-          ".arcane",
-          {
-            x: 0,
             duration: 0.8,
             ease: "power2.out",
           },
-          "-=0.3"
         )
         .to(
           ".dev",
@@ -132,7 +122,16 @@ const OverlayMenu = memo(() => {
             duration: 0.8,
             ease: "power2.inOut",
           },
-          "-=0.1"
+          "-=0.8"
+        )
+        .to(
+          ".arcane",
+          {
+            x: 0,
+            duration: 1.35,
+            ease: "power2.out",
+          },
+          "-=0.8"
         );
     },
     { scope: overlayMenuRef }
@@ -223,7 +222,7 @@ const OverlayMenu = memo(() => {
         }`}
       >
         <div
-          className={`absolute bottom-12 px-16 w-full md:px-0 md:top-20 md:right-24 md:w-fit transition-transform duration-300 ${
+          className={`absolute right-24 bottom-12 w-60 pl-2 md:pl-0 md:top-20 md:right-24 md:w-fit transition-transform duration-300 ${
             focusedTitle !== null && !isIphoneSE
               ? "translate-y-10 pointer-events-none md:translate-y-0 md:flex"
               : isIphoneSE

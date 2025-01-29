@@ -147,7 +147,7 @@ body {
     color: transparent;
     background-size: 300%;
     background-position: 0%;
-    animation: change-color 6s;
+    animation: change-color 4s;
   }
 
   .current-video {
