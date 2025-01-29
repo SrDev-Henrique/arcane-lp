@@ -182,7 +182,7 @@ const Hero = () => {
           <div
             ref={divRef}
             id="mask-clip-path"
-            className="mask-clip-path pulse absolute absolute-bottom-center md:absolute-center z-50 size-32 opacity-100 cursor-pointer overflow-hidden rounded-lg transition-all duration-300 ease-in md:hover:size-64"
+            className="mask-clip-path pulse absolute absolute-bottom-center md:absolute-center z-50 size-24 md:size-32 opacity-100 cursor-pointer overflow-hidden rounded-lg transition-all duration-300 ease-in md:hover:size-64"
           >
             <div
               onClick={handleMiniVideoClick}
