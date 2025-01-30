@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 
+import { sectionRefs } from "@/lib/sectionRefs";
 import OverlayMenuTitle from "./OverlayMenuTitle";
 import { useMenu } from "@/contexts/MenuContext";
 
@@ -35,7 +36,6 @@ const OverlayMenu = memo(() => {
   const overlayMenuRef = useRef<HTMLDivElement>(null);
   const accordionRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const tl = useRef<gsap.core.Timeline | null>(null);
-  // const menuTitleRef = useRef<HTMLDivElement>(null);
 
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [focusedTitle, setFocusedTitle] = useState<string | null>(null);
@@ -53,13 +53,13 @@ const OverlayMenu = memo(() => {
     setOpenAccordion((prev) => (prev === title ? null : title));
   };
 
-  // const scrollToSection = (title: string, content: string) => {
-  //   const sectionId = `${title}-${content.toLowerCase()}`;
-  //   const section = sectionRefs.current[sectionId];
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
+  const scrollToSection = (title: string, content: string) => {
+    const sectionId = `${title}-${content.toLowerCase()}`;
+    const section = sectionRefs.current[sectionId];
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   useEffect(() => {
     Object.keys(accordionRefs.current).forEach((key) => {
@@ -84,8 +84,6 @@ const OverlayMenu = memo(() => {
     });
   }, [openAccordion]);
 
-  console.log(isMenuOpen);
-
   useGSAP(
     () => {
       gsap.set([".overlay-menu-title", ".icon"], {
@@ -105,16 +103,13 @@ const OverlayMenu = memo(() => {
 
       tl.current = gsap
         .timeline({ paused: true })
-        .to(
-          [".overlay-menu-title", ".icon"],
-          {
-            opacity: 1,
-            y: 0,
-            stagger: 0.08,
-            duration: 0.8,
-            ease: "power2.out",
-          },
-        )
+        .to([".overlay-menu-title", ".icon"], {
+          opacity: 1,
+          y: 0,
+          stagger: 0.08,
+          duration: 0.8,
+          ease: "power2.out",
+        })
         .to(
           ".dev",
           {
@@ -139,17 +134,19 @@ const OverlayMenu = memo(() => {
 
   useEffect(() => {
     if (isMenuOpen) {
+      document.body.classList.add("overflow-hidden");
       tl.current?.play();
     } else {
       tl.current?.reverse();
+      document.body.classList.remove("overflow-hidden");
     }
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
   }, [isMenuOpen]);
 
   return (
-    <div
-      ref={overlayMenuRef}
-      className="menu-nav"
-    >
+    <div ref={overlayMenuRef} className="menu-nav">
       <div className="flex flex-col pl-10 md:pl-0 gap-7 md:gap-8 h-full w-[100%] md:w-[30%] justify-center">
         {navitems.map((item, index) => (
           <div key={item.title} className="flex flex-col w-full items-start">
@@ -206,7 +203,7 @@ const OverlayMenu = memo(() => {
                   <p
                     key={content}
                     className="transition-color duration-200 first-of-type:mt-3 cursor-pointer filter hover:text-arcane-purple hover:brightness-90"
-                    // onClick={() => scrollToSection(item.title, content)}
+                    onClick={() => scrollToSection(item.title, content)}
                   >
                     {content}
                   </p>

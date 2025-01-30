@@ -12,6 +12,9 @@ import OverlayMenu from "./OverlayMenu";
 const Navbar = memo(() => {
   const { isMenuOpen, setIsMenuOpen } = useMenu();
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
   return (
     <>
       <div className="fixed inset-x-0 top-4 z-[100] h-16 border-none transition-all duration-700 sm:inset-x-6">
@@ -34,7 +37,7 @@ const Navbar = memo(() => {
                   isMenuOpen ? <TiArrowSortedUp /> : <TiArrowSortedDown />
                 }
                 containerClass="bg-blue-50 flex w-[128px] md:w-[176px] items-center justify-center gap-1"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                onClick={toggleMenu}
               />
             </div>
           </nav>
@@ -44,6 +47,5 @@ const Navbar = memo(() => {
     </>
   );
 });
-
 Navbar.displayName = 'Navbar';
 export default Navbar;

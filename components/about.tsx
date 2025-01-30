@@ -1,11 +1,13 @@
 "use client";
 
-import { useGSAP } from "@gsap/react";
+import React, { useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-import React, { useRef } from "react";
+
 import AnimatedTitle from "./AnimatedTitle";
+import { sectionRefs } from "@/lib/sectionRefs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -77,7 +79,13 @@ const About: React.FC = () => {
   });
 
   return (
-    <div id="about" className="min-h-screen w-screen">
+    <div
+      id="pilto<b>v</b>er-apresentação"
+      ref={(el) => {
+        if (el) sectionRefs.current["pilto<b>v</b>er-apresentação"] = el;
+      }}
+      className="min-h-screen w-screen"
+    >
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
         <h2 className="font-general font-semibold text-sm uppercase md:text-[10px]">
           Bem-vindos a Runeterra
@@ -115,5 +123,4 @@ const About: React.FC = () => {
     </div>
   );
 };
-
 export default About;

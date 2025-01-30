@@ -14,7 +14,6 @@
 
 body {
   width: 100dvw;
-  overflow-x: hidden;
   background-color: #ffebb7;
   font-family: "General Sans", sans-serif;
 }
@@ -106,18 +105,18 @@ body {
   .srdev {
     background: linear-gradient(
       90deg,
-      #b0e0e6,
-      #b0e0e6,
-      #b0e0e6,
-      #b0e0e6,
-      #b0e0e6,
-      #b0e0e6,
       #b376ec,
       #b376ec,
       #b376ec,
       #b376ec,
       #b376ec,
-      #b376ec
+      #b376ec,
+      #b0e0e6,
+      #b0e0e6,
+      #b0e0e6,
+      #b0e0e6,
+      #b0e0e6,
+      #b0e0e6
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
