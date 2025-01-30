@@ -27,13 +27,13 @@ const Navbar = memo(() => {
   useEffect(() => {
     if (currentScrollY === 0) {
       setIsNavVisible(true);
-      navContainerRef.current?.classList.remove('floating-nav');
+      navContainerRef.current?.classList.remove("floating-nav");
     } else if (currentScrollY > lastScrollY) {
       setIsNavVisible(false);
-      navContainerRef.current?.classList.add('floating-nav');
+      navContainerRef.current?.classList.add("floating-nav");
     } else if (currentScrollY < lastScrollY) {
       setIsNavVisible(true);
-      navContainerRef.current?.classList.add('floating-nav');
+      navContainerRef.current?.classList.add("floating-nav");
     }
 
     setLastScrollY(currentScrollY);
@@ -45,8 +45,8 @@ const Navbar = memo(() => {
       opacity: isNavVisible ? 1 : 0,
       duration: 0.1,
       ease: "power1.out",
-    })
-  }, [isNavVisible])
+    });
+  }, [isNavVisible]);
 
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);
@@ -54,9 +54,25 @@ const Navbar = memo(() => {
     setIsIndicatorActive((prev) => !prev);
   };
 
+  const toggleChatBox = () => {
+    setIsAudioPlaying((prev) => !prev);
+
+    setIsIndicatorActive((prev) => !prev);
+
+    chatBoxRef.current?.classList.add("hidden");
+  };
+
   useEffect(() => {
     if (audioElementRef.current) {
       audioElementRef.current.volume = 0.16;
+
+      setTimeout(() => {
+        gsap.to(chatBoxRef.current, {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.out",
+        });
+      }, 500);
     }
   });
 
@@ -107,6 +123,27 @@ const Navbar = memo(() => {
                   />
                 ))}
               </button>
+              <div
+                ref={chatBoxRef}
+                className="absolute opacity-0 -bottom-20 left-10 bg-black w-40 rounded-lg"
+              >
+                <div className="relative text-neutral-light text-center text-sm font-bold p-2 after:absolute after:-top-5 after:left-4 after:h-5 after:w-[10px] after:border-l-[10px] after:border-r-[10px] after:border-b-[10px] after:border-r-transparent after:border-l-transparent after:border-black">
+                  <h2>Gostaria de ouvir uma música?</h2>
+                  <div className="buttons px-5 mt-2">
+                    <button onClick={toggleChatBox} className="button">
+                      Sim
+                    </button>
+                    <button
+                      onClick={() => {
+                        chatBoxRef.current?.classList.add("hidden");
+                      }}
+                      className="button"
+                    >
+                      Não
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="flex items-center mx-3">
               <Button
@@ -126,5 +163,5 @@ const Navbar = memo(() => {
     </>
   );
 });
-Navbar.displayName = 'Navbar';
+Navbar.displayName = "Navbar";
 export default Navbar;
