@@ -149,6 +149,36 @@ body {
     animation: change-color 4s;
   }
 
+  .buttons {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1px transparent solid;
+    border-radius: 10px;
+    background: #dfdff2;
+    color: #000;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: #000;
+      color: #fff;
+      border: 1px solid #e8e8ed;
+    } 
+  }
+
   .current-video {
     position: absolute;
     top: 50%;
@@ -185,7 +215,7 @@ body {
   }
 
   .about-image {
-    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
+    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-64 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
   }
 
   .animated-title {

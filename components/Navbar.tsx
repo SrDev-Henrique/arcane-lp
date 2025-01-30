@@ -18,6 +18,7 @@ const Navbar = memo(() => {
 
   const navContainerRef = React.useRef<HTMLDivElement>(null);
   const audioElementRef = React.useRef<HTMLAudioElement>(null);
+  const chatBoxRef = React.useRef<HTMLDivElement>(null);
 
   const { isMenuOpen, setIsMenuOpen } = useMenu();
 
@@ -55,7 +56,6 @@ const Navbar = memo(() => {
 
   useEffect(() => {
     if (audioElementRef.current) {
-      console.log("Duração real do áudio:", audioElementRef.current.duration);
       audioElementRef.current.volume = 0.16;
     }
   });
@@ -79,7 +79,7 @@ const Navbar = memo(() => {
       >
         <header className="absolute top-1/2 w-full -translate-y-1/2 flex justify-center">
           <nav className="relative flex w-full h-full items-center justify-between padding-4">
-            <div className="flex ml-2 ">
+            <div className="flex ml-2 relative">
               <button
                 className="flex items-center space-x-0.5"
                 onClick={toggleAudioIndicator}

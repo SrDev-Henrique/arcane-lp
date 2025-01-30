@@ -92,7 +92,7 @@ const About: React.FC = () => {
         </h2>
 
         <AnimatedTitle
-          title="conhe<b>c</b>a o <br/> i<b>n</b>crivel <br/> m<b>u</b>ndo de <b>a</b>rcane"
+          title="conhe<b>c</b>a o <br/> m<b>u</b>ndo <br/> de <b>a</b>rcane"
           containerClass="mt-5 !text-black text-center special-font"
         />
 
