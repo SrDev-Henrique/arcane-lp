@@ -146,7 +146,7 @@ const OverlayMenu = memo(() => {
   }, [isMenuOpen]);
 
   return (
-    <div ref={overlayMenuRef} className="menu-nav">
+    <div ref={overlayMenuRef} className="menu-nav flex-col md:flex-row">
       <div className="flex flex-col pl-10 md:pl-0 gap-7 md:gap-8 h-full w-[100%] md:w-[30%] justify-center">
         {navitems.map((item, index) => (
           <div key={item.title} className="flex flex-col w-full items-start">
@@ -219,7 +219,7 @@ const OverlayMenu = memo(() => {
         }`}
       >
         <div
-          className={`absolute right-24 bottom-12 w-60 pl-2 md:pl-0 md:top-20 md:right-24 md:w-fit transition-transform duration-300 ${
+          className={`absolute pl-16 bottom-12 w-[100%] md:pl-0 md:top-20 md:right-24 md:w-fit transition-transform duration-300 ${
             focusedTitle !== null && !isIphoneSE
               ? "translate-y-10 pointer-events-none md:translate-y-0 md:flex"
               : isIphoneSE
