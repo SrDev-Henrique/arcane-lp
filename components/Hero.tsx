@@ -161,7 +161,7 @@ const Hero = () => {
   });
 
   return (
-    <div className="relative h-dvh w-screen overflow-x-hidden user-select-none bg-piltover-light">
+    <div className="relative h-dvh w-screen overflow-x-hidden user-select-none bg-black">
       {isLoading && (
         <div className="flex-center fixed z-[999] h-dvh w-screen overflow-hidden bg-violet-50">
           <div className="three-body">
@@ -174,7 +174,7 @@ const Hero = () => {
 
       <div
         id="video-frame"
-        className="relative z-10 h-dvh w-screen overflow-hidden bg-accent-light"
+        className="relative z-10 h-dvh w-screen overflow-hidden bg-black"
         onMouseMove={onMouseMove}
         onMouseLeave={onMouseLeave}
       >

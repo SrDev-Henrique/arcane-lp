@@ -14,7 +14,7 @@
 
 body {
   width: 100dvw;
-  background-color: #ffebb7;
+  background-color: #000;
   font-family: "General Sans", sans-serif;
 }
 
@@ -147,6 +147,17 @@ body {
     background-size: 300%;
     background-position: 0%;
     animation: change-color 4s;
+  }
+
+  .piltover {
+    color: #000;
+    background: linear-gradient(180deg, #000, #00000099);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: #ffebb7 2px;
+    background-clip: text;
+    text-shadow: 2 3 1px rgba(0, 0, 0, 0.13);
+    letter-spacing: 1.5rem;
   }
 
   .buttons {

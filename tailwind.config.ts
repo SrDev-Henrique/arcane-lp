@@ -35,9 +35,6 @@ export default {
           DEFAULT: "#E50914",
           dark: "#FF4C4C",
         },
-        yellow: {
-          300: "#edff66",
-        },
         arcane: {
           pink: "#C71585",
           purple: "#8A2BE2",
@@ -46,6 +43,12 @@ export default {
           DEFAULT: "#FFFFFF",
           dark: "#e8e8ed",
           darker: "#FFFFFF33",
+        },
+        yellow: {
+          300: "#edff66",
+        },
+        blue: {
+          light: "#b0e0e6",
         },
       },
       fontFamily: {
