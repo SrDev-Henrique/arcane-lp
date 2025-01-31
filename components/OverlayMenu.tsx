@@ -16,11 +16,11 @@ const navitems = [
   },
   {
     title: "pilto<b>v</b>er",
-    conteudo: ["Apresentação", "História", "Locais", "Personagens"],
+    conteudo: ["Apresentação", "História", "Personagens"],
   },
   {
     title: "<b>z</b>aun",
-    conteudo: ["Apresentação", "História", "Locais", "Personagens"],
+    conteudo: ["Apresentação", "História", "Personagens"],
   },
   {
     title: "hist<b>o</b>ria",
