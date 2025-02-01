@@ -114,8 +114,8 @@ const About: React.FC = () => {
           <Image
             src={"/images/piltover.jpg"}
             alt="Background Image"
-            height={1000}
-            width={1000}
+            height={1080}
+            width={1920}
             className="absolute left-0 top-0 size-full object-cover"
           />
         </div>
