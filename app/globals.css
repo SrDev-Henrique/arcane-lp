@@ -104,7 +104,7 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     z-index: 99;
     justify-content: space-between;
-    background-image: radial-gradient(circle at 65%, #100731 20%, #080315 60%);
+    backdrop-filter: blur(10px) brightness(0.25);
   }
 
   .magic {
@@ -120,18 +120,19 @@ body {
   .srdev {
     background: linear-gradient(
       90deg,
-      #b376ec,
-      #b376ec,
-      #b376ec,
-      #b376ec,
-      #b376ec,
-      #b376ec,
       #b0e0e6,
       #b0e0e6,
       #b0e0e6,
       #b0e0e6,
       #b0e0e6,
-      #b0e0e6
+      #b0e0e6,
+      #F5F5DC,
+      #F5F5DC,
+      #F5F5DC,
+      #F5F5DC,
+      #F5F5DC,
+      #F5F5DC
+      
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -149,11 +150,11 @@ body {
   .arcane {
     background: linear-gradient(
       90deg,
+      #b0e0e6,
+      #b376ec,
       #b376ec,
       #b0e0e6,
-      #8A2BE2,
-      #00BFFF,
-      #b376ec
+      #b0e0e6
     );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -166,13 +167,29 @@ body {
 
   .piltover {
     color: #000;
-    background: linear-gradient(180deg, #B22222, #E5091490);
+    background: linear-gradient(180deg, #C4A84A, #C4A84A99);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: #F5F5DC 2px;
+    -webkit-text-stroke: #C4A84A99 0.1px;
     background-clip: text;
-    text-shadow: 2 3 1px rgba(0, 0, 0, 0.13);
     letter-spacing: 1.5rem;
+  }
+
+  .piltover-engine {
+    animation: rotate 15s linear infinite;
+  }
+
+  .piltover-background {
+    background-image: radial-gradient(circle at 50%, #F5F5DC 10%, #ffffff 60%);
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   .buttons {

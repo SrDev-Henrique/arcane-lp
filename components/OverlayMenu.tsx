@@ -160,20 +160,20 @@ const OverlayMenu = memo(() => {
             >
               <OverlayMenuTitle
                 title={item.title}
-                containerClass={`!px-0 overlay-menu-title special-font !text-6xl md:!text-8xl text-center transition-colors duration-300 md:group-hover:text-accent-light ${
+                containerClass={`!px-0 overlay-menu-title special-font !text-6xl md:!text-8xl text-center transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
                   focusedTitle === item.title
-                    ? "text-accent-light"
-                    : "text-arcane-purple"
+                    ? "text-neutral-light"
+                    : "text-accent-light"
                 }`}
                 delay={index * 0.1}
               />
               {item.conteudo && (
-                <div className="border-hsla icon w-[30px] h-[30px] flex-center rounded-full mt-1">
+                <div className="border-hsla icon w-[30px] h-[30px] flex-center rounded-full mt-2">
                   <TiArrowSortedDown
                     className={`transform ${
                       openAccordion === item.title
-                        ? "rotate-180 text-accent-light"
-                        : "text-arcane-purple md:group-hover:text-accent-light"
+                        ? "rotate-180 text-neutral-light"
+                        : "text-accent-light md:group-hover:text-accent-light"
                     } transition-transform duration-300`}
                   />
                 </div>
@@ -192,7 +192,7 @@ const OverlayMenu = memo(() => {
                   overflow: "hidden",
                   transition: "all 0.5s ease",
                 }}
-                className="flex flex-col ml-5 md:ml-10 gap-1 text-white-darker font-robert-regular font-bold text-xl md:text-2xl"
+                className="flex flex-col ml-5 md:ml-10 gap-1 text-white-dark font-robert-regular font-bold tracking-wide text-xl md:text-2xl"
                 onClick={() => {
                   setIsMenuOpen(!isMenuOpen);
                   setOpenAccordion(null);
@@ -202,7 +202,7 @@ const OverlayMenu = memo(() => {
                 {item.conteudo.map((content) => (
                   <p
                     key={content}
-                    className="transition-color duration-200 first-of-type:mt-3 cursor-pointer filter hover:text-arcane-purple hover:brightness-90"
+                    className="transition-color duration-200 first-of-type:mt-3 cursor-pointer filter hover:text-neutral-light hover:brightness-90"
                     onClick={() => scrollToSection(item.title, content)}
                   >
                     {content}
@@ -228,7 +228,7 @@ const OverlayMenu = memo(() => {
           }`}
         >
           <div className="dev flex flex-col items-start">
-            <h2 className="font-general font-bold text-xs md:text-lg text-neutral-dark uppercase">
+            <h2 className="font-general font-bold text-xs md:text-lg text-accent-light uppercase">
               Desenvolvido por
             </h2>
             <Link
@@ -236,7 +236,7 @@ const OverlayMenu = memo(() => {
               href={"https://github.com/SrDev-Henrique"}
               target="_blank"
             >
-              <h1 className="srdev font-zentry special-font text-4xl md:text-8xl">
+              <h1 className="srdev font-zentry special-font tracking-wide text-4xl md:text-8xl">
                 srde<b>v</b>-<b>h</b>enri<b>q</b>ue
               </h1>
             </Link>
