@@ -12,7 +12,9 @@ export default {
         piltover: {
           light: "#FFEBB7",
           DEFAULT: "#FFD700",
-          dark: "#C4A84A",
+          dark: "#C4A84A99",
+          background: "#F5F5DC",
+          red: "#B22222",
         },
         zaun: {
           light: "#A6E22E",

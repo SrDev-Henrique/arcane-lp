@@ -43,6 +43,21 @@ body {
     font-family: "zentry";
     src: url("/fonts/zentry-regular.woff2") format("woff2");
   }
+
+  @font-face {
+    font-family: "lora";
+    src: url("/fonts/lora.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "lora-italic";
+    src: url("/fonts/lora-italic.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "cinzel";
+    src: url("/fonts/cinzel.woff2") format("woff2");
+  }
 }
 
 @layer utilities {
@@ -151,10 +166,10 @@ body {
 
   .piltover {
     color: #000;
-    background: linear-gradient(180deg, #000, #00000099);
+    background: linear-gradient(180deg, #B22222, #E5091490);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: #ffebb7 2px;
+    -webkit-text-stroke: #F5F5DC 2px;
     background-clip: text;
     text-shadow: 2 3 1px rgba(0, 0, 0, 0.13);
     letter-spacing: 1.5rem;
