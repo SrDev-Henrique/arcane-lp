@@ -56,6 +56,9 @@ export default {
       fontFamily: {
         zentry: ["zentry", "sans-serif"],
         general: ["general", "sans-serif"],
+        cinzel: ["cinzel", "sans-serif"],
+        lora: ["lora", "sans-serif"],
+        "lora-italic": ["lora-italic", "sans-serif"],
         "circular-web": ["circular-web", "sans-serif"],
         "robert-medium": ["robert-medium", "sans-serif"],
         "robert-regular": ["robert-regular", "sans-serif"],
