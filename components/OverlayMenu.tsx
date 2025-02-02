@@ -28,6 +28,8 @@ const navitems = [
   },
 ];
 
+console.log(navitems[0].title)
+
 const OverlayMenu = memo(() => {
   const isIphoneSE = window.innerWidth <= 340;
 
@@ -41,6 +43,11 @@ const OverlayMenu = memo(() => {
   const [focusedTitle, setFocusedTitle] = useState<string | null>(null);
 
   const handleTitleClick = (title: string) => {
+    if(title === "i<b>n</b>icio") {
+      scrollToTop();
+      return;
+    }
+
     if (focusedTitle === title) {
       setFocusedTitle(null);
     } else {
@@ -53,12 +60,21 @@ const OverlayMenu = memo(() => {
     setOpenAccordion((prev) => (prev === title ? null : title));
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const scrollToSection = (title: string, content: string) => {
     const sectionId = `${title}-${content.toLowerCase()}`;
     const section = sectionRefs.current[sectionId];
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    toggleMenu();
   };
 
   useEffect(() => {
@@ -163,7 +179,7 @@ const OverlayMenu = memo(() => {
                 containerClass={`!px-0 overlay-menu-title special-font !text-6xl md:!text-8xl text-center transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
                   focusedTitle === item.title
                     ? "text-neutral-light"
-                    : "text-accent-light"
+                    : "text-blue-light"
                 }`}
                 delay={index * 0.1}
               />
@@ -194,7 +210,7 @@ const OverlayMenu = memo(() => {
                 }}
                 className="flex flex-col ml-5 md:ml-10 gap-1 text-white-dark font-robert-regular font-bold tracking-wide text-xl md:text-2xl"
                 onClick={() => {
-                  setIsMenuOpen(!isMenuOpen);
+                  toggleMenu();
                   setOpenAccordion(null);
                   setFocusedTitle(null);
                 }}

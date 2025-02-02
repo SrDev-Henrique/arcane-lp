@@ -288,7 +288,7 @@ body {
   }
 
   .bento-tilt_1 {
-    @apply relative border-piltover border-4 col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative border-piltover border-[4px] col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
 
   .bento-tilt_2 {

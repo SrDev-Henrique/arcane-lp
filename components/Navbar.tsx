@@ -62,19 +62,19 @@ const Navbar = memo(() => {
     chatBoxRef.current?.classList.add("hidden");
   };
 
-  useEffect(() => {
-    if (audioElementRef.current) {
-      audioElementRef.current.volume = 0.16;
+  // useEffect(() => {
+  //   if (audioElementRef.current) {
+  //     audioElementRef.current.volume = 0.16;
 
-      setTimeout(() => {
-        gsap.to(chatBoxRef.current, {
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.out",
-        });
-      }, 500);
-    }
-  });
+  //     setTimeout(() => {
+  //       gsap.to(chatBoxRef.current, {
+  //         opacity: 1,
+  //         duration: 0.5,
+  //         ease: "power2.out",
+  //       });
+  //     }, 500);
+  //   }
+  // });
 
   useEffect(() => {
     if (isAudioPlaying) {
@@ -91,7 +91,7 @@ const Navbar = memo(() => {
     <>
       <div
         ref={navContainerRef}
-        className="fixed inset-x-0 top-2 z-[100] h-16 border-none transition-all duration-700 sm:inset-x-6"
+        className="fixed top-2 z-[100] h-16 border-none transition-all duration-700 sm:inset-x-6"
       >
         <header className="absolute top-1/2 w-full -translate-y-1/2 flex justify-center">
           <nav className="relative flex w-full h-full items-center justify-between padding-4">

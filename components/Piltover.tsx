@@ -26,7 +26,7 @@ const Piltover = () => {
           </div>
         </div>
 
-        <div className="border-piltover border-4 relative mb-7 h-96 w-full overflow-hidden rounded-lg md:h-[65vh]">
+        <div className="border-piltover border-[3px] relative mb-7 h-96 w-full overflow-hidden rounded-lg md:h-[65vh]">
           <BentoCard
             videosrc="videos/piltoverclip.mp4"
             title={<>Piltover</>}
@@ -58,7 +58,7 @@ const Piltover = () => {
             />
           </div>
 
-          <div className="bento-tilt_1 row-span-1 ms-32 lg:col-span-1 lg:ms-0">
+          <div className="bento-tilt_1 row-span-1 ms-24 lg:col-span-1 lg:ms-0">
             <BentoCard
               imgsrc="/images/arcane_piltover/piltover.png"
               title={<>Cultura</>}
