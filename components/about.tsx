@@ -110,7 +110,7 @@ const About: React.FC = () => {
       </div>
 
       <div className="h-dvh w-screen" id="clip" ref={clipRef}>
-        <div className="mask-clip-path about-image border border-black">
+        <div className="mask-clip-path about-image border border-piltover-light">
           <Image
             src={"/images/piltover.jpg"}
             alt="Background Image"

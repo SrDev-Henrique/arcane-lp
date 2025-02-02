@@ -108,7 +108,7 @@ body {
   }
 
   .magic {
-    color: #ffebb7;
+    color: #FFD700;
     background: linear-gradient(180deg, #b0e0e6, #c71585);
     background-blend-mode: overlay;
     -webkit-background-clip: text;
@@ -170,17 +170,22 @@ body {
     background: linear-gradient(180deg, #C4A84A, #C4A84A99);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: #C4A84A99 0.1px;
+    -webkit-text-stroke: #C4A84A 1px;
     background-clip: text;
     letter-spacing: 1.5rem;
   }
-
+  
   .piltover-engine {
     animation: rotate 15s linear infinite;
+    filter: drop-shadow(0 0 5px rgba(196, 168, 74, 0.7));
   }
 
   .piltover-background {
     background-image: radial-gradient(circle at 50%, #F5F5DC 10%, #ffffff 60%);
+  }
+
+  .bentoCard-background {
+    background: linear-gradient(360deg, #000000 15%, transparent)
   }
 
   @keyframes rotate {
@@ -191,6 +196,12 @@ body {
       transform: rotate(360deg);
     }
   }
+
+  @keyframes enginePulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
 
   .buttons {
     display: flex;
