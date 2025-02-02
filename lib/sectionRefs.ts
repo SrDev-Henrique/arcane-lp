@@ -1,3 +1,3 @@
-type SectionRefs = { [key: string]: HTMLDivElement };
+type SectionRefs = { [key: string]: HTMLElement };
 
 export const sectionRefs: { current: SectionRefs } = { current: {} };

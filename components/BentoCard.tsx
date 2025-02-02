@@ -3,7 +3,7 @@
 import Image from "next/image";
 import React, { useEffect, useRef } from 'react'
 
-const BentoCard = ({ videosrc, imgsrc, title, description }: { videosrc?: string, imgsrc?:string, title: React.ReactNode, description: React.ReactNode }) => {
+const BentoCard = ({ videosrc, imgsrc, title, description, containerClass }: { videosrc?: string, imgsrc?:string, title: React.ReactNode, description: React.ReactNode, containerClass?: string }) => {
     const cardVideoRef = useRef<HTMLVideoElement>(null);
     const video = cardVideoRef.current;
 
@@ -13,7 +13,7 @@ const BentoCard = ({ videosrc, imgsrc, title, description }: { videosrc?: string
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              if (entry.isIntersecting && window.innerWidth < 768) {
+              if (entry.isIntersecting) {
                 video.play();
               } else {
                 video.pause();
@@ -33,31 +33,15 @@ const BentoCard = ({ videosrc, imgsrc, title, description }: { videosrc?: string
         };
     })
 
-    const onMouseEnter = () => {
-        if (window.innerWidth > 768) {
-          if (video) {
-            video.play();
-          }
-        }
-    }
-    const onMouseLeave = () => {
-        if (window.innerWidth > 768) {
-          if (video) {
-            video.currentTime = 0;
-            video.pause();
-          }}
-    }
   return (
     <div
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
       className="relative size-full"
     >
       {videosrc && (
         <video
           ref={cardVideoRef}
           src={videosrc}
-          className="absolute left-0 top-0 size-full object-cover object-center rounded-lg"
+          className="absolute left-0 top-0 size-full object-cover object-center"
           autoPlay
           loop
           muted
@@ -69,10 +53,10 @@ const BentoCard = ({ videosrc, imgsrc, title, description }: { videosrc?: string
           width={1080}
           height={1920}
           alt="Piltover Image"
-          className="absolute left-0 top-0 size-full object-cover object-center rounded-lg"
+          className="absolute left-0 top-0 size-full object-cover object-center"
         />
       )}
-      <div className="relative z-10 flex size-full flex-col justify-between p-5 bentoCard-background">
+      <div className={`relative z-10 flex size-full flex-col justify-between p-5 bentoCard-background ${containerClass}`}>
         <div className="absolute left-5 bottom-5">
           <h1 className="font-cinzel text-piltover-title uppercase">{title}</h1>
           {description && (

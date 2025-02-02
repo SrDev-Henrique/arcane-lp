@@ -14,8 +14,8 @@
 
 body {
   width: 100dvw;
-  background-color: #000;
   font-family: "General Sans", sans-serif;
+  background-color: #000;
 }
 
 @layer base {
@@ -185,7 +185,11 @@ body {
   }
 
   .bentoCard-background {
-    background: linear-gradient(360deg, #000000 15%, transparent)
+    background: linear-gradient(360deg, #000000 15%, transparent);
+  }
+
+  .brightness-filter {
+    backdrop-filter: brightness(80%);
   }
 
   @keyframes rotate {
@@ -284,7 +288,7 @@ body {
   }
 
   .bento-tilt_1 {
-    @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative border-piltover border-4 col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
 
   .bento-tilt_2 {

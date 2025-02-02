@@ -7,7 +7,6 @@ import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 
 import AnimatedTitle from "./AnimatedTitle";
-import { sectionRefs } from "@/lib/sectionRefs";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,10 +79,6 @@ const About: React.FC = () => {
 
   return (
     <div
-      id="pilto<b>v</b>er-apresentação"
-      ref={(el) => {
-        if (el) sectionRefs.current["pilto<b>v</b>er-apresentação"] = el;
-      }}
       className="min-h-screen w-screen bg-black"
     >
       <div className="relative mb-8 pt-36 flex flex-col items-center gap-5">
