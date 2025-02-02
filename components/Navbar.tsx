@@ -91,7 +91,7 @@ const Navbar = memo(() => {
     <>
       <div
         ref={navContainerRef}
-        className="fixed top-2 z-[100] h-16 border-none transition-all duration-700 sm:inset-x-6"
+        className="fixed inset-x-1 top-2 z-[100] h-16 border-none transition-all duration-700 sm:inset-x-6"
       >
         <header className="absolute top-1/2 w-full -translate-y-1/2 flex justify-center">
           <nav className="relative flex w-full h-full items-center justify-between padding-4">
