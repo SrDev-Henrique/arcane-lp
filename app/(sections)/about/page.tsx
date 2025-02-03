@@ -46,6 +46,7 @@ const About: React.FC = () => {
       width: "100vw",
       height: "100vh",
       borderRadius: 0,
+      border: "none",
       rotateY: "0deg",
       rotateX: "0deg",
     });
@@ -77,7 +78,7 @@ const About: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen w-screen bg-black">
+    <div className="min-h-screen w-screen bg-black overflow-x-hidden">
       <div className="relative mb-8 pt-36 flex flex-col items-center gap-5">
         <h2 className="font-general text-accent-light font-semibold text-sm uppercase md:text-[10px]">
           Bem-vindos a Runeterra
