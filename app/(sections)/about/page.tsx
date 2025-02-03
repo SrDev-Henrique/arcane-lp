@@ -5,8 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-
-import AnimatedTitle from "./AnimatedTitle";
+import AnimatedTitle from "@/components/AnimatedTitle";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,9 +77,7 @@ const About: React.FC = () => {
   });
 
   return (
-    <div
-      className="min-h-screen w-screen bg-black"
-    >
+    <div className="min-h-screen w-screen bg-black">
       <div className="relative mb-8 pt-36 flex flex-col items-center gap-5">
         <h2 className="font-general text-accent-light font-semibold text-sm uppercase md:text-[10px]">
           Bem-vindos a Runeterra

@@ -2,8 +2,8 @@
 
 import React, { useEffect, useRef } from "react";
 import { FaGear } from "react-icons/fa6";
-import BentoCard from "./BentoCard";
-import BentoTilt from "./BentoTilt";
+import BentoCard from "@/components/BentoCard";
+import BentoTilt from "@/components/BentoTilt";
 import { sectionRefs } from "@/lib/sectionRefs";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Button from "./Button";
 import { TiLocationArrow } from "react-icons/ti";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import Button from "@/components/Button";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,8 +23,7 @@ const Hero = () => {
   const fullSizeVideoRef = useRef<HTMLVideoElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
 
-  const getVideoSrc = (index: number) =>
-    `videos/Arcane-clip${index}.mp4`;
+  const getVideoSrc = (index: number) => `videos/Arcane-clip${index}.mp4`;
 
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
@@ -145,7 +144,7 @@ const Hero = () => {
     gsap.set("#video-frame", {
       clipPath: "polygon(14% 0%, 72% 0%, 90% 90%, 0% 100%)",
       borderRadius: "0 0 40% 10%",
-    })
+    });
 
     gsap.from("#video-frame", {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -197,7 +196,6 @@ const Hero = () => {
                 playsInline
                 className="size-64 origin-center scale-150 object-cover object-center rounded-lg"
                 onLoadedData={handleVideoLoad}
-  
               />
             </div>
           </div>
