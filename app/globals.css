@@ -165,6 +165,31 @@ body {
     animation: change-color 4s;
   }
 
+  .curtain-reveal-container {
+  position: relative;
+}
+
+.curtain-left,
+.curtain-right {
+  position: absolute;
+  top: 0;
+  width: 50%; /* Each curtain covers half of the container */
+  height: 100%;
+  background-color: #ffffff; /* Match the background color of your section */
+  z-index: 10; /* Ensure curtains are above the text */
+  transition: transform 1.5s ease-out; /* Smooth transition for the curtain effect */
+}
+
+.curtain-left {
+  left: 0;
+  transform-origin: left; /* Open from the left */
+}
+
+.curtain-right {
+  right: 0;
+  transform-origin: right; /* Open from the right */
+}
+
   .piltover {
     color: #000;
     background: linear-gradient(180deg, #C4A84A, #C4A84A99);
@@ -263,7 +288,7 @@ body {
     object-position: center;
     filter: brightness(0.75);
   }
-
+  
   .hero-heading {
     @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
   }
@@ -273,7 +298,7 @@ body {
   }
 
   .about-image {
-    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-[70vw] origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
+    @apply absolute left-1/2 top-0 z-20 h-[60vh] w-96 origin-center -translate-x-1/2 overflow-hidden rounded-3xl md:w-[30vw];
   }
 
   .animated-title {

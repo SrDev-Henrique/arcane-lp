@@ -2,36 +2,44 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef } from 'react'
+import { useLetterReveal } from "@/lib/useLetterReveal";
 
 const BentoCard = ({ videosrc, imgsrc, title, description, containerClass }: { videosrc?: string, imgsrc?:string, title: React.ReactNode, description: React.ReactNode, containerClass?: string }) => {
     const cardVideoRef = useRef<HTMLVideoElement>(null);
     const video = cardVideoRef.current;
 
-    useEffect(() => {
-        if (!video) return;
+  useEffect(() => {
+    if (!video) return;
 
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                video.play();
-              } else {
-                video.pause();
-                video.currentTime = 0;
-              }
-            });
-          },
-          {
-            threshold: 0.5,
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play();
+          } else {
+            video.pause();
+            video.currentTime = 0;
           }
-        );
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
 
-        observer.observe(video);
+    observer.observe(video);
 
-        return () => {
-          observer.unobserve(video);
-        };
-    })
+    return () => {
+      observer.unobserve(video);
+    };
+  });
+
+  useLetterReveal("reveal-letter", {
+    threshold: 0.5,
+    duration: 0.6,
+    letterStagger: 0.013,
+    rootMargin: "0px",
+  })
 
   return (
     <div
@@ -58,9 +66,9 @@ const BentoCard = ({ videosrc, imgsrc, title, description, containerClass }: { v
       )}
       <div className={`relative z-10 flex size-full flex-col justify-between p-5 bentoCard-background ${containerClass}`}>
         <div className="absolute left-5 bottom-5">
-          <h1 className="font-cinzel text-piltover-title uppercase">{title}</h1>
+          <h1 className="font-cinzel text-piltover-title uppercase reveal-letter">{title}</h1>
           {description && (
-            <div className="font-lora text-piltover-dark mt-3 max-w-96 md:max-w-[80%] text-xs md:text-base">
+            <div className="font-lora text-piltover-dark mt-3 max-w-96 md:max-w-[80%] text-xs md:text-base reveal-letter">
               {description}
             </div>
           )}

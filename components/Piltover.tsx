@@ -1,32 +1,73 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaGear } from "react-icons/fa6";
 import BentoCard from "./BentoCard";
+import BentoTilt from "./BentoTilt";
 import { sectionRefs } from "@/lib/sectionRefs";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Piltover = () => {
+  const curtainLeftRef = useRef<HTMLDivElement>(null);
+  const curtainRightRef = useRef<HTMLDivElement>(null);
+  const blurContentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      [curtainLeftRef.current, curtainRightRef.current],
+      { scaleX: 1 },
+      {
+        scaleX: 0,
+        scrollTrigger: {
+          trigger: curtainLeftRef.current,
+          start: "top +=400",
+          end: "center center",
+          scrub: 1,
+        },
+      }
+    );
+  }, []);
+
   return (
     <section
       className="piltover-background pb-52"
       id="pilto<b>v</b>er-apresentação"
       ref={(el) => {
-        if (el) sectionRefs.current["pilto<b>v</b>er-apresentação"] = el as HTMLElement;
+        if (el)
+          sectionRefs.current["pilto<b>v</b>er-apresentação"] =
+            el as HTMLElement;
       }}
     >
       <div className="container mx-auto px-3 md:px-10">
-        <div className="flex flex-col items-center gap-5 px-5 py-32 text-center">
-          <h2 className="font-cinzel text-piltover-dark border-b border-b-piltover-dark font-bold text-xs uppercase mb-10">
-            A cidade do progresso
-          </h2>
-          <div className="flex flex-row items-center gap-3 text-3xl sm:text-5xl lg:text-[135px] ml-6">
-            <h1 className="font-cinzel font-bold uppercase piltover">Pilt</h1>
-            <FaGear className="text-piltover-dark-transparent -ml-5 mb-1 sm:mb-2 md:mb-3 piltover-engine text-2xl sm:text-4xl lg:text-[110px]" />
-            <h1 className="font-cinzel font-bold uppercase piltover">ver</h1>
+        <div className="curtain-reveal-container relative overflow-hidden">
+          <div
+            ref={curtainLeftRef}
+            className="curtain-left absolute top-0 left-0 w-1/2 h-full bg-piltover-dark z-10"
+          ></div>
+          <div
+            ref={curtainRightRef}
+            className="curtain-right absolute top-0 right-0 w-1/2 h-full bg-piltover-dark z-10"
+          ></div>
+
+          <div
+            ref={blurContentRef}
+            className="flex flex-col items-center gap-5 px-5 py-32 text-center"
+          >
+            <h2 className="font-cinzel text-piltover-dark border-b border-b-piltover-dark font-bold text-xs uppercase mb-10">
+              A cidade do progresso
+            </h2>
+            <div className="flex flex-row items-center gap-3 text-3xl sm:text-5xl lg:text-[135px] ml-6">
+              <h1 className="font-cinzel font-bold uppercase piltover">Pilt</h1>
+              <FaGear className="text-piltover-dark-transparent -ml-5 mb-1 sm:mb-2 md:mb-3 piltover-engine text-2xl sm:text-4xl lg:text-[110px]" />
+              <h1 className="font-cinzel font-bold uppercase piltover">ver</h1>
+            </div>
           </div>
         </div>
 
-        <div className="border-piltover border-[3px] relative mb-7 h-96 w-full overflow-hidden rounded-lg md:h-[65vh]">
+        <BentoTilt className="relative border-piltover border-[3px] mb-7 h-96 w-full overflow-hidden rounded-lg md:h-[65vh]">
           <BentoCard
             videosrc="videos/piltoverclip.mp4"
             title={<>Piltover</>}
@@ -39,10 +80,10 @@ const Piltover = () => {
               </>
             }
           />
-        </div>
+        </BentoTilt>
 
         <div className="grid h-[145vh] lg:h-[125vh] grid-cols-2 grid-rows-3 lg:grid-rows-2 gap-7">
-          <div className="bento-tilt_1 row-span-1 lg:col-span-1 lg:row-span-2">
+          <BentoTilt className="bento-tilt_1 row-span-1 lg:col-span-1 lg:row-span-2">
             <BentoCard
               imgsrc="/images/arcane_piltover/piltover-large.jpeg"
               title={<>Tecnologia</>}
@@ -56,9 +97,9 @@ const Piltover = () => {
               }
               containerClass="brightness-filter"
             />
-          </div>
+          </BentoTilt>
 
-          <div className="bento-tilt_1 row-span-1 ms-24 lg:col-span-1 lg:ms-0">
+          <BentoTilt className="bento-tilt_1 row-span-1 ms-24 lg:col-span-1 lg:ms-0">
             <BentoCard
               imgsrc="/images/arcane_piltover/piltover.png"
               title={<>Cultura</>}
@@ -71,8 +112,8 @@ const Piltover = () => {
                 </>
               }
             />
-          </div>
-          <div className="bento-tilt_1 me-14 lg:col-span-1 lg:me-0">
+          </BentoTilt>
+          <BentoTilt className="bento-tilt_1 me-14 lg:col-span-1 lg:me-0">
             <BentoCard
               imgsrc="/images/arcane_piltover/piltover-small1.webp"
               title={<>Tradição</>}
@@ -87,7 +128,7 @@ const Piltover = () => {
               }
               containerClass="brightness-filter"
             />
-          </div>
+          </BentoTilt>
         </div>
       </div>
     </section>
