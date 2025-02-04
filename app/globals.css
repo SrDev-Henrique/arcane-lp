@@ -325,7 +325,7 @@ body {
   }
 
   .bento-reveal {
-    perspective: 700px;
+    perspective: 1000px;
     will-change: transform, opacity;
     transform-style: preserve-3d;
   }
