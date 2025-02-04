@@ -70,7 +70,7 @@ body {
   }
 
   .floating-nav {
-    @apply bg-black rounded-lg border;
+    @apply bg-black rounded-lg border border-white/10;
   }
 
   .absolute-center {
@@ -209,10 +209,6 @@ body {
     background-image: radial-gradient(circle at 50%, #F5F5DC 10%, #ffffff 60%);
   }
 
-  .bentoCard-background {
-    background: linear-gradient(360deg, #000000 15%, transparent);
-  }
-
   .brightness-filter {
     backdrop-filter: brightness(80%);
   }
@@ -313,15 +309,25 @@ body {
   }
 
   .bento-tilt_1 {
-    @apply relative border-piltover border-[4px] col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative border-piltover border-[4px] col-span-2 overflow-hidden rounded-lg transition-transform duration-300 ease-out;
   }
 
   .bento-tilt_2 {
-    @apply relative col-span-1 row-span-1 overflow-hidden rounded-md transition-transform duration-300 ease-out;
+    @apply relative col-span-1 row-span-1 overflow-hidden rounded-lg transition-transform duration-300 ease-out;
   }
 
   .bento-title {
     @apply uppercase md:text-6xl text-4xl font-black font-zentry;
+  }
+
+  .bentoCard-background {
+    background: linear-gradient(360deg, #000000 15%, transparent);
+  }
+
+  .bento-reveal {
+    perspective: 700px;
+    will-change: transform, opacity;
+    transform-style: preserve-3d;
   }
 
   .story-img-container {

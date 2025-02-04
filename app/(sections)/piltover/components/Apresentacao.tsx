@@ -25,11 +25,60 @@ const Apresentacao = () => {
             trigger: curtainLeftRef.current,
             start: "top +=400",
             end: "center center",
-            scrub: 1,
+            scrub: 0.8,
           },
         }
       );
     }, []);
+  
+  useEffect(() => {
+    const bentoElements = gsap.utils.toArray(".bento-reveal");
+
+    const animations: gsap.core.Tween[] = [];
+
+    bentoElements.forEach((element) => {
+      if (element instanceof HTMLElement) {
+        gsap.set(element, {
+          opacity: 0,
+          y: 50,
+          rotateX: -15,
+          scale: 0.95,
+        });
+
+        const tween = gsap.fromTo(
+          element,
+          {
+            opacity: 0,
+            y: 50,
+            rotateX: -15,
+            scale: 0.95,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            rotateX: 0,
+            scale: 1,
+            ease: "power3.out",
+            duration: 0.8,
+            scrollTrigger: {
+              trigger: element,
+              start: "top 90%", 
+              end: "top 70%", 
+              scrub: 0.8, 
+              markers: false, 
+              invalidateOnRefresh: true, 
+            },
+          }
+        );
+
+        animations.push(tween);
+      }
+    });   
+    return () => {
+      animations.forEach((anim) => anim.kill());
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, []);
 
   return (
     <section
@@ -42,7 +91,7 @@ const Apresentacao = () => {
       }}
     >
       <div className="container mx-auto px-3 md:px-10">
-        <div className="curtain-reveal-container relative overflow-hidden">
+        <div className="curtain-reveal-container relative overflow-hidden mb-20">
           <div
             ref={curtainLeftRef}
             className="curtain-left absolute top-0 left-0 w-1/2 h-full bg-piltover-dark z-10"
@@ -67,7 +116,7 @@ const Apresentacao = () => {
           </div>
         </div>
 
-        <BentoTilt className="relative border-piltover border-[3px] mb-7 h-96 w-full overflow-hidden rounded-lg md:h-[65vh]">
+        <BentoTilt className="bento-reveal relative border-piltover border-[3px] mb-7 h-96 w-full overflow-hidden rounded-lg md:h-[65vh] transition-transform duration-300 ease-out">
           <BentoCard
             videosrc="videos/piltoverclip.mp4"
             title={<>Piltover</>}
@@ -83,7 +132,7 @@ const Apresentacao = () => {
         </BentoTilt>
 
         <div className="grid h-[145vh] lg:h-[125vh] grid-cols-2 grid-rows-3 lg:grid-rows-2 gap-7">
-          <BentoTilt className="bento-tilt_1 row-span-1 lg:col-span-1 lg:row-span-2">
+          <BentoTilt className="bento-reveal bento-tilt_1 row-span-1 lg:col-span-1 lg:row-span-2">
             <BentoCard
               imgsrc="/images/arcane_piltover/piltover-large.jpeg"
               title={<>Tecnologia</>}
@@ -99,7 +148,7 @@ const Apresentacao = () => {
             />
           </BentoTilt>
 
-          <BentoTilt className="bento-tilt_1 row-span-1 ms-24 lg:col-span-1 lg:ms-0">
+          <BentoTilt className="bento-reveal bento-tilt_1 row-span-1 ms-24 lg:col-span-1 lg:ms-0">
             <BentoCard
               imgsrc="/images/arcane_piltover/piltover.png"
               title={<>Cultura</>}
@@ -113,7 +162,7 @@ const Apresentacao = () => {
               }
             />
           </BentoTilt>
-          <BentoTilt className="bento-tilt_1 me-14 lg:col-span-1 lg:me-0">
+          <BentoTilt className="bento-reveal bento-tilt_1 me-14 lg:col-span-1 lg:me-0">
             <BentoCard
               imgsrc="/images/arcane_piltover/piltover-small1.webp"
               title={<>Tradição</>}

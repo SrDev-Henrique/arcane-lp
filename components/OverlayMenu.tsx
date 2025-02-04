@@ -28,8 +28,6 @@ const navitems = [
   },
 ];
 
-console.log(navitems[0].title)
-
 const OverlayMenu = memo(() => {
   const isIphoneSE = window.innerWidth <= 340;
 

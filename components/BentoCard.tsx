@@ -37,7 +37,7 @@ const BentoCard = ({ videosrc, imgsrc, title, description, containerClass }: { v
   useLetterReveal("reveal-letter", {
     threshold: 0.5,
     duration: 0.6,
-    letterStagger: 0.013,
+    letterStagger: 0.012,
     rootMargin: "0px",
   })
 
