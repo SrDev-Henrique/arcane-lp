@@ -11,26 +11,26 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Apresentacao = () => {
-    const curtainLeftRef = useRef<HTMLDivElement>(null);
-    const curtainRightRef = useRef<HTMLDivElement>(null);
-    const blurContentRef = useRef<HTMLDivElement>(null);
+  const curtainLeftRef = useRef<HTMLDivElement>(null);
+  const curtainRightRef = useRef<HTMLDivElement>(null);
+  const blurContentRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-      gsap.fromTo(
-        [curtainLeftRef.current, curtainRightRef.current],
-        { scaleX: 1 },
-        {
-          scaleX: 0,
-          scrollTrigger: {
-            trigger: curtainLeftRef.current,
-            start: "top +=400",
-            end: "center center",
-            scrub: 0.8,
-          },
-        }
-      );
-    }, []);
-  
+  useEffect(() => {
+    gsap.fromTo(
+      [curtainLeftRef.current, curtainRightRef.current],
+      { scaleX: 1 },
+      {
+        scaleX: 0,
+        scrollTrigger: {
+          trigger: curtainLeftRef.current,
+          start: "top +=400",
+          end: "center center",
+          scrub: 0.8,
+        },
+      }
+    );
+  }, []);
+
   useEffect(() => {
     const bentoElements = gsap.utils.toArray(".bento-reveal");
 
@@ -62,18 +62,18 @@ const Apresentacao = () => {
             duration: 0.8,
             scrollTrigger: {
               trigger: element,
-              start: "top 90%", 
-              end: "top 70%", 
-              scrub: 0.8, 
-              markers: false, 
-              invalidateOnRefresh: true, 
+              start: "top 90%",
+              end: "top 70%",
+              scrub: 0.8,
+              markers: false,
+              invalidateOnRefresh: true,
             },
           }
         );
 
         animations.push(tween);
       }
-    });   
+    });
     return () => {
       animations.forEach((anim) => anim.kill());
       ScrollTrigger.getAll().forEach((st) => st.kill());
