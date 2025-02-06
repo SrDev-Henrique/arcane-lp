@@ -1,6 +1,7 @@
 "use client";
 
 import { sectionRefs } from "@/lib/sectionRefs";
+import { historia } from "@/data/piltover";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -11,38 +12,40 @@ gsap.registerPlugin(ScrollTrigger);
 const Historia = () => {
 
   useEffect(() => {
-    const section = sectionRefs.current["pilto<b>v</b>er-história"];
-    const ctx = gsap.context(() => {
-      const backgroundAnimation = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#história",
-          start: "top +=100",
-          end: "top top",
-          toggleActions: "play none none reverse"
-        }
-      });
+    const historiaSection = sectionRefs.current["pilto<b>v</b>er-história"];
+    const apresentacaoSection = sectionRefs.current["pilto<b>v</b>er-apresentação"];
 
-      backgroundAnimation.to(section, {
-        backgroundColor: "#FFEBB7",
-        duration: 0.1,
+    if (!historiaSection || !apresentacaoSection) return; 
+
+    const ctx = gsap.context(() => {
+      gsap.to([historiaSection, apresentacaoSection], {
+        className: "piltover-dark-background",
+        scrollTrigger: {
+          trigger: historiaSection,
+          start: "top +=600",
+          end: "top top",
+          scrub: 0,
+          toggleActions: "play none none reverse",
+        },
       });
-    }, [section]);
+    });
 
     return () => ctx.revert();
-  })
+  }, []);
 
-  console.log(sectionRefs)
   return (
     <section
-      className="min-h-dvh bg-white backdrop-blur-md"
+      className="min-h-dvh bg-white relative"
       id="pilto<b>v</b>er-história"
       ref={(el) => {
         if (el)
           sectionRefs.current["pilto<b>v</b>er-história"] = el as HTMLElement;
       }}
     >
-      <div id="história" className="text-wrap relative overflow-hidden w-full md:w-" ></div>
-      <div className="h-dvh"></div>
+      <div className="h-dvh"><h1>A história de Piltover</h1></div>
+      <div
+        className="text-wrap relative overflow-hidden w-full md:w-"
+      ></div>
     </section>
   );
 };

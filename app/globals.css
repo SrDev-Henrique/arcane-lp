@@ -209,6 +209,10 @@ body {
     background-image: radial-gradient(circle at 50%, #F5F5DC 10%, #ffffff 60%);
   }
 
+  .piltover-dark-background {
+    background-image: radial-gradient(circle at 50%, #C4A84A50, #000 30%);
+  }
+
   .brightness-filter {
     backdrop-filter: brightness(80%);
   }
@@ -401,28 +405,6 @@ body {
   to {
     background-position: 300%;
   }
-}
-
-.sticky-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-.progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
-}
-
-.scroll-section {
-  position: relative;
 }
 
 /* From Uiverse.io by G4b413l */
