@@ -82,7 +82,7 @@ const Apresentacao = () => {
 
   return (
     <section
-      className="piltover-background pb-52"
+      className="bg-white pb-10"
       id="pilto<b>v</b>er-apresentação"
       ref={(el) => {
         if (el)

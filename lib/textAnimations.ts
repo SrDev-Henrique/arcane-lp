@@ -102,3 +102,97 @@ export const useLetterReveal = (
     };
   }, [className, duration, letterStagger, rootMargin, threshold]);
 };
+
+//todo Second version:
+
+interface UseLetterRevelUpOptions {
+  threshold?: number;
+  rootMargin?: string;
+  duration?: number;
+  letterStagger?: number;
+}
+
+export const useLetterRevealUp = (
+  className: string,
+  {
+    threshold = 0.1,
+    rootMargin = "0px",
+    duration = 0.5,
+    letterStagger = 0.0,
+  }: UseLetterRevelUpOptions = {}
+) => {
+  useEffect(() => {
+    const elements = document.querySelectorAll(`.${className}`);
+    if (!elements.length) return;
+
+    elements.forEach((el) => {
+      const element = el as HTMLElement;
+      const text = element.textContent;
+      if (!text) return;
+
+      element.innerHTML = "";
+
+      const words = text.split(" ");
+
+      words.forEach((word, wordIndex) => {
+        const wordContainer = document.createElement("span");
+        wordContainer.style.display = "inline-block";
+        wordContainer.style.overflow = "hidden";
+        wordContainer.style.whiteSpace = "nowrap";
+
+        word.split("").forEach((letter) => {
+          const span = document.createElement("span");
+          span.textContent = letter;
+
+          span.style.opacity = "0";
+          span.style.transform = "translateY(70px)";
+
+          span.classList.add("font-cinzel");
+          span.classList.add("piltover");
+
+          span.style.display = "inline-block";
+
+          span.classList.add("letter");
+
+          wordContainer.appendChild(span);
+        });
+
+        element.appendChild(wordContainer);
+
+        if (wordIndex < words.length - 1) {
+          const space = document.createTextNode(" ");
+          element.appendChild(space);
+        }
+      });
+    });
+
+    const observerOptions = {
+      threshold,
+      rootMargin,
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const letter = entry.target.querySelectorAll("span.letter");
+
+          gsap.to(letter, {
+            opacity: 1,
+            transform: "translateY(0px)",
+            duration,
+            ease: "power2.out",
+            stagger: letterStagger,
+          });
+
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [className, duration, letterStagger, rootMargin, threshold]);
+};

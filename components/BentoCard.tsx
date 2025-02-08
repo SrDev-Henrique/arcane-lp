@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef } from 'react'
-import { useLetterReveal } from "@/lib/useLetterReveal";
+import { useLetterReveal } from "@/lib/textAnimations";
 
 const BentoCard = ({ videosrc, imgsrc, title, description, containerClass }: { videosrc?: string, imgsrc?:string, title: React.ReactNode, description: React.ReactNode, containerClass?: string }) => {
     const cardVideoRef = useRef<HTMLVideoElement>(null);

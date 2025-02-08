@@ -22,6 +22,7 @@ const About: React.FC = () => {
         scrub: 0.5,
         pin: true,
         pinSpacing: true,
+        invalidateOnRefresh: true,
         onUpdate: (self) => {
           isFullWidth.current = self.progress === 1;
           if (isFullWidth.current) {
