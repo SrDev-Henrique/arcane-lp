@@ -79,24 +79,24 @@ const About: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen w-screen bg-black overflow-x-hidden">
+    <div className="min-h-screen w-screen bg-piltover-light overflow-x-hidden">
       <div className="relative mb-8 pt-36 flex flex-col items-center gap-5">
-        <h2 className="font-general text-accent-light font-semibold text-sm uppercase md:text-[10px]">
+        <h2 className="font-general text-black-dark font-semibold text-sm uppercase md:text-[10px]">
           Bem-vindos a Runeterra
         </h2>
 
         <AnimatedTitle
           title="conhe<b>c</b>a o <br/> m<b>u</b>ndo <br/> de <b>a</b>rcane"
-          containerClass="mt-5 text-accent-light text-center special-font"
+          containerClass="mt-5 text-black text-center special-font"
         />
 
         <div className="about-subtext">
-          <p className="text-white">
+          <p className="text-black-dark">
             Composto por duas cidades-estado, chamadas{" "}
             <b className="text-piltover-dark">Piltover</b> e{" "}
             <b className="text-zaun-light">Zaun</b>
           </p>
-          <p className="text-accent-light">
+          <p className="text-black-light">
             O progresso e a decadência, a riqueza e a pobreza, a busca pelo
             equilíbrio em um mundo de contradições
           </p>

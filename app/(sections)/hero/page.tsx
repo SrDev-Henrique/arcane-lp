@@ -160,7 +160,7 @@ const Hero = () => {
   });
 
   return (
-    <div className="relative h-dvh w-screen overflow-x-hidden user-select-none bg-black">
+    <div className="relative h-dvh w-screen overflow-x-hidden user-select-none bg-piltover-light">
       {isLoading && (
         <div className="flex-center fixed z-[999] h-dvh w-screen overflow-hidden bg-violet-50">
           <div className="three-body">

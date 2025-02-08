@@ -35,7 +35,7 @@ const Historia = () => {
   }, []);
 
   useLetterRevealUp("letter-up", {
-    threshold: 0.9,
+    threshold: 0.8,
     duration: 0.8,
     letterStagger: 0.03,
     rootMargin: "0px",
