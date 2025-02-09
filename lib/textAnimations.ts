@@ -146,11 +146,11 @@ export const useLetterRevealUp = (
 
           span.style.opacity = "0";
           span.style.transform = "translateY(70px)";
+          span.style.display = "inline-block";
+          span.style.padding = "0.5rem";
 
           span.classList.add("font-cinzel");
           span.classList.add("piltover");
-
-          span.style.display = "inline-block";
 
           span.classList.add("letter");
 
