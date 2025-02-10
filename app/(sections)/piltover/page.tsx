@@ -1,3 +1,4 @@
+import PiltoverHistoria from "@/components/PiltoverHistoria";
 import dynamic from "next/dynamic";
 
 const Apresentacao = dynamic(() => import("./components/Apresentacao"));
@@ -8,6 +9,7 @@ const Piltover = () => {
     <main className="relative min-h-screen w-screen">
       <Apresentacao />
       <Historia />
+      <PiltoverHistoria />
     </main>
   );
 };
