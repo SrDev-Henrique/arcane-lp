@@ -1,8 +1,9 @@
-import PiltoverHistoria from "@/components/PiltoverHistoria";
 import dynamic from "next/dynamic";
 
 const Apresentacao = dynamic(() => import("./components/Apresentacao"));
 const Historia = dynamic(() => import("./components/Historia"));
+const PiltoverHistoria = dynamic(() => import("@/components/PiltoverHistoria"));
+const Personagens = dynamic(() => import("./components/Personagens"));
 
 const Piltover = () => {
   return (
@@ -10,6 +11,7 @@ const Piltover = () => {
       <Apresentacao />
       <Historia />
       <PiltoverHistoria />
+      <Personagens />
     </main>
   );
 };

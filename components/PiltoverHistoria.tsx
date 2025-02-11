@@ -81,6 +81,7 @@ const PiltoverHistoria = () => {
       trigger: ".black-section",
       scrub: true,
       pin: true,
+      pinSpacing: true,
       start: "top top",
       end: () => `+=${(images.length + 1) * window.innerHeight}`,
     });
@@ -91,7 +92,6 @@ const PiltoverHistoria = () => {
   }, []);
 
   return (
-    <div className="h-screen w-screen">
       <section className="black-section h-screen flex flex-col md:flex-row justify-around items-center">
         <div className="text-wrap relative w-[80%] md:max-w-[650px] h-[80dvh] -mb-20 md:mb-0 overflow-hidden">
           {historiaItems.map(({ title, content }, i) => (
@@ -127,7 +127,6 @@ const PiltoverHistoria = () => {
           ))}
         </div>
       </section>
-    </div>
   );
 };
 
