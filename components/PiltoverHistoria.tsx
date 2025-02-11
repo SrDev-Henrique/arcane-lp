@@ -83,7 +83,7 @@ const PiltoverHistoria = () => {
       pin: true,
       pinSpacing: true,
       start: "top top",
-      end: () => `+=${(images.length + 1) * window.innerHeight}`,
+      end: () => `+=${images.length * window.innerHeight}`,
     });
 
     return () => {
