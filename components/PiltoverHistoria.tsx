@@ -29,10 +29,9 @@ const PiltoverHistoria = () => {
 
     ScrollTrigger.defaults({ scroller: window });
 
-    
     gsap.set(".panel-text", { zIndex: (i, _, targets) => targets.length - i });
     const texts = gsap.utils.toArray(".panel-text");
-    
+
     texts.forEach((text, i) => {
       gsap
         .timeline({
@@ -46,9 +45,10 @@ const PiltoverHistoria = () => {
         .to(text as gsap.TweenTarget, { duration: 0.1, opacity: 1 }, -0.99)
         .to(text as gsap.TweenTarget, { duration: 0.33, opacity: 0 }, 0.66);
     });
-    
+
     gsap.set(".panel", {
-      zIndex: (i, _, targets) => targets.length - i });
+      zIndex: (i, _, targets) => targets.length - i,
+    });
     const images = gsap.utils.toArray(".panel");
 
     images.forEach((image, i) => {
@@ -61,10 +61,22 @@ const PiltoverHistoria = () => {
             scrub: true,
           },
         })
-        .to(image as gsap.TweenTarget, { duration: 0.1, opacity: 1 })
-        .to(image as gsap.TweenTarget, { duration: 0.33, opacity: 0 }, 0.66); 
+        .to(image as gsap.TweenTarget, {
+          duration: 0.1,
+          opacity: 1,
+          pointerEvents: "auto",
+        })
+        .to(
+          image as gsap.TweenTarget,
+          {
+            duration: 0.33,
+            opacity: 0,
+            pointerEvents: "none",
+          },
+          0.66
+        );
     });
-    
+
     ScrollTrigger.create({
       trigger: ".black-section",
       scrub: true,
@@ -102,7 +114,7 @@ const PiltoverHistoria = () => {
           {historiaItems.map(({ imagePath }, i) => (
             <BentoTilt
               key={i}
-              className="panel h-[200px] md:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out object-fit w-full z-auto"
+              className="panel h-[200px] md:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out object-fit w-full z-auto pointer-events-auto"
             >
               <Image
                 src={imagePath}
