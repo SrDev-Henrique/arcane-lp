@@ -1,11 +1,14 @@
 "use client";
 
+import Button from "@/components/Button";
+
 import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import { FaVolumeUp, FaVolumeMute } from  "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import Button from "@/components/Button";
+import { useMenu } from "@/contexts/MenuContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,19 +20,22 @@ const Hero = () => {
   const [loadedVideos, setLoadedVideos] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [windowScrolled, setWindowScrolled] = useState(false);
+  const { isAudioOn, setIsAudioOn } = useMenu();
 
   const totalVideos = 4;
   const nextVideoRef = useRef<HTMLVideoElement>(null);
   const fullSizeVideoRef = useRef<HTMLVideoElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
+  const audioRef = useRef<HTMLDivElement>(null);
 
   const getVideoSrc = (index: number) => `videos/Arcane-clip${index}.mp4`;
 
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
   useEffect(() => {
-    if (loadedVideos <= totalVideos) {
+    if (loadedVideos <= totalVideos && fullSizeVideoRef.current) {
       setIsLoading(false);
+      fullSizeVideoRef.current.volume=0.10
     }
   }, [loadedVideos]);
 
@@ -39,12 +45,17 @@ const Hero = () => {
       setWindowScrolled(isScrolled);
 
       if (isScrolled) {
+        setIsAudioOn(false);
         gsap.to(divRef.current, {
           width: "0px",
           height: "0px",
           duration: 0.1,
           ease: "power4.out",
         });
+        gsap.to(audioRef.current, {
+          opacity: 0,
+          duration: 0.1,
+        })
       } else {
         gsap.to(divRef.current, {
           width: "128px",
@@ -53,11 +64,15 @@ const Hero = () => {
           ease: "power1.in",
           clearProps: "all",
         });
+        gsap.to(audioRef.current, {
+          opacity: 1,
+          duration: 0.1,
+        });
       }
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  });
 
   useEffect(() => {
     if (isLoading) {
@@ -159,6 +174,10 @@ const Hero = () => {
     });
   });
 
+  const toggleAudio = () => {
+    setIsAudioOn(!isAudioOn);
+  };
+
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden user-select-none bg-piltover-light">
       {isLoading && (
@@ -215,10 +234,19 @@ const Hero = () => {
             autoPlay
             playsInline
             loop
-            muted
+            muted={!isAudioOn}
             className="absolute left-0 top-0 size-full object-cover object-center filter brightness-75"
             onLoadedData={handleVideoLoad}
           />
+        </div>
+
+        <div ref={audioRef} className="absolute z-[51] bottom-0 left-0 will-change-transform transition-transform duration-300 ease-in-out">
+          <div
+            className="relative mb-8 mx-3 sm:mx-8 p-2 rounded-full text-accent-light text-base sm:text-2xl border-hsla cursor-pointer"
+            onClick={toggleAudio}
+          >
+            <div>{isAudioOn ? <FaVolumeUp /> : <FaVolumeMute />}</div>
+          </div>
         </div>
 
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-netflix-light">
