@@ -77,41 +77,41 @@ const PiltoverHistoria = () => {
   }, []);
 
   return (
-      <section className="black-section h-screen flex flex-col md:flex-row justify-around items-center">
-        <div className="text-wrap relative w-[80%] md:max-w-[650px] h-[80dvh] -mb-20 md:mb-0 overflow-hidden">
-          {historiaItems.map(({ title, content }, i) => (
-            <div
-              key={i}
-              className="panel-text absolute-center w-full opacity-0 transition-opacity duration-300 flex flex-col gap-2 md:gap-10"
-            >
-              <h2 className="piltover tracking-widest font-cinzel font-bold text-xl md:text-4xl uppercase">
-                {title}
-              </h2>
-              <p
-                className="text-piltover-light font-lora text-xs md:text-base leading-6 mx-auto"
-                dangerouslySetInnerHTML={{ __html: content }}
-              />
-            </div>
-          ))}
-        </div>
+    <section className="black-section h-screen flex flex-col md:flex-row justify-around items-center">
+      <div className="text-wrap relative w-[80%] md:max-w-[650px] h-[80dvh] -mb-20 md:mb-0 overflow-hidden">
+        {historiaItems.map(({ title, content }, i) => (
+          <div
+            key={i}
+            className="panel-text absolute-center w-[97%] opacity-0 transition-opacity duration-300 flex flex-col gap-2 md:gap-10"
+          >
+            <h2 className="piltover tracking-widest font-cinzel font-bold text-xl md:text-4xl uppercase">
+              {title}
+            </h2>
+            <p
+              className="text-piltover-light font-lora text-xs md:text-base leading-6 mx-auto"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          </div>
+        ))}
+      </div>
 
-        <div className="p-wrap -mb-2 relative flex items-center w-[80%] md:max-w-[650px] h-[50dvh] md:h-[80dvh] overflow-hidden">
-          {historiaItems.map(({ imagePath }, i) => (
-            <BentoTilt
-              key={i}
-              className="panel h-[200px] md:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out object-fit w-full z-auto pointer-events-auto"
-            >
-              <Image
-                src={imagePath}
-                width={650}
-                height={650}
-                alt="Imagem da história de Piltover"
-                className="rounded-lg border size-full border-piltover-light filter brightness-90"
-              />
-            </BentoTilt>
-          ))}
-        </div>
-      </section>
+      <div className="p-wrap -mb-2 relative flex items-center w-[80%] md:max-w-[650px] h-[50dvh] md:h-[80dvh] overflow-hidden">
+        {historiaItems.map(({ imagePath }, i) => (
+          <BentoTilt
+            key={i}
+            className="panel h-[200px] md:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out object-fit w-[97%] z-auto pointer-events-auto"
+          >
+            <Image
+              src={imagePath}
+              width={650}
+              height={650}
+              alt="Imagem da história de Piltover"
+              className="rounded-lg border size-full border-piltover-light filter brightness-90"
+            />
+          </BentoTilt>
+        ))}
+      </div>
+    </section>
   );
 };
 
