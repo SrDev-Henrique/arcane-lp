@@ -19,7 +19,8 @@ const Historia = () => {
 
     const ctx = gsap.context(() => {
       gsap.to([historiaSection, apresentacaoSection], {
-        background: "#000",
+        "--color-1": "#000",
+        "--color-2": "#101010",
         scrollTrigger: {
           trigger: historiaSection,
           start: "top +=600",
@@ -43,7 +44,7 @@ const Historia = () => {
   return (
     <>
       <section
-        className="min-h-dvh bg-white"
+        className="min-h-dvh piltover-dark-background"
         id="pilto<b>v</b>er-história"
         ref={(el) => {
           if (el)

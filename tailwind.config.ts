@@ -16,7 +16,7 @@ export default {
           title: "#d6b600",
           dark: "#C4A84A",
           background: "#F5F5DC",
-          red: "#B22222",
+          red: "#8f0b13",
           "red-transparent": "#B2222299",
           "dark-transparent": "#C4A84A99",
         },
