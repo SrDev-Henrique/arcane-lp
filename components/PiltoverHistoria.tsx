@@ -99,14 +99,14 @@ const PiltoverHistoria = () => {
         {historiaItems.map(({ imagePath }, i) => (
           <BentoTilt
             key={i}
-            className="panel h-[200px] md:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out object-fit w-[97%] z-auto pointer-events-auto"
+            className="panel h-[200px] md:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out w-[97%] z-auto pointer-events-auto"
           >
             <Image
               src={imagePath}
               width={650}
               height={650}
               alt="Imagem da história de Piltover"
-              className="rounded-lg border size-full border-piltover-light filter brightness-90"
+              className="rounded-lg border size-full border-piltover-light object-cover filter brightness-90"
             />
           </BentoTilt>
         ))}

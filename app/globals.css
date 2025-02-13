@@ -221,7 +221,12 @@ body {
   }
 
   .bg-piltover-character {
-    background: linear-gradient(60deg, #380f17, #8f0b13, #380f17);
+    --color-1: #000;
+    --color-2: #380f17;
+    background:
+    radial-gradient(circle at left top, var(--color-2) 0%, var(--color-2) 5%, transparent 40%),
+    radial-gradient(circle at right bottom, var(--color-2) 0%, var(--color-2) 5%, transparent 30%),
+    var(--color-1);
   }
 
   .brightness-filter {
