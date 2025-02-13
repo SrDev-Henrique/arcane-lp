@@ -187,7 +187,7 @@ const OverlayMenu = memo(() => {
                     className={`transform ${
                       openAccordion === item.title
                         ? "rotate-180 text-neutral-light"
-                        : "text-accent-light md:group-hover:text-accent-light"
+                        : "text-blue-light md:group-hover:text-accent-light"
                     } transition-transform duration-300`}
                   />
                 </div>
