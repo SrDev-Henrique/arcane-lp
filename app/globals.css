@@ -221,13 +221,12 @@ body {
   }
 
   .bg-piltover-character {
-    --color-1: #000;
-    --color-2: #380f17;
+    --color-1: #F5F5DC;
+    --color-2: #62152B;
+    --color-3: #8B2E2E;
     background:
-    radial-gradient(circle at left top, var(--color-2) 0%, var(--color-2) 5%, transparent 40%),
-    radial-gradient(circle at right bottom, var(--color-2) 0%, var(--color-2) 5%, transparent 30%),
-    var(--color-1);
-  }
+    linear-gradient(180deg, var(--color-2), var(--color-2));
+}
 
   .brightness-filter {
     backdrop-filter: brightness(80%);
