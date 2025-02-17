@@ -77,12 +77,12 @@ const PiltoverHistoria = () => {
   }, []);
 
   return (
-    <section className="black-section h-screen flex flex-col lg:flex-row justify-around items-center">
-      <div className="text-wrap relative w-[80%] md:max-w-[650px] h-[80dvh] -mb-20 lg:mb-0 overflow-hidden">
+    <section className="black-section h-screen flex flex-col justify-around items-center">
+      <div className="text-wrap relative w-[80%] md:max-w-[650px] h-[80dvh] -mb-20 lg:-mb-24 overflow-hidden">
         {historiaItems.map(({ title, content }, i) => (
           <div
             key={i}
-            className="panel-text absolute-center w-[97%] opacity-0 transition-opacity duration-300 flex flex-col gap-2 md:gap-10"
+            className="panel-text absolute-center w-[97%] opacity-0 transition-opacity duration-300 flex flex-col gap-2 lg:gap-[10]"
           >
             <h2 className="piltover tracking-widest font-cinzel font-bold text-xl md:text-4xl uppercase">
               {title}

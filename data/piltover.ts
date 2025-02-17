@@ -36,3 +36,47 @@ export const historiaItems = [
     imagePath: "/images/piltover-historia/partVI.webp",
   },
 ];
+
+export const backgroundImages = [
+  {
+    nome: "Caitlyn",
+    imagens: Array.from(
+      { length: 5 },
+      (_, i) =>
+        `/images/piltover-characters/background/caitlyn/caitlyn-${i + 1}.jpg`
+    ),
+  },
+  {
+    nome: "Mel",
+    imagens: Array.from(
+      { length: 5 },
+      (_, i) => `/images/piltover-characters/background/mel/mel-${i + 1}.jpg`
+    ),
+  },
+  {
+    nome: "Jayce",
+    imagens: Array.from(
+      { length: 5 },
+      (_, i) =>
+        `/images/piltover-characters/background/jayce/jayce-${i + 1}.jpg`
+    ),
+  },
+  {
+    nome: "Viktor",
+    imagens: Array.from(
+      { length: 5 },
+      (_, i) =>
+        `/images/piltover-characters/background/viktor/viktor-${i + 1}.jpg`
+    ),
+  },
+  {
+    nome: "Heimerdinger",
+    imagens: Array.from(
+      { length: 5 },
+      (_, i) =>
+        `/images/piltover-characters/background/heimerdinger/heimerdinger-${
+          i + 1
+        }.jpg`
+    ),
+  },
+];
