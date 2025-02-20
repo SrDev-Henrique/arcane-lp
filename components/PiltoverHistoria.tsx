@@ -22,12 +22,12 @@ const PiltoverHistoria = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".black-section",
-            start: () => "top -" + window.innerHeight * i,
+            start: () => `top -${window.innerHeight * i}`,
             end: () => `+=${window.innerHeight}`,
             scrub: true,
           },
         })
-        .to(text as gsap.TweenTarget, { duration: 0.1, opacity: 1 }, -0.99)
+        .to(text as gsap.TweenTarget, { duration: 0.33, opacity: 1 })
         .to(text as gsap.TweenTarget, { duration: 0.33, opacity: 0 }, 0.66);
     });
 
@@ -41,13 +41,13 @@ const PiltoverHistoria = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".black-section",
-            start: () => `top -=${window.innerHeight * i}`,
+            start: () => `top -${window.innerHeight * i}`,
             end: () => `+=${window.innerHeight}`,
             scrub: true,
           },
         })
         .to(image as gsap.TweenTarget, {
-          duration: 0.1,
+          duration: 0.33,
           opacity: 1,
           pointerEvents: "auto",
         })
@@ -62,13 +62,30 @@ const PiltoverHistoria = () => {
         );
     });
 
+    gsap.set(".black-section", {
+      clipPath: "circle(100% at 50% 50%)",
+    });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".black-section",
+          start: () => `top -${(images.length) * window.innerHeight}`,
+          end: () => `+=${window.innerHeight * 1.5}`,
+          scrub: true,
+        },
+      })
+      .to(".black-section", {
+        clipPath: "circle(0% at 50% 50%)",
+      });
+
     ScrollTrigger.create({
       trigger: ".black-section",
       scrub: true,
       pin: true,
       pinSpacing: true,
       start: "top top",
-      end: () => `+=${images.length * window.innerHeight}`,
+      end: () => `+=${(images.length + 1.5) * window.innerHeight}`,
     });
 
     return () => {
@@ -77,18 +94,18 @@ const PiltoverHistoria = () => {
   }, []);
 
   return (
-    <section className="black-section h-screen flex flex-col justify-around items-center">
-      <div className="text-wrap relative w-[80%] md:max-w-[650px] h-[80dvh] -mb-20 lg:-mb-24 overflow-hidden">
+    <section className="black-section bg-black z-10 h-screen flex flex-col justify-around items-center">
+      <div className="text-wrap relative w-full h-[80dvh] -mb-20 lg:-mb-24 overflow-hidden">
         {historiaItems.map(({ title, content }, i) => (
           <div
             key={i}
-            className="panel-text absolute-center w-[97%] opacity-0 transition-opacity duration-300 flex flex-col gap-2 lg:gap-[10]"
+            className="panel-text absolute-center w-[90%] md:max-w-[650px] opacity-0 transition-opacity duration-300 flex flex-col gap-2 lg:gap-[10]"
           >
             <h2 className="piltover tracking-widest font-cinzel font-bold text-xl md:text-4xl uppercase">
               {title}
             </h2>
             <p
-              className="text-piltover-light font-lora text-xs md:text-base leading-6 mx-auto"
+              className="text-piltover-light font-lora text-xs lg:text-base leading-6 mx-auto"
               dangerouslySetInnerHTML={{ __html: content }}
             />
           </div>
@@ -99,7 +116,7 @@ const PiltoverHistoria = () => {
         {historiaItems.map(({ imagePath }, i) => (
           <BentoTilt
             key={i}
-            className="panel h-[200px] md:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out w-[97%] z-auto pointer-events-auto"
+            className="panel h-[200px] md:h-[300px] lg:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out w-[97%] z-auto pointer-events-auto"
           >
             <Image
               src={imagePath}

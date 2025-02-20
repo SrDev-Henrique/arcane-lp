@@ -76,7 +76,7 @@ body {
   .absolute-center {
     @apply absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
   }
-  
+
   .absolute-bottom-center {
     @apply absolute bottom-10 left-1/2 translate-x-[-50%];
   }
@@ -176,21 +176,21 @@ body {
   .curtain-right {
     position: absolute;
     top: 0;
-    width: 50%; 
+    width: 50%;
     height: 100%;
-    background-color: #ffffff; 
-    z-index: 10; 
-    transition: transform 1.5s ease-out; 
+    background-color: #ffffff;
+    z-index: 10;
+    transition: transform 1.5s ease-out;
   }
 
   .curtain-left {
     left: 0;
-    transform-origin: left; 
+    transform-origin: left;
   }
 
   .curtain-right {
     right: 0;
-    transform-origin: right; 
+    transform-origin: right;
   }
 
   .piltover {
@@ -211,7 +211,11 @@ body {
   .piltover-background {
     --color-1: #f5f5dc;
     --color-2: #ffffff;
-    background-image: radial-gradient(circle at 50%, var(--color-1) 10%, var(--color-2) 60%);
+    background-image: radial-gradient(
+      circle at 50%,
+      var(--color-1) 10%,
+      var(--color-2) 60%
+    );
   }
 
   .piltover-dark-background {
@@ -221,12 +225,11 @@ body {
   }
 
   .bg-piltover-character {
-    --color-1: #F5F5DC;
-    --color-2: #62152B;
-    --color-3: #8B2E2E;
-    background:
-    linear-gradient(180deg, var(--color-2), var(--color-2));
-}
+    --color-1: #f5f5dc;
+    --color-2: #62152b;
+    --color-3: #8b2e2e;
+    background: linear-gradient(180deg, var(--color-2), var(--color-2));
+  }
 
   .brightness-filter {
     backdrop-filter: brightness(80%);
@@ -241,16 +244,60 @@ body {
     }
   }
 
-  @keyframes enginePulse {
-    0% {
-      transform: scale(1);
+  @keyframes animatePositive {
+    from {
+      transform: translateY(-255vh);
     }
-    50% {
-      transform: scale(1.1);
+    to {
+      transform: translateY(0vh);
     }
-    100% {
-      transform: scale(1);
+  }
+
+  @keyframes animateNegative {
+    from {
+      transform: translateY(250vh);
     }
+    to {
+      transform: translateY(-5vh);
+    }
+  }
+
+  @keyframes animatePositivelg {
+    from {
+      transform: translateY(-315vh);
+    }
+    to {
+      transform: translateY(0vh);
+    }
+  }
+
+  @keyframes animateNegativelg {
+    from {
+      transform: translateY(300vh);
+    }
+    to {
+      transform: translateY(0vh);
+    }
+  }
+
+  .animate-positive {
+    animation: animatePositive 1.5s ease-in-out forwards;
+  }
+
+  .animate-negative {
+    animation: animateNegative 1.5s ease-in-out forwards;
+  }
+
+  .animate-positive-lg {
+    animation: animatePositivelg 1.5s ease-in-out forwards;
+  }
+
+  .animate-negative-lg {
+    animation: animateNegativelg 1.5s ease-in-out forwards;
+  }
+
+  .mask {
+    mask-image: radial-gradient(circle at center, transparent 10%, red 20%);
   }
 
   .buttons {
