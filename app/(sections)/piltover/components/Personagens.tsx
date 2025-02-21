@@ -14,15 +14,31 @@ const Personagens = () => {
   const [isLg, setIsLg] = useState(false);
 
   useEffect(() => {
-
     setIsLg(window.innerWidth >= 1024);
+    
+    gsap.set(".piltover-personagens", {
+      maskImage: "radial-gradient(circle at center, transparent 0%, white 0%)"
+    })
+
+    const end = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".piltover-personagens",
+        start: `+=${4.7 * window.innerHeight}`,
+        end: `+=${window.innerHeight}`,
+        scrub: 1,
+      },
+    });
+
+    end.to(".piltover-personagens", {
+      maskImage: "radial-gradient(circle at center, transparent 100%, white 100%)",
+    })
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".piltover-personagens",
         start: `+=${window.innerHeight}`,
-        end: () => "+=" + 4 * window.innerHeight, 
-        scrub: 1, 
+        end: () => "+=" + 4 * window.innerHeight,
+        scrub: 1,
       },
     });
 
@@ -37,13 +53,13 @@ const Personagens = () => {
       pin: true,
       pinSpacing: true,
       start: "top top",
-      end: () => `+=${5.5 * window.innerHeight}`,
+      end: () => `+=${5.7 * window.innerHeight}`,
     });
-  }, [])
+  }, []);
 
   return (
     <section
-      className="mt-[-250vh] piltover-personagens"
+      className="mt-[-250vh] min-h-[100dvh] piltover-personagens"
       id="pilto<b>v</b>er-personagens"
       ref={(el) => {
         if (el)
@@ -51,8 +67,8 @@ const Personagens = () => {
             el as HTMLElement;
       }}
     >
-      <div className="h-screen w-screen relative">
-        <div className="overflow-hidden text-white h-screen md:flex filter brightness-100 bg-piltover-red">
+      <div className="h-screen w-screen relative bg-piltover-light">
+        <div className="overflow-hidden fog h-screen md:flex filter brightness-100 bg-piltover-light">
           <div className="absolute-center h-[150vh] lg:h-[300vh] size-full transform -rotate-45 -translate-y-20 -translate-x-20 flex gap-[5.7%] lg:gap-[1.7%] justify-center">
             {backgroundImages.map((personagem, index) => (
               <div

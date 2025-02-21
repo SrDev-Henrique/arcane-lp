@@ -296,8 +296,8 @@ body {
     animation: animateNegativelg 1.5s ease-in-out reverse forwards;
   }
 
-  .mask {
-    mask-image: radial-gradient(circle at center, transparent 10%, red 20%);
+  .fog {
+    mask-image: linear-gradient(to bottom, transparent -10%, white, white, transparent 110%);
   }
 
   .buttons {
