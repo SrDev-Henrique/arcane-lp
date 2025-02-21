@@ -27,7 +27,7 @@ const PiltoverHistoria = () => {
             scrub: true,
           },
         })
-        .to(text as gsap.TweenTarget, { duration: 0.33, opacity: 1 })
+        .to(text as gsap.TweenTarget, { duration: 0.33, opacity: 1 }, -0.99)
         .to(text as gsap.TweenTarget, { duration: 0.33, opacity: 0 }, 0.66);
     });
 
@@ -95,28 +95,28 @@ const PiltoverHistoria = () => {
 
   return (
     <section className="black-section bg-black z-10 h-screen flex flex-col justify-around items-center">
-      <div className="text-wrap relative w-full h-[80dvh] -mb-20 lg:-mb-24 overflow-hidden">
+      <div className="text-wrap relative w-full h-[80dvh] -mb-20 overflow-hidden">
         {historiaItems.map(({ title, content }, i) => (
           <div
             key={i}
-            className="panel-text absolute-center w-[90%] md:max-w-[650px] opacity-0 transition-opacity duration-300 flex flex-col gap-2 lg:gap-[10]"
+            className="panel-text absolute-center w-[80%] md:max-w-[650px] opacity-0 transition-opacity duration-300 flex flex-col gap-2 lg:gap-[10]"
           >
             <h2 className="piltover tracking-widest font-cinzel font-bold text-xl md:text-4xl uppercase">
               {title}
             </h2>
             <p
-              className="text-piltover-light font-lora text-xs lg:text-base leading-6 mx-auto"
+              className="text-piltover-light font-lora text-xs lg:text-[0.9rem] leading-6 mx-auto"
               dangerouslySetInnerHTML={{ __html: content }}
             />
           </div>
         ))}
       </div>
 
-      <div className="p-wrap -mb-2 relative flex items-center w-[80%] md:max-w-[650px] h-[50dvh] md:h-[80dvh] overflow-hidden">
+      <div className="p-wrap relative flex items-center w-[80%] md:max-w-[650px] h-[50dvh] md:h-[80dvh] overflow-hidden">
         {historiaItems.map(({ imagePath }, i) => (
           <BentoTilt
             key={i}
-            className="panel h-[200px] md:h-[300px] lg:h-[400px] opacity-0 absolute transition-transform duration-300 ease-out w-[97%] z-auto pointer-events-auto"
+            className="panel mb-2 h-[200px] md:h-[300px] lg:h-[350px] opacity-0 absolute transition-transform duration-300 ease-out w-[97%] z-auto pointer-events-auto"
           >
             <Image
               src={imagePath}

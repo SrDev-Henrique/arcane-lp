@@ -6,15 +6,30 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Personagens = () => {
+  const [isLg, setIsLg] = useState(false);
+
   useEffect(() => {
-    gsap.timeline({
-      
-    })
+
+    setIsLg(window.innerWidth >= 1024);
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".piltover-personagens",
+        start: `+=${window.innerHeight}`,
+        end: () => "+=" + 4 * window.innerHeight, 
+        scrub: 1, 
+      },
+    });
+
+    tl.to(".positive-col", { y: "260vh", ease: "none", duration: 1 })
+      .to(".positive-col-lg", { y: "310vh", ease: "none", duration: 1 }, "<")
+      .to(".negative-col", { y: "-285vh", ease: "none", duration: 1 }, "<")
+      .to(".negative-col-lg", { y: "-310vh", ease: "none", duration: 1 }, "<");
 
     ScrollTrigger.create({
       trigger: ".piltover-personagens",
@@ -22,9 +37,9 @@ const Personagens = () => {
       pin: true,
       pinSpacing: true,
       start: "top top",
-      end: () => `+=${2 * window.innerHeight}`,
+      end: () => `+=${5.5 * window.innerHeight}`,
     });
-  })
+  }, [])
 
   return (
     <section
@@ -43,7 +58,13 @@ const Personagens = () => {
               <div
                 key={personagem.nome}
                 className={`min-w-[28%] md:min-w-[18%] flex flex-col gap-5 transform ${
-                  index % 2 !== 0 ? "translate-y-[-255vh] lg:translate-y-[-315vh] animate-positive lg:animate-positive-lg" : "translate-y-[250vh] lg:translate-y-[315vh] animate-negative lg:animate-negative-lg"
+                  index % 2 !== 0
+                    ? isLg
+                      ? "positive-col-lg translate-y-[-315vh]"
+                      : "positive-col translate-y-[-245vh]"
+                    : isLg
+                    ? "negative-col-lg translate-y-[315vh]"
+                    : "negative-col translate-y-[250vh]"
                 }`}
               >
                 {personagem.imagens.map((src, imgIndex) => (
