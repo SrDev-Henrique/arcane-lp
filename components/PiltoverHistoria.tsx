@@ -27,8 +27,16 @@ const PiltoverHistoria = () => {
             scrub: true,
           },
         })
-        .to(text as gsap.TweenTarget, { duration: 0.33, opacity: 1 }, -0.99)
-        .to(text as gsap.TweenTarget, { duration: 0.33, opacity: 0 }, 0.66);
+        .to(text as gsap.TweenTarget,
+          {
+            duration: 0.33,
+            opacity: 1
+          }, -1.99)
+        .to(text as gsap.TweenTarget,
+          {
+            duration: 0.33,
+            opacity: 0
+          }, 0.66);
     });
 
     gsap.set(".panel", {
@@ -50,9 +58,8 @@ const PiltoverHistoria = () => {
           duration: 0.33,
           opacity: 1,
           pointerEvents: "auto",
-        })
-        .to(
-          image as gsap.TweenTarget,
+        }, "<")
+        .to(image as gsap.TweenTarget,
           {
             duration: 0.33,
             opacity: 0,
