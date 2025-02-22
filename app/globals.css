@@ -297,7 +297,21 @@ body {
   }
 
   .fog {
-    mask-image: linear-gradient(to bottom, transparent -10%, white, white, transparent 110%);
+    mask-image: linear-gradient(
+      to bottom,
+      transparent -10%,
+      white,
+      white,
+      transparent 110%
+    );
+  }
+
+  .piltover-personagens,
+  .positive-col,
+  .positive-col-lg,
+  .negative-col,
+  .negative-col-lg {
+    will-change: transform, opacity, mask-image;
   }
 
   .buttons {
