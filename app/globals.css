@@ -322,6 +322,14 @@ body {
     justify-content: center;
   }
 
+  .overlay {
+    background: #000;
+    background: radial-gradient(circle, 
+    rgba(0, 0, 0, 0) 35%,
+    rgba(0, 0, 0, 0.5) 100%
+    )
+  }
+
   .button {
     display: flex;
     align-items: center;
