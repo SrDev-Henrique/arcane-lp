@@ -15,47 +15,57 @@ const Personagens = () => {
 
   useEffect(() => {
     setIsLg(window.innerWidth >= 1024);
-    
-    gsap.set(".piltover-personagens", {
-      maskImage: "radial-gradient(circle at center, transparent 0%, white 0%)"
-    })
+    const innerHeight = window.innerHeight;
 
-    const end = gsap.timeline({
-      scrollTrigger: {
+    const ctx = gsap.context(() => {
+      gsap.set(".piltover-personagens", {
+        maskImage:
+          "radial-gradient(circle at center, transparent 0%, white 0%)",
+      });
+
+      const endTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".piltover-personagens",
+          start: `+=${4.7 * innerHeight}`,
+          end: `+=${innerHeight}`,
+          scrub: 1,
+        },
+      });
+      endTimeline.to(".piltover-personagens", {
+        maskImage:
+          "radial-gradient(circle at center, transparent 100%, white 100%)",
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".piltover-personagens",
+          start: `+=${innerHeight}`,
+          end: `+=${4 * innerHeight}`,
+          scrub: 1,
+        },
+      });
+      tl.to(".positive-col", { y: "260vh", ease: "none" })
+        .to(".positive-col-lg", { y: "310vh", ease: "none" }, "<")
+        .to(".negative-col", { y: "-285vh", ease: "none" }, "<")
+        .to(".negative-col-lg", { y: "-310vh", ease: "none" }, "<");
+
+      ScrollTrigger.create({
         trigger: ".piltover-personagens",
-        start: `+=${4.7 * window.innerHeight}`,
-        end: `+=${window.innerHeight}`,
-        scrub: 1,
-      },
+        scrub: true,
+        pin: true,
+        pinSpacing: true,
+        start: "top top",
+        end: `+=${5.7 * innerHeight}`,
+      });
+
+      return () => {
+        ScrollTrigger.getAll().forEach((t) => t.kill());
+      };
     });
 
-    end.to(".piltover-personagens", {
-      maskImage: "radial-gradient(circle at center, transparent 100%, white 100%)",
-    })
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".piltover-personagens",
-        start: `+=${window.innerHeight}`,
-        end: () => "+=" + 4 * window.innerHeight,
-        scrub: 1,
-      },
-    });
-
-    tl.to(".positive-col", { y: "260vh", ease: "none", duration: 1 })
-      .to(".positive-col-lg", { y: "310vh", ease: "none", duration: 1 }, "<")
-      .to(".negative-col", { y: "-285vh", ease: "none", duration: 1 }, "<")
-      .to(".negative-col-lg", { y: "-310vh", ease: "none", duration: 1 }, "<");
-
-    ScrollTrigger.create({
-      trigger: ".piltover-personagens",
-      scrub: true,
-      pin: true,
-      pinSpacing: true,
-      start: "top top",
-      end: () => `+=${5.7 * window.innerHeight}`,
-    });
+    return () => ctx.revert();
   }, []);
+
 
   return (
     <section
