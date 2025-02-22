@@ -68,7 +68,7 @@ const Personagens = () => {
 
   return (
     <section
-      className="mt-[-250vh] min-h-[100dvh] piltover-personagens"
+      className="mt-[-250vh] min-h-[100dvh] piltover-personagens z-[1]"
     >
       <div className="h-screen w-screen relative bg-piltover-light">
         <div className="overflow-hidden fog h-screen md:flex filter brightness-100 bg-piltover-light">
