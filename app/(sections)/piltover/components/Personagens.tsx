@@ -1,79 +1,39 @@
 "use client";
 
-import * as THREE from "three";
-
-import { useEffect, useState } from "react";
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
 import { sectionRefs } from "@/lib/sectionRefs";
-
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Personagens = () => {
-    const [loadedImage, setLoadedImage] = useState(0);
-
-    const totalImages = 5;
-    const images = [];
-
-    const loadImages = () => {
-        if (loadedImage <= totalImages) {
-            const img = new Image();
-            img.onload = () => {
-                images.push(img);
-                setLoadedImage((prevLoadedImage) => prevLoadedImage + 1);
-
-                if (loadedImage === totalImages) {
-                    initializeScene();
-            }
-            };
-            img.onerror = () => {
-                setLoadedImage((prevLoadedImage) => prevLoadedImage + 1);
-                if (loadedImage === totalImages) {
-                    initializeScene();
-                };
-            };
-            img.src = `images/piltover-characters`
-        };
-    };
-
   useEffect(() => {
-      const ctx = gsap.context(() => {
-          const innerHeight = window.innerHeight;
-          
+    const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: ".personagens-section",
         start: "top top",
         pin: true,
         pinSpacing: true,
         scrub: true,
-        end: () => "+=" + innerHeight,
+        end: () => "+=" + (window.innerHeight * 1.5),
       });
-
-      return () => {
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-      };
     });
-
     return () => ctx.revert();
-  });
+  }, []);
+
   return (
     <section
-      className="mt-[-200vh] min-h-screen bg-piltover-red personagens-section relative"
+      className="mt-[-250vh] min-h-screen bg-piltover-red personagens-section relative"
       id="pilto<b>v</b>er-personagens"
       ref={(el) => {
-        if (el)
-          sectionRefs.current["pilto<b>v</b>er-personagens"] =
-            el as HTMLElement;
+        if (el) sectionRefs.current["pilto<b>v</b>er-personagens"] = el;
       }}
-      >
-          <div className="slider-wrapper fixed w-[100dvw] h-[100dvh] overflow-hidden">
-              <canvas className="fixed top-0 left-0 size-full"></canvas>
-          </div>
-
-          <div className="overlay fixed top-0 left-0 w-[100dvw] h-[100dvh] z-[2]"></div>
+    >
+      <div className="slider-wrapper fixed w-screen h-screen overflow-hidden">
+        <canvas className="fixed top-0 left-0 size-full"></canvas>
+      </div>
+      <div className="overlay fixed top-0 left-0 w-screen h-screen z-2"></div>
     </section>
   );
 };

@@ -12,6 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PiltoverHistoria = () => {
   useEffect(() => {
+    const innerHeight = window.innerHeight;
+
     ScrollTrigger.defaults({ scroller: window });
 
     gsap.set(".panel-text", { zIndex: (i, _, targets) => targets.length - i });
@@ -22,8 +24,8 @@ const PiltoverHistoria = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".black-section",
-            start: () => `top -${window.innerHeight * i}`,
-            end: () => `+=${window.innerHeight}`,
+            start: () => `top -${innerHeight * i}`,
+            end: () => `+=${innerHeight}`,
             scrub: true,
           },
         })
@@ -49,8 +51,8 @@ const PiltoverHistoria = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".black-section",
-            start: () => `top -${window.innerHeight * i}`,
-            end: () => `+=${window.innerHeight}`,
+            start: () => `top -${innerHeight * i}`,
+            end: () => `+=${innerHeight}`,
             scrub: true,
           },
         })
@@ -77,8 +79,8 @@ const PiltoverHistoria = () => {
       .timeline({
         scrollTrigger: {
           trigger: ".black-section",
-          start: () => `top -${(images.length) * window.innerHeight}`,
-          end: () => `+=${window.innerHeight * 1.5}`,
+          start: () => `top -${(images.length) * innerHeight}`,
+          end: () => `+=${innerHeight * 1.5}`,
           scrub: true,
         },
       })
@@ -92,7 +94,7 @@ const PiltoverHistoria = () => {
       pin: true,
       pinSpacing: true,
       start: "top top",
-      end: () => `+=${(images.length + 1.5) * window.innerHeight}`,
+      end: () => `+=${(images.length + 1.5) * innerHeight}`,
     });
 
     return () => {
@@ -101,7 +103,7 @@ const PiltoverHistoria = () => {
   }, []);
 
   return (
-    <section className="black-section bg-black z-10 h-screen flex flex-col justify-around items-center">
+    <section className="black-sectio z-10 h-screen flex flex-col justify-around items-center">
       <div className="text-wrap relative w-full h-[80dvh] -mb-20 overflow-hidden">
         {historiaItems.map(({ title, content }, i) => (
           <div
