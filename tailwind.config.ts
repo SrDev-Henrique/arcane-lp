@@ -53,7 +53,8 @@ export default {
         black: {
           light: "#141414",
           DEFAULT: "#000000",
-          dark: "#0a0a0a"
+          dark: "#0a0a0a",
+          intense: "#0D0D0D",
         },
         yellow: {
           300: "#edff66",

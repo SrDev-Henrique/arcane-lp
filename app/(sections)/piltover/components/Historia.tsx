@@ -19,8 +19,8 @@ const Historia = () => {
 
     const ctx = gsap.context(() => {
       gsap.to([historiaSection, apresentacaoSection], {
-        "--color-1": "#000",
-        "--color-2": "#101010",
+        "--color-1": "#0a0a0a",
+        "--color-2": "#000",
         scrollTrigger: {
           trigger: historiaSection,
           start: "top +=600",
