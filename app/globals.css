@@ -367,7 +367,7 @@ body {
   }
 
   .personagens-section {
-    background: url(/images/piltover-characters/heimerdinger.webp) center / cover no-repeat;
+    background: url(/images/piltover-characters/viktor.webp) center / cover no-repeat;
   }
 
   .overlay {
@@ -375,7 +375,7 @@ body {
     background: radial-gradient(circle, 
     rgba(0, 0, 0, 0) 35%,
     rgba(0, 0, 0, 0.5) 100%);
-    backdrop-filter: blur(50px) brightness(0.4);
+    backdrop-filter: blur(50px) brightness(0.5);
   }
 
   .current-video {

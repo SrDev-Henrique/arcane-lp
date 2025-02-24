@@ -37,12 +37,12 @@ const Personagens = () => {
         {personagensInfo.map((personagens, index) => (
           <div
             key={index}
-            className="absolute z-[3] top-20 left-14 flex flex-col items-start gap-5 text-piltover-background mix-blend-soft-light"
+            className="absolute z-[3] top-20 left-14 flex flex-col items-start gap-2 lg:gap-5 text-piltover-light mix-blend-soft-light"
           >
             <div className="name-wrapper">
               <h1
-                className={`text-[5.2rem] uppercase font-cinzel font-bold tracking-widest leading-[1] ${
-                  index === 4 ? "opacity-100" : "opacity-0"
+                className={`text-[3.5rem] lg:text-[5.2rem] uppercase font-cinzel font-bold tracking-widest leading-[1] ${
+                  index === 3 ? "opacity-100" : "opacity-0"
                 }`}
               >
                 {personagens.nome}
@@ -50,8 +50,8 @@ const Personagens = () => {
             </div>
             <div className="title-wrapper">
               <h2
-                className={`text-2xl font-cinzel font-semibold tracking-widest ${
-                  index === 4 ? "opacity-100" : "opacity-0"
+                className={`text-xl lg:text-2xl font-cinzel font-semibold tracking-widest ${
+                  index === 3 ? "opacity-100" : "opacity-0"
                 }`}
               >
                 {personagens.titulo}
@@ -61,14 +61,14 @@ const Personagens = () => {
         ))}
         {personagensInfo.map((personagens, index) => (
           <div key={index} className="w-screen h-screen">
-            <div className="absolute top-20 right-6 w-[65dvw] h-[80dvh]">
+            <div className="absolute top-56 right-6 w-[75dvw] h-[60dvh] lg:top-20 lg:right-6 lg:w-[65dvw] lg:h-[80dvh]">
               <Image
                 src={personagens.imagePath}
                 width={1920}
                 height={1080}
                 alt={personagens.nome}
                 className={`size-full object-cover rounded-[3%] ${
-                  index === 4 ? "opacity-100" : "opacity-0"
+                  index === 3 ? "opacity-100" : "opacity-0"
                 }`}
               />
             </div>

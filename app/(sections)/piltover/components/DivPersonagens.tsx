@@ -28,6 +28,7 @@ const Personagens = () => {
           start: `+=${4.7 * innerHeight}`,
           end: `+=${innerHeight}`,
           scrub: 1,
+          invalidateOnRefresh: true,
         },
       });
       endTimeline.to(".piltover-personagens", {
@@ -41,6 +42,7 @@ const Personagens = () => {
           start: `+=${innerHeight}`,
           end: `+=${4 * innerHeight}`,
           scrub: true,
+          invalidateOnRefresh: true,
         },
       });
       tl.to(".positive-col", { y: "260vh", ease: "none" })
@@ -55,6 +57,7 @@ const Personagens = () => {
         pinSpacing: true,
         start: "top top",
         end: `+=${5.7 * innerHeight}`,
+        invalidateOnRefresh: true,
       });
 
       return () => {

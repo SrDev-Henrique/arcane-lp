@@ -53,14 +53,20 @@ const PiltoverHistoria = () => {
             start: () => `top -${window.innerHeight * i}`,
             end: () => `+=${window.innerHeight}`,
             scrub: true,
+            invalidateOnRefresh: true,
           },
         })
-        .to(image as gsap.TweenTarget, {
-          duration: 0.33,
-          opacity: 1,
-          pointerEvents: "auto",
-        }, "<")
-        .to(image as gsap.TweenTarget,
+        .to(
+          image as gsap.TweenTarget,
+          {
+            duration: 0.33,
+            opacity: 1,
+            pointerEvents: "auto",
+          },
+          "<"
+        )
+        .to(
+          image as gsap.TweenTarget,
           {
             duration: 0.33,
             opacity: 0,
@@ -78,9 +84,10 @@ const PiltoverHistoria = () => {
       .timeline({
         scrollTrigger: {
           trigger: ".black-section",
-          start: () => `top -${(images.length) * window.innerHeight}`,
+          start: () => `top -${images.length * window.innerHeight}`,
           end: () => `+=${window.innerHeight * 1.5}`,
           scrub: true,
+          invalidateOnRefresh: true,
         },
       })
       .to(".black-section", {
@@ -94,6 +101,7 @@ const PiltoverHistoria = () => {
       pinSpacing: true,
       start: "top top",
       end: () => `+=${(images.length + 1.5) * window.innerHeight}`,
+      invalidateOnRefresh: true,
     });
 
     return () => {
