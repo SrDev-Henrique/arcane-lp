@@ -165,7 +165,7 @@ const OverlayMenu = memo(() => {
         {navitems.map((item, index) => (
           <div key={item.title} className="flex flex-col w-full items-start">
             <div
-              className={`group flex cursor-pointer transition-brightness duration-300 ${
+              className={`group flex w-full justify-between cursor-pointer transition-brightness duration-300 ${
                 focusedTitle !== null && focusedTitle !== item.title
                   ? "filter brightness-50"
                   : ""
@@ -174,7 +174,7 @@ const OverlayMenu = memo(() => {
             >
               <OverlayMenuTitle
                 title={item.title}
-                containerClass={`!px-0 overlay-menu-title special-font !text-6xl md:!text-8xl text-center transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
+                containerClass={`px-5 md:px-10 overlay-menu-title special-font !text-6xl md:!text-8xl text-center transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
                   focusedTitle === item.title
                     ? "text-neutral-light"
                     : "text-blue-light"

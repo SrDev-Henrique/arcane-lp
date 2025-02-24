@@ -25,7 +25,7 @@ const OverlayMenuTitle: React.FC<AnimatedTitleProps> = ({
           {line.split(" ").map((word, index) => (
             <span
               key={index}
-              className="font-zentry px-5 md:px-10"
+              className="font-zentry"
               dangerouslySetInnerHTML={{ __html: word }}
             />
           ))}
