@@ -11,12 +11,10 @@ interface AnimatedTitleProps {
 const OverlayMenuTitle: React.FC<AnimatedTitleProps> = ({
   title,
   containerClass,
-  sectionId,
-  delay,
 }) => {
 
   return (
-    <div className={`animated-title ${containerClass}`}>
+    <div className={`${containerClass}`}>
       {title.split("<br/>").map((line, index) => (
         <div
           key={index}

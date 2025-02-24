@@ -20,6 +20,7 @@ const Personagens = () => {
         pinSpacing: true,
         scrub: true,
         end: () => "+=" + window.innerHeight * 1.5,
+        invalidateOnRefresh: true,
       });
     });
     return () => ctx.revert();
@@ -37,12 +38,12 @@ const Personagens = () => {
         {personagensInfo.map((personagens, index) => (
           <div
             key={index}
-            className="absolute z-[3] top-20 left-14 flex flex-col items-start gap-2 lg:gap-5 text-piltover-light mix-blend-soft-light"
+            className="absolute z-[3] top-20 left-8 sm:left-14 flex flex-col items-start gap-2 lg:gap-5 text-piltover-light mix-blend-soft-light"
           >
             <div className="name-wrapper">
               <h1
                 className={`text-[3.5rem] lg:text-[5.2rem] uppercase font-cinzel font-bold tracking-widest leading-[1] ${
-                  index === 3 ? "opacity-100" : "opacity-0"
+                  index === 4 ? "opacity-100 text-[2.4rem]" : "opacity-0"
                 }`}
               >
                 {personagens.nome}
@@ -51,7 +52,7 @@ const Personagens = () => {
             <div className="title-wrapper">
               <h2
                 className={`text-xl lg:text-2xl font-cinzel font-semibold tracking-widest ${
-                  index === 3 ? "opacity-100" : "opacity-0"
+                  index === 4 ? "opacity-100 text-[1.1rem]" : "opacity-0"
                 }`}
               >
                 {personagens.titulo}
@@ -68,7 +69,7 @@ const Personagens = () => {
                 height={1080}
                 alt={personagens.nome}
                 className={`size-full object-cover rounded-[3%] ${
-                  index === 3 ? "opacity-100" : "opacity-0"
+                  index === 4 ? "opacity-100" : "opacity-0"
                 }`}
               />
             </div>

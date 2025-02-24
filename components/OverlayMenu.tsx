@@ -86,12 +86,14 @@ const OverlayMenu = memo(() => {
             maxHeight: height,
             opacity: 1,
             ease: "power2.out",
+            invalidateOnRefresh: true,
           });
         } else {
           gsap.to(accordionContent, {
             maxHeight: 0,
             opacity: 0,
             ease: "power2.out",
+            invalidateOnRefresh: true,
           });
         }
       }
@@ -123,6 +125,7 @@ const OverlayMenu = memo(() => {
           stagger: 0.08,
           duration: 0.8,
           ease: "power2.out",
+          invalidateOnRefresh: true,
         })
         .to(
           ".dev",
@@ -163,24 +166,57 @@ const OverlayMenu = memo(() => {
     <div ref={overlayMenuRef} className="menu-nav flex-col md:flex-row">
       <div className="flex flex-col pl-10 md:pl-0 gap-7 md:gap-8 h-full w-[100%] md:w-[30%] justify-center">
         {navitems.map((item, index) => (
-          <div key={item.title} className="flex flex-col w-full items-start">
+          <div key={item.title} className="flex w-full items-start">
             <div
-              className={`group flex w-full justify-between cursor-pointer transition-brightness duration-300 ${
+              className={`group flex cursor-pointer transition-brightness duration-300 ${
                 focusedTitle !== null && focusedTitle !== item.title
                   ? "filter brightness-50"
                   : ""
               }`}
               onClick={() => handleTitleClick(item.title)}
             >
-              <OverlayMenuTitle
-                title={item.title}
-                containerClass={`px-5 md:px-10 overlay-menu-title special-font !text-6xl md:!text-8xl text-center transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
-                  focusedTitle === item.title
-                    ? "text-neutral-light"
-                    : "text-blue-light"
-                }`}
-                delay={index * 0.1}
-              />
+              <div className="flex flex-col">
+                <OverlayMenuTitle
+                  title={item.title}
+                  containerClass={`px-5 md:px-10 overlay-menu-title special-font text-6xl lg:text-8xl text-center transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
+                    focusedTitle === item.title
+                      ? "text-neutral-light"
+                      : "text-blue-light"
+                  }`}
+                  delay={index * 0.1}
+                />
+                {item.conteudo && (
+                  <div
+                    ref={(el) => {
+                      if (el) {
+                        accordionRefs.current[item.title] = el;
+                      }
+                    }}
+                    style={{
+                      maxHeight: openAccordion === item.title ? "152px" : "0",
+                      opacity: openAccordion === item.title ? 1 : 0,
+                      overflow: "hidden",
+                      transition: "all 0.5s ease",
+                    }}
+                    className="flex flex-col ml-5 md:ml-10 gap-1 text-white-dark font-robert-regular font-bold tracking-wide text-xl lg:text-2xl"
+                    onClick={() => {
+                      toggleMenu();
+                      setOpenAccordion(null);
+                      setFocusedTitle(null);
+                    }}
+                  >
+                    {item.conteudo.map((content) => (
+                      <p
+                        key={content}
+                        className="transition-color duration-200 first-of-type:mt-3 cursor-pointer filter hover:text-neutral-light hover:brightness-90"
+                        onClick={() => scrollToSection(item.title, content)}
+                      >
+                        {content}
+                      </p>
+                    ))}
+                  </div>
+                )}
+              </div>
               {item.conteudo && (
                 <div className="border-hsla icon w-[30px] h-[30px] flex-center rounded-full mt-2">
                   <TiArrowSortedDown
@@ -193,37 +229,6 @@ const OverlayMenu = memo(() => {
                 </div>
               )}
             </div>
-            {item.conteudo && (
-              <div
-                ref={(el) => {
-                  if (el) {
-                    accordionRefs.current[item.title] = el;
-                  }
-                }}
-                style={{
-                  maxHeight: openAccordion === item.title ? "152px" : "0",
-                  opacity: openAccordion === item.title ? 1 : 0,
-                  overflow: "hidden",
-                  transition: "all 0.5s ease",
-                }}
-                className="flex flex-col ml-5 md:ml-10 gap-1 text-white-dark font-robert-regular font-bold tracking-wide text-xl md:text-2xl"
-                onClick={() => {
-                  toggleMenu();
-                  setOpenAccordion(null);
-                  setFocusedTitle(null);
-                }}
-              >
-                {item.conteudo.map((content) => (
-                  <p
-                    key={content}
-                    className="transition-color duration-200 first-of-type:mt-3 cursor-pointer filter hover:text-neutral-light hover:brightness-90"
-                    onClick={() => scrollToSection(item.title, content)}
-                  >
-                    {content}
-                  </p>
-                ))}
-              </div>
-            )}
           </div>
         ))}
       </div>
@@ -250,14 +255,14 @@ const OverlayMenu = memo(() => {
               href={"https://github.com/SrDev-Henrique"}
               target="_blank"
             >
-              <h1 className="srdev font-zentry special-font tracking-wide text-4xl md:text-8xl">
+              <h1 className="srdev font-zentry special-font tracking-wide text-4xl md:text-5xl xl:text-8xl">
                 srde<b>v</b>-<b>h</b>enri<b>q</b>ue
               </h1>
             </Link>
           </div>
         </div>
-        <div className="hidden md:flex absolute translate-y-[420px] right-1 m-0 p-0">
-          <h2 className="font-zentry arcane text-[400px]">arcane</h2>
+        <div className="hidden lg:flex absolute translate-y-[420px] right-1 m-0 p-0">
+          <h2 className="font-zentry arcane text-[200px] xl:text-[400px]">arcane</h2>
         </div>
       </div>
     </div>
