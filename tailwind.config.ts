@@ -19,6 +19,7 @@ export default {
           red: "#8f0b13",
           "red-transparent": "#B2222299",
           "dark-transparent": "#C4A84A99",
+          fadedBrown: "#7a7454",
         },
         zaun: {
           light: "#A6E22E",

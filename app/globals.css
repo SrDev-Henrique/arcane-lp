@@ -322,14 +322,6 @@ body {
     justify-content: center;
   }
 
-  .overlay {
-    background: #000;
-    background: radial-gradient(circle, 
-    rgba(0, 0, 0, 0) 35%,
-    rgba(0, 0, 0, 0.5) 100%
-    )
-  }
-
   .button {
     display: flex;
     align-items: center;
@@ -350,6 +342,40 @@ body {
       color: #fff;
       border: 1px solid #e8e8ed;
     }
+  }
+
+  .hero-container {
+    perspective: 1000px;
+  }
+
+  @keyframes rotate-y {
+    from {
+      transform: translateY(100%) rotateX(35deg);
+      border-radius: 5%;
+    }
+    to {
+      transform: translateY(-100%) rotateX(-35deg);
+      border-radius: 5%;
+    }
+  }
+
+  .curved {
+    animation: rotate-y 2s linear infinite alternate;
+    width: 80vw;
+    height: 90vh;
+    margin-left: 10rem;
+  }
+
+  .personagens-section {
+    background: url(/images/piltover-characters/heimerdinger.webp) center / cover no-repeat;
+  }
+
+  .overlay {
+    background: #000;
+    background: radial-gradient(circle, 
+    rgba(0, 0, 0, 0) 35%,
+    rgba(0, 0, 0, 0.5) 100%);
+    backdrop-filter: blur(50px) brightness(0.4);
   }
 
   .current-video {

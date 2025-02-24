@@ -80,3 +80,31 @@ export const backgroundImages = [
     ),
   },
 ];
+
+export const personagensInfo = [
+  {
+    nome: "Caitlyn",
+    titulo: "A Comandante de Piltover",
+    imagePath: "/images/piltover-characters/caitlyn.webp",
+  },
+  {
+    nome: "Mel",
+    titulo: "A Conselheira de Piltover",
+    imagePath: "/images/piltover-characters/mel.webp",
+  },
+  {
+    nome: "Jayce",
+    titulo: "O Visionário de Piltover",
+    imagePath: "/images/piltover-characters/jayce.webp",
+  },
+  {
+    nome: "Viktor",
+    titulo: "O Arauto do Arcano",
+    imagePath: "/images/piltover-characters/viktor.webp",
+  },
+  {
+    nome: "Heimerdinger",
+    titulo: "O Professor de Piltover",
+    imagePath: "/images/piltover-characters/heimerdinger.webp",
+  },
+];
