@@ -40,7 +40,7 @@ const Personagens = () => {
           trigger: ".piltover-personagens",
           start: `+=${innerHeight}`,
           end: `+=${4 * innerHeight}`,
-          scrub: 0.5,
+          scrub: true,
         },
       });
       tl.to(".positive-col", { y: "260vh", ease: "none" })
