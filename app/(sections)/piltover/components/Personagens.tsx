@@ -5,7 +5,10 @@ import { personagensInfo } from "@/data/piltover";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { useEffect } from "react";
+import { FaArrowRight } from "react-icons/fa";
+
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -43,7 +46,7 @@ const Personagens = () => {
             <div className="name-wrapper">
               <h1
                 className={`text-[3.5rem] lg:text-[5.2rem] uppercase font-cinzel font-bold tracking-widest leading-[1] ${
-                  index === 4 ? "opacity-100 text-[2.4rem]" : "opacity-0"
+                  index === 0 ? "opacity-100 text-[2.4rem]" : "opacity-0"
                 }`}
               >
                 {personagens.nome}
@@ -52,7 +55,7 @@ const Personagens = () => {
             <div className="title-wrapper">
               <h2
                 className={`text-xl lg:text-2xl font-cinzel font-semibold tracking-widest ${
-                  index === 4 ? "opacity-100 text-[1.1rem]" : "opacity-0"
+                  index === 0 ? "opacity-100 text-[1.1rem]" : "opacity-0"
                 }`}
               >
                 {personagens.titulo}
@@ -69,9 +72,23 @@ const Personagens = () => {
                 height={1080}
                 alt={personagens.nome}
                 className={`size-full object-cover rounded-[3%] ${
-                  index === 4 ? "opacity-100" : "opacity-0"
+                  index === 0 ? "opacity-100" : "opacity-0"
                 }`}
               />
+              <div className="absolute bottom-0 pb-5 pt-5 right-6 w-full flex items-center justify-end gap-2 fadingBlack-background">
+                <div className="z-[1]">
+                  <h3
+                    className={`text-piltover-background ${
+                      index === 0 ? "opacity-100" : "opacity-0"
+                    }`}
+                  >
+                    {personagens.nome} {personagens.sobrenome}
+                  </h3>
+                </div>
+                <div className="rounded-full p-3 bg-black">
+                  <FaArrowRight className="text-lg text-piltover-background" />
+                </div>
+              </div>
             </div>
           </div>
         ))}

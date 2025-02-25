@@ -56,7 +56,6 @@ const Navbar = memo(() => {
 
   const toggleChatBox = () => {
     setIsAudioPlaying((prev) => !prev);
-
     setIsIndicatorActive((prev) => !prev);
 
     chatBoxRef.current?.classList.add("hidden");

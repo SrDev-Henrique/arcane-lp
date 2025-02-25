@@ -84,6 +84,7 @@ export const backgroundImages = [
 export const personagensInfo = [
   {
     nome: "Caitlyn",
+    sobrenome: "Kiramman",
     titulo: "A Comandante de Piltover",
     imagePath: "/images/piltover-characters/caitlyn.webp",
   },
