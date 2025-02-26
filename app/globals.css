@@ -78,10 +78,6 @@ body {
   }
 
   .absolute-bottom-center {
-    @apply absolute bottom-10 left-1/2 translate-x-[-50%];
-  }
-
-  .absolute-bottom-center {
     @apply absolute bottom-40 left-1/2 translate-x-[-50%] translate-y-[-50%];
   }
 
@@ -366,8 +362,12 @@ body {
     margin-left: 10rem;
   }
 
-  .personagens-section {
+  .slider-wrapper {
     background: url(/images/piltover-characters/caitlyn.webp) center / cover no-repeat;
+  }
+
+  .slider{
+    backdrop-filter: blur(50px) brightness(0.4);
   }
 
   .overlay {
@@ -443,8 +443,6 @@ body {
   .bentoCard-background {
     background: linear-gradient(360deg, #000000 15%, transparent);
   }
-
-  
 
   .bento-reveal {
     perspective: 1000px;

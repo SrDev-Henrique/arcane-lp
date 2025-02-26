@@ -113,3 +113,27 @@ export const personagensInfo = [
     imagePath: "/images/piltover-characters/heimerdinger.webp",
   },
 ];
+
+export const carrouselImages = [
+  {
+    nome: "caitlyn",
+    imagePath: "/images/piltover-characters/background/caitlyn/caitlyn-1.jpg",
+  },
+  {
+    nome: "heimerdinger",
+    imagePath:
+      "/images/piltover-characters/background/heimerdinger/heimerdinger-4.jpg",
+  },
+  {
+    nome: "jayce",
+    imagePath: "/images/piltover-characters/background/jayce/jayce-1.jpg",
+  },
+  {
+    nome: "mel",
+    imagePath: "/images/piltover-characters/background/mel/mel-3.jpg",
+  },
+  {
+    nome: "viktor",
+    imagePath: "/images/piltover-characters/background/viktor/viktor-5.jpg",
+  },
+];
