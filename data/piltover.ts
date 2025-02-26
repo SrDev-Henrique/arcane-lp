@@ -90,21 +90,25 @@ export const personagensInfo = [
   },
   {
     nome: "Mel",
+    sobrenome: "Medarda",
     titulo: "A Conselheira de Piltover",
     imagePath: "/images/piltover-characters/mel.webp",
   },
   {
     nome: "Jayce",
+    sobrenome: "Talis",
     titulo: "O Visionário de Piltover",
     imagePath: "/images/piltover-characters/jayce.webp",
   },
   {
     nome: "Viktor",
+    sobrenome: " ",
     titulo: "O Arauto do Arcano",
     imagePath: "/images/piltover-characters/viktor.webp",
   },
   {
     nome: "Heimerdinger",
+    sobrenome: "Cecil B.",
     titulo: "O Professor de Piltover",
     imagePath: "/images/piltover-characters/heimerdinger.webp",
   },

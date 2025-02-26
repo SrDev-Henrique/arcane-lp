@@ -22,8 +22,8 @@ const Personagens = () => {
         pin: true,
         pinSpacing: true,
         scrub: true,
-        end: () => "+=" + window.innerHeight * 1.5,
         invalidateOnRefresh: true,
+        end: () => "+=" + window.innerHeight * 1.5,
       });
     });
     return () => ctx.revert();
@@ -31,12 +31,13 @@ const Personagens = () => {
 
   return (
     <section
-      className="mt-[-250vh] min-h-screen bg-piltover-fadedBrown personagens-section"
+      className="mt-[-250vh] h-screen bg-piltover-fadedBrown personagens-section"
       id="pilto<b>v</b>er-personagens"
       ref={(el) => {
         if (el) sectionRefs.current["pilto<b>v</b>er-personagens"] = el;
       }}
     >
+      <div className="min-h-screen w-screen" />
       <div className="slider-wrapper z-[2] relative w-screen h-screen overflow-hidden">
         {personagensInfo.map((personagens, index) => (
           <div
@@ -45,8 +46,8 @@ const Personagens = () => {
           >
             <div className="name-wrapper">
               <h1
-                className={`text-[3.5rem] lg:text-[5.2rem] uppercase font-cinzel font-bold tracking-widest leading-[1] ${
-                  index === 0 ? "opacity-100 text-[2.4rem]" : "opacity-0"
+                className={`lg:text-[5.2rem] uppercase font-cinzel font-bold tracking-widest leading-[1] ${
+                  index === 4 ? "text-[2.4rem]" : "text-[3.5rem]"
                 }`}
               >
                 {personagens.nome}
@@ -54,8 +55,8 @@ const Personagens = () => {
             </div>
             <div className="title-wrapper">
               <h2
-                className={`text-xl lg:text-2xl font-cinzel font-semibold tracking-widest ${
-                  index === 0 ? "opacity-100 text-[1.1rem]" : "opacity-0"
+                className={`lg:text-2xl font-cinzel font-semibold tracking-widest ${
+                  index === 4 ? "text-[1.1rem]" : "text-xl"
                 }`}
               >
                 {personagens.titulo}
@@ -63,37 +64,38 @@ const Personagens = () => {
             </div>
           </div>
         ))}
-        {personagensInfo.map((personagens, index) => (
-          <div key={index} className="w-screen h-screen">
-            <div className="absolute top-56 right-6 w-[75dvw] h-[60dvh] lg:top-20 lg:right-6 lg:w-[65dvw] lg:h-[80dvh]">
-              <Image
-                src={personagens.imagePath}
-                width={1920}
-                height={1080}
-                alt={personagens.nome}
-                className={`size-full object-cover rounded-[3%] ${
-                  index === 0 ? "opacity-100" : "opacity-0"
-                }`}
-              />
-              <div className="absolute bottom-0 pb-5 pt-5 right-6 w-full flex items-center justify-end gap-2 fadingBlack-background">
-                <div className="z-[1]">
-                  <h3
-                    className={`text-piltover-background ${
-                      index === 0 ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    {personagens.nome} {personagens.sobrenome}
+        <div className="w-screen h-screen">
+          {personagensInfo.map((personagens, index) => (
+            <div
+              key={index}
+              className="absolute bottom-5 right-6 w-[75dvw] h-[60dvh] lg:bottom-14 lg:right-6 lg:w-[65dvw] lg:h-[80dvh]"
+            >
+              <div className="size-full rounded-[3%] fadingBlack-background">
+                <Image
+                  src={personagens.imagePath}
+                  width={1920}
+                  height={1080}
+                  alt={personagens.nome}
+                  className="size-full object-cover rounded-[3%]"
+                />
+              </div>
+              <div className="absolute bottom-0 right-0 pb-3 pt-3 pr-4 w-full flex justify-end">
+                <div className="flex items-center gap-2 py-2 px-4 bg-black text-piltover-light rounded-full cursor-pointer">
+                  <h3 className="text-sm lg:text-lg">
+                    {index !== 4
+                      ? `${personagens.nome} ${personagens.sobrenome}`
+                      : `${personagens.sobrenome} ${personagens.nome}`}
                   </h3>
-                </div>
-                <div className="rounded-full p-3 bg-black">
-                  <FaArrowRight className="text-lg text-piltover-background" />
+                  <div className="rounded-full p-6 bg-black-intense relative">
+                    <FaArrowRight className="absolute-center md:text-lg" />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-      <div className="overlay fixed top-0 left-0 w-screen h-screen z-[1]" />
+      <div className="overlay fixed top-0 left-0 w-screen h-screen z-[1] pointer-events-none" />
     </section>
   );
 };

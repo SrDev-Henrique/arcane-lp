@@ -444,9 +444,7 @@ body {
     background: linear-gradient(360deg, #000000 15%, transparent);
   }
 
-  .fadingBlack-background {
-    background: linear-gradient(360deg, #00000090 10%, transparent);
-  }
+  
 
   .bento-reveal {
     perspective: 1000px;
