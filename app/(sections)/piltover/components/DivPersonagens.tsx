@@ -27,7 +27,7 @@ const Personagens = () => {
           trigger: ".piltover-personagens",
           start: `+=${4.7 * innerHeight}`,
           end: `+=${innerHeight}`,
-          scrub: 1,
+          scrub: true,
           invalidateOnRefresh: true,
         },
       });
@@ -97,6 +97,8 @@ const Personagens = () => {
                       width={466}
                       height={708}
                       className="rounded-md filter brightness-90"
+                      priority
+                      loading="eager"
                     />
                   </div>
                 ))}
