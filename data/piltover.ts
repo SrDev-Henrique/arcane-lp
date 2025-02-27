@@ -117,23 +117,23 @@ export const personagensInfo = [
 export const carrouselImages = [
   {
     nome: "caitlyn",
-    imagePath: "/images/piltover-characters/background/caitlyn/caitlyn-1.jpg",
+    imagePath: "/images/piltover-characters/background/caitlyn/caitlyn-4.jpg",
   },
   {
     nome: "heimerdinger",
     imagePath:
-      "/images/piltover-characters/background/heimerdinger/heimerdinger-4.jpg",
+      "/images/piltover-characters/background/heimerdinger/heimerdinger-5.jpg",
   },
   {
     nome: "jayce",
-    imagePath: "/images/piltover-characters/background/jayce/jayce-1.jpg",
+    imagePath: "/images/piltover-characters/background/jayce/jayce-2.jpg",
   },
   {
     nome: "mel",
-    imagePath: "/images/piltover-characters/background/mel/mel-3.jpg",
+    imagePath: "/images/piltover-characters/background/mel/mel-4.jpg",
   },
   {
     nome: "viktor",
-    imagePath: "/images/piltover-characters/background/viktor/viktor-5.jpg",
+    imagePath: "/images/piltover-characters/background/viktor/viktor-2.jpg",
   },
 ];

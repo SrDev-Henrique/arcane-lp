@@ -204,6 +204,10 @@ body {
     filter: drop-shadow(0 0 5px rgba(196, 168, 74, 0.7));
   }
 
+  .rotate {
+    animation: rotate 30s linear infinite;
+  }
+
   .piltover-background {
     --color-1: #f5f5dc;
     --color-2: #ffffff;
@@ -238,58 +242,6 @@ body {
     to {
       transform: rotate(360deg);
     }
-  }
-
-  @keyframes animatePositive {
-    from {
-      transform: translateY(-315vh);
-    }
-    to {
-      transform: translateY(0vh);
-    }
-  }
-
-  @keyframes animateNegative {
-    from {
-      transform: translateY(310vh);
-    }
-    to {
-      transform: translateY(-5vh);
-    }
-  }
-
-  @keyframes animatePositivelg {
-    from {
-      transform: translateY(315vh);
-    }
-    to {
-      transform: translateY(0vh);
-    }
-  }
-
-  @keyframes animateNegativelg {
-    from {
-      transform: translateY(315vh);
-    }
-    to {
-      transform: translateY(0vh);
-    }
-  }
-
-  .animate-positive {
-    animation: animatePositive 1.5s ease-in-out forwards;
-  }
-
-  .animate-positive-reverse {
-    animation: animatePositivelg 1.5s ease-in-out reverse forwards;
-  }
-
-  .animate-negative {
-    animation: animateNegative 1.5s ease-in-out forwards;
-  }
-
-  .animate-negative-reverse {
-    animation: animateNegativelg 1.5s ease-in-out reverse forwards;
   }
 
   .fog {
@@ -344,6 +296,10 @@ body {
     perspective: 1000px;
   }
 
+  .sticky-section {
+    mask-image: radial-gradient(circle, black 0%, transparent 85%);
+  }
+
   @keyframes rotate-y {
     from {
       transform: translateY(100%) rotateX(35deg);
@@ -371,11 +327,11 @@ body {
   }
 
   .overlay {
-    background: #000;
+    background: #7a7454;
     background: radial-gradient(circle, 
     rgba(0, 0, 0, 0) 35%,
     rgba(0, 0, 0, 0.5) 100%);
-    backdrop-filter: blur(50px) brightness(0.5);
+    backdrop-filter: brightness(0.5);
   }
 
   .current-video {

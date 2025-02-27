@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 import Image from "next/image";
+import BentoTilt from "@/components/BentoTilt";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,22 +34,22 @@ const Personagens = () => {
   return (
     <section className="mt-[-250vh] min-h-screen personagens-section">
       <div className="sticky-section h-screen w-screen bg-piltover-fadedBrown z-[-1] sticky -top-[150%] flex-center">
-        <div className="relative border w-full h-[90dvh] z-[1]">
-          <div className="absolute-center flex-center size-full">
-            <div className="size-full relative border">
+        <div className="relative w-full h-[90dvh] md:h-[95dvh] z-[1]">
+          <div className="absolute-center flex-center size-full overflow-hidden">
+            <BentoTilt className="size-full relative transform will-change-transform">
               {carrouselImages.map((images, index) => (
                 <div
                   key={index}
-                  className={`absolute border border-black-light w-[100px] h-[150px]  rounded-lg ${
+                  className={`absolute w-[17%] h-[22%] md:h-[30%] max-w-[150px] max-h-[250px] rounded-lg transform ${
                     index === 0
-                      ? "top-12 left-1/2 translate-x-[-50%]"
+                      ? "top-16 md:top-0 left-1/2 translate-x-[-50%]"
                       : index === 1
-                      ? "top-40 left-1/2 translate-x-[90%] md:translate-x-[70%] rotate-[72deg] md:rotate-[70deg]"
+                      ? "top-44 md:top-42 left-1/2 translate-x-[115%] sm:translate-x-[100%] md:translate-x-[95%] rotate-[72deg] md:rotate-[70deg]"
                       : index === 2
-                      ? "top-40 right-1/2 translate-x-[-90%] md:translate-x-[-70%] -rotate-[72deg] md:-rotate-[70deg]"
+                      ? "top-44 md:top-42 right-1/2 translate-x-[-115%] sm:translate-x-[-100%] md:translate-x-[-95%] -rotate-[72deg] md:-rotate-[70deg]"
                       : index === 3
-                      ? "top-[21rem] md:top-[27rem] left-1/2 translate-x-[36%] md:translate-x-[45deg] rotate-[145deg]"
-                      : "top-[21rem] md:top-[27rem] right-1/2 translate-x-[-36%] md:translate-x-[-45deg] rotate-[-145deg]"
+                      ? "top-[21.5rem] sm:top-[22.5rem] md:top-[27.5rem] left-1/2 translate-x-[46%] sm:translate-x-[40%] md:translate-x-[40%] rotate-[145deg]"
+                      : "top-[21.5rem] sm:top-[22.5rem] md:top-[27.5rem] right-1/2 translate-x-[-46%] sm:translate-x-[-40%] md:translate-x-[-40%] rotate-[-145deg]"
                   }`}
                 >
                   <Image
@@ -56,10 +57,15 @@ const Personagens = () => {
                     width={150}
                     height={250}
                     alt={images.nome}
-                    className="size-full object-cover rounded-md"
+                    className="size-full object-cover rounded-lg"
                   />
                 </div>
               ))}
+            </BentoTilt>
+            <div className="absolute bottom-1/2 translate-y-[25%] md:translate-y-[35%] text-center mix-blend-difference">
+              <h1 className="text-5xl md:text-8xl text-piltover-background uppercase font-bold font-lora">
+                Personagens <br /> de piltover
+              </h1>
             </div>
           </div>
         </div>
