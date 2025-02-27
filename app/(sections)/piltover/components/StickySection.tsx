@@ -12,9 +12,8 @@ const StickyDiv = () => {
   const rotatingDiv = useRef<HTMLDivElement>(null);
   const upText = useRef<HTMLDivElement>(null);
 
-  const windowHeight = window.innerHeight;
-
   useEffect(() => {
+    const windowHeight = window.innerHeight;
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: "#sticky-section",
@@ -47,7 +46,7 @@ const StickyDiv = () => {
       );
     });
     return () => ctx.revert();
-  }, [windowHeight]);
+  });
 
   return (
     <section

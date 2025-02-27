@@ -18,8 +18,15 @@ const Personagens = () => {
   const titleWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-
-  })
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: ".slider-wrapper",
+        start: "top top",
+        end: () => `+= ${window.innerHeight * personagensInfo.length}`
+      })
+    });
+    return () => ctx.revert();
+  }, [])
 
   return (
       <section id="personagens-section" className="min-h-screen mt-[100vh]">
