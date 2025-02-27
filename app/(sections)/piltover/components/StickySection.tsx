@@ -30,6 +30,12 @@ const StickyDiv = () => {
           end: `+=${windowHeight * 2.5}`,
           scrub: true,
           invalidateOnRefresh: true,
+          onEnterBack: () => {
+            document.querySelector("#sticky-section")?.classList.add("sticky");
+          },
+          onLeave: () => {
+            document.querySelector("#sticky-section")?.classList.remove("sticky");
+          }
         },
       });
       carrouselTl.to(rotatingDiv.current, {

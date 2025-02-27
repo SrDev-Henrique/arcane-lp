@@ -19,11 +19,16 @@ const Personagens = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.set(nameWrapperRef.current, {zIndex: (i, _, targets) => targets.length - i})
+      const names = gsap.utils.toArray(nameWrapperRef.current)
+
       ScrollTrigger.create({
         trigger: ".slider-wrapper",
         start: "top top",
-        end: () => `+= ${window.innerHeight * personagensInfo.length}`
-      })
+        end: () => "+=" + window.innerHeight * 5,
+        pin: true,
+        scrub: true,
+      });
     });
     return () => ctx.revert();
   }, [])
