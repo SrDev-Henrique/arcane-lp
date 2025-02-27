@@ -5,7 +5,7 @@ const Historia = dynamic(() => import("./components/Historia"));
 const PiltoverHistoria = dynamic(() => import("@/components/PiltoverHistoria"));
 const DivPersonagens = dynamic(() => import("./components/DivPersonagens"));
 const Personagens = dynamic(() => import("./components/Personagens"));
-const StickyDiv = dynamic(() => import("./components/StickyDiv"));
+const StickySection = dynamic(() => import("./components/StickySection"));
 
 const Piltover = () => {
   return (
@@ -14,7 +14,7 @@ const Piltover = () => {
       <Historia />
       <PiltoverHistoria />
       <DivPersonagens />
-      <StickyDiv />
+      <StickySection />
       <Personagens />
     </main>
   );

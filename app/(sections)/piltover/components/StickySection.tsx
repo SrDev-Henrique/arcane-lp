@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { carrouselImages } from "@/data/piltover";
 
@@ -9,56 +9,50 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 const StickyDiv = () => {
-     const rotatingDiv = useRef<HTMLDivElement>(null);
-    const upText = useRef<HTMLDivElement>(null);
-    
-    const windowHeight = window.innerHeight;
-    
-      useEffect(() => {
-        const ctx = gsap.context(() => {
-          ScrollTrigger.create({
-            trigger: "#sticky-section",
-            start: "top top",
-            scrub: true,
-            pin: true,
-            invalidateOnRefresh: true,
-            end: () => "+=" + windowHeight,
-            onLeave: () => {
-              if (rotatingDiv.current) {
-                rotatingDiv.current.style.position = "sticky";
-              }
-            }
-          });
-    
-          const carrouselTl = gsap.timeline({
-            scrollTrigger: {
-              trigger: "#sticky-section",
-              start: `top top`,
-              end: `+=${windowHeight * 2.5}`,
-              scrub: true,
-              invalidateOnRefresh: true,
-            },
-          });
-          carrouselTl.to(rotatingDiv.current, {
-            rotate: 180,
-            ease: "none",
-          });
-          carrouselTl.to(
-            upText.current,
-            {
-              y: "1rem",
-              ease: "none",
-            },
-            "<"
-          );
-        });
-        return () => ctx.revert();
-      }, [windowHeight]);
+  const rotatingDiv = useRef<HTMLDivElement>(null);
+  const upText = useRef<HTMLDivElement>(null);
+
+  const windowHeight = window.innerHeight;
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: "#sticky-section",
+        start: "top top",
+        scrub: true,
+        invalidateOnRefresh: true,
+        end: () => "+=" + windowHeight,
+      });
+
+      const carrouselTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#sticky-section",
+          start: `top top`,
+          end: `+=${windowHeight * 2.5}`,
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      });
+      carrouselTl.to(rotatingDiv.current, {
+        rotate: 180,
+        ease: "none",
+      });
+      carrouselTl.to(
+        upText.current,
+        {
+          y: "1rem",
+          ease: "none",
+        },
+        "<"
+      );
+    });
+    return () => ctx.revert();
+  }, [windowHeight]);
 
   return (
     <section
       id="sticky-section"
-      className="sticky-section -mt-[200vh] h-screen w-screen bg-piltover-fadedBrown z-50 sticky top-0 flex-center"
+      className="sticky-section -mt-[200vh] h-screen w-screen bg-piltover-fadedBrown sticky top-0 flex-center"
     >
       <div className="relative w-full h-[90dvh] sm:h-[95dvh] z-[1]">
         <div className="absolute-center flex-center size-full overflow-hidden">

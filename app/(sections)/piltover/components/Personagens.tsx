@@ -18,11 +18,11 @@ const Personagens = () => {
   const titleWrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    
+
   })
 
   return (
-      <section id="personagens-section" className="min-h-screen">
+      <section id="personagens-section" className="min-h-screen mt-[100vh]">
         <div
           className="slider-wrapper z-[1] w-screen h-screen"
           id="pilto<b>v</b>er-personagens"
