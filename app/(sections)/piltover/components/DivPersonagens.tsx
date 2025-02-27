@@ -54,7 +54,6 @@ const Personagens = () => {
         trigger: ".piltover-personagens",
         scrub: true,
         pin: true,
-        pinSpacing: true,
         start: "top top",
         end: `+=${5.7 * innerHeight}`,
         invalidateOnRefresh: true,
