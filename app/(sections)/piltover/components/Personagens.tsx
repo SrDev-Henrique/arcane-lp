@@ -44,7 +44,7 @@ const Personagens = () => {
             name as gsap.TweenTarget,
             {
               duration: 0.33,
-              clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0 100%)",
+              clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
             },
             0.66
           );
@@ -69,15 +69,19 @@ const Personagens = () => {
               invalidateOnRefresh: true,
             },
           })
-          .to(title as gsap.TweenTarget, {
-            duration: 0.1,
-            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0 100%)",
-          }, "<")
           .to(
             title as gsap.TweenTarget,
             {
-              duration: 0.1,
-              clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0 100%)",
+              duration: 0.33,
+              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0 100%)",
+            },
+            "<"
+          )
+          .to(
+            title as gsap.TweenTarget,
+            {
+              duration: 0.33,
+              clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
             },
             0.66
           );
@@ -106,7 +110,7 @@ const Personagens = () => {
             image as gsap.TweenTarget,
             {
               duration: 0.5,
-              y: "-120%",
+              y: "-200%",
             },
             0.66
           );
@@ -178,7 +182,7 @@ const Personagens = () => {
           {personagensInfo.map((personagens, index) => (
             <div
               key={index}
-              className="absolute z-[2] top-20 left-8 sm:left-14 flex flex-col items-start gap-2 lg:gap-5 text-piltover-light mix-blend-soft-light"
+              className="absolute z-[2] top-20 left-8 sm:left-14 flex flex-col items-start gap-2 lg:gap-5 text-piltover-background mix-blend-soft-light"
             >
               <div className="name-wrapper hidden-clip-path">
                 <h1
@@ -217,7 +221,7 @@ const Personagens = () => {
                   />
                 </div>
                 <div className="absolute bottom-0 right-0 pb-3 pt-3 pr-4 w-full flex justify-end">
-                  <button className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-light rounded-full group cursor-pointer">
+                  <button className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-background rounded-full group cursor-pointer">
                     <h3 className="text-sm lg:text-lg">
                       {index !== 4
                         ? `${personagens.nome} ${personagens.sobrenome}`

@@ -344,7 +344,7 @@ html.lenis body {
   }
 
   .slider{
-    backdrop-filter: blur(30px) brightness(0.3);
+    backdrop-filter: blur(30px) brightness(0.55);
   }
 
   .overlay {
