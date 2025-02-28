@@ -52,7 +52,7 @@ const Navbar = memo(() => {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 2.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       orientation: "vertical",
@@ -70,9 +70,9 @@ const Navbar = memo(() => {
   useEffect(() => {
     if (lenisRef.current) {
       if (isMenuOpen) {
-        lenisRef.current.stop(); // Para o Lenis quando o menu está aberto
+        lenisRef.current.stop();
       } else {
-        lenisRef.current.start(); // Retoma o Lenis quando o menu é fechado
+        lenisRef.current.start();
       }
     }
   }, [isMenuOpen]);
