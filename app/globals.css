@@ -18,6 +18,27 @@ body {
   background-color: #000;
 }
 
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 @layer base {
   @font-face {
     font-family: "circular-web";
@@ -87,6 +108,10 @@ body {
 
   .mask-clip-path {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .hidden-clip-path {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0 100%);
   }
 
   .special-font b {
@@ -318,12 +343,8 @@ body {
     margin-left: 10rem;
   }
 
-  .slider-wrapper {
-    background: url(/images/piltover-characters/caitlyn.webp) center / cover no-repeat;
-  }
-
   .slider{
-    backdrop-filter: blur(50px) brightness(0.4);
+    backdrop-filter: blur(50px) brightness(0.3);
   }
 
   .overlay {
