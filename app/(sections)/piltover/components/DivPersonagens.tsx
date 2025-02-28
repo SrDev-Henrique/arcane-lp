@@ -65,7 +65,7 @@ const Personagens = () => {
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [setIsLg]);
 
 
   return (
