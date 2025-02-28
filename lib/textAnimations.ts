@@ -105,7 +105,7 @@ export const useLetterReveal = (
 
 //todo Second version:
 
-interface UseLetterRevelUpOptions {
+interface UseLetterRevealUpOptions {
   threshold?: number;
   rootMargin?: string;
   duration?: number;
@@ -119,7 +119,7 @@ export const useLetterRevealUp = (
     rootMargin = "0px",
     duration = 0.5,
     letterStagger = 0.0,
-  }: UseLetterRevelUpOptions = {}
+  }: UseLetterRevealUpOptions = {}
 ) => {
   useEffect(() => {
     const elements = document.querySelectorAll(`.${className}`);
