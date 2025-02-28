@@ -59,7 +59,7 @@ const StickyDiv = () => {
       id="sticky-section"
       className="sticky-section -mt-[200vh] h-screen w-screen bg-piltover-fadedBrown sticky top-0 flex-center"
     >
-      <div className="relative w-full h-[90dvh] sm:h-[95dvh] z-[1]">
+      <div className="relative w-full h-[75dvh] sm:h-[95dvh] z-[1]">
         <div className="absolute-center flex-center size-full overflow-hidden">
           <div
             ref={rotatingDiv}

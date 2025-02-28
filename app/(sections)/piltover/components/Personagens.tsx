@@ -145,7 +145,7 @@ const Personagens = () => {
             },
             0.66
           );
-      });
+      });   
 
       ScrollTrigger.create({
         trigger: ".slider-wrapper",
@@ -217,7 +217,7 @@ const Personagens = () => {
                   />
                 </div>
                 <div className="absolute bottom-0 right-0 pb-3 pt-3 pr-4 w-full flex justify-end">
-                  <button className="flex items-center gap-2 py-2 px-4 bg-black text-piltover-light rounded-full group cursor-pointer">
+                  <button className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-light rounded-full group cursor-pointer">
                     <h3 className="text-sm lg:text-lg">
                       {index !== 4
                         ? `${personagens.nome} ${personagens.sobrenome}`
