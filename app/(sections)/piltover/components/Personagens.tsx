@@ -157,6 +157,7 @@ const Personagens = () => {
         end: () => "+=" + window.innerHeight * 5,
         pin: true,
         scrub: true,
+        invalidateOnRefresh: true,
       });
     });
     return () => ctx.revert();
