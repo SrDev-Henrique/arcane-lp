@@ -10,10 +10,17 @@ import { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Personagens = () => {
+  const router = useRouter();
+
+  const handleCharacterClick = (nome: string) => {
+    const slug = nome.toLowerCase();
+    router.push(`/${slug}`)
+  }
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -222,7 +229,9 @@ const Personagens = () => {
                   />
                 </div>
                 <div className="absolute bottom-0 right-0 pb-3 pt-3 pr-4 w-full flex justify-end">
-                  <button className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-background rounded-full group cursor-pointer">
+                  <button
+                    onClick={() => handleCharacterClick(personagens.nome)}
+                    className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-background rounded-full group cursor-pointer">
                     <h3 className="text-sm lg:text-lg">
                       {index !== 4
                         ? `${personagens.nome} ${personagens.sobrenome}`
