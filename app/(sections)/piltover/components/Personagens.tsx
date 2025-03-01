@@ -18,9 +18,18 @@ const Personagens = () => {
   const router = useRouter();
 
   const handleCharacterClick = (nome: string) => {
+    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
     const slug = nome.toLowerCase();
     router.push(`/${slug}`)
   }
+
+  useEffect(() => {
+    const savedScroll = sessionStorage.getItem("scrollPosition");
+    if (savedScroll) {
+      window.scrollTo(0, parseInt(savedScroll, 10));
+      sessionStorage.removeItem("scrollPosition");
+    }
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {

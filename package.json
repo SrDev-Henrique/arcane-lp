@@ -13,7 +13,6 @@
     "gsap": "^3.12.7",
     "lenis": "^1.1.20",
     "next": "15.1.5",
-    "next-scroll-restorer": "^0.9.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-use": "^17.6.0",
