@@ -20,16 +20,8 @@ const Personagens = () => {
   const handleCharacterClick = (nome: string) => {
     sessionStorage.setItem("scrollPosition", window.scrollY.toString());
     const slug = nome.toLowerCase();
-    router.push(`/${slug}`)
-  }
-
-  useEffect(() => {
-    const savedScroll = sessionStorage.getItem("scrollPosition");
-    if (savedScroll) {
-      window.scrollTo(0, parseInt(savedScroll, 10));
-      sessionStorage.removeItem("scrollPosition");
-    }
-  }, []);
+    router.push(`/${slug}`);
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -103,25 +95,33 @@ const Personagens = () => {
           );
       });
 
-      gsap.set(".image-container", { zIndex: (i, _, targets) => targets.length - i, y: "110%" });
+      gsap.set(".image-container", {
+        zIndex: (i, _, targets) => targets.length - i,
+        y: "110%",
+      });
       const images = gsap.utils.toArray(".image-container");
 
       images.forEach((image, i) => {
-        if(!images) return;
-        gsap.timeline({
-          scrollTrigger: {
-            trigger: ".slider-wrapper",
-            start: () => `top -${window.innerHeight * i}`,
-            end: () => `+=${window.innerHeight}`,
-            scrub: true,
-            toggleActions: "play none reverse none",
-            invalidateOnRefresh: true,
-          },
-        })
-        .to(image as gsap.TweenTarget, {
-            duration: 0.5,
-            y: 0,
-          }, "<")
+        if (!images) return;
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".slider-wrapper",
+              start: () => `top -${window.innerHeight * i}`,
+              end: () => `+=${window.innerHeight}`,
+              scrub: true,
+              toggleActions: "play none reverse none",
+              invalidateOnRefresh: true,
+            },
+          })
+          .to(
+            image as gsap.TweenTarget,
+            {
+              duration: 0.5,
+              y: 0,
+            },
+            "<"
+          )
           .to(
             image as gsap.TweenTarget,
             {
@@ -165,7 +165,7 @@ const Personagens = () => {
             },
             0.66
           );
-      });   
+      });
 
       ScrollTrigger.create({
         trigger: ".slider-wrapper",
@@ -240,7 +240,8 @@ const Personagens = () => {
                 <div className="absolute bottom-0 right-0 pb-3 pt-3 pr-4 w-full flex justify-end">
                   <button
                     onClick={() => handleCharacterClick(personagens.nome)}
-                    className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-background rounded-full group cursor-pointer">
+                    className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-background rounded-full group cursor-pointer"
+                  >
                     <h3 className="text-sm lg:text-lg">
                       {index !== 4
                         ? `${personagens.nome} ${personagens.sobrenome}`

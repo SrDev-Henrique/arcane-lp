@@ -82,10 +82,11 @@ const StickyDiv = () => {
               >
                 <Image
                   src={images.imagePath}
-                  width={150}
-                  height={250}
                   alt={images.nome}
-                  className="size-full object-cover rounded-lg"
+                  fill
+                  sizes={"(max-width: 250px)"}
+                  style={{ objectFit: "cover" }}
+                  className="rounded-lg"
                 />
               </div>
             ))}

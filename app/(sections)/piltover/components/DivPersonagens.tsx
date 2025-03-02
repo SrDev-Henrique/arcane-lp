@@ -45,10 +45,19 @@ const Personagens = () => {
           invalidateOnRefresh: true,
         },
       });
-      tl.to(".positive-col", { y: "260vh", ease: "none" })
-        .to(".positive-col-lg", { y: "310vh", ease: "none" }, "<")
-        .to(".negative-col", { y: "-285vh", ease: "none" }, "<")
-        .to(".negative-col-lg", { y: "-310vh", ease: "none" }, "<");
+      if (isLg) {
+        tl.to(".positive-col-lg", { y: "310vh", ease: "none" }).to(
+          ".negative-col-lg",
+          { y: "-310vh", ease: "none" },
+          "<"
+        );
+      } else {
+        tl.to(".positive-col", { y: "260vh", ease: "none" }).to(
+          ".negative-col",
+          { y: "-285vh", ease: "none" },
+          "<"
+        );
+      }
 
       ScrollTrigger.create({
         trigger: ".piltover-personagens",
