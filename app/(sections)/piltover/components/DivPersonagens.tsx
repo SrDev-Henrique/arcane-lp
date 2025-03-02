@@ -74,7 +74,7 @@ const Personagens = () => {
     });
 
     return () => ctx.revert();
-  }, [setIsLg]);
+  }, [isLg]);
 
 
   return (
@@ -118,5 +118,4 @@ const Personagens = () => {
     </section>
   );
 };
-
 export default Personagens;
