@@ -5,15 +5,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Personagens = () => {
-  const [isLg, setIsLg] = useState(false);
+const DivPersonagens = () => {
 
   useEffect(() => {
-    setIsLg(window.innerWidth >= 1024);
     const innerHeight = window.innerHeight;
 
     const ctx = gsap.context(() => {
@@ -45,19 +43,8 @@ const Personagens = () => {
           invalidateOnRefresh: true,
         },
       });
-      if (isLg) {
-        tl.to(".positive-col-lg", { y: "310vh", ease: "none" }).to(
-          ".negative-col-lg",
-          { y: "-310vh", ease: "none" },
-          "<"
-        );
-      } else {
-        tl.to(".positive-col", { y: "260vh", ease: "none" }).to(
-          ".negative-col",
-          { y: "-285vh", ease: "none" },
-          "<"
-        );
-      }
+      tl.to(".positive-col", { y: "310vh", ease: "none" })
+        .to(".negative-col", { y: "-310vh", ease: "none" }, "<");
 
       ScrollTrigger.create({
         trigger: ".piltover-personagens",
@@ -74,13 +61,10 @@ const Personagens = () => {
     });
 
     return () => ctx.revert();
-  }, [setIsLg]);
-
+  });
 
   return (
-    <section
-      className="mt-[-250vh] min-h-[100dvh] piltover-personagens z-[1]"
-    >
+    <section className="mt-[-250vh] min-h-[100dvh] piltover-personagens z-[1]">
       <div className="h-screen w-screen relative bg-piltover-light">
         <div className="overflow-hidden fog h-screen md:flex filter brightness-100 bg-piltover-light">
           <div className="absolute-center h-[150vh] lg:h-[300vh] size-full transform -rotate-45 -translate-y-20 -translate-x-20 flex gap-[5.7%] lg:gap-[1.7%] justify-center">
@@ -89,12 +73,8 @@ const Personagens = () => {
                 key={personagem.nome}
                 className={`min-w-[28%] md:min-w-[18%] flex flex-col gap-5 transform ${
                   index % 2 !== 0
-                    ? isLg
-                      ? "positive-col-lg translate-y-[-315vh]"
-                      : "positive-col translate-y-[-245vh]"
-                    : isLg
-                    ? "negative-col-lg translate-y-[315vh]"
-                    : "negative-col translate-y-[250vh]"
+                    ? "positive-col translate-y-[-315vh]"
+                    : "negative-col translate-y-[315vh]"
                 }`}
               >
                 {personagem.imagens.map((src, imgIndex) => (
@@ -119,4 +99,4 @@ const Personagens = () => {
   );
 };
 
-export default Personagens;
+export default DivPersonagens;
