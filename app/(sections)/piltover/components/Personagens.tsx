@@ -10,18 +10,11 @@ import { useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { TransitionLink } from "@/components/TransitionLink";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Personagens = () => {
-  const router = useRouter();
-
-  const handleCharacterClick = (nome: string) => {
-    sessionStorage.setItem("scrollPosition", window.scrollY.toString());
-    const slug = nome.toLowerCase();
-    router.push(`/${slug}`);
-  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -223,38 +216,40 @@ const Personagens = () => {
           ))}
 
           <div className="w-screen h-screen">
-            {personagensInfo.map((personagens, index) => (
-              <div
-                key={index}
-                className="image-container absolute bottom-5 right-6 w-[75dvw] h-[60dvh] lg:bottom-14 lg:right-6 lg:w-[65dvw] lg:h-[80dvh] transform will-change-transform translate-y-[110%]"
-              >
-                <div className="size-full rounded-[3%] fadingBlack-background">
-                  <Image
-                    src={personagens.imagePath}
-                    width={1920}
-                    height={1080}
-                    alt={personagens.nome}
-                    className="size-full object-cover rounded-[3%]"
-                  />
+            {personagensInfo.map((personagens, index) => {
+              const slug = personagens.nome.toLowerCase();
+              return (
+                <div
+                  key={index}
+                  className="image-container absolute bottom-5 right-6 w-[75dvw] h-[60dvh] lg:bottom-14 lg:right-6 lg:w-[65dvw] lg:h-[80dvh] transform will-change-transform translate-y-[110%]"
+                >
+                  <div className="size-full rounded-[3%] fadingBlack-background">
+                    <Image
+                      src={personagens.imagePath}
+                      width={1920}
+                      height={1080}
+                      alt={personagens.nome}
+                      className="size-full object-cover rounded-[3%]"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 right-0 pb-3 pt-3 pr-4 w-full flex justify-end">
+                    <TransitionLink href={`/${slug}`}>
+                      <button className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-background rounded-full group cursor-pointer">
+                        <h3 className="text-sm lg:text-lg">
+                          {index !== 4
+                            ? `${personagens.nome} ${personagens.sobrenome}`
+                            : `${personagens.sobrenome} ${personagens.nome}`}
+                        </h3>
+                        <div className="rounded-full p-6 bg-black-intense overflow-hidden relative">
+                          <FaArrowRight className="absolute bottom-1/2 translate-y-[50%] translate-x-[50%] right-1/2 md:text-lg will-change-transform duration-300 group-hover:translate-x-[180%] group-hover:opacity-0" />
+                          <FaArrowRight className="absolute bottom-1/2 translate-y-[50%] translate-x-[-140%] right-1/2 opacity-0 md:text-lg will-change-transform duration-300 group-hover:translate-x-[50%] group-hover:opacity-100" />
+                        </div>
+                      </button>
+                    </TransitionLink>
+                  </div>
                 </div>
-                <div className="absolute bottom-0 right-0 pb-3 pt-3 pr-4 w-full flex justify-end">
-                  <button
-                    onClick={() => handleCharacterClick(personagens.nome)}
-                    className="personagens-button flex items-center gap-2 py-2 px-4 bg-black text-piltover-background rounded-full group cursor-pointer"
-                  >
-                    <h3 className="text-sm lg:text-lg">
-                      {index !== 4
-                        ? `${personagens.nome} ${personagens.sobrenome}`
-                        : `${personagens.sobrenome} ${personagens.nome}`}
-                    </h3>
-                    <div className="rounded-full p-6 bg-black-intense overflow-hidden relative">
-                      <FaArrowRight className="absolute bottom-1/2 translate-y-[50%] translate-x-[50%] right-1/2 md:text-lg will-change-transform duration-300 group-hover:translate-x-[180%] group-hover:opacity-0" />
-                      <FaArrowRight className="absolute bottom-1/2 translate-y-[50%] translate-x-[-140%] right-1/2 opacity-0 md:text-lg will-change-transform duration-300 group-hover:translate-x-[50%] group-hover:opacity-100" />
-                    </div>
-                  </button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { sectionRefs } from "@/lib/sectionRefs";
-import { useLetterRevealUp } from "@/lib/textAnimations";
+import { useLetterRevealUp } from "@/utils/textAnimations";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
