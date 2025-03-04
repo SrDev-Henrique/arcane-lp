@@ -83,13 +83,13 @@ export const backgroundImages = [
 
 export const personagensInfo = [
   {
-    nome: "Mario",
+    nome: "Caitlyn",
     sobrenome: "Kiramman",
     titulo: "A Comandante de Piltover",
     imagePath: "/images/piltover-characters/caitlyn.webp",
   },
   {
-    nome: "Luigi",
+    nome: "Mel",
     sobrenome: "Medarda",
     titulo: "A Conselheira de Piltover",
     imagePath: "/images/piltover-characters/mel.webp",
