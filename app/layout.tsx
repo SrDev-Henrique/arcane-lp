@@ -1,9 +1,13 @@
+import ClientSideScrollRestorer from "@/components/ScrollRestoration";
+import Navbar from "@/components/Navbar";
+import TransitionComponent from "@/components/TransitionComponent";
+
+import { MenuProvider } from "@/contexts/MenuContext";
+import { TransitionProvider } from "@/contexts/TransitionContext";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import { MenuProvider } from "@/contexts/MenuContext";
-import ClientSideScrollRestorer from "@/components/ScrollRestoration";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +37,9 @@ export default function RootLayout({
         <ClientSideScrollRestorer />
         <MenuProvider>
           <Navbar />
-          {children}
+          <TransitionProvider>
+            <TransitionComponent>{children}</TransitionComponent>
+          </TransitionProvider>
         </MenuProvider>
       </body>
     </html>
