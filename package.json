@@ -16,7 +16,6 @@
     "next-scroll-restorer": "^0.9.9",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-transition-group": "^4.4.5",
     "react-use": "^17.6.0",
     "three": "^0.173.0"
   },
@@ -25,7 +24,6 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/react-transition-group": "^4.4.12",
     "@types/three": "^0.173.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.5",

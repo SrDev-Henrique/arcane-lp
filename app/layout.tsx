@@ -1,9 +1,7 @@
 import ClientSideScrollRestorer from "@/components/ScrollRestoration";
 import Navbar from "@/components/Navbar";
-import TransitionComponent from "@/components/TransitionComponent";
 
 import { MenuProvider } from "@/contexts/MenuContext";
-import { TransitionProvider } from "@/contexts/TransitionContext";
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -37,9 +35,7 @@ export default function RootLayout({
         <ClientSideScrollRestorer />
         <MenuProvider>
           <Navbar />
-          <TransitionProvider>
-            <TransitionComponent>{children}</TransitionComponent>
-          </TransitionProvider>
+          {children}
         </MenuProvider>
       </body>
     </html>
