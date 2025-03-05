@@ -8,7 +8,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
   const [isAnimating, setIsAnimating] = useState(false);
   const pathname = usePathname();
   const formatedPathname = pathname.replace(/^\/+/, "");
-  console.log(formatedPathname);
 
   useEffect(() => {
     setIsAnimating(true);

@@ -24,7 +24,7 @@ export const animatePageOut = () => {
     const tl = gsap.timeline();
 
     tl.set(transitionDiv, {
-      clipPath: "ellipse(0% 100% at 100% 50%)",
+      clipPath: "ellipse(100% 120% at 200% 50%)",
     }).to(transitionDiv, {
       clipPath: "ellipse(62% 250% at 60% 50%)",
       duration: 1,
