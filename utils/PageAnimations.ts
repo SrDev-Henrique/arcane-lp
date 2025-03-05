@@ -12,7 +12,7 @@ export const animatePageIn = () => {
     }).to(transitionDiv, {
       clipPath: "ellipse(0% 100% at 0% 50%)",
       duration: 1,
-      ease: "power2.out",
+      ease: "power1.out",
     });
   }
 };
@@ -28,7 +28,7 @@ export const animatePageOut = () => {
     }).to(transitionDiv, {
       clipPath: "ellipse(62% 250% at 60% 50%)",
       duration: 1,
-      ease: "power2.out",
+      ease: "power1.out",
     });
   }
 }

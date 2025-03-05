@@ -63,6 +63,26 @@ export default {
         blue: {
           light: "#b0e0e6",
         },
+        caitlyn: {
+          DEFAULT: "#35637C",
+          transparent: "#35637C99",
+        },
+        mel: {
+          DEFAULT: "#B79E58",
+          transparent: "#B79E5899",
+        },
+        jayce: {
+          DEFAULT: "#8C5A3C",
+          transparent: "#8C5A3C99",
+        },
+        viktor: {
+          DEFAULT: "#B87148",
+          transparent: "#B8714899",
+        },
+        heimerdinger: {
+          DEFAULT: "#D6A741",
+          transparent: "#D6A74199",
+        },
       },
       fontFamily: {
         zentry: ["zentry", "sans-serif"],
