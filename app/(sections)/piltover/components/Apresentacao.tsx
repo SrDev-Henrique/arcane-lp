@@ -3,7 +3,7 @@
 import { FaGear } from "react-icons/fa6";
 import BentoCard from "@/components/BentoCard";
 import BentoTilt from "@/components/BentoTilt";
-import { sectionRefs } from "@/lib/sectionRefs";
+import { sectionRefs } from "@/utils/sectionRefs";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

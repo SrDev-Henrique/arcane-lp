@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 
-import { sectionRefs } from "@/lib/sectionRefs";
+import { sectionRefs } from "@/utils/sectionRefs";
 import OverlayMenuTitle from "./OverlayMenuTitle";
 import { useMenu } from "@/contexts/MenuContext";
 
@@ -41,7 +41,7 @@ const OverlayMenu = memo(() => {
   const [focusedTitle, setFocusedTitle] = useState<string | null>(null);
 
   const handleTitleClick = (title: string) => {
-    if(title === "i<b>n</b>icio") {
+    if (title === "i<b>n</b>icio") {
       scrollToTop();
       return;
     }
@@ -262,7 +262,9 @@ const OverlayMenu = memo(() => {
           </div>
         </div>
         <div className="hidden lg:flex absolute translate-y-[420px] right-1 m-0 p-0">
-          <h2 className="font-zentry arcane text-[200px] xl:text-[400px]">arcane</h2>
+          <h2 className="font-zentry arcane text-[200px] xl:text-[400px]">
+            arcane
+          </h2>
         </div>
       </div>
     </div>

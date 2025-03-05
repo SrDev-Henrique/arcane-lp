@@ -1,6 +1,6 @@
 "use client";
 
-import { sectionRefs } from "@/lib/sectionRefs";
+import { sectionRefs } from "@/utils/sectionRefs";
 import { useLetterRevealUp } from "@/utils/textAnimations";
 
 import gsap from "gsap";

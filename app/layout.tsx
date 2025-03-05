@@ -1,4 +1,4 @@
-import ClientSideScrollRestorer from "@/components/ScrollRestoration";
+import ClientSideScrollRestorer from "@/utils/ScrollRestoration";
 import Navbar from "@/components/Navbar";
 
 import { MenuProvider } from "@/contexts/MenuContext";

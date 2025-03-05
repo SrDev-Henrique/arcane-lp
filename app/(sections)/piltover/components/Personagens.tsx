@@ -1,6 +1,6 @@
 "use client";
 
-import { sectionRefs } from "@/lib/sectionRefs";
+import { sectionRefs } from "@/utils/sectionRefs";
 import { personagensInfo } from "@/data/piltover";
 
 import gsap from "gsap";
@@ -15,7 +15,6 @@ import { TransitionLink } from "@/components/TransitionLink";
 gsap.registerPlugin(ScrollTrigger);
 
 const Personagens = () => {
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(".name-wrapper", {
