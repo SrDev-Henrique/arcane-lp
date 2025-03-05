@@ -105,5 +105,17 @@ export default {
       },
     },
   },
+  safelist: [
+    "from-caitlyn",
+    "to-caitlyn-transparent",
+    "from-mel",
+    "to-mel-transparent",
+    "from-jayce",
+    "to-jayce-transparent",
+    "from-viktor",
+    "to-viktor-transparent",
+    "from-heimerdinger",
+    "to-heimerdinger-transparent",
+  ],
   plugins: [],
 } satisfies Config;
