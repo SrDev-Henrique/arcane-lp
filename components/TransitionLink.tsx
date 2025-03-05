@@ -3,7 +3,11 @@
 import React, { ReactNode } from "react";
 import Link, { LinkProps } from "next/link";
 import { useRouter } from "next/navigation";
-import gsap from "gsap";
+import { animatePageOut } from "@/utils/PageAnimations";
+
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
 
 interface TransitionLinkProps extends LinkProps {
   children: ReactNode;
@@ -17,10 +21,12 @@ export const TransitionLink = ({
 }: TransitionLinkProps) => {
   const router = useRouter();
 
-  const handleTransition = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault();
 
-      const tl = gsap.timeline()
+    animatePageOut();
+    
+    await sleep(1000);
 
     router.push(href);
   };

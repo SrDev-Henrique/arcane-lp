@@ -1,7 +1,5 @@
 "use client";
 
-import React, { useEffect } from "react";
-import gsap from "gsap";
 import { characters } from "@/data/Characters";
 import { notFound } from "next/navigation";
 
@@ -14,20 +12,12 @@ export default function CharacterPageClient({
 }: CharacterPageClientProps) {
   const data = characters[character as keyof typeof characters];
 
-  useEffect(() => {
-    gsap.fromTo(
-      ".character-content",
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, duration: 1 }
-    );
-  }, []);
-
   if (!data) {
     return notFound();
   }
 
   return (
-    <div className="character-content p-4">
+    <main className="character-content p-4 bg-piltover-light min-h-[200dvh]">
       <div
         className="bg-cover bg-center h-64"
         style={{ backgroundImage: `url(${data.background})` }}
@@ -39,6 +29,6 @@ export default function CharacterPageClient({
         <h3 className="text-2xl text-gray-500 font-semibold">História</h3>
         <p className="text-gray-500">{data.story}</p>
       </div>
-    </div>
+    </main>
   );
 }

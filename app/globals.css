@@ -317,30 +317,8 @@ html.lenis body {
     }
   }
 
-  .hero-container {
-    perspective: 1000px;
-  }
-
   .sticky-section {
     mask-image: radial-gradient(circle, black 0%, transparent 85%);
-  }
-
-  @keyframes rotate-y {
-    from {
-      transform: translateY(100%) rotateX(35deg);
-      border-radius: 5%;
-    }
-    to {
-      transform: translateY(-100%) rotateX(-35deg);
-      border-radius: 5%;
-    }
-  }
-
-  .curved {
-    animation: rotate-y 2s linear infinite alternate;
-    width: 80vw;
-    height: 90vh;
-    margin-left: 10rem;
   }
 
   .slider{
