@@ -7,28 +7,27 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import useDimension from "@/utils/UseDimension";
 
 const StickyDiv = () => {
   const rotatingDiv = useRef<HTMLDivElement>(null);
   const upText = useRef<HTMLDivElement>(null);
-  const { height } = useDimension();
 
   useEffect(() => {
+    const windowHeight = window.innerHeight;
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: "#sticky-section",
         start: "top top",
         scrub: true,
         invalidateOnRefresh: true,
-        end: () => "+=" + height,
+        end: () => "+=" + windowHeight,
       });
 
       const carrouselTl = gsap.timeline({
         scrollTrigger: {
           trigger: "#sticky-section",
           start: `top top`,
-          end: `+=${height * 2.5}`,
+          end: `+=${windowHeight * 2.5}`,
           scrub: true,
           invalidateOnRefresh: true,
           onEnterBack: () => {
@@ -55,14 +54,14 @@ const StickyDiv = () => {
       );
     });
     return () => ctx.revert();
-  }, [height]);
+  });
 
   return (
     <section
       id="sticky-section"
       className="sticky-section -mt-[200vh] h-screen w-screen bg-piltover-fadedBrown sticky top-0 flex-center"
     >
-      <div className="relative w-full h-[75dvh] sm:h-[95dvh] z-[1]">
+      <div className="relative w-full h-[95dvh] z-[1]">
         <div className="absolute-center flex-center size-full overflow-hidden">
           <div
             ref={rotatingDiv}
