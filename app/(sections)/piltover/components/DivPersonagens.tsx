@@ -43,9 +43,9 @@ const DivPersonagens = () => {
           invalidateOnRefresh: true,
         },
       });
-      tl.to(".positive-col", { y: "310vh", ease: "none" }).to(
+      tl.to(".positive-col", { y: "90%", ease: "none" }).to(
         ".negative-col",
-        { y: "-310vh", ease: "none" },
+        { y: "-130%", ease: "none" },
         "<"
       );
 
@@ -76,8 +76,8 @@ const DivPersonagens = () => {
                 key={personagem.nome}
                 className={`min-w-[28%] md:min-w-[18%] flex flex-col gap-5 transform ${
                   index % 2 !== 0
-                    ? "positive-col translate-y-[-315vh]"
-                    : "negative-col translate-y-[315vh]"
+                    ? "positive-col translate-y-[-135%]"
+                    : "negative-col translate-y-[120%]"
                 }`}
               >
                 {personagem.imagens.map((src, imgIndex) => (
