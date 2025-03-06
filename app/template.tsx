@@ -20,7 +20,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
         <div
           className={`transition-div-title bg-gradient-to-b from-${formatedPathname} to-${formatedPathname}-transparent`}
         >
-          <h1 className="text-9xl text-white uppercase font-cinzel font-bold tracking-wider">
+          <h1 className="text-5xl md:text-9xl uppercase font-cinzel font-bold tracking-wider">
             {pathname === "/" ? "" : formatedPathname}
           </h1>
         </div>
