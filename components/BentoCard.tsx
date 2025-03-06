@@ -46,12 +46,12 @@ const BentoCard = ({
     };
   });
 
-  useLetterReveal("reveal-letter", {
-    threshold: 0.5,
-    duration: 0.6,
-    letterStagger: 0.012,
-    rootMargin: "0px",
-  });
+  // useLetterReveal("reveal-letter", {
+  //   threshold: 0.5,
+  //   duration: 0.4,
+  //   letterStagger: 0.010,
+  //   rootMargin: "0px",
+  // });
 
   return (
     <div className="relative size-full">

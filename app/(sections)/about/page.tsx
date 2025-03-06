@@ -47,7 +47,7 @@ const About: React.FC = () => {
       width: "100vw",
       height: "100vh",
       borderRadius: 0,
-      borderColor: "transparent",
+      border: "0px",
       rotateY: "0deg",
       rotateX: "0deg",
       x: "0",
