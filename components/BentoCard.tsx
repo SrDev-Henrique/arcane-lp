@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { useLetterReveal } from "@/utils/textAnimations";
 
 const BentoCard = ({
   videosrc,
@@ -46,13 +45,6 @@ const BentoCard = ({
     };
   });
 
-  // useLetterReveal("reveal-letter", {
-  //   threshold: 0.5,
-  //   duration: 0.4,
-  //   letterStagger: 0.010,
-  //   rootMargin: "0px",
-  // });
-
   return (
     <div className="relative size-full">
       {videosrc && (
@@ -78,11 +70,11 @@ const BentoCard = ({
         className={`relative z-10 flex size-full flex-col justify-between p-5 bentoCard-background ${containerClass}`}
       >
         <div className="absolute left-5 bottom-5">
-          <h1 className="font-cinzel text-piltover-title uppercase reveal-letter">
+          <h1 className="font-cinzel text-piltover-title uppercase">
             {title}
           </h1>
           {description && (
-            <div className="font-lora text-piltover-dark mt-3 max-w-96 md:max-w-[80%] text-xs md:text-base reveal-letter">
+            <div className="font-lora text-piltover-dark mt-3 max-w-96 md:max-w-[80%] text-xs md:text-base">
               {description}
             </div>
           )}

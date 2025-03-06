@@ -35,34 +35,16 @@ export const useLetterReveal = (
       // Separa o texto em palavras preservando os espaços
       const words = text.split(" ");
 
-      words.forEach((word, wordIndex) => {
+      words.forEach((word) => {
         // Cria um contêiner para a palavra que não pode ser quebrada entre linhas
-        const wordContainer = document.createElement("span");
-        wordContainer.style.display = "inline-block";
-        wordContainer.style.whiteSpace = "nowrap";
-
-        // Separa a palavra em letras
-        word.split("").forEach((letter) => {
-          const span = document.createElement("span");
-          span.textContent = letter;
-          // Define os estilos iniciais para cada letra
-          span.style.opacity = "0";
-          span.style.filter = "blur(7px)";
-          // Para permitir animação individual, cada letra é inline-block
-          span.style.display = "inline-block";
-          // Adiciona uma classe para facilitar a seleção se necessário
-          span.classList.add("letter");
-          wordContainer.appendChild(span);
-        });
-
-        // Adiciona o contêiner da palavra ao elemento principal
-        element.appendChild(wordContainer);
-
-        // Adiciona um espaço após cada palavra, exceto a última
-        if (wordIndex < words.length - 1) {
-          const space = document.createTextNode(" ");
-          element.appendChild(space);
-        }
+        const span = document.createElement("span");
+        span.textContent = word;
+        span.style.opacity = "0";
+        span.style.filter = "blur(8px)";
+        span.style.display = "inline-block";
+        span.classList.add("word");
+        element.appendChild(span);
+        element.appendChild(document.createTextNode(" "));
       });
     });
 
@@ -76,7 +58,7 @@ export const useLetterReveal = (
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           // Seleciona todas as letras (spans com a classe "letter") dentro do elemento
-          const letters = entry.target.querySelectorAll("span.letter");
+          const letters = entry.target.querySelectorAll(".word");
 
           // Anima as letras com GSAP, em cascata (stagger)
           gsap.to(letters, {
