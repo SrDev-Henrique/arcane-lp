@@ -17,9 +17,9 @@ export default function CharacterPageClient({
   }
 
   return (
-    <main className="character-content p-4 bg-piltover-light min-h-[200dvh]">
+    <main className="character-content bg-piltover-light min-h-[200dvh]">
       <div
-        className="bg-cover bg-center h-64"
+        className="bg-cover bg-center h-96"
         style={{ backgroundImage: `url(${data.background})` }}
       ></div>
       <h1 className="text-3xl text-gray-500 font-bold mt-4">{data.name}</h1>

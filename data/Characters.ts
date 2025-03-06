@@ -1,6 +1,6 @@
 export const characters = {
   caitlyn: {
-    background: "/images/mario-bg.jpg",
+    background: "/images/piltover-characters/caitlyn.webp",
     name: "Mario",
     title: "Herói do Reino dos Cogumelos",
     description: "Um encanador que salva o dia!",
