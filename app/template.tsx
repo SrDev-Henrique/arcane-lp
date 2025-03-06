@@ -1,30 +1,16 @@
 "use client";
 
 import { animatePageIn } from "@/utils/PageAnimations";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Template({ children }: { children: React.ReactNode }) {
-  const [isAnimating, setIsAnimating] = useState(false);
   const pathname = usePathname();
   const formatedPathname = pathname.replace(/^\/+/, "");
 
   useEffect(() => {
-    setIsAnimating(true);
     animatePageIn();
-
-    return () => setIsAnimating(false);
   }, []);
-
-  useEffect(() => {
-    if (isAnimating) {
-      document.body.classList.add("overflow-hidden");
-    } else {
-      document.body.classList.remove("overflow-hidden");
-    }
-
-    return () => document.body.classList.remove("overflow-hidden");
-  }, [isAnimating]);
   return (
     <div>
       <div

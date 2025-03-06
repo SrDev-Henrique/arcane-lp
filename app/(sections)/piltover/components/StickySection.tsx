@@ -7,35 +7,38 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import useDimension from "@/utils/UseDimension";
 
 const StickyDiv = () => {
   const rotatingDiv = useRef<HTMLDivElement>(null);
   const upText = useRef<HTMLDivElement>(null);
+  const { height } = useDimension();
 
   useEffect(() => {
-    const windowHeight = window.innerHeight;
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: "#sticky-section",
         start: "top top",
         scrub: true,
         invalidateOnRefresh: true,
-        end: () => "+=" + windowHeight,
+        end: () => "+=" + height,
       });
 
       const carrouselTl = gsap.timeline({
         scrollTrigger: {
           trigger: "#sticky-section",
           start: `top top`,
-          end: `+=${windowHeight * 2.5}`,
+          end: `+=${height * 2.5}`,
           scrub: true,
           invalidateOnRefresh: true,
           onEnterBack: () => {
             document.querySelector("#sticky-section")?.classList.add("sticky");
           },
           onLeave: () => {
-            document.querySelector("#sticky-section")?.classList.remove("sticky");
-          }
+            document
+              .querySelector("#sticky-section")
+              ?.classList.remove("sticky");
+          },
         },
       });
       carrouselTl.to(rotatingDiv.current, {
@@ -52,7 +55,7 @@ const StickyDiv = () => {
       );
     });
     return () => ctx.revert();
-  });
+  }, [height]);
 
   return (
     <section

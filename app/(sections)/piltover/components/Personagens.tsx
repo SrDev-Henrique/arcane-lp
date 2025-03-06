@@ -1,6 +1,7 @@
 "use client";
 
 import { sectionRefs } from "@/utils/sectionRefs";
+import useDimension from "@/utils/UseDimension";
 import { personagensInfo } from "@/data/piltover";
 
 import gsap from "gsap";
@@ -15,6 +16,8 @@ import { TransitionLink } from "@/components/TransitionLink";
 gsap.registerPlugin(ScrollTrigger);
 
 const Personagens = () => {
+  const { height } = useDimension();
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(".name-wrapper", {
@@ -29,8 +32,8 @@ const Personagens = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".slider-wrapper",
-              start: () => `top -${window.innerHeight * i}`,
-              end: () => `+=${window.innerHeight}`,
+              start: () => `top -${height * i}`,
+              end: () => `+=${height}`,
               scrub: true,
               toggleActions: "play none reverse none",
               invalidateOnRefresh: true,
@@ -62,8 +65,8 @@ const Personagens = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".slider-wrapper",
-              start: () => `top -${window.innerHeight * i}`,
-              end: () => `+=${window.innerHeight}`,
+              start: () => `top -${height * i}`,
+              end: () => `+=${height}`,
               scrub: true,
               toggleActions: "play none reverse none",
               invalidateOnRefresh: true,
@@ -99,8 +102,8 @@ const Personagens = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".slider-wrapper",
-              start: () => `top -${window.innerHeight * i}`,
-              end: () => `+=${window.innerHeight}`,
+              start: () => `top -${i * height}`,
+              end: () => `+=${height}`,
               scrub: true,
               toggleActions: "play none reverse none",
               invalidateOnRefresh: true,
@@ -135,8 +138,8 @@ const Personagens = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".slider-wrapper",
-              start: () => `top -${window.innerHeight * i + 0.5}`,
-              end: () => `+=${window.innerHeight}`,
+              start: () => `top -${height * i + 0.5}`,
+              end: () => `+=${height}`,
               scrub: true,
               invalidateOnRefresh: true,
             },
@@ -162,14 +165,14 @@ const Personagens = () => {
       ScrollTrigger.create({
         trigger: ".slider-wrapper",
         start: "top top",
-        end: () => "+=" + window.innerHeight * 5,
+        end: () => "+=" + height * 5,
         pin: true,
         scrub: true,
         invalidateOnRefresh: true,
       });
     });
     return () => ctx.revert();
-  }, []);
+  }, [height]);
 
   return (
     <section id="personagens-section" className="min-h-screen mt-[100vh]">

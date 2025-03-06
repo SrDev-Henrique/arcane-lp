@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 const Apresentacao = dynamic(() => import("./components/Apresentacao"));
 const Historia = dynamic(() => import("./components/Historia"));
 const PiltoverHistoria = dynamic(() => import("@/components/PiltoverHistoria"));
-const DivPersonagens = dynamic(() => import("./components/DivPersonagens"));
+// const DivPersonagens = dynamic(() => import("./components/DivPersonagens"));
 const Personagens = dynamic(() => import("./components/Personagens"));
 const StickySection = dynamic(() => import("./components/StickySection"));
 
@@ -13,7 +13,7 @@ const Piltover = () => {
       <Apresentacao />
       <Historia />
       <PiltoverHistoria />
-      <DivPersonagens />
+      {/* <DivPersonagens /> */}
       <StickySection />
       <Personagens />
     </main>

@@ -43,8 +43,11 @@ const DivPersonagens = () => {
           invalidateOnRefresh: true,
         },
       });
-      tl.to(".positive-col", { y: "310vh", ease: "none" })
-        .to(".negative-col", { y: "-310vh", ease: "none" }, "<");
+      tl.to(".positive-col", { y: "310vh", ease: "none" }).to(
+        ".negative-col",
+        { y: "-310vh", ease: "none" },
+        "<"
+      );
 
       ScrollTrigger.create({
         trigger: ".piltover-personagens",
