@@ -47,9 +47,10 @@ const About: React.FC = () => {
       width: "100vw",
       height: "100vh",
       borderRadius: 0,
-      border: "none",
+      borderColor: "transparent",
       rotateY: "0deg",
       rotateX: "0deg",
+      x: "0",
     });
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -57,8 +58,8 @@ const About: React.FC = () => {
 
       const { left, top, width, height } =
         clipRef.current.getBoundingClientRect();
-      const x = ((e.clientX - left) / width - 0.5) * 10;
-      const y = ((e.clientY - top) / height - 0.5) * 10;
+      const x = ((e.clientX - left) / width - 0.5) * 5;
+      const y = ((e.clientY - top) / height - 0.5) * 5;
 
       gsap.to(clipRef.current, {
         rotateX: -y,
@@ -103,14 +104,14 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      <div className="h-dvh w-screen" id="clip" ref={clipRef}>
-        <div className="mask-clip-path about-image border border-piltover-light">
+      <div className="h-dvh w-full flex justify-center" id="clip" ref={clipRef}>
+        <div className="mask-clip-path about-image border border-black-intense">
           <Image
             src={"/images/piltover.jpg"}
             alt="Background Image"
             height={1080}
             width={1920}
-            className="absolute left-0 top-0 size-full object-cover"
+            className="size-full object-cover"
           />
         </div>
       </div>
