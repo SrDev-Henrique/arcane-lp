@@ -1,11 +1,11 @@
 import ClientSideScrollRestorer from "@/utils/ScrollRestoration";
-import Navbar from "@/components/Navbar";
 
 import { MenuProvider } from "@/contexts/MenuContext";
 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ConditionalNavbar from "@/components/ConditionalNavBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +34,7 @@ export default function RootLayout({
       >
         <ClientSideScrollRestorer />
         <MenuProvider>
-          <Navbar />
+          <ConditionalNavbar />
           {children}
         </MenuProvider>
       </body>
