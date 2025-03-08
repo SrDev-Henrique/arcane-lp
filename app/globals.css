@@ -198,7 +198,6 @@ html.lenis body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     z-index: 99;
     justify-content: space-between;
-    backdrop-filter: blur(10px) brightness(0.25);
   }
 
   .magic {
@@ -316,13 +315,6 @@ html.lenis body {
     --color-1: #ffffff;
     --color-2: #ffffff;
     background: linear-gradient(to bottom, var(--color-2), var(--color-1));
-  }
-
-  .bg-piltover-character {
-    --color-1: #f5f5dc;
-    --color-2: #62152b;
-    --color-3: #8b2e2e;
-    background: linear-gradient(180deg, var(--color-2), var(--color-2));
   }
 
   .brightness-filter {
@@ -455,6 +447,10 @@ html.lenis body {
 .indicator-line.active {
   animation: indicator-line 0.5s ease infinite;
   animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+.character-content {
+  backdrop-filter: brightness(40%);
 }
 
 /* From Uiverse.io by G4b413l */
