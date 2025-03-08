@@ -18,14 +18,7 @@ export default function CharacterPageClient({
 
   return (
     <main className="bg-black-intense min-h-[100dvh]">
-      <div
-        className="bg-cover bg-center w-full h-[100dvh]"
-        style={{ backgroundImage: `url(${data.background})` }}
-      >
-        <div className="size-full relative character-content">
-          
-        </div>
-      </div>
+      
     </main>
   );
 }
