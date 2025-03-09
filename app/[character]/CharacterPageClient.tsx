@@ -19,9 +19,9 @@ export default function CharacterPageClient({
   }
 
   return (
-    <main className="bg-black-dark min-h-[100dvh]">
+    <main className="min-h-[100dvh] bg-black-dark">
       <CharactersNavBar />
-      <Hero heroImage={data.heroImage} name={data.name} description={data.description} />
+      <Hero heroImage={data.heroImage} name={data.name} lastName={data.lastName} description={data.description} quote={data.quote} color={data.color} />
     </main>
   );
 }

@@ -198,6 +198,7 @@ html.lenis body {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     z-index: 99;
     justify-content: space-between;
+    backdrop-filter: blur(10px) brightness(0.25);
   }
 
   .magic {

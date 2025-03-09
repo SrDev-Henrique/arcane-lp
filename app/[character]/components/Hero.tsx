@@ -1,33 +1,54 @@
-import Image from "next/image";
+import { FaQuoteLeft } from "react-icons/fa";
 
 interface HeroProps {
   heroImage: string;
   name: string;
+  lastName: string;
   description: string;
+  quote: string;
+  color: string;
 }
-const Hero = ({ heroImage, name, description }: HeroProps) => {
+const Hero = ({ heroImage, name, lastName, description, quote, color }: HeroProps) => {
   return (
-    <div className="w-full h-[200dvh]">
-      <div className="w-full">
-        <h1 className="font-cinzel font-bold uppercase tracking-wide text-9xl text-neutral-light">
-          {name}
-        </h1>
-      </div>
-      <div className="size-full border px-14 pt-4 flex items-center justify-between">
-        <div className="max-w-[500px]">
-          <p className="font-lora font-bold text-accent-light">{description}</p>
-        </div>
-        <div className="w-[400px] h-[75dvh]">
-          <Image
-            src={heroImage}
-            alt={name}
-            width={500}
-            height={736}
-            className="size-full object-cover"
+    <section className="w-full min-h-[100dvh] flex-center">
+      <div className="w-[95dvw] h-[90dvh] flex justify-end items-start relative">
+        <div className="w-[60%] max-w-[550px] h-[65%] flex gap-3 mt-8 mr-5 relative">
+          {[...Array(3)].map((_, i) => (
+            <div
+              key={i}
+              className={`w-[33.3333%] bg-white ${
+                i === 0
+                  ? "h-[60%] self-center rounded-es-md"
+                  : i === 2
+                  ? "h-[80%] rounded-se-md"
+                  : "h-[100%]"
+              }`}
+            />
+          ))}
+          <div
+            style={{
+              backgroundImage: `url(${heroImage})`,
+            }}
+            className="absolute size-full bg-cover bg-center mix-blend-darken"
           />
         </div>
+        <div className="absolute left-0 top-0 w-fit flex gap-2 items-end">
+          <FaQuoteLeft style={{color: `${color}`}} className="text-3xl" />
+          <h3 style={{borderBottom: `${color} 1px solid`}} className="text-white-dark text-lg">{quote}</h3>
+        </div>
+        <div className="absolute left-0 top-[15.1rem] w-[500px] flex flex-col gap-2">
+          <h1 className="font-cinzel font-bold uppercase tracking-wide text-5xl text-neutral-light">
+            {name}
+          </h1>
+          <h1 className="font-cinzel font-bold uppercase tracking-wide text-5xl text-neutral-light">
+            {lastName}
+          </h1>
+        </div>
+        <div className="absolute bottom-5 left-1/2 -translate-x-1/2 w-[95%] max-w-[500px]">
+          <p className="text-accent-light text-base">{description}</p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
