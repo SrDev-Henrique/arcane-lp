@@ -21,7 +21,6 @@ const Personagens = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set(".name-wrapper", {
-        zIndex: (i, _, targets) => targets.length - i,
         clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0 100%)",
       });
       const names = gsap.utils.toArray(".name-wrapper");
@@ -54,7 +53,6 @@ const Personagens = () => {
       });
 
       gsap.set(".title-wrapper", {
-        zIndex: (i, _, targets) => targets.length - i,
         clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0 100%)",
       });
       const titles = gsap.utils.toArray(".title-wrapper");
@@ -91,7 +89,6 @@ const Personagens = () => {
       });
 
       gsap.set(".image-container", {
-        zIndex: (i, _, targets) => targets.length - i,
         y: "110%",
       });
       const images = gsap.utils.toArray(".image-container");
@@ -223,7 +220,7 @@ const Personagens = () => {
               return (
                 <div
                   key={index}
-                  className="image-container absolute bottom-5 right-6 w-[75dvw] h-[60dvh] lg:bottom-14 lg:right-6 lg:w-[65dvw] lg:h-[80dvh] transform will-change-transform translate-y-[110%]"
+                  className="image-container absolute bottom-5 right-6 w-[85dvw] h-[60dvh] lg:bottom-14 lg:right-6 lg:w-[65dvw] lg:h-[80dvh] transform will-change-transform translate-y-[110%]"
                 >
                   <div className="size-full rounded-[3%] fadingBlack-background">
                     <Image
@@ -231,7 +228,7 @@ const Personagens = () => {
                       width={1920}
                       height={1080}
                       alt={personagens.nome}
-                      className="size-full object-cover rounded-[3%]"
+                      className="size-full object-cover object-center rounded-[3%]"
                     />
                   </div>
                   <div className="absolute bottom-0 right-0 pb-3 pt-3 pr-4 w-full flex justify-end">

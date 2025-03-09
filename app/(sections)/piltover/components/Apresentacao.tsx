@@ -108,11 +108,11 @@ const Apresentacao = () => {
             <h2 className="font-cinzel text-piltover-dark border-b border-b-piltover-dark font-bold text-xs uppercase mb-10">
               A cidade do progresso
             </h2>
-            <div className="flex flex-row items-center gap-3 text-3xl sm:text-5xl lg:text-[135px] ml-6">
+            <div className="flex flex-row items-center gap-3 text-4xl sm:text-5xl lg:text-[135px] ml-6">
               <h1 className="font-cinzel font-bold uppercase piltover tracking-[1.5rem]">
                 Pilt
               </h1>
-              <FaGear className="text-piltover-dark-transparent -ml-5 mb-1 sm:mb-2 md:mb-3 piltover-engine text-2xl sm:text-4xl lg:text-[110px]" />
+              <FaGear className="text-piltover-dark-transparent -ml-5 mb-1 sm:mb-2 md:mb-3 piltover-engine text-3xl sm:text-4xl lg:text-[110px]" />
               <h1 className="font-cinzel font-bold uppercase piltover tracking-[1.5rem]">
                 ver
               </h1>

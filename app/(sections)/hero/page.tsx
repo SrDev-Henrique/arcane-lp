@@ -47,8 +47,8 @@ const Hero = () => {
       if (isScrolled) {
         setIsAudioOn(false);
         gsap.to(divRef.current, {
-          width: "0px",
-          height: "0px",
+          width: "0",
+          height: "0",
           duration: 0.1,
           ease: "power4.out",
         });
@@ -242,7 +242,7 @@ const Hero = () => {
 
         <div ref={audioRef} className="absolute z-[51] bottom-0 left-0 will-change-transform transition-transform duration-300 ease-in-out">
           <div
-            className="relative mb-8 mx-3 sm:mx-8 p-2 rounded-full text-accent-light text-base sm:text-2xl border-hsla cursor-pointer"
+            className="relative mb-8 mx-3 sm:mx-8 p-2 rounded-full text-accent-light text-2xl border-hsla cursor-pointer"
             onClick={toggleAudio}
           >
             <div>{isAudioOn ? <FaVolumeUp /> : <FaVolumeMute />}</div>
