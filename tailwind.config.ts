@@ -99,9 +99,15 @@ export default {
           "0%, 100%": { transform: "scale(.9)", translate: "(-50%, -50%)" },
           "50%": { transform: "scale(1)", translate: "(-50%, -50%)" },
         },
+        diagonal: {
+          "0%": { transform: "translate(-10px, 10px) rotate(-1deg)" },
+          "100%": { transform: "translate(10px, -10px)" },
+        },
       },
       animation: {
         pulse: "pulse 1s infinite",
+        diagonal:
+          "diagonal 3s infinite alternate ease-in-out",
       },
     },
   },
