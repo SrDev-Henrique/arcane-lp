@@ -108,7 +108,7 @@ const OverlayMenu = memo(() => {
       });
 
       gsap.set(".arcane", {
-        x: 1100,
+        x: "100%",
       });
 
       gsap.set(".dev", {
@@ -261,8 +261,8 @@ const OverlayMenu = memo(() => {
             </Link>
           </div>
         </div>
-        <div className="hidden lg:flex absolute translate-y-[420px] right-1 m-0 p-0">
-          <h2 className="font-zentry arcane text-[200px] xl:text-[400px]">
+        <div className="hidden lg:flex absolute bottom-0 xl:translate-y-32 right-1">
+          <h2 className="font-zentry arcane text-[200px] xl:text-[330px] 2xl:text-[27vw] leading-none">
             arcane
           </h2>
         </div>
