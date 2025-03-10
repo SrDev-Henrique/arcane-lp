@@ -4,7 +4,6 @@ import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import React, { memo, useEffect, useState } from "react";
 import Image from "next/image";
-import Lenis from "lenis";
 
 import { useMenu } from "@/contexts/MenuContext";
 import Button from "./Button";
@@ -20,7 +19,6 @@ const Navbar = memo(() => {
   const navContainerRef = React.useRef<HTMLDivElement>(null);
   const audioElementRef = React.useRef<HTMLAudioElement>(null);
   const chatBoxRef = React.useRef<HTMLDivElement>(null);
-  const lenisRef = React.useRef<Lenis | null>(null);
 
   const { isMenuOpen, setIsMenuOpen } = useMenu();
 
@@ -49,33 +47,6 @@ const Navbar = memo(() => {
       ease: "power1.out",
     });
   }, [isNavVisible]);
-
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 2.5,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      orientation: "vertical",
-      gestureOrientation: "vertical",
-    });
-    lenisRef.current = lenis;
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-  }, [])
-
-  useEffect(() => {
-    if (lenisRef.current) {
-      if (isMenuOpen) {
-        lenisRef.current.stop();
-      } else {
-        lenisRef.current.start();
-      }
-    }
-  }, [isMenuOpen]);
 
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prev) => !prev);

@@ -58,16 +58,16 @@ const Hero = ({
 
   return (
     <section ref={heroRef} className="w-full min-h-[100dvh] flex-center">
-      <div className="w-[95dvw] lg:w-[85dvw] h-[90dvh] flex justify-end items-start relative">
+      <div className="w-[95dvw] lg:w-[85dvw] max-w-[1920px] h-[90dvh] flex justify-end items-start relative">
         <div className="w-[65%] max-w-[590px] h-[65%] xl:h-[75%] flex gap-3 mt-9 mr-5 xl:mr-0 relative">
           {[...Array(3)].map((_, i) => (
             <div
               key={i}
               className={`bg-white animate-diagonal max-h-[640px] ${
                 i === 0
-                  ? " self-center rounded-es-md"
+                  ? " self-center rounded-es-md max-h-[404px]"
                   : i === 2
-                  ? "rounded-se-md"
+                  ? "rounded-se-md max-h-[534px]"
                   : ""
               }`}
             />
