@@ -70,7 +70,7 @@ const StickyDiv = () => {
             {carrouselImages.map((images, index) => (
               <div
                 key={index}
-                className={`absolute w-[50%] h-[45%] max-w-[150px] max-h-[250px] rounded-lg transform translate-y-[-50%] ${
+                className={`absolute w-[50%] h-[55%] max-w-[150px] max-h-[250px] rounded-lg transform translate-y-[-50%] ${
                   index === 0
                     ? "top-10 sm:top-12 md:top-0 left-1/2 translate-x-[-50%]"
                     : index === 1

@@ -55,7 +55,7 @@ const Hero = ({
             backgroundClip: "text",
             WebkitTextFillColor: "transparent",
           }}
-          className="absolute left-0 top-[15.1rem] w-[500px] flex flex-col gap-2"
+          className="absolute left-0 top-[19.1rem] w-[500px] flex flex-col gap-2"
         >
           <h1 className="font-cinzel font-bold uppercase tracking-wide text-5xl">
             {name}
