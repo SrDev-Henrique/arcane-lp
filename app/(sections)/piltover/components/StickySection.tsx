@@ -62,7 +62,7 @@ const StickyDiv = () => {
       className="sticky-section -mt-[200vh] h-screen w-screen bg-piltover-fadedBrown sticky top-0 flex-center"
     >
       <div className="relative w-full h-[100dvh] z-[1]">
-        <div className="absolute inset-0 flex-center size-full overflow-hidden">
+        <div className="flex-center size-full overflow-hidden">
           <div
             ref={rotatingDiv}
             className="size-[50%] relative transform will-change-transform"
@@ -70,16 +70,16 @@ const StickyDiv = () => {
             {carrouselImages.map((images, index) => (
               <div
                 key={index}
-                className={`absolute w-[50%] h-[55%] max-w-[150px] max-h-[250px] rounded-lg transform translate-y-[-50%] ${
+                className={`absolute w-[50%] h-[50%] sm:h-[55%] max-w-[150px]  max-h-[250px] rounded-lg transform translate-y-[-50%] ${
                   index === 0
-                    ? "top-10 sm:top-12 md:top-0 left-1/2 translate-x-[-50%]"
+                    ? "top-0 translate-y-[-50%] sm:translate-y-[-60%] left-1/2 translate-x-[-50%]"
                     : index === 1
-                    ? "top-40 md:top-42 left-1/2 translate-x-[100%] sm:translate-x-[95%] md:translate-x-[95%] rotate-[72deg] md:rotate-[70deg]"
+                    ? "top-36 left-1/2 translate-x-[90%] rotate-[68deg]"
                     : index === 2
-                    ? "top-40 md:top-42 right-1/2 translate-x-[-100%] sm:translate-x-[-95%] md:translate-x-[-95%] -rotate-[72deg] md:-rotate-[70deg]"
+                    ? "top-36 right-1/2 translate-x-[-90%]  -rotate-[68deg]"
                     : index === 3
-                    ? "top-[22rem] sm:top-[23.5rem] md:top-[27.5rem] left-1/2 translate-x-[46%] sm:translate-x-[40%] md:translate-x-[40%] rotate-[145deg]"
-                    : "top-[22rem] sm:top-[23.5rem] md:top-[27.5rem] right-1/2 translate-x-[-46%] sm:translate-x-[-40%] md:translate-x-[-40%] rotate-[-145deg]"
+                    ? "bottom-0 translate-y-[35%] md:translate-y-[60%] left-1/2 translate-x-[46%] sm:translate-x-[40%] rotate-[145deg]"
+                    : "bottom-0 translate-y-[35%] md:translate-y-[60%] right-1/2 translate-x-[-46%] sm:translate-x-[-40%] rotate-[-145deg]"
                 }`}
               >
                 <Image
