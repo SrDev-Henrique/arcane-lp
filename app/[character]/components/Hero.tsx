@@ -20,6 +20,7 @@ const Hero = ({
 }: HeroProps) => {
   const heroRef = useRef<HTMLElement>(null);
   useEffect(() => {
+    if (!heroRef.current) return;
     const ctx = gsap.context(() => {
       gsap.from(".animate-quote", {
         y: 100,
@@ -54,7 +55,7 @@ const Hero = ({
     }, heroRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [heroRef]);
 
   return (
     <section ref={heroRef} className="w-full min-h-[100dvh] flex-center">

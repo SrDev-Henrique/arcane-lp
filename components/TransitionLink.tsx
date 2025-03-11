@@ -29,10 +29,12 @@ export const TransitionLink = ({
     await sleep(1000);
 
     router.push(href);
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   };
 
   return (
-    <Link scroll={false} onClick={handleTransition} href={href} {...props}>
+    <Link onClick={handleTransition} href={href} {...props}>
       {children}
     </Link>
   );
