@@ -11,12 +11,13 @@ import Image from "next/image";
 const StickyDiv = () => {
   const rotatingDiv = useRef<HTMLDivElement>(null);
   const upText = useRef<HTMLDivElement>(null);
+  const stickyRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const windowHeight = window.innerHeight;
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
-        trigger: "#sticky-section",
+        trigger: stickyRef.current,
         start: "top top",
         scrub: true,
         invalidateOnRefresh: true,
@@ -25,18 +26,16 @@ const StickyDiv = () => {
 
       const carrouselTl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#sticky-section",
+          trigger: stickyRef.current,
           start: `top top`,
           end: `+=${windowHeight * 2.5}`,
           scrub: true,
           invalidateOnRefresh: true,
           onEnterBack: () => {
-            document.querySelector("#sticky-section")?.classList.add("sticky");
+            stickyRef.current?.classList.add("sticky");
           },
           onLeave: () => {
-            document
-              .querySelector("#sticky-section")
-              ?.classList.remove("sticky");
+            stickyRef.current?.classList.remove("sticky");
           },
         },
       });
@@ -54,11 +53,11 @@ const StickyDiv = () => {
       );
     });
     return () => ctx.revert();
-  });
+  }, []);
 
   return (
     <section
-      id="sticky-section"
+      ref={stickyRef}
       className="sticky-section -mt-[200vh] h-screen w-screen bg-piltover-fadedBrown sticky top-0 flex-center"
     >
       <div className="relative w-full h-[100dvh] z-[1]">
