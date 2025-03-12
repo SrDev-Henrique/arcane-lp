@@ -491,6 +491,7 @@ html.lenis body {
 .active-tab {
   border: 1px solid #dfdff2;
   background: #000;
+  color: #dfdff2;
 }
 
 .tab-image-container {

@@ -1,6 +1,9 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 import { FaQuoteLeft } from "react-icons/fa";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface HeroProps {
   heroImage: string;
@@ -56,6 +59,16 @@ const Hero = ({
 
     return () => ctx.revert();
   }, [heroRef]);
+
+  useEffect(() => {
+    if (!heroRef.current) return;
+    
+    const cntx = gsap.context(() => {
+      
+    })
+
+    return () => cntx.revert();
+  })
 
   return (
     <section ref={heroRef} className="w-full h-[99dvh] flex-center">

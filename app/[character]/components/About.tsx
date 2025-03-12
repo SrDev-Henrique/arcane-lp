@@ -45,12 +45,12 @@ const About = ({ personalidade, aparencia, habilidades, name }: AboutProps) => {
   return (
     <section className="w-[100dvw] flex-center">
       <div ref={aboutRef} className="w-[70dvw] bg-accent-light rounded-t-xl flex-col">
-        <div className="py-14 pl-[7vw] xl:pl-48 w-screen">
+        <div className="py-14 pl-[7vw] xl:pl-48">
           <h1 className="text-8xl text-black-dark w-fit font-lora-italic">
             Sobre
           </h1>
         </div>
-        <div className="w-full bg-black-dark rounded-2xl flex-center text-white">
+        <div className="w-full bg-black-dark rounded-2xl flex-center text-white-dark">
           <Tabs
             personalidade={personalidade}
             aparencia={aparencia}
