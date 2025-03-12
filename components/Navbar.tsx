@@ -2,7 +2,7 @@
 
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
-import React, { memo, useEffect, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import { useMenu } from "@/contexts/MenuContext";
@@ -13,31 +13,30 @@ import gsap from "gsap";
 const Navbar = memo(() => {
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isNavVisible, setIsNavVisible] = useState(true);
 
   const navContainerRef = React.useRef<HTMLDivElement>(null);
   const audioElementRef = React.useRef<HTMLAudioElement>(null);
   const chatBoxRef = React.useRef<HTMLDivElement>(null);
+  const lastScrollYRef = useRef(0);
 
   const { isMenuOpen, setIsMenuOpen } = useMenu();
 
   const { y: currentScrollY } = useWindowScroll();
 
-  useEffect(() => {
-    if (currentScrollY === 0) {
-      setIsNavVisible(true);
-      navContainerRef.current?.classList.remove("floating-nav");
-    } else if (currentScrollY > lastScrollY) {
-      setIsNavVisible(false);
-      navContainerRef.current?.classList.add("floating-nav");
-    } else if (currentScrollY < lastScrollY) {
-      setIsNavVisible(true);
-      navContainerRef.current?.classList.add("floating-nav");
-    }
-
-    setLastScrollY(currentScrollY);
-  }, [currentScrollY, lastScrollY]);
+   useEffect(() => {
+     if (currentScrollY === 0) {
+       setIsNavVisible(true);
+       navContainerRef.current?.classList.remove("floating-nav");
+     } else if (currentScrollY > lastScrollYRef.current) {
+       setIsNavVisible(false);
+       navContainerRef.current?.classList.add("floating-nav");
+     } else if (currentScrollY < lastScrollYRef.current) {
+       setIsNavVisible(true);
+       navContainerRef.current?.classList.add("floating-nav");
+     }
+     lastScrollYRef.current = currentScrollY;
+   }, [currentScrollY]);
 
   useEffect(() => {
     gsap.to(navContainerRef.current, {
