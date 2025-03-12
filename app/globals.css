@@ -332,12 +332,13 @@ html.lenis body {
     );
   }
 
-  .piltover-personagens,
   .positive-col,
-  .positive-col-lg,
-  .negative-col,
-  .negative-col-lg {
-    will-change: transform, opacity, mask-image;
+  .negative-col {
+    will-change: transform;
+  }
+
+  .piltover-personagens {
+    will-change: mask-image;
   }
 
   .buttons {

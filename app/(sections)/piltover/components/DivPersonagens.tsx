@@ -10,7 +10,6 @@ import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const DivPersonagens = () => {
-
   useEffect(() => {
     const innerHeight = window.innerHeight;
 
@@ -57,14 +56,13 @@ const DivPersonagens = () => {
         end: `+=${5.7 * innerHeight}`,
         invalidateOnRefresh: true,
       });
-
-      return () => {
-        ScrollTrigger.getAll().forEach((t) => t.kill());
-      };
     });
 
-    return () => ctx.revert();
-  });
+    return () => {
+      ctx.revert();
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
 
   return (
     <section className="mt-[-250vh] min-h-[100dvh] piltover-personagens z-[1]">
