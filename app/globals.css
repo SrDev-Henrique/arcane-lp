@@ -88,7 +88,7 @@ html.lenis body {
   }
 
   .nav-hover-btn {
-    @apply relative font-robert-medium font-bold text-2xl uppercase text-white-darker after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-white cursor-pointer;
+    @apply relative font-robert-medium font-bold uppercase text-accent-light after:absolute after:-bottom-0.5 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-accent-light after:transition-transform after:duration-300 after:ease-[cubic-bezier(0.65_0.05_0.36_1)] hover:after:origin-bottom-left hover:after:scale-x-100 dark:after:bg-accent-light cursor-pointer;
   }
 
   .floating-nav {
@@ -479,6 +479,25 @@ html.lenis body {
 
 .animate-description {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.tab-btn {
+  font-family: "lora";
+  font-weight: semibold;
+  text-transform: uppercase;
+}
+
+.active-tab {
+  border: 1px solid #dfdff2;
+  background: #000;
+}
+
+.tab-image-container {
+  mask-image: linear-gradient(to bottom, #0a0a0a, transparent);
+}
+
+.tab-image {
+  filter:grayscale(50%);
 }
 
 /* From Uiverse.io by G4b413l */

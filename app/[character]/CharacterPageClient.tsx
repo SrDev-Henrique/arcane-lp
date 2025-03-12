@@ -20,8 +20,21 @@ export default function CharacterPageClient({
 
   return (
     <main className="min-h-[100dvh] bg-black-dark">
-      <Hero key={character} heroImage={data.heroImage} name={data.name} lastName={data.lastName} description={data.description} quote={data.quote} color={data.color} />
-      <About />
+      <Hero
+        key={character}
+        heroImage={data.heroImage}
+        name={data.name}
+        lastName={data.lastName}
+        description={data.description}
+        quote={data.quote}
+        color={data.color}
+      />
+      <About
+        personalidade={data.personalidade}
+        aparencia={data.aparencia}
+        habilidades={data.habilidades}
+        name={data.name}
+      />
     </main>
   );
 }

@@ -53,6 +53,7 @@ export default {
         },
         black: {
           light: "#141414",
+          lighter: "#1D1D1D",
           DEFAULT: "#000000",
           dark: "#0a0a0a",
           intense: "#0D0D0D",
@@ -109,6 +110,9 @@ export default {
         diagonal:
           "diagonal 3s infinite alternate ease-in-out",
       },
+      screens: {
+        "md-lg": "880px",
+      }
     },
   },
   safelist: [
