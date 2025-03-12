@@ -10,7 +10,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Apresentacao = () => {
+const Apresentacao = React.memo(() => {
   const curtainLeftRef = useRef<HTMLDivElement>(null);
   const curtainRightRef = useRef<HTMLDivElement>(null);
   const blurContentRef = useRef<HTMLDivElement>(null);
@@ -186,6 +186,7 @@ const Apresentacao = () => {
       </div>
     </section>
   );
-};
+});
+Apresentacao.displayName = "Apresentacao";
 
 export default Apresentacao;
