@@ -77,7 +77,8 @@ const Hero = ({
           {[...Array(3)].map((_, i) => (
             <div
               key={i}
-              className={`bg-white animate-diagonal max-h-[640px] ${
+              style={{backgroundColor: `${color}`}}
+              className={` animate-diagonal max-h-[640px] ${
                 i === 0
                   ? " self-center rounded-es-md max-h-[404px]"
                   : i === 2
