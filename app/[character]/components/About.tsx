@@ -45,7 +45,7 @@ const About = ({ personalidade, aparencia, habilidades, name }: AboutProps) => {
   return (
     <section className="w-[100dvw] flex-center">
       <div ref={aboutRef} className="w-[70dvw] bg-accent-light rounded-t-xl flex-col">
-        <div className="py-14 pl-[7vw] xl:pl-48">
+        <div className="character-divider">
           <h1 className="text-8xl text-black-dark w-fit font-lora-italic">
             Sobre
           </h1>

@@ -494,12 +494,24 @@ html.lenis body {
   color: #dfdff2;
 }
 
+.character-divider {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+  padding-left: 7vw;
+}
+
+@media (min-width: 1280px) {
+  .character-divider {
+    padding-left: 12rem;
+  }
+}
+
 .tab-image-container {
-  mask-image: linear-gradient(to bottom, #0a0a0a, transparent);
+  mask-image: linear-gradient(to bottom, #0a0a0a 15%, transparent 90%);
 }
 
 .tab-image {
-  filter:grayscale(50%);
+  filter: grayscale(50%);
 }
 
 /* From Uiverse.io by G4b413l */
