@@ -29,7 +29,7 @@ const CharacterTitle = ({
             ease: "power1.out",
             scrollTrigger: {
               trigger: titleRef.current,
-              start: "top 100%",
+              start: "top 110%",
               toggleActions: "play none none reverse",
             },
           }
@@ -41,7 +41,7 @@ const CharacterTitle = ({
 
   return (
     <div className="character-divider">
-      <div className="pb-3 overflow-hidden">
+      <div className="pb-4 -mb-4 overflow-hidden">
         <h1
           ref={titleRef}
           className={`transform will-change-transform translate-y-[100%] ${containerClass}`}
