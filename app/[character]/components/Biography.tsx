@@ -21,9 +21,9 @@ const Biography = ({ name, biografia, quote }: BiographyProps) => {
   return (
     <section className="w-[100dvw] bg-accent-light">
       <div className="character-divider">
-        <h3 className="text-7xl sm:text-8xl text-black-dark w-fit font-lora-italic flex-wrap">
+        <h1 className="text-7xl sm:text-8xl text-black-dark w-fit font-lora-italic flex-wrap">
           Biografia
-        </h3>
+        </h1>
       </div>
       <div className="w-full bg-black-dark rounded-2xl flex-center flex-col gap-3 pt-14">
         {biografia.parte1.map((item, index) => (
