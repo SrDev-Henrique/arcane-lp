@@ -80,6 +80,24 @@ export const characters = {
           "Seu talento para desvendar mistérios e enxergar além das aparências a coloca à frente de casos que outros descartariam como meros boatos.",
       },
     ],
+    biografia: {
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-11.webp",
+          content:
+            "Caitlyn nasceu em uma família aristocrática rica, os <b>Kiramman</b>. Desde pequena, ela sentiu o peso e a proteção excessiva dos pais – principalmente da mãe – que queriam, a todo custo, que ela seguisse os passos da família. Mas, como a gente sabe, nem sempre a <b>segurança</b> vem acompanhada de <b>liberdade</b>, e a jovem <b>Caitlyn</b>, com seu espírito rebelde, buscava algo a mais do que viver sob os moldes preestabelecidos.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-12.webp",
+          content:
+            "Esse sentimento de não se encaixar é o pontapé inicial para a <b>jornada</b> que ela empreendeu. Em vez de optar pela vida de luxo e proteção, <b>Caitlyn</b> decidiu trilhar um caminho de <b>coragem</b>, competindo e se destacando – inclusive, <b>vencendo um torneio de tiro em Piltover</b>. Foi nesse momento que, num bate-bola com o <b>xerife Grayson</b>, ela mostrou que sua habilidade não vinha de privilégios, mas de pura <b>dedicação e talento</b>.",
+        },
+      ],
+    },
   },
   mel: {
     color: "",
@@ -91,5 +109,9 @@ export const characters = {
     personalidade: [],
     aparencia: [],
     habilidades: [],
+    biografia: {
+      parte1: [{ image: "", content: "" }],
+      parte2: [{ image: "", content: "" }],
+    },
   },
 };
