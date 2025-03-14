@@ -4,6 +4,7 @@ import { characters } from "@/data/Characters";
 import { notFound } from "next/navigation";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Biography from "./components/Biography";
 
 interface CharacterPageClientProps {
   character: string;
@@ -34,6 +35,11 @@ export default function CharacterPageClient({
         aparencia={data.aparencia}
         habilidades={data.habilidades}
         name={data.name}
+      />
+      <Biography
+        name={data.name}
+        biografia={data.biografia}
+        quote={data.quote}
       />
     </main>
   );

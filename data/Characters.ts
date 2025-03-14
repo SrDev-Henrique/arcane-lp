@@ -109,9 +109,6 @@ export const characters = {
     personalidade: [],
     aparencia: [],
     habilidades: [],
-    biografia: {
-      parte1: [{ image: "", content: "" }],
-      parte2: [{ image: "", content: "" }],
-    },
+    biografia: {parte1: [], parte2: [],}
   },
 };
