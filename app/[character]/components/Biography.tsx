@@ -1,3 +1,4 @@
+import CharacterTitle from "@/components/CharacterTitle";
 import Image from "next/image";
 import React from "react";
 
@@ -20,11 +21,10 @@ interface BiographyProps {
 const Biography = ({ name, biografia, quote }: BiographyProps) => {
   return (
     <section className="w-[100dvw] bg-accent-light">
-      <div className="character-divider">
-        <h1 className="text-7xl sm:text-8xl text-black-dark w-fit font-lora-italic flex-wrap">
-          Biografia
-        </h1>
-      </div>
+      <CharacterTitle
+        content="Biografia"
+        containerClass="text-7xl sm:text-8xl text-black-dark w-fit font-lora-italic"
+      />
       <div className="w-full bg-black-dark rounded-2xl flex-center flex-col gap-3 pt-14">
         {biografia.parte1.map((item, index) => (
           <div key={index} className="w-full flex-center flex-col gap-10">
@@ -58,7 +58,9 @@ const Biography = ({ name, biografia, quote }: BiographyProps) => {
                   className="size-full object-cover rounded-xl"
                 />
               </div>
-              <div className="w-fit"><p className="text-white-dark text-xs">{`"${quote}"`}</p></div>
+              <div className="w-fit">
+                <p className="text-white-dark text-xs">{`"${quote}"`}</p>
+              </div>
             </div>
             <div className="text-white-dark w-[87%] max-w-[600px]">
               <p

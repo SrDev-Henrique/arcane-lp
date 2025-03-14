@@ -1,5 +1,6 @@
 'use client';
 
+import CharacterTitle from "@/components/CharacterTitle";
 import Tabs from "@/components/Tabs";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -44,12 +45,14 @@ const About = ({ personalidade, aparencia, habilidades, name }: AboutProps) => {
   }, [])
   return (
     <section className="w-[100dvw] flex-center">
-      <div ref={aboutRef} className="w-[70dvw] bg-accent-light rounded-t-xl flex-col">
-        <div className="character-divider">
-          <h1 className="text-8xl text-black-dark w-fit font-lora-italic">
-            Sobre
-          </h1>
-        </div>
+      <div
+        ref={aboutRef}
+        className="w-[70dvw] bg-accent-light rounded-t-xl flex-col"
+      >
+        <CharacterTitle
+          content="Sobre"
+          containerClass="text-8xl text-black-dark w-fit font-lora-italic"
+        />
         <div className="w-full bg-black-dark rounded-2xl flex-center text-white-dark">
           <Tabs
             personalidade={personalidade}
