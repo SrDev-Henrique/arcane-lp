@@ -30,6 +30,12 @@ export default function ConditionalNavbar() {
   }, []);
 
   useEffect(() => {
+    lenisRef.current?.stop();
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    lenisRef.current?.start();
+  }, [pathname])
+
+  useEffect(() => {
     if (lenisRef.current) {
       if (isMenuOpen) {
         lenisRef.current.stop();
