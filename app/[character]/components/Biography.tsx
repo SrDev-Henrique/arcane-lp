@@ -21,14 +21,16 @@ interface BiographyData {
 interface BiographyProps {
   name: string;
   quote: string;
+  color: string;
   biografia: BiographyData;
 }
 
-const Biography = ({ name, biografia, quote }: BiographyProps) => {
+const Biography = ({ name, biografia, quote, color }: BiographyProps) => {
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const texts = gsap.utils.toArray(".character-about-text");
-      texts.forEach((el) => {
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width: 800px)", () => {
+      gsap.utils.toArray(".character-about-text").forEach((el) => {
         gsap.fromTo(
           el as Element,
           { y: "30%", opacity: 0 },
@@ -39,15 +41,13 @@ const Biography = ({ name, biografia, quote }: BiographyProps) => {
             ease: "power1.out",
             scrollTrigger: {
               trigger: el as Element,
-              start: "top 130%%",
+              start: "top 130%",
               toggleActions: "play none none reverse",
             },
           }
         );
       });
-
-      const imageContainer = gsap.utils.toArray(".about-image-container");
-      imageContainer.forEach((el) => {
+      gsap.utils.toArray(".about-image-container").forEach((el) => {
         gsap.fromTo(
           el as Element,
           { y: "-15%", opacity: 0 },
@@ -64,9 +64,7 @@ const Biography = ({ name, biografia, quote }: BiographyProps) => {
           }
         );
       });
-
-      const images = gsap.utils.toArray(".character-about-image");
-      images.forEach((el) => {
+      gsap.utils.toArray(".character-about-image").forEach((el) => {
         gsap.fromTo(
           el as Element,
           { scale: 1.5, width: "10%" },
@@ -79,20 +77,75 @@ const Biography = ({ name, biografia, quote }: BiographyProps) => {
               trigger: el as Element,
               start: "top 85%",
               toggleActions: "play none none reverse",
-            }
+            },
           }
-        )
-      })
+        );
+      });
     });
 
-    return () => ctx.revert();
+    mm.add("(max-width: 799px)", () => {
+      gsap.utils.toArray(".character-about-text").forEach((el) => {
+        gsap.fromTo(
+          el as Element,
+          { y: "30%", opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: el as Element,
+              start: "top 95%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+      gsap.utils.toArray(".about-image-container").forEach((el) => {
+        gsap.fromTo(
+          el as Element,
+          { y: "-15%", opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.6,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: el as Element,
+              start: "top 75%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+      gsap.utils.toArray(".character-about-image").forEach((el) => {
+        gsap.fromTo(
+          el as Element,
+          { scale: 1.5, width: "10%" },
+          {
+            scale: 1,
+            width: "100%",
+            duration: 0.6,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: el as Element,
+              start: "top 75%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+    });
+
+    return () => mm.revert();
   }, []);
 
   return (
-    <section className="w-[100dvw] bg-accent-light">
+    <section style={{ backgroundColor: `${color}` }} className="w-[100dvw]">
       <CharacterTitle
         content="Biografia"
         containerClass="text-7xl sm:text-8xl text-black-dark w-fit font-lora-italic"
+        scrollStart="top 130%"
       />
       <div className="w-full bg-black-dark rounded-2xl flex-center flex-col gap-3 pt-14 overflow-hidden">
         {biografia.parte1.map((item, index) => (
@@ -116,7 +169,10 @@ const Biography = ({ name, biografia, quote }: BiographyProps) => {
         ))}
         ;
         {biografia.parte2.map((item, index) => (
-          <div key={index} className="w-full flex-center flex-col gap-8 overflow-hidden">
+          <div
+            key={index}
+            className="w-full flex-center flex-col gap-8 overflow-hidden"
+          >
             <div className="about-image-container flex-center flex-col gap-2 transform-gpu will-change-transform">
               <div className="w-[70vw] max-w-[600px] aspect-square tab-image flex justify-center overflow-hidden">
                 <Image

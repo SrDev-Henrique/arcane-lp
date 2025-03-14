@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import CharacterTitle from "@/components/CharacterTitle";
 import Tabs from "@/components/Tabs";
@@ -17,9 +17,16 @@ interface AboutProps {
   aparencia: TabItem[];
   habilidades: TabItem[];
   name: string;
+  color: string;
 }
 
-const About = ({ personalidade, aparencia, habilidades, name }: AboutProps) => {
+const About = ({
+  personalidade,
+  aparencia,
+  habilidades,
+  name,
+  color,
+}: AboutProps) => {
   const aboutRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -42,12 +49,13 @@ const About = ({ personalidade, aparencia, habilidades, name }: AboutProps) => {
     })
 
     return () => ctx.revert();
-  }, [])
+  }, []);
   return (
     <section className="w-[100dvw] flex-center">
       <div
         ref={aboutRef}
-        className="w-[70dvw] bg-accent-light rounded-t-xl flex-col"
+        style={{ backgroundColor: `${color}` }}
+        className="w-[70dvw] rounded-t-xl flex-col"
       >
         <CharacterTitle
           content="Sobre"

@@ -9,9 +9,11 @@ gsap.registerPlugin(ScrollTrigger);
 const CharacterTitle = ({
   containerClass,
   content,
+  scrollStart = "top 90%",
 }: {
   containerClass: string;
-  content: string;
+    content: string;
+  scrollStart?: string
     }) => {
     const titleRef = React.useRef<HTMLHeadingElement>(null);
 
@@ -21,7 +23,7 @@ const CharacterTitle = ({
       const ctx = gsap.context(() => {
         gsap.fromTo(
           titleRef.current,
-          { y: "110%", opacity: 0 },
+          { y: "100%", opacity: 0 },
           {
             y: "0%",
             opacity: 1,
@@ -29,7 +31,7 @@ const CharacterTitle = ({
             ease: "power1.out",
             scrollTrigger: {
               trigger: titleRef.current,
-              start: "top 110%",
+              start: scrollStart,
               toggleActions: "play none none reverse",
             },
           }
@@ -37,11 +39,11 @@ const CharacterTitle = ({
       });
 
       return () => ctx.revert();
-    }, []);
+    }, [scrollStart]);
 
   return (
     <div className="character-divider">
-      <div className="pb-4 -mb-4 overflow-hidden">
+      <div className="pb-4 -mb-1 overflow-hidden">
         <h1
           ref={titleRef}
           className={`transform will-change-transform translate-y-[100%] ${containerClass}`}

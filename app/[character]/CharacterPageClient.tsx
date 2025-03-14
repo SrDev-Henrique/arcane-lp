@@ -35,11 +35,13 @@ export default function CharacterPageClient({
         aparencia={data.aparencia}
         habilidades={data.habilidades}
         name={data.name}
+        color={data.color}
       />
       <Biography
         name={data.name}
         biografia={data.biografia}
         quote={data.quote}
+        color={data.color}
       />
     </main>
   );
