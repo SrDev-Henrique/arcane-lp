@@ -184,7 +184,7 @@ const Biography = ({ name, biografia, quote, color }: BiographyProps) => {
                 />
               </div>
               <div className="quote w-fit transform-gpu will-change-transform">
-                <p className="text-white-dark text-xs">{`"${quote}"`}</p>
+                <p className="text-white-dark text-xs md:text-sm">{`"${quote}"`}</p>
               </div>
             </div>
             <div className="character-about-text text-white-dark w-[87%] max-w-[600px] transform-gpu will-change-transform">
