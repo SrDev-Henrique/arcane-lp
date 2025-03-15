@@ -81,6 +81,7 @@ export const characters = {
       },
     ],
     biografia: {
+      title: "Biografia",
       parte1: [
         {
           image:
@@ -98,6 +99,25 @@ export const characters = {
         },
       ],
     },
+    jornada: {
+      title: "Jornada",
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-13.webp",
+          content:
+            "Depois de conquistar seu espaço nos campos de tiro, <b>Caitlyn</b> seguiu sua vocação para a **justiça** e se juntou ao <b>Departamento de Polícia de Piltover</b>. É nesse ambiente que a personagem floresce – e não demorou para ela cruzar o caminho de <b>Jayce Talis</b>, um jovem brilhante e determinado que, mesmo vindo de uma família patrocinada, trazia consigo uma chama de rebeldia. ",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-14.webp",
+          content:
+            "Lembram daquela explosão no laboratório? <b>Caitlyn</b> estava lá, lado a lado com <b>Jayce</b>, quando tudo desabou, literalmente. Esse acontecimento não só fortaleceu a conexão entre os dois, mas também acendeu em <b>Caitlyn</b> uma vontade de descobrir os mistérios por trás da **violência** que assolava a <b>Undercity</b>. Mesmo com as investigações sendo minadas por interesses escusos – sim, teve um certo conluio com o <b>xerife Marcus</b> – nossa protagonista não desistiu de buscar a **verdade**.",
+        },
+      ],
+    },
   },
   mel: {
     color: "#B79E58",
@@ -109,6 +129,15 @@ export const characters = {
     personalidade: [],
     aparencia: [],
     habilidades: [],
-    biografia: { parte1: [], parte2: [] },
+    biografia: {
+      title: "",
+      parte1: [],
+      parte2: []
+    },
+    jornada: {
+      title: "",
+      parte1: [],
+      parte2: [],
+    },
   },
 };

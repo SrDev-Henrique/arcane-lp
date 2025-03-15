@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Biography from "./components/Biography";
+import Journey from "./components/Journey";
 
 interface CharacterPageClientProps {
   character: string;
@@ -42,6 +43,11 @@ export default function CharacterPageClient({
         biografia={data.biografia}
         quote={data.quote}
         color={data.color}
+      />
+      <Journey
+        color={data.color}
+        jornada={data.jornada}
+        name={data.name}
       />
     </main>
   );
