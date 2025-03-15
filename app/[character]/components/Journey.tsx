@@ -17,8 +17,8 @@ interface JourneyProps {
   jornada: JourneyData;
 }
 
-const Journey = ({ color, name, jornada }: JourneyProps) => {
+const Journey = ({ jornada, name, color }: JourneyProps) => {
   return CharacterSection(jornada, name, color);
-}
+};
 
 export default Journey

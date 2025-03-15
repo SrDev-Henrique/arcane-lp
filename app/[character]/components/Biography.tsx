@@ -1,5 +1,3 @@
-"use client";
-
 import CharacterSection from "@/components/RenderCharacterData";
 
 interface BioItem {
@@ -20,9 +18,8 @@ interface BiographyProps {
   biografia: BiographyData;
 }
 
-const Biography = ({ name, biografia, quote, color }: BiographyProps) => {
-
-  return CharacterSection(biografia, name, color, quote)
+const Biography = ({ biografia, name, color, quote }: BiographyProps) => {
+  return CharacterSection(biografia, name, color, quote);
 };
 
 export default Biography;

@@ -177,7 +177,7 @@ const CharacterSection = (
               <div className="w-[70vw] max-w-[600px] aspect-square tab-image flex justify-center overflow-hidden">
                 <Image
                   src={item.image}
-                  alt={`biografia de ${name} parte 2`}
+                  alt={`biografia de ${name} parte ${index + 2}`}
                   width={600}
                   height={600}
                   className="character-about-image h-full w-[10%] object-cover rounded-xl transform-gpu will-change-transform"
@@ -207,15 +207,17 @@ const CharacterSection = (
                 <div className="w-[70vw] max-w-[600px] aspect-square tab-image flex justify-center overflow-hidden">
                   <Image
                     src={item.image}
-                    alt={`biografia de ${name} parte 2`}
+                    alt={`biografia de ${name} parte ${index + 3}`}
                     width={600}
                     height={600}
                     className="character-about-image h-full w-[10%] object-cover rounded-xl transform-gpu will-change-transform"
                   />
                 </div>
-                <div className="quote w-fit transform-gpu will-change-transform">
-                  <p className="text-white-dark text-xs md:text-sm">{`"${quote}"`}</p>
-                </div>
+                {quote && (
+                  <div className="quote w-fit transform-gpu will-change-transform">
+                    <p className="text-white-dark text-xs md:text-sm">{`"${quote}"`}</p>
+                  </div>
+                )}
               </div>
               <div className="character-about-text text-white-dark w-[87%] max-w-[600px] transform-gpu will-change-transform">
                 <p
