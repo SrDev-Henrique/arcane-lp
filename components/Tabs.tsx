@@ -127,7 +127,7 @@ const Tabs = ({ personalidade, aparencia, habilidades, name }: TabsProps) => {
   };
 
   return (
-    <div className="tab-container w-full lg:min-h-[600px] flex flex-col md:p-6 pt-6">
+    <div className="tab-container w-full lg:min-h-[600px] flex flex-col mt-5 py-3 md:m-0 md:px-6">
       <nav className="nav flex-center gap-3 md:py-5">
         {tabs.map((tab) => (
           <button
