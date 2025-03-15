@@ -8,6 +8,7 @@ import gsap from "gsap";
 interface CharacterItem {
   image: string;
   content: string;
+  quote?: string;
 }
 
 interface CharacterData {
@@ -21,11 +22,12 @@ const CharacterSection = (
   subject: CharacterData,
   name: string,
   color: string,
-  quote?: string,
 ) => {
   const firstPart = subject.parte1;
   const secondPart = subject.parte2;
   const thirdPart = subject.parte3 || [];
+
+  const allParts = [...firstPart, ...secondPart, ...thirdPart];
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -149,43 +151,21 @@ const CharacterSection = (
         scrollStart="top 130%"
       />
       <div className="w-full bg-black-dark rounded-2xl flex-center flex-col gap-12 py-14 overflow-hidden">
-        {firstPart.map((item, index) => (
-          <div key={index} className="w-full flex-center flex-col gap-10">
-            <div className="w-[70vw] max-w-[600px] aspect-square tab-image flex justify-center about-image-container transform-gpu will-change-transform">
-              <Image
-                src={item.image}
-                alt={`biografia de ${name} parte ${index + 1}`}
-                width={600}
-                height={600}
-                className="character-about-image size-full object-cover rounded-xl transform-gpu will-change-transform"
-              />
-            </div>
-            <div className="character-about-text text-white-dark w-[87%] max-w-[600px] transform-gpu will-change-transform">
-              <p
-                className="font-lora"
-                dangerouslySetInnerHTML={{ __html: item.content }}
-              />
-            </div>
-          </div>
-        ))}
-        {secondPart.map((item, index) => (
-          <div
-            key={index}
-            className="w-full flex-center flex-col gap-8 overflow-hidden"
-          >
-            <div className="about-image-container flex-center flex-col gap-2 transform-gpu will-change-transform">
-              <div className="w-[70vw] max-w-[600px] aspect-square tab-image flex justify-center overflow-hidden">
+        {allParts.map((item, index) => (
+          <div key={index} className={`w-full flex-center flex-col ${item.quote ? "gap-5" : "gap-10"}`}>
+            <div className="w-[70vw] max-w-[600px] flex-center flex-col gap-2 overflow-hidden">
+              <div className="size-full aspect-square tab-image flex justify-center about-image-container transform-gpu will-change-transform">
                 <Image
                   src={item.image}
-                  alt={`biografia de ${name} parte ${index + 2}`}
+                  alt={`b${subject.title} de ${name} parte ${index + 1}`}
                   width={600}
                   height={600}
                   className="character-about-image size-full object-cover rounded-xl transform-gpu will-change-transform"
                 />
               </div>
-              {quote && (
+              {item.quote && (
                 <div className="quote w-fit transform-gpu will-change-transform">
-                  <p className="text-white-dark text-xs md:text-sm">{`"${quote}"`}</p>
+                  <p className="text-white-dark text-xs md:text-sm">{`"${item.quote}"`}</p>
                 </div>
               )}
             </div>
@@ -197,36 +177,6 @@ const CharacterSection = (
             </div>
           </div>
         ))}
-        {thirdPart &&
-          thirdPart.map((item, index) => (
-            <div
-              key={index}
-              className="w-full flex-center flex-col gap-8 overflow-hidden"
-            >
-              <div className="about-image-container flex-center flex-col gap-2 transform-gpu will-change-transform">
-                <div className="w-[70vw] max-w-[600px] aspect-square tab-image flex justify-center overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={`biografia de ${name} parte ${index + 3}`}
-                    width={600}
-                    height={600}
-                    className="character-about-image size-full object-cover rounded-xl transform-gpu will-change-transform"
-                  />
-                </div>
-                {quote && (
-                  <div className="quote w-fit transform-gpu will-change-transform">
-                    <p className="text-white-dark text-xs md:text-sm">{`"${quote}"`}</p>
-                  </div>
-                )}
-              </div>
-              <div className="character-about-text text-white-dark w-[87%] max-w-[600px] transform-gpu will-change-transform">
-                <p
-                  className="font-lora"
-                  dangerouslySetInnerHTML={{ __html: item.content }}
-                />
-              </div>
-            </div>
-          ))}
       </div>
     </section>
   );

@@ -94,6 +94,7 @@ export const characters = {
         {
           image:
             "/images/piltover-characters/characters-page/caitlyn/caitlyn-12.webp",
+          quote: "Eu sou uma desajustada, eu acho.",
           content:
             "Esse sentimento de não se encaixar é o pontapé inicial para a <b>jornada</b> que ela empreendeu. Em vez de optar pela vida de luxo e proteção, <b>Caitlyn</b> decidiu trilhar um caminho de <b>coragem</b>, competindo e se destacando – inclusive, <b>vencendo um torneio de tiro em Piltover</b>. Foi nesse momento que, num bate-bola com o <b>xerife Grayson</b>, ela mostrou que sua habilidade não vinha de privilégios, mas de pura <b>dedicação e talento</b>.",
         },

@@ -42,7 +42,6 @@ export default function CharacterPageClient({
       <Biography
         name={data.name}
         biografia={data.biografia}
-        quote={data.quote}
         color={data.color}
       />
       <Journey

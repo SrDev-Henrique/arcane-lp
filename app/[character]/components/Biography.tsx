@@ -13,13 +13,12 @@ interface BiographyData {
 
 interface BiographyProps {
   name: string;
-  quote: string;
   color: string;
   biografia: BiographyData;
 }
 
-const Biography = ({ biografia, name, color, quote }: BiographyProps) => {
-  return CharacterSection(biografia, name, color, quote);
+const Biography = ({ biografia, name, color }: BiographyProps) => {
+  return CharacterSection(biografia, name, color);
 };
 
 export default Biography;
