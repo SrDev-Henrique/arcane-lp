@@ -106,7 +106,7 @@ const Hero = ({
             {quote}
           </h3>
         </div>
-        <div className="absolute left-0 xl:left-20 top-[19.1rem] xl:top-1/2 xl:-translate-y-1/2 w-fit flex flex-col gap-2 text-5xl md:text-7xl lg:text-8xl">
+        <div className="character-name absolute left-0 xl:left-20 top-[43%] xl:top-1/2 xl:-translate-y-1/2 w-fit flex flex-col gap-2 text-5xl md:text-7xl lg:text-8xl">
           <div className="overflow-hidden">
             <h1
               style={{ color: `${color}` }}

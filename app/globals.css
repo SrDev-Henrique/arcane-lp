@@ -665,3 +665,27 @@ html.lenis body {
 .pulse {
   animation: pulse 1.2s infinite;
 }
+
+@media (max-height: 450px) {
+  .character-name {
+    top: 33%
+  }
+  .mini-video {
+    top: 50%;
+  }
+  .letter-up {
+    font-size: 1.5rem;
+  }
+  .p-wrap {
+    display: none;
+  }
+  .positive-col {
+    transform: translateY(-100%);
+  }
+  .negative-col {
+    transform: translateY(-50%);
+  }
+  .rotating-div {
+    display: none;
+  }
+}

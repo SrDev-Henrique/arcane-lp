@@ -64,7 +64,7 @@ const StickyDiv = () => {
         <div className="flex-center size-full overflow-hidden">
           <div
             ref={rotatingDiv}
-            className="size-[50%] relative transform will-change-transform"
+            className="rotating-div size-[50%] relative transform will-change-transform"
           >
             {carrouselImages.map((images, index) => (
               <div
