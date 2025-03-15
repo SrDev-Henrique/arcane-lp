@@ -16,6 +16,9 @@ interface CharacterData {
   parte1: CharacterItem[];
   parte2: CharacterItem[];
   parte3?: CharacterItem[];
+  parte4?: CharacterItem[];
+  parte5?: CharacterItem[];
+  parte6?: CharacterItem[];
 }
 
 const CharacterSection = (
@@ -26,8 +29,11 @@ const CharacterSection = (
   const firstPart = subject.parte1;
   const secondPart = subject.parte2;
   const thirdPart = subject.parte3 || [];
+  const fourthPart = subject.parte4 || [];
+  const fifthPart = subject.parte5 || [];
+  const sixthPart = subject.parte6 || [];
 
-  const allParts = [...firstPart, ...secondPart, ...thirdPart];
+  const allParts = [...firstPart, ...secondPart, ...thirdPart, ...fourthPart, ...fifthPart, ...sixthPart];
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -78,7 +84,7 @@ const CharacterSection = (
             ease: "power1.out",
             scrollTrigger: {
               trigger: el as Element,
-              start: "top 85%",
+              start: "top 65%",
               toggleActions: "play none none reverse",
             },
           }
@@ -147,12 +153,17 @@ const CharacterSection = (
     <section style={{ backgroundColor: `${color}` }} className="w-[100dvw]">
       <CharacterTitle
         content={subject.title}
-        containerClass="text-7xl sm:text-8xl text-black-dark w-fit font-lora-italic"
+        containerClass={`${subject.title === 'Temporada 1' ? "text-[3.5rem]" : "text-7xl"} sm:text-8xl text-black-dark w-fit font-lora-italic`}
         scrollStart="top 130%"
       />
       <div className="w-full bg-black-dark rounded-2xl flex-center flex-col gap-12 py-14 overflow-hidden">
         {allParts.map((item, index) => (
-          <div key={index} className={`w-full flex-center flex-col ${item.quote ? "gap-5" : "gap-10"}`}>
+          <div
+            key={index}
+            className={`w-full flex-center flex-col ${
+              item.quote ? "gap-5" : "gap-6"
+            }`}
+          >
             <div className="w-[70vw] max-w-[600px] flex-center flex-col gap-2 overflow-hidden">
               <div className="size-full aspect-square tab-image flex justify-center about-image-container transform-gpu will-change-transform">
                 <Image

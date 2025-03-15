@@ -126,7 +126,7 @@ export const characters = {
           image:
             "/images/piltover-characters/characters-page/caitlyn/caitlyn-15.webp",
           content:
-            "Na primeira temporada, <b>Caitlyn</b> é apresentada como uma <b>jovem ambiciosa</b> que, contra todas as expectativas, <b>rejeita o estilo de vida protegido</b> de sua família. Ao se juntar aos <b>Enforcers de Piltover</b>, ela se destaca não só por seu <b>intelecto aguçado</b>, mas também pela <b>determinação inabalável</b> em fazer a diferença.",
+            "<b>Caitlyn</b> sempre teve algo a dizer contra o <b>destino traçado</b> para ela. Nascida na ilustre <b>família Kiramman</b>, ela cresceu com uma <b>proteção quase sufocante</b> – principalmente de sua mãe – que queria mantê-la no caminho do <b>luxo e da tradição aristocrática</b>. Mas a jovem, com seu <b>espírito rebelde</b>, logo decidiu que <b>não queria viver refém das expectativas</b>. Em vez disso, ela escolheu se juntar aos <b>Enforcers de Piltover</b>, impulsionada por um <b>forte senso de justiça</b> e o desejo de <b>fazer a diferença</b>.",
         },
       ],
       parte2: [
@@ -134,7 +134,7 @@ export const characters = {
           image:
             "/images/piltover-characters/characters-page/caitlyn/caitlyn-16.webp",
           content:
-            "Durante esse período, sua trajetória ganha um novo rumo quando investiga a <b>explosão no laboratório de Jayce</b> e, por consequência, cruza com <b>Vi</b> – uma lutadora de Zaun que, apesar de vir de um mundo bem diferente, acaba se tornando sua <b>parceira inseparável</b>. Essa parceria improvável se transforma em um elo de confiança e respeito mútuo, ampliando a visão de <b>Caitlyn</b> sobre a <b>desigualdade e a opressão</b> que afetam tanto Piltover quanto Zaun.",
+            "Tudo começou a ganhar contornos dramáticos quando Caitlyn passou a investigar a <b>misteriosa explosão no laboratório de Jayce</b>. Esse acontecimento não só revelou <b>conexões obscuras com Zaun</b>, mas também a lançou em uma <b>investigação profunda</b> sobre os <b>esquemas que ameaçavam a paz entre as duas cidades</b>. Durante esse processo, ela descobriu indícios de que uma <b>força oculta</b> – os <b>esquemas de Silco</b> e o <b>uso do Shimmer para consolidar poder em Zaun</b> – estava por trás dos <b>eventos violentos</b> que assolavam a região.",
         },
       ],
       parte3: [
@@ -142,7 +142,23 @@ export const characters = {
           image:
             "/images/piltover-characters/characters-page/caitlyn/caitlyn-17.webp",
           content:
-            "Além disso, suas investigações acabam revelando os esquemas obscuros de <b>Silco</b>, um dos vilões que usa o <b>Shimmer</b> para consolidar seu poder em Zaun. Mesmo diante de tanta corrupção, a protagonista mostra que a <b>busca pela justiça</b> vai muito além de seguir ordens ou protocolos – é uma <b>missão pessoal</b>.",
+            "Foi justamente nessa fase que o <b>destino reservou um encontro que mudaria a vida de Caitlyn</b>. Em meio a suas investigações, ela se deparou com <b>Vi</b>, uma <b>lutadora de Zaun</b> que estava presa em <b>Stillwater Hold</b> e detinha um <b>conhecimento único do submundo do crime</b>. <b>Libertar Vi</b> não foi apenas um <b>ato de coragem</b>, mas também o início de uma <b>parceria improvável</b> que se transformou em <b>algo muito maior</b>.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-18.webp",
+          content:
+            "Trabalhando juntas, as duas se aproximaram de um <b>ponto de equilíbrio</b>: enquanto <b>Caitlyn</b> via o mundo com os olhos de uma <b>jovem idealista</b>, <b>Vi</b> trazia a <b>realidade crua da desigualdade e da opressão</b>. Essa convivência fez com que, pouco a pouco, sentimentos de <b>respeito, admiração e, quem sabe, algo mais</b> florescessem entre elas – uma <b>aliança</b> que se tornaria o <b>pilar</b> para enfrentar as <b>tensões entre Piltover e Zaun</b>.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-19.webp",
+          content:
+            "No final dessa primeira temporada, o universo de Caitlyn já demonstrava <b>mudanças profundas</b>. Ela emerge como uma <b>figura mais madura e determinada</b>, tendo aprendido que, para <b>lutar pela justiça</b>, é preciso enfrentar não só os <b>inimigos externos</b>, mas também os <b>dilemas internos</b>. A <b>experiência com Vi</b>, a imersão nas <b>lutas dos cidadãos de Zaun</b> e a descoberta dos <b>esquemas de corrupção</b> ampliaram sua visão, forjando nela um <b>caráter resiliente</b>, pronto para enfrentar as <b>sombras que se aproximavam</b>.",
         },
       ],
     },
