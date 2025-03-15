@@ -21,7 +21,7 @@ const CharacterSection = (
   subject: CharacterData,
   name: string,
   color: string,
-  quote?: string
+  quote?: string,
 ) => {
   const firstPart = subject.parte1;
   const secondPart = subject.parte2;
@@ -157,7 +157,7 @@ const CharacterSection = (
                 alt={`biografia de ${name} parte ${index + 1}`}
                 width={600}
                 height={600}
-                className="character-about-image h-full w-[10%] object-cover rounded-xl transform-gpu will-change-transform"
+                className="character-about-image size-full object-cover rounded-xl transform-gpu will-change-transform"
               />
             </div>
             <div className="character-about-text text-white-dark w-[87%] max-w-[600px] transform-gpu will-change-transform">
@@ -180,7 +180,7 @@ const CharacterSection = (
                   alt={`biografia de ${name} parte ${index + 2}`}
                   width={600}
                   height={600}
-                  className="character-about-image h-full w-[10%] object-cover rounded-xl transform-gpu will-change-transform"
+                  className="character-about-image size-full object-cover rounded-xl transform-gpu will-change-transform"
                 />
               </div>
               {quote && (
@@ -210,7 +210,7 @@ const CharacterSection = (
                     alt={`biografia de ${name} parte ${index + 3}`}
                     width={600}
                     height={600}
-                    className="character-about-image h-full w-[10%] object-cover rounded-xl transform-gpu will-change-transform"
+                    className="character-about-image size-full object-cover rounded-xl transform-gpu will-change-transform"
                   />
                 </div>
                 {quote && (

@@ -122,23 +122,29 @@ export const characters = {
       title: "Temporada 1",
       parte1: [
         {
-          image: "",
-          content: "",
-        }
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-15.webp",
+          content:
+            "Na primeira temporada, <b>Caitlyn</b> é apresentada como uma <b>jovem ambiciosa</b> que, contra todas as expectativas, <b>rejeita o estilo de vida protegido</b> de sua família. Ao se juntar aos <b>Enforcers de Piltover</b>, ela se destaca não só por seu <b>intelecto aguçado</b>, mas também pela <b>determinação inabalável</b> em fazer a diferença.",
+        },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
-        }
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-16.webp",
+          content:
+            "Durante esse período, sua trajetória ganha um novo rumo quando investiga a <b>explosão no laboratório de Jayce</b> e, por consequência, cruza com <b>Vi</b> – uma lutadora de Zaun que, apesar de vir de um mundo bem diferente, acaba se tornando sua <b>parceira inseparável</b>. Essa parceria improvável se transforma em um elo de confiança e respeito mútuo, ampliando a visão de <b>Caitlyn</b> sobre a <b>desigualdade e a opressão</b> que afetam tanto Piltover quanto Zaun.",
+        },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
-        }
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-17.webp",
+          content:
+            "Além disso, suas investigações acabam revelando os esquemas obscuros de <b>Silco</b>, um dos vilões que usa o <b>Shimmer</b> para consolidar seu poder em Zaun. Mesmo diante de tanta corrupção, a protagonista mostra que a <b>busca pela justiça</b> vai muito além de seguir ordens ou protocolos – é uma <b>missão pessoal</b>.",
+        },
       ],
-    }
+    },
   },
   mel: {
     color: "#B79E58",
@@ -165,6 +171,6 @@ export const characters = {
       parte1: [],
       parte2: [],
       parte3: [],
-    }
+    },
   },
 };

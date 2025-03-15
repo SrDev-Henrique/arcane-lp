@@ -92,8 +92,9 @@ const Tabs = ({ personalidade, aparencia, habilidades, name }: TabsProps) => {
                     <Image
                       src={imgSrc}
                       alt={`${name} - ${tabs[tabIndex].id} ${i + 1}`}
-                      fill
-                      className={`object-cover rounded-lg ${
+                      width={250}
+                      height={350}
+                      className={`object-cover size-full rounded-lg ${
                         i === 0
                           ? "-rotate-12 animate-tab-image1"
                           : i === 1
