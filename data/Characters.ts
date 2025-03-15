@@ -100,7 +100,7 @@ export const characters = {
     },
   },
   mel: {
-    color: "",
+    color: "#B79E58",
     heroImage: "",
     name: "",
     lastName: "",
@@ -109,6 +109,6 @@ export const characters = {
     personalidade: [],
     aparencia: [],
     habilidades: [],
-    biografia: {parte1: [], parte2: [],}
+    biografia: { parte1: [], parte2: [] },
   },
 };

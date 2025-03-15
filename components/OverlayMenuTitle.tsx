@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 interface AnimatedTitleProps {
@@ -18,7 +17,7 @@ const OverlayMenuTitle: React.FC<AnimatedTitleProps> = ({
       {title.split("<br/>").map((line, index) => (
         <div
           key={index}
-          className={`group flex justify-center max-w-full cursor-pointer`}
+          className={`group flex max-w-full cursor-pointer`}
         >
           {line.split(" ").map((word, index) => (
             <span

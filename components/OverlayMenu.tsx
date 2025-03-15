@@ -178,7 +178,7 @@ const OverlayMenu = memo(() => {
               <div className="flex flex-col">
                 <OverlayMenuTitle
                   title={item.title}
-                  containerClass={`px-5 md:px-10 overlay-menu-title special-font text-6xl lg:text-8xl text-center transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
+                  containerClass={`px-5 md:px-10 overlay-menu-title special-font text-6xl lg:text-8xl transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
                     focusedTitle === item.title
                       ? "text-neutral-light"
                       : "text-blue-light"
@@ -208,7 +208,7 @@ const OverlayMenu = memo(() => {
                     {item.conteudo.map((content) => (
                       <p
                         key={content}
-                        className="transition-color duration-200 first-of-type:mt-3 cursor-pointer filter hover:text-neutral-light hover:brightness-90"
+                        className="overlay-menu-content transition-color duration-200 first-of-type:mt-3 cursor-pointer filter hover:text-neutral-light hover:brightness-90"
                         onClick={() => scrollToSection(item.title, content)}
                       >
                         {content}
@@ -220,7 +220,7 @@ const OverlayMenu = memo(() => {
               {item.conteudo && (
                 <div className="border-hsla icon w-[30px] h-[30px] flex-center rounded-full mt-2">
                   <TiArrowSortedDown
-                    className={`transform ${
+                    className={`overlay-menu-icon transform ${
                       openAccordion === item.title
                         ? "rotate-180 text-neutral-light"
                         : "text-blue-light md:group-hover:text-accent-light"
