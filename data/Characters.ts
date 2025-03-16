@@ -162,6 +162,57 @@ export const characters = {
         },
       ],
     },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-20.webp",
+          content:
+            "Logo no início da segunda temporada, o mundo de Caitlyn é abalado por uma <b>perda devastadora</b>. Durante o <b>caótico ataque de Jinx ao Conselho de Piltover</b>, sua mãe, <b>Cassandra Kiramman</b>, é <b>brutalmente assassinada</b>. Essa tragédia abala as estruturas de sua existência e lança Caitlyn num <b>turbilhão emocional</b>. De repente, aquele <b>idealismo que antes guiava seus passos</b> é substituído por uma <b>sede de vingança</b> e um <b>desejo ardente de retribuição contra Jinx</b> e tudo o que <b>Zaun representa</b>.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-21.webp",
+          content:
+            "Com o <b>coração tomado pela dor</b>, Caitlyn começa a se transformar. A <b>doce idealista</b> que buscava a <b>justiça de forma íntegra</b> agora se vê imersa em <b>decisões moralmente questionáveis</b>, ações que colocam em risco <b>vidas inocentes</b>. Esse novo estado de espírito a faz adotar uma <b>postura mais fria e implacável</b>, onde a <b>vingança</b> passa a ser o <b>combustível para cada escolha</b>, afastando-a ainda mais dos <b>valores que um dia jurou defender</b>.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-22.webp",
+          content:
+            "A situação se complica ainda mais quando <b>Ambessa Medarda</b>, uma <b>senhora de guerra noxiana</b> com uma agenda própria, coloca nas mãos de <b>Caitlyn</b> a responsabilidade de <b>comandar a força policial de Piltover</b>. Embora inicialmente relutante, ela vê nessa nomeação uma chance de <b>proteger sua cidade do caos</b>. Porém, essa aliança com <b>Ambessa</b> se mostra um <b>verdadeiro teste moral</b>. A <b>influência e as intenções</b> da líder política vão lentamente minando a <b>bússola moral de Caitlyn</b>, fazendo-a questionar se seus métodos ainda estão alinhados com os <b>ideais de justiça</b> que um dia carregou no peito.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-23.webp",
+          content:
+            "Ao longo da temporada, o reencontro com <b>Vi</b> torna-se a <b>âncora</b> que tenta puxar <b>Caitlyn</b> de volta à sua <b>essência</b>. Depois de meses distantes, o <b>reencontro</b> das duas não só <b>reacende a chama da amizade e do afeto</b>, mas também serve de <b>alerta</b> para a <b>jovem executora</b> sobre o quanto ela se <b>desviou de seus princípios</b>. Juntas, elas enfrentam <b>desafios extremos</b> – desde o <b>resgate de Vander (agora transformado em Warwick)</b> até os <b>embates com as maquinações políticas de Ambessa</b>.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-24.webp",
+          content:
+            "No ápice dessa jornada, numa <b>batalha épica</b> pelas ruas de <b>Piltover</b>, <b>Caitlyn</b> se vê frente a frente com a própria <b>Ambessa</b>. Em um <b>confronto que custa caro</b>, ela chega a <b>perder um olho</b> – um símbolo físico e emocional das cicatrizes deixadas pela <b>guerra interna</b> que travou. Foi nesse momento, em meio à <b>dor e ferimentos</b>, que <b>Caitlyn</b> finalmente <b>rejeita a influência corrupta</b> e <b>reafirma sua lealdade à justiça</b>.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/caitlyn/caitlyn-25.webp",
+          content:
+            "No final da temporada, apesar de ter testemunhado <b>imensa violência e traição</b> — culminando no <b>ataque catastrófico de Jinx ao Conselho de Piltover</b> — Caitlyn encontra, no <b>abraço e no olhar de Vi</b>, a <b>razão para renascer</b>. Esse <b>reencontro emocional</b> simboliza não só a <b>reconciliação entre elas</b>, mas também a <b>redescoberta dos valores</b> que outrora definiram sua trajetória. Em meio a lágrimas e sorrisos, a executora reafirma seu <b>compromisso de proteger Piltover</b>, desta vez sem jamais abrir mão de sua <b>integridade</b> e do <b>amor</b> que a conecta com aqueles que realmente importam.",
+        },
+      ],
+    },
   },
   mel: {
     color: "#B79E58",
@@ -184,6 +235,12 @@ export const characters = {
       parte2: [],
     },
     temporada1: {
+      title: "",
+      parte1: [],
+      parte2: [],
+      parte3: [],
+    },
+    temporada2: {
       title: "",
       parte1: [],
       parte2: [],

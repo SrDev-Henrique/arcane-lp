@@ -7,6 +7,7 @@ import About from "./components/About";
 import Biography from "./components/Biography";
 import Journey from "./components/Journey";
 import FirstSeason from "./components/FirstSeason";
+import SecondSeason from "./components/SecondSeason";
 
 interface CharacterPageClientProps {
   character: string;
@@ -53,7 +54,11 @@ export default function CharacterPageClient({
         temporada1={data.temporada1}
         name={data.name}
         color={data.color}
-
+      />
+      <SecondSeason
+        temporada2={data.temporada2}
+        name={data.name}
+        color={data.color}
       />
     </main>
   );

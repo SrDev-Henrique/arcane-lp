@@ -153,7 +153,7 @@ const CharacterSection = (
     <section style={{ backgroundColor: `${color}` }} className="w-[100dvw]">
       <CharacterTitle
         content={subject.title}
-        containerClass={`${subject.title === 'Temporada 1' ? "text-[3.5rem]" : "text-7xl"} sm:text-8xl text-black-dark w-fit font-lora-italic`}
+        containerClass={`${subject.title === 'Temporada 1' || 'Temporada 2' ? "text-[3.5rem]" : "text-7xl"} sm:text-8xl text-black-dark w-fit font-lora-italic`}
         scrollStart="top 130%"
       />
       <div className="w-full bg-black-dark rounded-2xl flex-center flex-col gap-12 py-14 overflow-hidden">
