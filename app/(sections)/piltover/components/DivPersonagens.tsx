@@ -72,7 +72,7 @@ const DivPersonagens = () => {
             {backgroundImages.map((personagem, index) => (
               <div
                 key={personagem.nome}
-                className={`min-w-[28%] md:min-w-[18%] flex flex-col gap-5 transform ${
+                className={`min-w-[28%] md:min-w-[18%] h-fit flex flex-col gap-5 transform ${
                   index % 2 !== 0
                     ? "positive-col translate-y-[-135%]"
                     : "negative-col translate-y-[120%]"
