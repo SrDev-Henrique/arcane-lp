@@ -6,8 +6,8 @@ import Image from "next/image";
 import gsap from "gsap";
 
 interface CharacterItem {
-  image: string;
   content: string;
+  image?: string;
   quote?: string;
 }
 
@@ -24,7 +24,7 @@ interface CharacterData {
 const CharacterSection = (
   subject: CharacterData,
   name: string,
-  color: string,
+  color: string
 ) => {
   const firstPart = subject.parte1;
   const secondPart = subject.parte2;
@@ -33,7 +33,14 @@ const CharacterSection = (
   const fifthPart = subject.parte5 || [];
   const sixthPart = subject.parte6 || [];
 
-  const allParts = [...firstPart, ...secondPart, ...thirdPart, ...fourthPart, ...fifthPart, ...sixthPart];
+  const allParts = [
+    ...firstPart,
+    ...secondPart,
+    ...thirdPart,
+    ...fourthPart,
+    ...fifthPart,
+    ...sixthPart,
+  ];
 
   useEffect(() => {
     const mm = gsap.matchMedia();
@@ -153,10 +160,14 @@ const CharacterSection = (
     <section style={{ backgroundColor: `${color}` }} className="w-[100dvw]">
       <CharacterTitle
         content={subject.title}
-        containerClass={`${subject.title === 'Temporada 1' || 'Temporada 2' ? "text-[3.5rem]" : "text-7xl"} sm:text-8xl text-black-dark w-fit font-lora-italic`}
+        containerClass={`${
+          subject.title === "Temporada 1" || "Temporada 2"
+            ? "text-[3.5rem]"
+            : "text-7xl"
+        } sm:text-8xl text-black-dark w-fit font-lora-italic`}
         scrollStart="top 130%"
       />
-      <div className="w-full bg-black-dark rounded-2xl flex-center flex-col gap-12 py-14 overflow-hidden">
+      <div className="w-full bg-black-dark rounded-2xl flex-center flex-col pt-14 pb-2 overflow-hidden">
         {allParts.map((item, index) => (
           <div
             key={index}
@@ -164,23 +175,25 @@ const CharacterSection = (
               item.quote ? "gap-5" : "gap-6"
             }`}
           >
-            <div className="w-[70vw] max-w-[600px] flex-center flex-col gap-2 overflow-hidden">
-              <div className="size-full aspect-square tab-image flex justify-center about-image-container transform-gpu will-change-transform">
-                <Image
-                  src={item.image}
-                  alt={`b${subject.title} de ${name} parte ${index + 1}`}
-                  width={600}
-                  height={600}
-                  className="character-about-image size-full object-cover rounded-xl transform-gpu will-change-transform"
-                />
-              </div>
-              {item.quote && (
-                <div className="quote w-fit transform-gpu will-change-transform">
-                  <p className="text-white-dark text-xs md:text-sm">{`"${item.quote}"`}</p>
+            {item.image && (
+              <div className="w-[70vw] max-w-[600px] flex-center flex-col gap-2 overflow-hidden">
+                <div className="size-full aspect-square tab-image flex justify-center about-image-container transform-gpu will-change-transform">
+                  <Image
+                    src={item.image}
+                    alt={`${subject.title} de ${name} parte ${index + 1}`}
+                    width={600}
+                    height={600}
+                    className="character-about-image size-full object-cover rounded-xl transform-gpu will-change-transform"
+                  />
                 </div>
-              )}
-            </div>
-            <div className="character-about-text text-white-dark w-[87%] max-w-[600px] transform-gpu will-change-transform">
+                {item.quote && (
+                  <div className="quote w-fit transform-gpu will-change-transform">
+                    <p className="text-white-dark text-xs md:text-sm">{`"${item.quote}"`}</p>
+                  </div>
+                )}
+              </div>
+            )}
+            <div className="character-about-text text-white-dark w-[87%] max-w-[600px] pb-12 transform-gpu will-change-transform">
               <p
                 className="font-lora"
                 dangerouslySetInnerHTML={{ __html: item.content }}
