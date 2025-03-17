@@ -64,14 +64,14 @@ const StickyDiv = () => {
         <div className="flex-center size-full overflow-hidden">
           <div
             ref={rotatingDiv}
-            className="rotating-div size-[50%] relative transform will-change-transform"
+            className="rotating-div w-[50%] max-w-[235px] md:max-w-[300px] h-[50%] max-h-[375px] min-h-[365px] relative transform will-change-transform"
           >
             {carrouselImages.map((images, index) => (
               <div
                 key={index}
                 className={`absolute w-[50%] max-w-[150px] aspect-[250/350] rounded-lg transform translate-y-[-50%] ${
                   index === 0
-                    ? "top-0 translate-y-[-50%] sm:translate-y-[-60%] left-1/2 translate-x-[-50%]"
+                    ? "top-4 translate-y-[-50%] sm:translate-y-[-60%] left-1/2 translate-x-[-50%]"
                     : index === 1
                     ? "top-36 left-1/2 translate-x-[90%] rotate-[68deg]"
                     : index === 2
