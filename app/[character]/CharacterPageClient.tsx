@@ -9,6 +9,7 @@ import Journey from "./components/Journey";
 import FirstSeason from "./components/FirstSeason";
 import SecondSeason from "./components/SecondSeason";
 import Conclusion from "./components/Conclusion";
+import CharactersNavBar from "@/components/CharactersNavBar";
 
 interface CharacterPageClientProps {
   character: string;
@@ -25,6 +26,7 @@ export default function CharacterPageClient({
 
   return (
     <main className="min-h-[100dvh] bg-black-dark">
+      <CharactersNavBar />
       <Hero
         key={character}
         heroImage={data.heroImage}
