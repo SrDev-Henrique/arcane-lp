@@ -20,6 +20,7 @@ const Hero = () => {
   const [loadedVideos, setLoadedVideos] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [windowScrolled, setWindowScrolled] = useState(false);
+  const [isMobile, setIsMobile] = useState(false)
   const { isAudioOn, setIsAudioOn } = useMenu();
 
   const totalVideos = 4;
@@ -85,6 +86,22 @@ const Hero = () => {
     };
   }, [isLoading]);
 
+  useEffect(() => {
+    const checkMobile = () => {
+      if (window.innerWidth <= 799) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    }
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    }
+  }, [])
+
   const handleVideoLoad = () => {
     console.log("Video loaded, current count:", loadedVideos + 1);
     setLoadedVideos((prev) => prev + 1);
@@ -113,6 +130,7 @@ const Hero = () => {
   };
 
   const onMouseLeave = () => {
+    if (isMobile) return;
     gsap.to(divRef.current, {
       opacity: 0,
       duration: 0.3,
