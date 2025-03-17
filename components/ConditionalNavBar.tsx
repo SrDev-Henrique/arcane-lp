@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import CharactersNavBar from "@/components/CharactersNavBar";
 import { usePathname } from "next/navigation";
 import React, { useEffect } from "react";
 import Lenis from "lenis";
@@ -48,7 +47,6 @@ export default function ConditionalNavbar() {
   return (
     <div>
       {pathname === "/" && <Navbar />}
-      {pathname !== "/" && <CharactersNavBar />}
     </div>
   );
 }
