@@ -159,7 +159,7 @@ const CharacterSection = (
   return (
     <section
       style={{ backgroundColor: `${color}` }}
-      className={`${subject.title === "Conclusão" ? "pb-10" : ""} w-[100dvw]`}
+      className="min-h-[100dvh] w-[100dvw]"
     >
       <CharacterTitle
         content={subject.title}
