@@ -157,7 +157,10 @@ const CharacterSection = (
   }, []);
 
   return (
-    <section style={{ backgroundColor: `${color}` }} className="w-[100dvw]">
+    <section
+      style={{ backgroundColor: `${color}` }}
+      className={`${subject.title === "Conclusão" ? "pb-10" : ""} w-[100dvw]`}
+    >
       <CharacterTitle
         content={subject.title}
         containerClass={`${

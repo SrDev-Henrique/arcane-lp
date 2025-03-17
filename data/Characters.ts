@@ -213,6 +213,21 @@ export const characters = {
         },
       ],
     },
+    conclusion: {
+      title: "Conclusão",
+      parte1: [
+        {
+          content:
+            "<b>A história de Caitlyn Kiramman</b> é, sem dúvidas, um exemplo de como a <b>dor, a perda e os desafios</b> podem ser o <b>catalisador para uma transformação profunda</b>. Desde os primeiros passos como uma <b>jovem ambiciosa</b> que rejeitava o <b>destino pré-determinado</b>, passando pela <b>investigação em Zaun</b> e pela <b>parceria que se transformou em algo muito mais humano com Vi</b>, até a <b>segunda temporada</b> — onde a <b>tragédia da perda</b> a levou a um <b>caminho sombrio de vingança</b>, e as <b>batalhas internas</b> a custaram caro — cada capítulo traz lições de <b>resiliência, luta interna e, por fim, redenção</b>.",
+        },
+      ],
+      parte2: [
+        {
+          content:
+            "No final de tudo, mesmo tendo testemunhado <b>imensa violência e traição</b>, incluindo o <b>devastador ataque de Jinx ao Conselho de Piltover</b>, <b>Caitlyn</b> permanece firme em seu <b>compromisso com a justiça</b>, provando que a <b>verdadeira força</b> reside na <b>capacidade de se reinventar</b> e <b>seguir em frente com o coração aberto</b>.",
+        },
+      ],
+    },
   },
   mel: {
     color: "#B79E58",
@@ -225,26 +240,31 @@ export const characters = {
     aparencia: [],
     habilidades: [],
     biografia: {
-      title: "",
+      title: "Biografia",
       parte1: [],
       parte2: [],
     },
     jornada: {
-      title: "",
+      title: "Jornada",
       parte1: [],
       parte2: [],
     },
     temporada1: {
-      title: "",
+      title: "Temporada 1",
       parte1: [],
       parte2: [],
       parte3: [],
     },
     temporada2: {
-      title: "",
+      title: "Temporada 2",
       parte1: [],
       parte2: [],
       parte3: [],
+    },
+    conclusion: {
+      title: "Conclusão",
+      parte1: [],
+      parte2: [],
     },
   },
 };
