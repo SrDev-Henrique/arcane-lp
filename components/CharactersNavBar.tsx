@@ -1,8 +1,14 @@
+"use client";
+
+import useActiveSection from "@/utils/useActiveSection";
+import gsap from "gsap";
+
 import Image from "next/image";
 
-import React, { memo } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 
 import { BsPlusLg } from "react-icons/bs";
+import { useWindowScroll } from "react-use";
 
 const navItems = [
   { title: "Sobre" },
@@ -19,7 +25,34 @@ interface CharactersNavBarProps {
 }
 
 const CharactersNavBar = memo(({ color, icon }: CharactersNavBarProps) => {
-  const charactersNavRef = React.useRef<HTMLDivElement>(null);
+  const activeSection = useActiveSection();
+
+  const [isCharNavVisible, setIsCharNavVisible] = useState(false);
+
+  const lastScrollYRef = useRef(0);
+  const charactersNavRef = useRef<HTMLDivElement>(null);
+
+  const { y: currentScrollY } = useWindowScroll();
+
+  useEffect(() => {
+    if (currentScrollY === 0) {
+      setIsCharNavVisible(false);
+    } else if (currentScrollY > lastScrollYRef.current) {
+      setIsCharNavVisible(false);
+    } else if (currentScrollY < lastScrollYRef.current) {
+      setIsCharNavVisible(true);
+    }
+    lastScrollYRef.current = currentScrollY;
+  }, [currentScrollY]);
+
+  useEffect(() => {
+    gsap.to(charactersNavRef.current, {
+      y: isCharNavVisible ? 0 : -100,
+      opacity: isCharNavVisible ? 1 : 0,
+      duration: 0.3,
+      ease: "power1.out",
+    });
+  }, [isCharNavVisible]);
 
   return (
     <div
@@ -44,7 +77,7 @@ const CharactersNavBar = memo(({ color, icon }: CharactersNavBarProps) => {
               {[...Array(4)].map((_, index) => (
                 <div
                   key={index}
-                  className={`indicator-line active mt-1`}
+                  className={`indicator-line hidden mt-1`}
                   style={{
                     animationDelay: `${index * 0.1}s`,
                     backgroundColor: `${color}`,
@@ -57,9 +90,9 @@ const CharactersNavBar = memo(({ color, icon }: CharactersNavBarProps) => {
             {navItems.map((item, index) => (
               <div
                 key={index}
-                className={`${
-                  index === 5 ? "opacity-100" : "opacity-0"
-                } absolute-center w-full text-center`}
+                className={`absolute-center w-full text-center transition-all duration-500 ease-in-out transform ${
+                  activeSection === item.title ? "opacity-100" : "opacity-0"
+                }`}
               >
                 <p className="text-neutral-light uppercase font-lora font-bold text-sm text-nowrap">
                   {item.title}

@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import CharacterTitle from "./CharacterTitle";
 import Image from "next/image";
 import gsap from "gsap";
+import { sectionRefs } from "@/utils/sectionRefs";
 
 interface CharacterItem {
   content: string;
@@ -160,6 +161,10 @@ const CharacterSection = (
     <section
       style={{ backgroundColor: `${color}` }}
       className="min-h-[100dvh] w-[100dvw]"
+      ref={(el) => {
+        if (el) sectionRefs.current[subject.title] = el as HTMLElement;
+      }}
+      data-title={subject.title}
     >
       <CharacterTitle
         content={subject.title}
