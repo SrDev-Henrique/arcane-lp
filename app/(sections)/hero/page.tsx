@@ -103,7 +103,6 @@ const Hero = () => {
   }, [])
 
   const handleVideoLoad = () => {
-    console.log("Video loaded, current count:", loadedVideos + 1);
     setLoadedVideos((prev) => prev + 1);
   };
 

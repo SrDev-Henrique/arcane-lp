@@ -1,6 +1,8 @@
 export const characters = {
   caitlyn: {
     color: "#35637C",
+    secondaryColor: "#A4B3B5",
+    icon: "/images/piltover-characters/characters-page/caitlyn/icon.webp",
     heroImage:
       "/images/piltover-characters/characters-page/caitlyn/caitlyn-1.webp",
     name: "Caitlyn",
@@ -229,8 +231,134 @@ export const characters = {
       ],
     },
   },
+
   mel: {
     color: "#B79E58",
+    secondaryColor: "#D0C5A1",
+    icon: "",
+    heroImage: "",
+    name: "",
+    lastName: "",
+    description: "",
+    quote: "",
+    personalidade: [],
+    aparencia: [],
+    habilidades: [],
+    biografia: {
+      title: "Biografia",
+      parte1: [],
+      parte2: [],
+    },
+    jornada: {
+      title: "Jornada",
+      parte1: [],
+      parte2: [],
+    },
+    temporada1: {
+      title: "Temporada 1",
+      parte1: [],
+      parte2: [],
+      parte3: [],
+    },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [],
+      parte2: [],
+      parte3: [],
+    },
+    conclusion: {
+      title: "Conclusão",
+      parte1: [],
+      parte2: [],
+    },
+  },
+
+  jayce: {
+    color: "#8C5A3C",
+    secondaryColor: "#B4B0A2",
+    icon: "",
+    heroImage: "",
+    name: "",
+    lastName: "",
+    description: "",
+    quote: "",
+    personalidade: [],
+    aparencia: [],
+    habilidades: [],
+    biografia: {
+      title: "Biografia",
+      parte1: [],
+      parte2: [],
+    },
+    jornada: {
+      title: "Jornada",
+      parte1: [],
+      parte2: [],
+    },
+    temporada1: {
+      title: "Temporada 1",
+      parte1: [],
+      parte2: [],
+      parte3: [],
+    },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [],
+      parte2: [],
+      parte3: [],
+    },
+    conclusion: {
+      title: "Conclusão",
+      parte1: [],
+      parte2: [],
+    },
+  },
+
+  viktor: {
+    color: "#B87148",
+    secondaryColor: "#6E5E4B",
+    icon: "",
+    heroImage: "",
+    name: "",
+    lastName: "",
+    description: "",
+    quote: "",
+    personalidade: [],
+    aparencia: [],
+    habilidades: [],
+    biografia: {
+      title: "Biografia",
+      parte1: [],
+      parte2: [],
+    },
+    jornada: {
+      title: "Jornada",
+      parte1: [],
+      parte2: [],
+    },
+    temporada1: {
+      title: "Temporada 1",
+      parte1: [],
+      parte2: [],
+      parte3: [],
+    },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [],
+      parte2: [],
+      parte3: [],
+    },
+    conclusion: {
+      title: "Conclusão",
+      parte1: [],
+      parte2: [],
+    },
+  },
+
+  heimerdinger: {
+    color: "#D6A741",
+    secondaryColor: "#A1B77A",
+    icon: "",
     heroImage: "",
     name: "",
     lastName: "",

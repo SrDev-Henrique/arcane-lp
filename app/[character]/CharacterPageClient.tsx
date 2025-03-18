@@ -26,7 +26,10 @@ export default function CharacterPageClient({
 
   return (
     <main className="min-h-[100dvh] bg-black-dark">
-      <CharactersNavBar />
+      <CharactersNavBar
+        color={data.secondaryColor}
+        icon={data.icon}
+      />
       <Hero
         key={character}
         heroImage={data.heroImage}
