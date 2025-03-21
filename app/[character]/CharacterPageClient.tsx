@@ -4,7 +4,6 @@ import { characters } from "@/data/Characters";
 import { notFound } from "next/navigation";
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Biography from "./components/Biography";
 import Journey from "./components/Journey";
 import FirstSeason from "./components/FirstSeason";
 import SecondSeason from "./components/SecondSeason";
@@ -27,8 +26,11 @@ export default function CharacterPageClient({
   return (
     <main className="min-h-[100dvh] bg-black-dark">
       <CharactersNavBar
-        color={data.secondaryColor}
+        color={data.color}
+        secondaryColor={data.secondaryColor}
         icon={data.icon}
+        name={data.name}
+        playlist={data.playlist}
       />
       <Hero
         key={character}
@@ -43,11 +45,6 @@ export default function CharacterPageClient({
         personalidade={data.personalidade}
         aparencia={data.aparencia}
         habilidades={data.habilidades}
-        name={data.name}
-        color={data.color}
-      />
-      <Biography
-        biografia={data.biografia}
         name={data.name}
         color={data.color}
       />

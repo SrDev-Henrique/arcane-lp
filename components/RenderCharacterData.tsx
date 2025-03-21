@@ -15,7 +15,7 @@ interface CharacterItem {
 interface CharacterData {
   title: string;
   parte1: CharacterItem[];
-  parte2: CharacterItem[];
+  parte2?: CharacterItem[];
   parte3?: CharacterItem[];
   parte4?: CharacterItem[];
   parte5?: CharacterItem[];
@@ -28,7 +28,7 @@ const CharacterSection = (
   color: string
 ) => {
   const firstPart = subject.parte1;
-  const secondPart = subject.parte2;
+  const secondPart = subject.parte2 || [];
   const thirdPart = subject.parte3 || [];
   const fourthPart = subject.parte4 || [];
   const fifthPart = subject.parte5 || [];

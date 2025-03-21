@@ -82,8 +82,8 @@ export const characters = {
           "Seu talento para desvendar mistérios e enxergar além das aparências a coloca à frente de casos que outros descartariam como meros boatos.",
       },
     ],
-    biografia: {
-      title: "Biografia",
+    jornada: {
+      title: "Jornada",
       parte1: [
         {
           image:
@@ -101,10 +101,7 @@ export const characters = {
             "Esse sentimento de não se encaixar é o pontapé inicial para a <b>jornada</b> que ela empreendeu. Em vez de optar pela vida de luxo e proteção, <b>Caitlyn</b> decidiu trilhar um caminho de <b>coragem</b>, competindo e se destacando – inclusive, <b>vencendo um torneio de tiro em Piltover</b>. Foi nesse momento que, num bate-bola com o <b>xerife Grayson</b>, ela mostrou que sua habilidade não vinha de privilégios, mas de pura <b>dedicação e talento</b>.",
         },
       ],
-    },
-    jornada: {
-      title: "Jornada",
-      parte1: [
+      parte3: [
         {
           image:
             "/images/piltover-characters/characters-page/caitlyn/caitlyn-13.webp",
@@ -112,7 +109,7 @@ export const characters = {
             "Depois de conquistar seu espaço nos campos de tiro, <b>Caitlyn</b> seguiu sua vocação para a <b>justiça</b> e se juntou ao <b>Departamento de Polícia de Piltover</b>. É nesse ambiente que a personagem floresce – e não demorou para ela cruzar o caminho de <b>Jayce Talis</b>, um jovem brilhante e determinado que, mesmo vindo de uma família patrocinada, trazia consigo uma chama de rebeldia. ",
         },
       ],
-      parte2: [
+      parte4: [
         {
           image:
             "/images/piltover-characters/characters-page/caitlyn/caitlyn-14.webp",
@@ -230,47 +227,186 @@ export const characters = {
         },
       ],
     },
+    playlist: [
+      {
+        songName: "Fantastic",
+        artistName: "King Princess",
+        imgSrc:
+          "/images/piltover-characters/characters-page/caitlyn/song/Caitlyn-1.webp",
+      },
+      {
+        songName: "I Can't Hear It Now",
+        artistName: "Freya Ridings",
+        imgSrc:
+          "/images/piltover-characters/characters-page/caitlyn/song/Caitlyn-2.webp",
+      },
+    ],
   },
 
   mel: {
     color: "#B79E58",
     secondaryColor: "#D0C5A1",
-    icon: "",
-    heroImage: "",
-    name: "",
-    lastName: "",
-    description: "",
-    quote: "",
-    personalidade: [],
-    aparencia: [],
-    habilidades: [],
-    biografia: {
-      title: "Biografia",
-      parte1: [],
-      parte2: [],
-    },
+    icon: "/images/piltover-characters/characters-page/mel/icon.webp",
+    heroImage: "/images/piltover-characters/characters-page/mel/mel-1.webp",
+    name: "Mel",
+    lastName: "Medarda",
+    description:
+      "Uma líder enigmática que transita entre a política implacável de Piltover e os mistérios da magia, Mel Medarda é uma força transformadora que une passado e futuro em uma narrativa de poder, intrigas e redenção.",
+    quote: "A guerra não é nosso primeiro e único recurso",
+    personalidade: [
+      {
+        title: "Visionária e Ambiciosa:",
+        content:
+          "Sempre à frente do seu tempo, Mel busca transformar Piltover com ideias inovadoras e estratégias que rompem com o passado.",
+      },
+      {
+        title: "Mestre da Persuasão e Intriga:",
+        content:
+          "Com uma habilidade nata para manobrar os jogos políticos, ela equilibra a frieza da lógica com uma paixão intensa pelo progresso.",
+      },
+      {
+        title: "Resiliente e Reflexiva:",
+        content:
+          "Mesmo marcada pelos traumas e conflitos do passado, sua capacidade de se reinventar a torna uma líder inspiradora e determinada.",
+      },
+    ],
+    aparencia: [
+      {
+        title: "Elegância e Sofisticação:",
+        content:
+          "De pele escura, com olhos que misturam tons de verde e ouro, e cabelos negros cacheados com detalhes dourados, sua presença impõe respeito.",
+      },
+      {
+        title: "Visual Impactante:",
+        content:
+          "Seja em trajes refinados de branco e ouro ou em sua versão mística como maga – com marcas douradas e um brilho especial –, sua aparência é sempre memorável.",
+      },
+      {
+        title: "Transformação Visual:",
+        content:
+          "Momentos de crise e o despertar de seus poderes revelam uma nova faceta: uma força que, mesmo mantendo a elegância, exibe a intensidade e a energia de uma verdadeira maga",
+      },
+    ],
+    habilidades: [
+      {
+        title: "Magia de Luz e Empatia Mágica:",
+        content:
+          "Mel canaliza a magia da luz para criar ondas, raios e escudos protetores, além de captar e refletir as energias ao seu redor com uma sensibilidade única.",
+      },
+      {
+        title: "Liderança Estratégica:",
+        content:
+          "Sua mente afiada para a política e sua capacidade de manipular as engrenagens do poder fazem dela uma estrategista nata, capaz de transformar crises em oportunidades.",
+      },
+      {
+        title: "Despertar Mágico:",
+        content:
+          "Em momentos decisivos, o poder oculto de Mel se revela – com marcas douradas e uma energia vibrante que simbolizam sua profunda conexão com as forças místicas que regem seu destino.",
+      },
+    ],
     jornada: {
       title: "Jornada",
-      parte1: [],
-      parte2: [],
+      parte1: [
+        {
+          image: "",
+          content:
+            "Nascida em Noxus, Mel Medarda é fruto de um caso entre a temida Ambessa Medarda e uma misteriosa maga. Criada em meio à agressividade e às lições duras de sua mãe, ela conviveu com um legado de violência – algo que contrastava fortemente com a influência pacifista de seu meio-irmão Kino.",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content:
+            "Em um episódio marcante, quando Mel sugeriu o exílio de uma princesa estrangeira ao invés de aceitar a execução brutal, ela desafiou os métodos impostos por Ambessa. Esse ato de rebeldia acabou selando seu destino: banida para Piltover, onde a adversidade se transformou na força motriz de sua ascensão, sempre com o apoio incondicional de sua assistente, Elora.",
+        },
+      ],
     },
     temporada1: {
       title: "Temporada 1",
-      parte1: [],
-      parte2: [],
-      parte3: [],
+      parte1: [
+        {
+          image: "",
+          content:
+            "Ao chegar em Piltover, Mel não apenas carregava as cicatrizes do passado – ela as transformava em combustível para sua ambição. Em meio à desilusão e à rejeição familiar, a jovem começou a trilhar um novo caminho, onde o conhecimento e a inovação eram suas principais armas.",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content:
+            "Na primeira temporada, seu olhar visionário e sua paixão por transformar Piltover se destacam. Em meio a reuniões intensas e apresentações ousadas, Mel defende experimentos que rompem com o tradicional. O icônico 'Progress Day' é um marco: um dia em que a cidade se enche de novas ideias e onde ela, com firmeza, declara que o futuro pertence àqueles que ousam deixar o passado para trás. Seu apoio a projetos de Jayce e Viktor demonstra que inovação e ambição podem, juntas, abrir caminhos para um novo horizonte.",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content:
+            "Apesar de sua postura inovadora, Mel é assombrada pelas lembranças dolorosas do passado. Conflitos familiares, métodos brutais impostos por Ambessa e o constante embate interno entre o que foi e o que ela deseja ser marcam seus dias. Essas lições, embora dolorosas, fortalecem sua convicção e moldam uma personalidade que sabe equilibrar política e emoção, abrindo espaço para relações intensas – inclusive com Jayce, cuja presença mistura política com uma paixão inesperada.",
+        },
+      ],
     },
     temporada2: {
       title: "Temporada 2",
-      parte1: [],
-      parte2: [],
-      parte3: [],
+      parte1: [
+        {
+          image: "",
+          content:
+            "Na segunda temporada, os desafios se intensificam. Piltover se vê imersa num cenário de caos: ataques devastadores abalam o Conselho, e as tensões com Zaun se aprofundam a cada dia. Mel precisa lidar com perdas dolorosas, embates políticos ferozes e a pressão constante de definir os rumos de um futuro incerto, enquanto a cidade clama por respostas e soluções inovadoras.",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content:
+            "Em meio ao tumulto, algo surpreendente acontece: Mel desperta um poder oculto. Após momentos extremos – inclusive sua captura pelos Black Rose – seus dons como maga emergem de forma avassaladora.",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content:
+            "Seus olhos se iluminam, e marcas douradas se espalham pelo seu corpo, simbolizando uma fusão inédita entre luz e energia. Esse despertar redefine sua identidade, tornando-a ainda mais formidável e central na luta para restaurar a ordem e transformar o futuro de Piltover.",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content:
+            "Em meio aos intensos confrontos políticos e às batalhas que misturam o físico e o mágico, Mel se vê obrigada a enfrentar os fantasmas de seu passado – principalmente a influência implacável de sua mãe, Ambessa.",
+        },
+      ],
+      parte5: [
+        {
+          image: "",
+          content:
+            "Cada embate a aproxima da reconciliação com sua própria essência, permitindo que ela entenda que a verdadeira inovação nasce do equilíbrio entre razão e emoção.",
+        },
+      ],
+      parte6: [
+        {
+          image: "",
+          content:
+            "Ao assumir de vez seu papel de líder, Mel abraça seu destino e se prepara para retornar a Noxus, desta vez como a chefe da Casa Medarda, com uma nova visão para o futuro.",
+        },
+      ],
     },
     conclusion: {
       title: "Conclusão",
-      parte1: [],
-      parte2: [],
+      parte1: [
+        {
+          content:
+            "Mel Medarda é uma personagem que transcende dualidades: exilada que virou governante, diplomata que carrega magia, filha que superou a mãe. Sua jornada é sobre redenção – não pela força, mas pela inteligência e empatia. Mesmo após perder Elora, confrontar Ambessa e enfrentar a Rosa Negra, ela emerge como uma líder que entende que o verdadeiro poder está em unir opostos. Seu legado em Piltover e Noxus prova que até nas sombras mais densas, a luz de uma estratégia bem-orquestrada pode guiar o caminho.",
+        },
+      ],
     },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc:
+          "/images/piltover-characters/characters-page/mel/song/Mel-1.webp",
+      },
+    ],
   },
 
   jayce: {
@@ -285,11 +421,6 @@ export const characters = {
     personalidade: [],
     aparencia: [],
     habilidades: [],
-    biografia: {
-      title: "Biografia",
-      parte1: [],
-      parte2: [],
-    },
     jornada: {
       title: "Jornada",
       parte1: [],
@@ -312,6 +443,13 @@ export const characters = {
       parte1: [],
       parte2: [],
     },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc: "",
+      },
+    ],
   },
 
   viktor: {
@@ -326,11 +464,6 @@ export const characters = {
     personalidade: [],
     aparencia: [],
     habilidades: [],
-    biografia: {
-      title: "Biografia",
-      parte1: [],
-      parte2: [],
-    },
     jornada: {
       title: "Jornada",
       parte1: [],
@@ -353,6 +486,13 @@ export const characters = {
       parte1: [],
       parte2: [],
     },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc: "",
+      },
+    ],
   },
 
   heimerdinger: {
@@ -367,11 +507,6 @@ export const characters = {
     personalidade: [],
     aparencia: [],
     habilidades: [],
-    biografia: {
-      title: "Biografia",
-      parte1: [],
-      parte2: [],
-    },
     jornada: {
       title: "Jornada",
       parte1: [],
@@ -394,5 +529,12 @@ export const characters = {
       parte1: [],
       parte2: [],
     },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc: "",
+      },
+    ],
   },
 };

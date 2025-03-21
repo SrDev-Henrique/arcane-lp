@@ -513,10 +513,6 @@ html.lenis body {
   filter: grayscale(50%);
 }
 
-.mask-characters-nav {
-  mask-image: linear-gradient(to left, transparent 0%, #0a0a0a 50%, transparent 100%);
-}
-
 /* From Uiverse.io by G4b413l */
 /* https://uiverse.io/G4b413l/tidy-walrus-92 */
 .three-body {
