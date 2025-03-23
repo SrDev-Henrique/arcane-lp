@@ -661,42 +661,214 @@ export const characters = {
   viktor: {
     color: "#B87148",
     secondaryColor: "#6E5E4B",
-    icon: "",
-    heroImage: "",
-    name: "",
+    icon: "/images/piltover-characters/characters-page/viktor/icon.webp",
+    heroImage:
+      "/images/piltover-characters/characters-page/viktor/viktor-1.webp",
+    name: "Viktor",
     lastName: "",
-    description: "",
-    quote: "",
-    personalidade: [],
-    aparencia: [],
-    habilidades: [],
+    description:
+      "Viktor é um inventor brilhante de Zaun que, por meio da Hextech, busca a 'Gloriosa Evolução'. Sua trajetória, marcada por transformações radicais, revela o eterno dilema entre progresso científico e perda da humanidade.",
+    quote: "Não há prêmio para perfeição. Apenas um fim à busca.",
+    personalidade: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/viktor/viktor-2.webp",
+          "/images/piltover-characters/characters-page/viktor/viktor-3.webp",
+          "/images/piltover-characters/characters-page/viktor/viktor-4.webp",
+        ],
+      },
+      {
+        title: "Idealista e Obcecado:",
+        content:
+          "Viktor é movido por uma visão grandiosa de um mundo melhor, mas essa ambição muitas vezes o cega para os riscos dos seus experimentos. Sua dedicação à ciência é intensa e, por vezes, obsessiva.",
+      },
+      {
+        title: "Pacifista com um Fervor Transformador:",
+        content:
+          "Apesar de sua origem humilde e dos sofrimentos vividos, Viktor sempre buscou transformar a realidade sem recorrer à violência – até que a pressão e as perdas o empurraram para métodos extremos.",
+      },
+      {
+        title: "Solitário e Determinado:",
+        content:
+          "Sempre à margem, ele se refugiou em seu laboratório e em suas pesquisas, confiando mais em sua genialidade do que na companhia dos outros, o que o fez trilhar um caminho de isolamento e introspecção.",
+      },
+    ],
+    aparencia: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/viktor/viktor-5.webp",
+          "/images/piltover-characters/characters-page/viktor/viktor-6.webp",
+          "/images/piltover-characters/characters-page/viktor/viktor-7.webp",
+        ],
+      },
+      {
+        title: "Humano Abatido:",
+        content:
+          "Nos seus primeiros anos, Viktor era um jovem de pele pálida, olhos âmbar e cabelos castanhos, marcado pela doença que o debilitava e pela aparência frágil que refletia sua vida nas fissuras de Zaun.",
+      },
+      {
+        title: "Transição para o Biomecânico:",
+        content:
+          "Conforme se submeteu aos experimentos hextec, partes de seu corpo foram substituídas por metal escuro com detalhes dourados, representando a fusão entre o orgânico e o tecnológico, simbolizando sua transformação e o preço da evolução.",
+      },
+      {
+        title: "Forma Final:",
+        content:
+          "Em seu ápice, Viktor assume uma aparência quase irreconhecível: uma figura alta e esquelética, com uma máscara de metal que divide seu rosto, olhos amarelos brilhantes e um manto esfarrapado – a personificação de um ser que ultrapassou os limites humanos.",
+      },
+    ],
+    habilidades: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/viktor/viktor-8.webp",
+          "/images/piltover-characters/characters-page/viktor/viktor-9.webp",
+          "/images/piltover-characters/characters-page/viktor/viktor-10.webp",
+        ],
+      },
+      {
+        title: "Gênio Inventivo:",
+        content:
+          "Com uma mente brilhante e criativa, Viktor é capaz de conceber e aperfeiçoar tecnologias revolucionárias – desde a estabilização dos cristais hextec até a criação do Hexcore, que representa a síntese de seu conhecimento e ambição.",
+      },
+      {
+        title: "Transmutação Hextec:",
+        content:
+          "Através do Hexcore, ele consegue transmutar matéria orgânica em metal biomecânico, curando doenças, removendo imperfeições e, em última instância, remodelando a própria natureza do corpo humano.",
+      },
+      {
+        title: "Hivemind e Manipulação Psíquica:",
+        content:
+          "Viktor também desenvolveu a capacidade de formar conexões psíquicas, absorvendo e manipulando as memórias e emoções de seus seguidores, um poder que o permitia controlar e direcionar a massa – embora a um custo ético e moral imenso.",
+      },
+    ],
     jornada: {
       title: "Jornada",
-      parte1: [],
-      parte2: [],
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-11.webp",
+          content:
+            "Viktor nasceu nas <b>fissuras escuras</b> abaixo de <b>Zaun</b>, em meio à <b>pobreza e poluição tóxica</b>. Desde cedo, uma <b>doença rara</b> corroía seu corpo, causando uma <b>claudicação</b> que o forçou a depender de uma bengala. Mesmo em meio à solidão e à fragilidade física, o jovem Viktor demonstrava um <b>intelecto fora do comum</b> e uma <b>paixão intensa por construir máquinas</b> com as poucas coisas que encontrava.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-12.webp",
+          content:
+            "Durante uma de suas aventuras pelas <b>águas do Sump</b>, Viktor tropeçou em uma <b>caverna escondida</b>, onde descobriu um <b>laboratório secreto</b>. Lá, conheceu <b>Singed</b> – um <b>alquimista sombrio</b> que o introduziu, ainda que de maneira traumática, ao <b>universo da ciência e da transmutação</b>. Apesar do medo e do horror que sentiu ao presenciar os <b>métodos cruéis</b> de Singed para manter uma criatura viva, esse episódio despertou nele a <b>semente de um futuro grandioso</b>.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-13.webp",
+          content:
+            "Foi justamente quando suas esperanças pareciam se dissipar que o <b>renomado Professor Heimerdinger</b> o encontrou. Impressionado com a <b>mente brilhante</b> do garoto, Heimerdinger ofereceu a Viktor uma chance de ingressar na <b>Academia de Piltover</b>, dando-lhe a oportunidade de <b>transformar sua dor em combustível para a inovação</b>.",
+        },
+      ],
     },
     temporada1: {
       title: "Temporada 1",
-      parte1: [],
-      parte2: [],
-      parte3: [],
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-14.webp",
+          content:
+            "<b>Viktor sempre acreditou que a ciência poderia curar o mundo.</b> Em meio a um cenário caótico, quando um <b>assalto e uma explosão no laboratório de Jayce Talis</b> colocaram em risco materiais perigosos, ele recebeu uma <b>missão que mudaria o rumo de sua vida</b>. Encargo de remover o que pudesse ser prejudicial – e, por acaso, os resquícios da pesquisa de Jayce – Viktor se deparou com um <b>jovem inventor</b> que sonhava em unir a <b>magia com a ciência</b> para transformar Piltover.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-15.webp",
+          content:
+            "Durante o <b>julgamento de Jayce</b>, o <b>discurso apaixonado</b> do inventor despertou em Viktor não apenas curiosidade, mas uma <b>profunda esperança de redenção</b> para a humanidade. Ao salvar as <b>anotações experimentais</b> de Jayce do descarte, Viktor firmou uma <b>aliança que se transformaria na base da Hextech</b>, um novo paradigma que prometia revolucionar o comércio, o transporte e, principalmente, a vida das pessoas.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-16.webp",
+          content:
+            "Enquanto Jayce enfrentava as <b>consequências de sua ousada experimentação</b> – que beirava o proibido – Viktor viu além do risco imediato. Para ele, os <b>cristais instáveis</b> e as <b>pesquisas secretas</b> representavam uma <b>oportunidade única</b>: a chance de criar uma tecnologia capaz de canalizar a <b>energia arcana</b> para melhorar a vida em Piltover.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-17.webp",
+          content:
+            "Com o apoio mútuo, Viktor e Jayce invadiram a <b>Academia</b> para recuperar os <b>materiais confiscados</b> – um ato ousado que demonstrou a <b>viabilidade da Hextech</b>. Enquanto Jayce ganhava os holofotes como <b>'o Homem do Progresso'</b>, Viktor permanecia nos bastidores, alimentando seus experimentos e investindo em suas próprias pesquisas.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-18.webp",
+          content:
+            "Impulsionado por uma <b>visão de futuro</b> onde a Hextech pudesse evoluir por si só, Viktor se lançou no desenvolvimento do <b>Hexcore</b> – uma <b>matriz rúnica adaptável</b> que, segundo sua teoria, seria capaz de aprender, adaptar-se e aprimorar-se continuamente. Esse dispositivo representava para ele a <b>materialização de seu sonho</b>: um mecanismo que transcenderia os limites da ciência convencional e interagiria com o arcano, respondendo e se transformando conforme as necessidades do mundo.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-19.webp",
+          content:
+            "Confrontado com sua própria fragilidade e debilitado por uma <b>doença que corroía seu corpo</b>, Viktor tomou uma decisão radical: experimentar em si mesmo. Utilizando uma <b>injeção de shimmer</b> – uma substância que permitiria que seu organismo aceitasse as transmutações do Hexcore – ele transformou parte de seu corpo, convertendo uma perna em uma fusão entre <b>metal escuro, cacos dourados e energia pulsante</b>. ",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-20.webp",
+          content:
+            "Embora o sucesso inicial tenha aliviado sua claudicação, a transformação desencadeou uma <b>espiral de experimentos arriscados</b>. Sem o shimmer necessário para ampliar o processo, Viktor avançou imprudentemente, perdendo o <b>controle do Hexcore</b>. A máquina, que começou a manifestar uma <b>vontade própria</b>, passou a interferir em sua mente, tornando o cientista <b>refém de sua própria criação</b>.",
+        },
+      ],
     },
     temporada2: {
       title: "Temporada 2",
-      parte1: [],
-      parte2: [],
-      parte3: [],
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
     },
     conclusion: {
       title: "Conclusão",
-      parte1: [],
-      parte2: [],
+      parte1: [
+        {
+          content:
+            "A vida de Viktor é um <b>relato pungente</b> sobre os perigos e maravilhas do <b>progresso desenfreado</b>. Do <b>sofrimento nas fissuras de Zaun</b> à <b>ascensão como pioneiro da hextech</b>, sua trajetória é marcada por <b>desafios imensos</b>, escolhas impensáveis e o <b>constante preço a pagar</b> por uma <b>busca implacável por melhoria</b>.",
+        },
+      ],
+      parte2: [
+        {
+          content:
+            "Embora seu legado esteja cercado de <b>controvérsias e mistérios</b>, poucos conseguem ignorar a <b>profundidade de seu impacto</b> – um homem que, ao tentar <b>curar o mundo</b>, acabou se <b>curando de si mesmo</b>, apenas para se <b>perder no labirinto de sua própria criação</b>.",
+        },
+      ],
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
-        imgSrc: "",
+        songName: "The Line",
+        artistName: "Twenty One Pilots, Arcane",
+        imgSrc:
+          "/images/piltover-characters/characters-page/viktor/song/Viktor-1.webp",
       },
     ],
   },

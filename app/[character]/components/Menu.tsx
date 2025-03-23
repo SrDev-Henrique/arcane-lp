@@ -87,6 +87,10 @@ const Menu = ({
   };
 
   const handleNextAudioClick = () => {
+    if (playlist.length <= 1) {
+      audioRef.current!.currentTime = 0;
+      audioRef.current!.play();
+    }
     setCurrentIndex(upcomingAudioIndex);
   };
 
@@ -320,7 +324,7 @@ const Menu = ({
           </div>
           <div
             ref={playlistContainerRef}
-            className="flex flex-col h-fit gap-4 relative opacity-0 will-change-transform"
+            className="flex flex-col gap-4 relative opacity-0 will-change-transform"
           >
             {playlist.map((song, index) => (
               <div
@@ -331,7 +335,7 @@ const Menu = ({
                     : "opacity-0 pointer-events-none"
                 }`}
               >
-                <div className="w-32 aspect-square">
+                <div className="w-32 p-2 aspect-square">
                   <Image
                     src={song.imgSrc}
                     alt={song.songName}
@@ -341,10 +345,10 @@ const Menu = ({
                   />
                 </div>
                 <div className="flex flex-col w-full pl-1 text-neutral-light font-lora">
-                  <h2 className="leading-none sm:text-lg text-nowrap">
+                  <h2 className="leading-none sm:text-lg text-nowrap font-lora">
                     {song.songName}
                   </h2>
-                  <h3 className="text-xs sm:text-sm text-accent-light">
+                  <h3 className="text-xs sm:text-sm text-black-light font-lora">
                     {song.artistName}
                   </h3>
                 </div>

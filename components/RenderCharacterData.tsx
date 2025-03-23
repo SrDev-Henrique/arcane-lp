@@ -20,6 +20,7 @@ interface CharacterData {
   parte4?: CharacterItem[];
   parte5?: CharacterItem[];
   parte6?: CharacterItem[];
+  parte7?: CharacterItem[];
 }
 
 const CharacterSection = (
@@ -33,6 +34,7 @@ const CharacterSection = (
   const fourthPart = subject.parte4 || [];
   const fifthPart = subject.parte5 || [];
   const sixthPart = subject.parte6 || [];
+  const seventhPart = subject.parte7 || [];
 
   const allParts = [
     ...firstPart,
@@ -41,6 +43,7 @@ const CharacterSection = (
     ...fourthPart,
     ...fifthPart,
     ...sixthPart,
+    ...seventhPart,
   ];
 
   useEffect(() => {
@@ -185,7 +188,7 @@ const CharacterSection = (
           >
             {item.image && (
               <div className="w-[70vw] max-w-[600px] flex-center flex-col gap-2 overflow-hidden">
-                <div className="size-full aspect-square tab-image flex justify-center about-image-container transform-gpu will-change-transform">
+                <div className="size-full aspect-square tab-image flex justify-center about-image-container transform-gpu will-change-transform rounded-xl">
                   <Image
                     src={item.image}
                     alt={`${subject.title} de ${name} parte ${index + 1}`}
