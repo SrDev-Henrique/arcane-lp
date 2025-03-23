@@ -69,6 +69,8 @@ const Menu = ({
   const upcomingAudioIndex = (currentIndex % totalAudio) + 1;
   const prevAudioIndex = (currentIndex % totalAudio) - 1 * -1;
 
+  console.log(currentIndex)
+
   const { duration = 0 } = audioRef.current || {};
   const progressPercent = (currentTime / duration) * 100 || 0;
 
@@ -119,6 +121,7 @@ const Menu = ({
     gsap.to(menuRef.current, {
       y: isCharNavVisible ? 0 : -100,
       opacity: isCharNavVisible ? 1 : 0,
+      pointerEvents: isCharNavVisible ? "auto" : "none",
       duration: 0.3,
       ease: "power1.out",
     });
@@ -132,7 +135,7 @@ const Menu = ({
         paused: true,
         defaults: {
           duration: 0.53,
-          ease: "elastic.out(1, 0.8)",
+          ease: "power2.out",
         },
       })
       .to(menuRef.current, {
@@ -142,6 +145,7 @@ const Menu = ({
         nameRef.current,
         {
           y: 0,
+          ease: "power2.out",
         },
         "<"
       )

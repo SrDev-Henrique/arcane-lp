@@ -236,7 +236,7 @@ export const characters = {
       },
       {
         songName: "I Can't Hear It Now",
-        artistName: "Freya Ridings",
+        artistName: "Freya Ridings, Arcane",
         imgSrc:
           "/images/piltover-characters/characters-page/caitlyn/song/Caitlyn-2.webp",
       },
@@ -255,6 +255,13 @@ export const characters = {
     quote: "A guerra não é nosso primeiro e único recurso",
     personalidade: [
       {
+        src: [
+          "/images/piltover-characters/characters-page/mel/mel-2.webp",
+          "/images/piltover-characters/characters-page/mel/mel-3.webp",
+          "/images/piltover-characters/characters-page/mel/mel-4.webp",
+        ],
+      },
+      {
         title: "Visionária e Ambiciosa:",
         content:
           "Sempre à frente do seu tempo, Mel busca transformar Piltover com ideias inovadoras e estratégias que rompem com o passado.",
@@ -272,6 +279,13 @@ export const characters = {
     ],
     aparencia: [
       {
+        src: [
+          "/images/piltover-characters/characters-page/mel/mel-5.webp",
+          "/images/piltover-characters/characters-page/mel/mel-6.webp",
+          "/images/piltover-characters/characters-page/mel/mel-7.webp",
+        ],
+      },
+      {
         title: "Elegância e Sofisticação:",
         content:
           "De pele escura, com olhos que misturam tons de verde e ouro, e cabelos negros cacheados com detalhes dourados, sua presença impõe respeito.",
@@ -288,6 +302,13 @@ export const characters = {
       },
     ],
     habilidades: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/mel/mel-8.webp",
+          "/images/piltover-characters/characters-page/mel/mel-9.webp",
+          "/images/piltover-characters/characters-page/mel/mel-10.webp",
+        ],
+      },
       {
         title: "Magia de Luz e Empatia Mágica:",
         content:
@@ -308,16 +329,16 @@ export const characters = {
       title: "Jornada",
       parte1: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-11.webp",
           content:
-            "Nascida em Noxus, Mel Medarda é fruto de um caso entre a temida Ambessa Medarda e uma misteriosa maga. Criada em meio à agressividade e às lições duras de sua mãe, ela conviveu com um legado de violência – algo que contrastava fortemente com a influência pacifista de seu meio-irmão Kino.",
+            "Nascida em <b>Noxus</b>, <b>Mel Medarda</b> é fruto de um caso entre a temida <b>Ambessa Medarda</b> e um misterioso mago. Criada em meio à agressividade e às lições duras de sua mãe, ela conviveu com um legado de <b>violência</b> – algo que contrastava fortemente com a influência <b>pacifista</b> de seu meio-irmão <b>Kino</b>.",
         },
       ],
       parte2: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-12.webp",
           content:
-            "Em um episódio marcante, quando Mel sugeriu o exílio de uma princesa estrangeira ao invés de aceitar a execução brutal, ela desafiou os métodos impostos por Ambessa. Esse ato de rebeldia acabou selando seu destino: banida para Piltover, onde a adversidade se transformou na força motriz de sua ascensão, sempre com o apoio incondicional de sua assistente, Elora.",
+            "Em um episódio marcante, quando <b>Mel</b> sugeriu o <b>exílio de uma princesa estrangeira</b> ao invés de aceitar a execução brutal, ela desafiou os métodos impostos por <b>Ambessa</b>. Esse ato de rebeldia acabou selando seu destino: <b>banida para Piltover</b>, onde a adversidade se transformou na força motriz de sua ascensão, sempre com o apoio incondicional de sua assistente, <b>Elora</b>.",
         },
       ],
     },
@@ -325,23 +346,23 @@ export const characters = {
       title: "Temporada 1",
       parte1: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-13.webp",
           content:
-            "Ao chegar em Piltover, Mel não apenas carregava as cicatrizes do passado – ela as transformava em combustível para sua ambição. Em meio à desilusão e à rejeição familiar, a jovem começou a trilhar um novo caminho, onde o conhecimento e a inovação eram suas principais armas.",
+            "Ao chegar em <b>Piltover</b>, <b>Mel</b> não apenas carregava as cicatrizes do passado – ela as transformava em combustível para sua ambição. Em meio à desilusão e à rejeição familiar, a jovem começou a trilhar um novo caminho, onde o <b>conhecimento</b> e a <b>inovação</b> eram suas principais armas.",
         },
       ],
       parte2: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-14.webp",
           content:
-            "Na primeira temporada, seu olhar visionário e sua paixão por transformar Piltover se destacam. Em meio a reuniões intensas e apresentações ousadas, Mel defende experimentos que rompem com o tradicional. O icônico 'Progress Day' é um marco: um dia em que a cidade se enche de novas ideias e onde ela, com firmeza, declara que o futuro pertence àqueles que ousam deixar o passado para trás. Seu apoio a projetos de Jayce e Viktor demonstra que inovação e ambição podem, juntas, abrir caminhos para um novo horizonte.",
+            "Na primeira temporada, seu <b>olhar visionário</b> e sua <b>paixão por transformar Piltover</b> se destacam. Em meio a <b>reuniões intensas</b> e <b>apresentações ousadas</b>, Mel defende <b>experimentos que rompem com o tradicional</b>. O icônico '<b>Progress Day</b>' é um marco: um dia em que a cidade se enche de <b>novas ideias</b> e onde ela, com firmeza, declara que o <b>futuro pertence àqueles que ousam deixar o passado para trás</b>. Seu apoio a projetos de <b>Jayce</b> e <b>Viktor</b> demonstra que <b>inovação</b> e <b>ambição</b> podem, juntas, abrir caminhos para um <b>novo horizonte</b>.",
         },
       ],
       parte3: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-15.webp",
           content:
-            "Apesar de sua postura inovadora, Mel é assombrada pelas lembranças dolorosas do passado. Conflitos familiares, métodos brutais impostos por Ambessa e o constante embate interno entre o que foi e o que ela deseja ser marcam seus dias. Essas lições, embora dolorosas, fortalecem sua convicção e moldam uma personalidade que sabe equilibrar política e emoção, abrindo espaço para relações intensas – inclusive com Jayce, cuja presença mistura política com uma paixão inesperada.",
+            "Apesar de sua <b>postura inovadora</b>, Mel é assombrada pelas <b>lembranças dolorosas do passado</b>. <b>Conflitos familiares</b>, <b>métodos brutais</b> impostos por Ambessa e o constante <b>embate interno</b> entre o que foi e o que ela deseja ser marcam seus dias. Essas lições, embora dolorosas, fortalecem sua <b>convicção</b> e moldam uma personalidade que sabe equilibrar <b>política</b> e <b>emoção</b>, abrindo espaço para <b>relações intensas</b> – inclusive com <b>Jayce</b>, cuja presença mistura <b>política</b> com uma <b>paixão inesperada</b>.",
         },
       ],
     },
@@ -349,44 +370,44 @@ export const characters = {
       title: "Temporada 2",
       parte1: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-16.webp",
           content:
-            "Na segunda temporada, os desafios se intensificam. Piltover se vê imersa num cenário de caos: ataques devastadores abalam o Conselho, e as tensões com Zaun se aprofundam a cada dia. Mel precisa lidar com perdas dolorosas, embates políticos ferozes e a pressão constante de definir os rumos de um futuro incerto, enquanto a cidade clama por respostas e soluções inovadoras.",
+            "Na <b>segunda temporada</b>, os desafios se intensificam. <b>Piltover</b> se vê imersa num cenário de <b>caos</b>: <b>ataques devastadores</b> abalam o <b>Conselho</b>, e as <b>tensões com Zaun</b> se aprofundam a cada dia. Mel precisa lidar com <b>perdas dolorosas</b>, <b>embates políticos ferozes</b> e a <b>pressão constante</b> de definir os rumos de um <b>futuro incerto</b>, enquanto a cidade clama por <b>respostas</b> e <b>soluções inovadoras</b>.",
         },
       ],
       parte2: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-17.webp",
           content:
-            "Em meio ao tumulto, algo surpreendente acontece: Mel desperta um poder oculto. Após momentos extremos – inclusive sua captura pelos Black Rose – seus dons como maga emergem de forma avassaladora.",
+            "Em meio ao <b>tumulto</b>, algo <b>surpreendente</b> acontece: Mel desperta um <b>poder oculto</b>. Após momentos <b>extremos</b> – inclusive sua <b>captura pelos Black Rose</b> – seus dons como <b>maga</b> emergem de forma <b>avassaladora</b>.",
         },
       ],
       parte3: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-10.webp",
           content:
-            "Seus olhos se iluminam, e marcas douradas se espalham pelo seu corpo, simbolizando uma fusão inédita entre luz e energia. Esse despertar redefine sua identidade, tornando-a ainda mais formidável e central na luta para restaurar a ordem e transformar o futuro de Piltover.",
+            "Seus <b>olhos se iluminam</b>, e <b>marcas douradas</b> se espalham pelo seu corpo, simbolizando uma <b>fusão inédita</b> entre <b>luz e energia</b>. Esse <b>despertar</b> redefine sua <b>identidade</b>, tornando-a ainda mais <b>formidável</b> e <b>central</b> na luta para <b>restaurar a ordem</b> e <b>transformar o futuro</b> de Piltover.",
         },
       ],
       parte4: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-18.webp",
           content:
-            "Em meio aos intensos confrontos políticos e às batalhas que misturam o físico e o mágico, Mel se vê obrigada a enfrentar os fantasmas de seu passado – principalmente a influência implacável de sua mãe, Ambessa.",
+            "Em meio aos <b>intensos confrontos políticos</b> e às <b>batalhas</b> que misturam o <b>físico e o mágico</b>, Mel se vê obrigada a enfrentar os <b>fantasmas de seu passado</b> – principalmente a <b>influência implacável</b> de sua mãe, <b>Ambessa</b>.",
         },
       ],
       parte5: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-19.webp",
           content:
-            "Cada embate a aproxima da reconciliação com sua própria essência, permitindo que ela entenda que a verdadeira inovação nasce do equilíbrio entre razão e emoção.",
+            "Cada embate a aproxima da <b>reconciliação com sua própria essência</b>, permitindo que ela entenda que a <b>verdadeira inovação</b> nasce do <b>equilíbrio entre razão e emoção</b>.",
         },
       ],
       parte6: [
         {
-          image: "",
+          image: "/images/piltover-characters/characters-page/mel/mel-20.webp",
           content:
-            "Ao assumir de vez seu papel de líder, Mel abraça seu destino e se prepara para retornar a Noxus, desta vez como a chefe da Casa Medarda, com uma nova visão para o futuro.",
+            "Ao assumir de vez seu papel de <b>líder</b>, Mel abraça seu destino e se prepara para retornar a <b>Noxus</b>, desta vez como a chefe da <b>Casa Medarda</b>, com uma nova visão para o futuro.",
         },
       ],
     },
@@ -395,14 +416,14 @@ export const characters = {
       parte1: [
         {
           content:
-            "Mel Medarda é uma personagem que transcende dualidades: exilada que virou governante, diplomata que carrega magia, filha que superou a mãe. Sua jornada é sobre redenção – não pela força, mas pela inteligência e empatia. Mesmo após perder Elora, confrontar Ambessa e enfrentar a Rosa Negra, ela emerge como uma líder que entende que o verdadeiro poder está em unir opostos. Seu legado em Piltover e Noxus prova que até nas sombras mais densas, a luz de uma estratégia bem-orquestrada pode guiar o caminho.",
+            "Mel Medarda é uma personagem que transcende dualidades: <b>exilada</b> que virou <b>governante</b>, <b>diplomata</b> que carrega <b>magia</b>, <b>filha</b> que superou a mãe. Sua jornada é sobre <b>redenção</b> – não pela força, mas pela <b>inteligência</b> e <b>empatia</b>. Mesmo após perder <b>Elora</b>, confrontar <b>Ambessa</b> e enfrentar a <b>Rosa Negra</b>, ela emerge como uma <b>líder</b> que entende que o verdadeiro poder está em unir opostos. Seu legado em <b>Piltover</b> e <b>Noxus</b> prova que até nas sombras mais densas, a luz de uma estratégia bem-orquestrada pode guiar o caminho.",
         },
       ],
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
+        songName: "Bite Marks",
+        artistName: "TEYA, Arcane",
         imgSrc:
           "/images/piltover-characters/characters-page/mel/song/Mel-1.webp",
       },
@@ -412,42 +433,227 @@ export const characters = {
   jayce: {
     color: "#8C5A3C",
     secondaryColor: "#B4B0A2",
-    icon: "",
-    heroImage: "",
-    name: "",
-    lastName: "",
-    description: "",
-    quote: "",
-    personalidade: [],
-    aparencia: [],
-    habilidades: [],
+    icon: "/images/piltover-characters/characters-page/jayce/icon.webp",
+    heroImage: "/images/piltover-characters/characters-page/jayce/jayce-1.webp",
+    name: "Jayce",
+    lastName: "Talis",
+    description:
+      "Jayce Talis é um dos pilares de Arcane, um líder ambicioso e resiliente que equilibra ciência e magia. Sua jornada, marcada por perdas e descobertas, o transforma de um jovem sonhador em um visionário dividido entre o futuro e seu passado.",
+    quote: "Há beleza nas imperfeições. Elas fizeram você ser quem é.",
+    personalidade: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/jayce/jayce-2.webp",
+          "/images/piltover-characters/characters-page/jayce/jayce-3.webp",
+          "/images/piltover-characters/characters-page/jayce/jayce-4.webp",
+        ],
+      },
+      {
+        title: "Ambicioso e Visionário:",
+        content:
+          "Jayce é movido pelo sonho de unir a magia com a ciência para criar um mundo melhor. Sua paixão pela Hextech reflete um desejo de transcender os limites tradicionais e abraçar o novo.",
+      },
+      {
+        title: "Comprometido e Emocional:",
+        content:
+          "Embora inicialmente ingênuo, suas experiências o forjaram num líder que encara os dilemas com sinceridade – desde a responsabilidade pelo bem-estar dos outros até o peso de suas escolhas pessoais.",
+      },
+      {
+        title: "Resiliente e Reflexivo:",
+        content:
+          "Através de perdas dolorosas e conflitos internos, ele aprende a valorizar cada imperfeição como parte do processo de crescimento, sempre buscando a redenção mesmo diante de grandes desafios.",
+      },
+    ],
+    aparencia: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/jayce/jayce-5.webp",
+          "/images/piltover-characters/characters-page/jayce/jayce-6.webp",
+          "/images/piltover-characters/characters-page/jayce/jayce-7.webp",
+        ],
+      },
+      {
+        title: "O Jovem Inventor:",
+        content:
+          "Jayce exibe uma constituição robusta com pele bronzeada, cabelo castanho escuro cortado de forma moderna e um visual que mistura o clássico da Casa Talis com toques de modernidade – como a jaqueta branca e dourada que carrega o brasão familiar.",
+      },
+      {
+        title: "Marcas da Luta:",
+        content:
+          "Os traços se tornam mais rústicos e desgastados; seu cabelo cresce desordenadamente, uma barba começa a se formar, e as marcas do tempo e das batalhas ficam evidentes em cada cicatriz e olhar. Seu visual reflete a intensidade dos conflitos e a luta interna que o transforma.",
+      },
+      {
+        title: "Forma Astral:",
+        content:
+          "Em momentos de conexão profunda com o Hexcore, Jayce assume uma aparência etérea: seu corpo se tinge de cores que variam entre branco, azul, rosa e roxo, enquanto detalhes iridescentes se manifestam, simbolizando a fusão entre o humano e o místico.",
+      },
+    ],
+    habilidades: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/jayce/jayce-8.webp",
+          "/images/piltover-characters/characters-page/jayce/jayce-9.webp",
+          "/images/piltover-characters/characters-page/jayce/jayce-10.webp",
+        ],
+      },
+      {
+        title: "Engenhosidade e Invenção:",
+        content:
+          "Dotado de uma mente criativa, Jayce desenvolve invenções revolucionárias como o Martelo de Mercúrio, as Manoplas Atlas e os Hexgates, demonstrando que a inovação pode transformar a realidade.",
+      },
+      {
+        title: "Durabilidade e Força:",
+        content:
+          "Sua capacidade de resistir a ferimentos extremos e continuar lutando – tanto física quanto emocionalmente – é um dos pilares de sua jornada, evidenciando uma força que vai além do físico.",
+      },
+      {
+        title: "Integração do Arcano e da Ciência:",
+        content:
+          "Jayce é o exemplo vivo de que a magia e a tecnologia podem coexistir. Ao explorar o Hexcore e as energias místicas, ele desafia as convenções e abre caminho para uma nova era onde o conhecimento e a intuição caminham juntos.",
+      },
+    ],
     jornada: {
       title: "Jornada",
-      parte1: [],
-      parte2: [],
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-11.webp",
+          content:
+            "Desde muito jovem, Jayce foi confrontado com o inesperado. Durante uma violenta tempestade de neve, ele e sua mãe foram miraculosamente salvos por um homem encapuzado que, com <b>magia</b>, os transportou para longe do perigo. Como um presente enigmático, esse salvador deixou para Jayce um <b>cristal</b> — um símbolo que despertaria sua paixão por entender e manipular a magia através da ciência.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-12.webp",
+          content:
+            "Pertencente à renomada <b>Casa Talis</b>, famosa por seus martelos e chaves dobráveis, muitos esperavam que Jayce seguisse o caminho tradicional da família. Mas o jovem sempre se destacou por seu desejo ardente de desvendar os segredos do <b>arcano</b>. Incentivado pelo apoio do reitor <b>Heimerdinger</b> e pelos <b>Kiramman</b>, ele mergulhou na <b>academia de Piltover</b>, onde sua ambição floresceu mesmo diante dos desafios e das expectativas familiares.",
+        },
+      ],
     },
     temporada1: {
       title: "Temporada 1",
-      parte1: [],
-      parte2: [],
-      parte3: [],
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-13.webp",
+          content:
+            "De volta à sua oficina, após uma visita à <b>loja de Benzo em Zaun</b>, Jayce se depara com um cenário caótico. Em meio a ferramentas espalhadas e o cheiro persistente de produtos químicos, ele testemunha a devastação provocada por um <b>cristal instável</b>. Esse cristal, deixado sem supervisão por uma criança curiosa, desencadeia uma explosão que não apenas arrasa parte de sua pesquisa, mas também revela segredos de uma experiência não autorizada.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-14.webp",
+          content:
+            "O incidente mobiliza <b>Heimerdinger e o Conselho</b>, que veem na falha um <b>risco inaceitável</b>. Durante o julgamento, a pressão e o sentimento de ter sido traído por seus próprios erros quase o fazem ceder ao <b>desespero</b>. Em um momento de desolação, enquanto contempla a possibilidade de saltar do prédio – um gesto que simbolizaria sua rendição – é <b>Viktor</b> quem surge para lhe oferecer uma mão amiga. Juntos, eles iniciam uma <b>batalha contra o tempo</b> para <b>estabilizar os cristais</b> e <b>resgatar a esperança</b> de uma nova descoberta.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-15.webp",
+          content:
+            "O <b>apoio inabalável de Viktor</b> e o ambiente de constante experimentação levam Jayce a enxergar, no caos da explosão, a semente de uma <b>revolução</b>. Durante longas noites no laboratório, cercados por <b>cálculos precisos</b> e <b>experimentos audaciosos</b>, os dois descobrem como a fusão entre a <b>energia arcana dos cristais</b> e as leis da ciência pode gerar uma nova fonte de poder: a <b>Hextech</b>.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-16.webp",
+          content:
+            "Nesse processo, cada <b>ensaio bem-sucedido</b> reforça a convicção de que a união entre o <b>místico e o tecnológico</b> pode transformar não apenas <b>Piltover</b>, mas <b>todo o mundo</b>. Em meio a <b>debates acalorados</b> e à necessidade de tomar decisões rápidas, <b>Mel Medarda</b> aparece como uma <b>aliada estratégica</b>, sugerindo inclusive sua inclusão no <b>Conselho</b>. Seu <b>apoio decisivo</b> permite que o projeto <b>Hextech</b> seja legitimado, abrindo caminho para <b>acordos ousados</b> e <b>discursos impactantes</b> que ecoam nas salas de reuniões e nas ruas da cidade.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-17.webp",
+          content:
+            "Com o <b>reconhecimento</b> e o <b>apoio do Conselho</b>, Jayce encara <b>novos desafios</b> que vão além dos limites da <b>ciência</b>. Em meio a <b>disputas políticas</b> e <b>confrontos</b> com executores da ordem, ele se vê forçado a lidar com seus próprios <b>medos</b> e <b>falhas</b>. Sua relação com <b>Mel</b> se aprofunda, transformando-se em uma ligação complexa onde <b>amor e responsabilidade</b> se misturam.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-18.webp",
+          content:
+            "Ao mesmo tempo, o impacto da <b>dolorosa condição de Viktor</b> – que o acompanha como um lembrete constante da <b>fragilidade humana</b> – pressiona Jayce a questionar os <b>limites éticos</b> de sua ambição. Em <b>longas conversas</b> sob a <b>luz trêmula do laboratório</b> e em momentos de <b>vulnerabilidade</b> nas ruas de <b>Piltover</b>, ele pondera até onde pode ir em nome da <b>inovação</b>. Esse <b>turbilhão de emoções</b> e desafios o empurra a reavaliar se transformar a <b>magia em arma</b> não trará <b>consequências irreversíveis</b> para a cidade que tanto ama.",
+        },
+      ],
     },
     temporada2: {
       title: "Temporada 2",
-      parte1: [],
-      parte2: [],
-      parte3: [],
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-19.webp",
+          content:
+            "Após um <b>longo período de pesquisas</b>, Jayce reúne <b>Heimerdinger</b> e <b>Ekko</b> para investigar os <b>sinais de corrupção</b> que assolam o <b>Hexcore</b>. Durante uma reunião nos <b>túneis de manutenção</b>, os três discutem a <b>“runa selvagem”</b> – teoria de que certos comandos podem desencadear <b>reações primitivas</b> no arcano –, concluindo que o <b>uso excessivo de hextech</b> é a fonte dos problemas, até serem <b>absorvidos por uma imensa anomalia esférica</b> que os dispersa pelo <b>espaço-tempo</b>.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-20.webp",
+          content:
+            "Separado dos demais, Jayce desperta num <b>deserto sombrio</b>, onde é acolhido por um <b>misterioso mago</b> de sua infância. Em meio à escuridão, ele sofre uma <b>queda</b> que <b>quebra sua perna</b> e <b>inutiliza seu martelo</b>, obrigando-o a improvisar uma <b>cinta de metal</b> enquanto sobrevive e é atormentado por <b>visões dos fracassos</b> que o assombram.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-21.webp",
+          content:
+            "Jayce consegue <b>escapar da ravina</b> e escala os <b>destroços</b> até o topo da <b>torre do Hexgate</b>, onde encontra um <b>cadáver de metal</b> empunhando uma versão <b>corrompida</b> de seu <b>Martelo de Mercúrio</b>. Nesse instante, o <b>mago encapuzado</b> se revela como uma <b>versão futura de Viktor</b>, que explica ter <b>manipulado eventos</b> em diversas realidades para que Jayce se tornasse o único capaz de <b>detê-lo</b>, entregando a ele uma <b>nova missão</b> e um <b>destino inexorável</b>.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-22.webp",
+          content:
+            "De volta à sua realidade, Jayce enfrenta <b>Salo</b> – curado por <b>Viktor</b>, mas agindo de forma <b>anômala</b> – e, após <b>eliminá-lo</b> com seu <b>martelo corrompido</b>, depara-se com uma <b>comunidade de cidadãos transformados pelo Hexcore</b> em busca de uma <b>“perfeição” insensível</b>. <b>Horrorizado</b> com a distorção da humanidade, ele <b>convoca os remanescentes de Piltover e Zaun</b> para se prepararem contra a <b>invasão iminente</b>, enquanto questiona o <b>custo real de suas invenções</b>.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-23.webp",
+          content:
+            "No <b>clímax da batalha</b>, Jayce, ao lado de <b>Caitlyn</b>, <b>Vi</b> e <b>Mel</b>, luta para <b>desativar o Hexgate</b> e impedir que <b>Viktor capture a anomalia</b>. Em meio a <b>confrontos intensos</b> e ao surgimento da <b>nova forma evoluída de Viktor</b>, os antigos amigos trocam <b>palavras e memórias</b>, mas os <b>apelos à humanidade</b> caem em vão quando <b>Viktor reativa o Hexgate</b> e convoca uma <b>tempestade arcana</b> que ameaça engolir a cidade.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/jayce/jayce-24.webp",
+          content:
+            "Quando tudo parece perdido, <b>Ekko</b> intervém com seu <b>Z-Drive Resonance</b>, dando a Jayce a chance de mostrar a <b>Viktor</b> uma visão de um <b>futuro sombrio e arrependido</b>. Temporariamente livre do <b>controle do Hexcore</b>, Viktor concorda em <b>destruir o artefato</b> e seus seguidores; Jayce entrega-lhe o <b>cristal rúnico</b> e ambos se <b>dissolvem no nada</b>, cumprindo a <b>promessa final</b> de salvar o <b>legado de Piltover</b>, ainda que o <b>sacrifício de Jayce</b> seja lamentado por sua <b>mãe</b> e por todo o <b>povo da cidade</b>.",
+        },
+      ],
     },
     conclusion: {
       title: "Conclusão",
-      parte1: [],
-      parte2: [],
+      parte1: [
+        {
+          content:
+            "A <b>jornada de Jayce Talis</b>, que atravessa desde os <b>laboratórios repletos de descobertas e anomalias</b> até o <b>desolado fim de Piltover</b> e a <b>batalha final</b> pelo equilíbrio entre <b>ciência e arcano</b>, revela a essência de um homem marcado por <b>erros e sacrifícios</b>. Seu percurso, repleto de <b>encontros com aliados</b> e <b>confrontos com versões distorcidas de amigos e inimigos</b>, prova que cada <b>cicatriz</b> – seja física ou emocional – carrega a <b>coragem de um visionário</b> que ousou <b>desafiar o destino</b>.",
+        },
+      ],
+      parte2: [
+        {
+          content:
+            "Ao <b>abraçar suas imperfeições</b> e transformar os <b>fracassos</b> em <b>lições para um futuro melhor</b>, Jayce ensina que a <b>verdadeira grandeza</b> reside na <b>resiliência</b> e na <b>capacidade de se reinventar</b>. Seu <b>legado</b>, formado na <b>interseção entre o ideal e o real</b>, inspira-nos a <b>encontrar beleza mesmo nas sombras</b>, lembrando que cada <b>desafio superado</b> é a semente de uma <b>esperança renovada</b> para todos aqueles que acreditam na <b>possibilidade de um renascimento</b>.",
+        },
+      ],
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
-        imgSrc: "",
+        songName: "To Ashes And Blood",
+        artistName: "Woodkid, Arcane",
+        imgSrc:
+          "/images/piltover-characters/characters-page/jayce/song/Jayce-1.webp",
       },
     ],
   },

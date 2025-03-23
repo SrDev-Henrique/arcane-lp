@@ -2,6 +2,8 @@
 
 import Menu from "@/app/[character]/components/Menu";
 import useActiveSection from "@/utils/useActiveSection";
+import useDimension from "@/utils/UseDimension";
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 // import gsap from "gsap";
@@ -39,8 +41,6 @@ const CharactersNavBar = memo(
   ({ color, secondaryColor, icon, name, playlist }: CharactersNavBarProps) => {
     const activeSection = useActiveSection();
 
-    console.log(activeSection);
-
     const [isCharNavVisible, setIsCharNavVisible] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isTransitioning, setIsTransitioning] = useState(false);
@@ -53,17 +53,39 @@ const CharactersNavBar = memo(
     const openMenuRef = useRef<HTMLButtonElement>(null);
 
     const { y: currentScrollY } = useWindowScroll();
+    const { width } = useDimension();
 
     useEffect(() => {
-      if (currentScrollY === 0) {
+      if (currentScrollY === 0 && width < 768) {
         setIsCharNavVisible(false);
+      } else if (currentScrollY === 0 && width > 1020) {
+        setIsCharNavVisible(true)
       } else if (currentScrollY > lastScrollYRef.current) {
         setIsCharNavVisible(false);
       } else if (currentScrollY < lastScrollYRef.current) {
         setIsCharNavVisible(true);
       }
       lastScrollYRef.current = currentScrollY;
-    }, [currentScrollY]);
+    }, [currentScrollY, width]);
+
+    useEffect(() => {
+      if (isMenuOpen) {
+        tl.current?.play();
+      } else {
+        setTimeout(() => {
+          tl.current?.reverse();
+        }, 340);
+      }
+    }, [isMenuOpen, isTransitioning]);
+
+    useEffect(() => {
+      gsap.to(charactersNavRef.current, {
+        y: isCharNavVisible ? 0 : -100,
+        opacity: isCharNavVisible ? 1 : 0,
+        duration: 0.3,
+        ease: "power1.out",
+      });
+    }, [isCharNavVisible, isMenuOpen]);
 
     useGSAP(() => {
       const mm = gsap.matchMedia();
@@ -71,7 +93,7 @@ const CharactersNavBar = memo(
       tl.current = gsap
         .timeline({
           paused: true,
-          defaults: { duration: 0.3, ease: "cubic-bezier(.15, 0, .333, 1)" },
+          defaults: { duration: 0.53, ease: "power2.out" },
         })
         .to(charactersNavRef.current, {
           width: "600px",
@@ -95,7 +117,7 @@ const CharactersNavBar = memo(
         tl.current = gsap
           .timeline({
             paused: true,
-            defaults: { duration: 0.3, ease: "cubic-bezier(.15, 0, .333, 1)" },
+            defaults: { duration: 0.53, ease: "power2.out" },
           })
           .to(charactersNavRef.current, {
             width: "95%",
@@ -115,7 +137,7 @@ const CharactersNavBar = memo(
             "<"
           );
       });
-    });
+    }, []);
 
     const handleMenuClick = () => {
       if (isTransitioning) return;
@@ -127,25 +149,6 @@ const CharactersNavBar = memo(
         setIsTransitioning(false);
       }, 500);
     };
-
-    useEffect(() => {
-      if (isMenuOpen) {
-        tl.current?.play();
-      } else {
-        setTimeout(() => {
-          tl.current?.reverse();
-        }, 680);
-      }
-    }, [isMenuOpen, isTransitioning]);
-
-    useEffect(() => {
-      gsap.to(charactersNavRef.current, {
-        y: isCharNavVisible ? 0 : -100,
-        opacity: isCharNavVisible ? 1 : 0,
-        duration: 0.3,
-        ease: "power1.out",
-      });
-    }, [isCharNavVisible, isMenuOpen]);
 
     return (
       <>

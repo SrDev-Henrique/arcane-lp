@@ -77,8 +77,8 @@ const Hero = ({
           {[...Array(3)].map((_, i) => (
             <div
               key={i}
-              style={{backgroundColor: `${color}`}}
-              className={` animate-diagonal max-h-[640px] ${
+              style={{ backgroundColor: `${color}` }}
+              className={`filter brightness-[140%] animate-diagonal max-h-[640px] ${
                 i === 0
                   ? " self-center rounded-es-md max-h-[404px]"
                   : i === 2
@@ -101,7 +101,7 @@ const Hero = ({
           />
           <h3
             style={{ borderBottom: `${color} 1px solid` }}
-            className="animate-quote transform will-change-transform text-white-dark text-sm md:text-lg"
+            className="animate-quote transform will-change-transform text-white-dark text-xs sm:text-sm md:text-lg"
           >
             {quote}
           </h3>
@@ -118,7 +118,7 @@ const Hero = ({
           <div className="overflow-hidden">
             <h1
               style={{ color: `${color}` }}
-              className="animate-name font-cinzel font-bold uppercase tracking-wide"
+              className={`${lastName === "Talis" ? "ms-6" : ""} animate-name font-cinzel font-bold uppercase tracking-wide`}
             >
               {lastName}
             </h1>
