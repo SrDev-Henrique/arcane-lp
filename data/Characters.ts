@@ -914,37 +914,198 @@ export const characters = {
     description:
       "Cecil B. Heimerdinger é o venerável mentor e inventor de Piltover em Arcane, cuja sabedoria e visão equilibram tradição e inovação, guiando jovens talentos enquanto preserva a cautela diante dos desafios do futuro.",
     quote: "Desde que te conheci, eu realmente vivi.",
-    personalidade: [],
-    aparencia: [],
-    habilidades: [],
+    personalidade: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-2.webp",
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-3.webp",
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-4.webp",
+        ],
+      },
+      {
+        title: "O Visionário Cauteloso:",
+        content:
+          "Heimerdinger é conhecido por sua profunda cautela diante do poder destrutivo da magia. Sempre atento aos riscos das novas tecnologias, ele acredita que o progresso deve ser alcançado de forma ética e gradual, protegendo vidas inocentes das consequências de inovações precipitadas.",
+      },
+      {
+        title: "O Mentor Inspirador:",
+        content:
+          "Como reitor da Academia Piltover, Heimerdinger dedicou sua imortalidade a cultivar as mentes brilhantes da cidade. Ele se orgulha de ver seus alunos superarem seus próprios limites, acreditando que sua maior conquista é o sucesso daqueles que passou a orientar.",
+      },
+      {
+        title: "O Espírito Inovador e Excêntrico:",
+        content:
+          "Apesar de sua longa e séria trajetória, Heimerdinger mantém um fascínio quase infantil por novas ideias. Sua excentricidade se manifesta tanto na maneira como projeta invenções revolucionárias quanto em seus momentos de descontração, quando adota trajes inusitados e se entrega à música.",
+      },
+    ],
+    aparencia: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-5.webp",
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-6.webp",
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-7.webp",
+        ],
+      },
+      {
+        title: "O Pequeno Yordle de Bandle:",
+        content:
+          "Originário de Bandle City, Heimerdinger exibe as marcas típicas dos yordles: uma estatura pequena, orelhas pontudas, e um rosto expressivo com olhos azuis vivos, que refletem a sua natureza curiosa e vibrante.",
+      },
+      {
+        title: "O Estilo Acadêmico Tradicional:",
+        content:
+          "Em Piltover, ele costuma ser visto vestindo um jaleco azul-acinzentado adornado com detalhes dourados, acompanhado de cinto e luvas escuras. Seus óculos de proteção redondos e seu bigode branco conferem um ar clássico e intelectual, simbolizando seu papel de mentor e inovador.",
+      },
+      {
+        title: "A Reinvenção no Universo Paralelo:",
+        content:
+          "Após sua experiência interdimensional, Heimerdinger adotou um visual levemente diferente: um casaco mais brilhante, que reflete o espírito de renovação, e o hábito peculiar de carregar um banjo mecânico – um toque que une sua paixão pela ciência com a redescoberta das alegrias simples da vida.",
+      },
+    ],
+    habilidades: [
+      {
+        src: [
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-12.webp",
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-9.webp",
+          "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-10.webp",
+        ],
+      },
+      {
+        title: "Professor Excepcional:",
+        content:
+          "Heimerdinger é amplamente reconhecido por sua habilidade de inspirar e orientar gerações de inventores. Sua expertise não se limita à teoria; ele tem um talento singular para transformar ideias complexas em conhecimentos práticos, contribuindo para o desenvolvimento de algumas das mentes mais brilhantes de Piltover.",
+      },
+      {
+        title: "Inventor de Invenções Inovadoras:",
+        content:
+          "Com uma carreira que abrange mais de duzentos anos, Heimerdinger concebeu e aperfeiçoou uma vasta gama de dispositivos mecânicos e hextec. De torres de bolhas a hoverbikes voadoras, sua criatividade inata o posiciona como um dos maiores inventores da história, sempre com um olhar atento para o potencial revolucionário da tecnologia.",
+      },
+      {
+        title: "Habilidades Yordle e Mágicas:",
+        content:
+          "Além de seu conhecimento científico, Heimerdinger possui as habilidades naturais dos yordles, como a magia inerente de sua espécie, que lhe permite manipular pequenos dispositivos com destreza e realizar encantos simples. Sua imortalidade e conexão com o Reino Espiritual conferem-lhe uma perspectiva única sobre o tempo e o poder do arcano.",
+      },
+    ],
     jornada: {
       title: "Jornada",
-      parte1: [],
-      parte2: [],
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-11.webp",
+          content:
+            "Pouco se sabe sobre os primeiros passos de <b>Heimerdinger</b> em <b>Bandle City</b>, mas sua juventude foi marcada por acontecimentos extraordinários. Ao aventurar-se para além dos limites do <b>Reino Espiritual</b>, ele testemunhou uma <b>devastadora catástrofe mágica</b> que abalou <b>Runeterra</b> e plantou nele a semente de uma <b>busca insaciável pelo conhecimento</b>. Inspirado por um <b>cientista</b> cujo exemplo o marcou profundamente, Heimerdinger desempenhou um papel fundamental na <b>fundação da cidade dourada de Piltover</b>, projetada como um <b>refúgio seguro para as forças mágicas</b>.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-12.webp",
+          content:
+            "Com o tempo, sua <b>genialidade e ética</b> o levaram a se destacar não só como <b>inventor de dispositivos não convencionais</b>, mas também como <b>educador</b>. Nomeado <b>reitor da Academia Piltover</b>, ele dedicou sua longa vida – imortal como só um yordle pode ser – a <b>orientar mentes brilhantes</b> e a servir como o <b>conselheiro mais antigo e respeitado</b> da história da cidade, sempre zelando pelo <b>equilíbrio entre inovação e responsabilidade</b>.",
+        },
+      ],
     },
     temporada1: {
       title: "Temporada 1",
-      parte1: [],
-      parte2: [],
-      parte3: [],
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-13.webp",
+          content:
+            "Durante os primeiros anos de Piltover, a <b>magia</b> se mostrava tanto uma <b>fonte de poder</b> quanto um <b>risco iminente</b>. Quando um incidente envolvendo uma <b>explosão no escritório do jovem estudante Jayce</b> expôs <b>materiais não autorizados</b> da Academia, Heimerdinger foi imediatamente <b>convocado para agir</b>.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-14.webp",
+          content:
+            "Preocupado com o <b>poder destrutivo da hextec</b> quando manejada de forma imprudente, ele não hesitou em <b>visitar Jayce</b>, que havia sido <b>detido pelas autoridades</b>. Em uma <b>conversa direta e severa</b>, Heimerdinger <b>alertou o jovem</b> sobre os <b>perigos de tentar manipular a magia através da ciência</b> sem a <b>cautela necessária</b>. Suas palavras, carregadas de <b>sabedoria adquirida ao longo de séculos</b>, enfatizavam que certos <b>segredos deveriam permanecer guardados</b> para <b>evitar a corrupção e a devastação de civilizações</b>.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-15.webp",
+          content:
+            "Após o episódio, Heimerdinger <b>ordenou a destruição dos materiais experimentais de Jayce</b> e <b>instruiu seu assistente Viktor</b> a <b>trancar o laboratório</b> durante a noite – medidas destinadas a <b>preservar a integridade da hextec</b>. Contudo, o destino tinha outros planos. Viktor, movido por sua própria ambição e pela <b>visão revolucionária de Jayce</b>, <b>desobedeceu as ordens</b>, ajudando o jovem a <b>completar seu experimento</b>.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-16.webp",
+          content:
+            "Embora relutante, <b>Heimerdinger</b> se viu impotente diante do <b>avanço das inovações</b> que ele mesmo tentava proteger. A recusa de <b>Jayce</b> em seguir seus conselhos e a <b>insistência em explorar o potencial da hextec</b> abriram um <b>abismo entre o velho guardião e as novas gerações</b>. Mesmo assim, Heimerdinger continuou a defender a <b>segurança e a ética</b>, preocupado que a <b>magia</b>, se colocada em mãos erradas, pudesse corromper e destruir os <b>fundamentos da sociedade</b>.",
+        },
+      ],
     },
     temporada2: {
       title: "Temporada 2",
-      parte1: [],
-      parte2: [],
-      parte3: [],
+      parte1: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-17.webp",
+          content:
+            "Forçado a <b>deixar o Conselho de Piltover</b> devido às <b>crescentes divergências com os novos líderes</b> e à <b>influência cada vez maior de Jayce e Viktor</b>, Heimerdinger partiu rumo a <b>Zaun</b>. Lá, confrontou de perto as <b>terríveis condições de vida</b> e a <b>violência que assolavam os habitantes da cidade subterrânea</b>. Tentando oferecer ajuda e orientação, seus <b>esforços iniciais foram rejeitados</b>, fazendo-o <b>retornar a Piltover com o coração apertado</b> e uma <b>responsabilidade de proteger seu legado</b>.",
+        },
+      ],
+      parte2: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-18.webp",
+          content:
+            "No caminho de volta, o destino interveio quando Heimerdinger se deparou com um <b>hoverboard na Ponte do Progresso</b> – e, logo depois, com seu dono: um <b>jovem inventor de Zaun chamado Ekko</b>. Impressionado pela <b>engenhosidade e espírito rebelde</b> do rapaz, o sábio yordle viu em Ekko uma <b>nova esperança para a inovação</b>. Sentindo que o futuro de Piltover e de Zaun dependia do <b>equilíbrio entre a tradição e a criatividade</b>, Heimerdinger decidiu <b>tomar Ekko sob sua proteção</b>, iniciando uma <b>nova relação de mentor e aluno</b>.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-19.webp",
+          content:
+            "A inquietação de Heimerdinger não tardou a se manifestar novamente. Preocupado com <b>sinais de corrupção na natureza</b> – evidenciados pelas <b>folhas caindo da árvore Firelight</b> e os <b>estranhos padrões</b> que lembravam os <b>perigos da hextec</b> –, ele se uniu a Ekko e a outros colegas para <b>investigar a origem desses fenômenos</b>. Juntos, eles exploraram os <b>recantos da Academia Piltover</b>, onde Heimerdinger reconheceu os <b>traços dos temidos “runas selvagens”</b>, uma <b>consequência do uso excessivo da magia e da tecnologia hextec</b>.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-20.webp",
+          content:
+            "Durante uma <b>expedição rumo ao fundo do Hexgate</b>, localizado em Zaun, uma <b>anomalia esférica emergiu</b>, <b>absorvendo Jayce, Ekko e Heimerdinger</b> em uma <b>viagem através do tempo e do espaço</b>. Lançado para um <b>universo paralelo</b> – um mundo onde a hextec jamais fora inventada – Heimerdinger encontrou, para sua surpresa, uma <b>nova forma de vida e criatividade</b>. Lá, ele <b>redescobriu as alegrias simples</b>, <b>aprimorou suas habilidades musicais</b> e <b>reinventou sua própria identidade</b>, longe das <b>pressões e da rigidez de seu passado</b> em Piltover.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-21.webp",
+          content:
+            "Ao longo de <b>anos que pareciam ter transcorrido em um piscar de olhos</b>, Heimerdinger viveu intensamente nessa <b>nova realidade</b>, formando <b>laços inesperados</b> e <b>cultivando um ambiente de paz</b> entre as comunidades. Contudo, o destino trouxe Ekko de volta – seu <b>antigo pupilo</b>, que havia passado <b>1128 dias à espera de um retorno</b>. Em um <b>encontro emocionante</b>, Heimerdinger explicou que, embora Ekko desejasse retornar ao seu universo de origem, o professor já se havia adaptado e encontrado um <b>novo sentido de pertencimento</b>.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-22.webp",
+          content:
+            "Determinado a não abandonar seu pupilo, mas consciente de que não havia um caminho viável para sua própria volta, Heimerdinger colaborou para <b>criar um dispositivo capaz de estabilizar a anomalia</b>. Após inúmeros testes, cálculos e o auxílio relutante de outros inventores, Ekko foi <b>enviado de volta para sua dimensão</b>. No entanto, o sábio yordle <b>escolheu permanecer naquele universo alternativo</b> – um <b>adeus silencioso</b> que deixou a <b>cadeira de Heimerdinger no Conselho de Piltover vazia</b> e sua <b>existência envolta em mistério</b>.",
+        },
+      ],
     },
     conclusion: {
       title: "Conclusão",
-      parte1: [],
-      parte2: [],
+      parte1: [
+        {
+          content:
+            "Heimerdinger é a <b>personificação do conhecimento acumulado</b> e da <b>cautela diante do desconhecido</b>. Sua vida, marcada por <b>conquistas e desafios</b>, revela a importância de se <b>equilibrar a inovação com a responsabilidade ética</b>. Mesmo após enfrentar contratempos e ser afastado de seus antigos círculos de poder, sua <b>dedicação ao ensino e à proteção da hextec</b> fez dele uma <b>lenda imortal</b>. O <b>legado de Heimerdinger</b> é um convite à <b>reflexão sobre o uso da magia e da ciência para o bem coletivo</b> – um lembrete de que, por mais que o futuro seja incerto, a <b>sabedoria e a criatividade</b> são as <b>ferramentas mais poderosas para transformar o mundo</b>.",
+        },
+      ],
     },
     playlist: [
       {
         songName: "Spin The Wheel",
         artistName: "Mick Wingert, Arcane",
         imgSrc:
-          "/images/piltover-characters/characters-page/jayce/song/Jayce-1.webp",
+          "/images/piltover-characters/characters-page/heimerdinger/song/Heimerdinger-1.webp",
       },
     ],
   },

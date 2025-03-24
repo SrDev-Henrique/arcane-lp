@@ -34,11 +34,12 @@ interface CharactersNavBarProps {
   secondaryColor: string;
   icon: string;
   name: string;
+  lastName: string;
   playlist: PlaylistItem[];
 }
 
 const CharactersNavBar = memo(
-  ({ color, secondaryColor, icon, name, playlist }: CharactersNavBarProps) => {
+  ({ color, secondaryColor, icon, name, lastName, playlist }: CharactersNavBarProps) => {
     const activeSection = useActiveSection();
 
     const [isCharNavVisible, setIsCharNavVisible] = useState(false);
@@ -224,6 +225,7 @@ const CharactersNavBar = memo(
           color={color}
           secondaryColor={secondaryColor}
           name={name}
+          lastName={lastName}
           playlist={playlist}
           setIsMenuOpen={setIsMenuOpen}
           setIsAudioPlaying={setIsAudioPlaying}

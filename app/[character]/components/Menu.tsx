@@ -33,6 +33,7 @@ interface MenuProps {
   secondaryColor: string;
   items: { title: string }[];
   name: string;
+  lastName: string;
   playlist: PlaylistItem[];
 }
 
@@ -46,6 +47,7 @@ const Menu = ({
   secondaryColor,
   items,
   name,
+  lastName,
   playlist,
 }: MenuProps) => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -64,7 +66,7 @@ const Menu = ({
 
   const activeSection = useActiveSection();
 
-  const getAudioSrc = (index: number) => `/audio/${name}-${index}.m4a`;
+  const getAudioSrc = (index: number) => name === "Cecil B." ? `/audio/${lastName}-${index}.m4a` : `/audio/${name}-${index}.m4a`;
   const totalAudio = playlist.length;
   const upcomingAudioIndex = (currentIndex % totalAudio) + 1;
   const prevAudioIndex = (currentIndex % totalAudio) - 1 * -1;
@@ -279,7 +281,7 @@ const Menu = ({
               style={{ color: `${secondaryColor}` }}
               className="font-cinzel font-bold uppercase sm:text-xl transform -translate-y-full will-change-transform"
             >
-              {name}
+              {name === "Cecil B." ? lastName : name}
             </h3>
           </div>
           <div className="flex-center gap-2 flex-wrap">
@@ -319,7 +321,7 @@ const Menu = ({
               ref={playlistHeadingRef}
               className="text-neutral-light font-lora sm:text-lg transform -translate-y-full will-change-transform"
             >
-              Playlist de {name}:
+              Playlist de {name === "Cecil B." ? lastName : name}:
             </h3>
           </div>
           <div

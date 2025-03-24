@@ -30,6 +30,7 @@ export default function CharacterPageClient({
         secondaryColor={data.secondaryColor}
         icon={data.icon}
         name={data.name}
+        lastName={data.lastName}
         playlist={data.playlist}
       />
       <Hero
