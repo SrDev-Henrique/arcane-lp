@@ -831,20 +831,50 @@ export const characters = {
       title: "Temporada 2",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-21.webp",
+          content:
+            "Paradoxalmente, enquanto lutava para dominar a tecnologia que o consumia, Viktor se viu capaz de realizar <b>feitos extraordinários de cura</b>. Em um gesto que misturava compaixão e obsessão, ele curou viciados e sofredores da cidade subterrânea – um exemplo sendo a <b>transformação milagrosa de Huck</b>, que, ao ter sua dependência e doenças revertidas, passou a ver Viktor como um salvador.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-22.webp",
+          content:
+            "Aos poucos, Viktor atraiu um grupo de seguidores que, encantados com seus poderes, formaram uma <b>comuna na Cidade Baixa</b>. Esse refúgio, destinado a abrigar os desamparados, simbolizava a promessa de um <b>novo começo</b>. No entanto, a convivência com a humanidade também expôs Viktor às <b>imperfeições das emoções</b> – a raiva, a compaixão desmedida e o medo – elementos que ele buscava erradicar em sua visão de evolução.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-23.webp",
+          content:
+            "Utilizando um <b>casulo esférico alimentado por shimmer e chemtech</b>, Viktor reuniu forças para sustentar sua <b>forma híbrida entre homem e máquina</b>. Em uma luta feroz, ele chegou a reverter as tentativas de Jayce de fechar o <b>Hexgate</b>, demonstrando o poder que havia adquirido – um poder que, paradoxalmente, o isolava ainda mais de sua própria humanidade.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-24.webp",
+          content:
+            "O <b>clímax da jornada de Viktor</b> se deu durante a <b>batalha no Hexgate</b> – um episódio que transformou a cidade em um campo de guerra entre a <b>visão de evolução sem emoção</b> e a <b>preservação da humanidade</b>. Em meio a ataques, transbordantes de <b>energia hextec</b> e confrontos diretos com Jayce, Viktor revelou sua proposta de uma <b>'Gloriosa Evolução'</b>: um mundo onde a <b>lógica e a razão</b> prevalecessem sobre as <b>imperfeições dos sentimentos</b>.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-25.webp",
+          content:
+            "Apesar de ter alcançado uma <b>vitória aparente</b> ao subjugar seu antigo parceiro e roubar a <b>Anomalia</b> que sustentava suas inovações, Viktor não conseguiu escapar das <b>consequências de suas escolhas</b>. O confronto final expôs a fenda entre a <b>ambição de erradicar o sofrimento</b> e a <b>realidade dolorosa dos sentimentos humanos</b>.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/piltover-characters/characters-page/viktor/viktor-26.webp",
+          content:
+            "Ao ser confrontado por uma <b>visão do futuro</b> – um deserto de solidão e destruição provocado pelo excesso de Hextech – Viktor cedeu ao peso do <b>remorso</b>. Num <b>último ato de redenção trágica</b>, ele permitiu que sua <b>essência fosse engolida pelo Hexcore</b>, desaparecendo <b>sem deixar vestígios</b> que pudessem justificar ou explicar plenamente sua jornada.",
         },
       ],
     },
@@ -876,12 +906,14 @@ export const characters = {
   heimerdinger: {
     color: "#D6A741",
     secondaryColor: "#A1B77A",
-    icon: "",
-    heroImage: "",
-    name: "",
-    lastName: "",
-    description: "",
-    quote: "",
+    icon: "/images/piltover-characters/characters-page/heimerdinger/icon.webp",
+    heroImage:
+      "/images/piltover-characters/characters-page/heimerdinger/heimerdinger-1.webp",
+    name: "Cecil B.",
+    lastName: "Heimerdinger",
+    description:
+      "Cecil B. Heimerdinger é o venerável mentor e inventor de Piltover em Arcane, cuja sabedoria e visão equilibram tradição e inovação, guiando jovens talentos enquanto preserva a cautela diante dos desafios do futuro.",
+    quote: "Desde que te conheci, eu realmente vivi.",
     personalidade: [],
     aparencia: [],
     habilidades: [],
@@ -909,9 +941,10 @@ export const characters = {
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
-        imgSrc: "",
+        songName: "Spin The Wheel",
+        artistName: "Mick Wingert, Arcane",
+        imgSrc:
+          "/images/piltover-characters/characters-page/jayce/song/Jayce-1.webp",
       },
     ],
   },

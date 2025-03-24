@@ -61,7 +61,7 @@ const CharacterSection = (
             ease: "power1.out",
             scrollTrigger: {
               trigger: el as Element,
-              start: "top 130%",
+              start: "top 140%",
               toggleActions: "play none none reverse",
             },
           }
