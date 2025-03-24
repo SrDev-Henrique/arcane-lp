@@ -25,6 +25,12 @@ export default {
           light: "#A6E22E",
           DEFAULT: "#4CAF50",
           dark: "#2E8B57",
+          green: "#39FF14",
+          purple: "#8A2BE2",
+          gray: "#A9A9A9",
+          "dark-gray": "#1D1D1D",
+          red: "#8B0000",
+          orange: "#FF4500",
         },
         neutral: {
           light: "#F0F0F0",
@@ -107,12 +113,11 @@ export default {
       },
       animation: {
         pulse: "pulse 1s infinite",
-        diagonal:
-          "diagonal 3s infinite alternate ease-in-out",
+        diagonal: "diagonal 3s infinite alternate ease-in-out",
       },
       screens: {
         "md-lg": "880px",
-      }
+      },
     },
   },
   safelist: [

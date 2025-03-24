@@ -357,16 +357,16 @@ const Menu = ({
                 <div
                   ref={progressAreaRef}
                   onClick={handleProgressClick}
-                  className="w-full h-1 relative cursor-pointer group"
+                  className="w-full h-[0.3rem] relative cursor-pointer group rounded-full"
                 >
-                  <div className="size-full h-1 bg-[#14141470] rounded-full" />
+                  <div className="size-full h-[0.3rem] bg-[#14141470] rounded-full" />
                   <div
                     ref={progressBarRef}
                     style={{
                       backgroundColor: `${secondaryColor}`,
                       width: `${progressPercent}%`,
                     }}
-                    className="absolute h-full inset-0 bg-black-dark"
+                    className="absolute h-full inset-0 bg-black-dark rounded-full"
                   />
                 </div>
                 <div className="w-[70%] mt-1 flex-center relative">
