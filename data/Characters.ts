@@ -384,28 +384,28 @@ export const characters = {
       ],
       parte3: [
         {
-          image: "/images/piltover-characters/characters-page/mel/mel-10.webp",
+          image: "/images/piltover-characters/characters-page/mel/mel-18.webp",
           content:
             "Seus <b>olhos se iluminam</b>, e <b>marcas douradas</b> se espalham pelo seu corpo, simbolizando uma <b>fusão inédita</b> entre <b>luz e energia</b>. Esse <b>despertar</b> redefine sua <b>identidade</b>, tornando-a ainda mais <b>formidável</b> e <b>central</b> na luta para <b>restaurar a ordem</b> e <b>transformar o futuro</b> de Piltover.",
         },
       ],
       parte4: [
         {
-          image: "/images/piltover-characters/characters-page/mel/mel-18.webp",
+          image: "/images/piltover-characters/characters-page/mel/mel-19.webp",
           content:
             "Em meio aos <b>intensos confrontos políticos</b> e às <b>batalhas</b> que misturam o <b>físico e o mágico</b>, Mel se vê obrigada a enfrentar os <b>fantasmas de seu passado</b> – principalmente a <b>influência implacável</b> de sua mãe, <b>Ambessa</b>.",
         },
       ],
       parte5: [
         {
-          image: "/images/piltover-characters/characters-page/mel/mel-19.webp",
+          image: "/images/piltover-characters/characters-page/mel/mel-20.webp",
           content:
             "Cada embate a aproxima da <b>reconciliação com sua própria essência</b>, permitindo que ela entenda que a <b>verdadeira inovação</b> nasce do <b>equilíbrio entre razão e emoção</b>.",
         },
       ],
       parte6: [
         {
-          image: "/images/piltover-characters/characters-page/mel/mel-20.webp",
+          image: "/images/piltover-characters/characters-page/mel/mel-21.webp",
           content:
             "Ao assumir de vez seu papel de <b>líder</b>, Mel abraça seu destino e se prepara para retornar a <b>Noxus</b>, desta vez como a chefe da <b>Casa Medarda</b>, com uma nova visão para o futuro.",
         },
