@@ -170,280 +170,268 @@ html.lenis body {
   .indicator-line {
     @apply h-1 w-[2px] rounded-full bg-white transition-all duration-200 ease-in-out;
   }
+}
 
-  .special-font b {
-    font-family: "Zentry";
-    font-feature-settings: "ss01" on;
+.special-font b {
+  font-family: "Zentry";
+  font-feature-settings: "ss01" on;
+}
+
+/* todo clip-paths */
+
+.mask-clip-path {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.hidden-clip-path {
+  clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+/* todo menu */
+
+.menu-nav {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 99;
+  justify-content: space-between;
+  backdrop-filter: blur(10px) brightness(0.25);
+}
+
+.magic {
+  color: #ffd700;
+  background: linear-gradient(180deg, #b0e0e6, #c71585);
+  background-blend-mode: overlay;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2 3 1px rgba(0, 0, 0, 0.13);
+}
+
+.srdev {
+  background: linear-gradient(
+    90deg,
+    #b0e0e6,
+    #b0e0e6,
+    #b0e0e6,
+    #b0e0e6,
+    #b0e0e6,
+    #b0e0e6,
+    #f5f5dc,
+    #f5f5dc,
+    #f5f5dc,
+    #f5f5dc,
+    #f5f5dc,
+    #f5f5dc
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  background-position: 0%;
+  background-size: 300%;
+  transition: background 2.4s;
+
+  &:hover {
+    background-position: 250%;
   }
+}
 
-  /* todo clip-paths */
+.arcane {
+  background: linear-gradient(
+    90deg,
+    #b0e0e6,
+    #b376ec,
+    #b376ec,
+    #b0e0e6,
+    #b0e0e6
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  background-size: 300%;
+  background-position: 0%;
+  animation: change-color 4s;
+}
 
-  .mask-clip-path {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+.curtain-reveal-container {
+  position: relative;
+}
+
+.curtain-left,
+.curtain-right {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 10;
+  transition: transform 1.5s ease-out;
+}
+
+.curtain-left {
+  left: 0;
+  transform-origin: left;
+}
+
+.curtain-right {
+  right: 0;
+  transform-origin: right;
+}
+
+.piltover {
+  color: #000;
+  background: linear-gradient(180deg, #c4a84a, #c4a84a99);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #c4a84a 1px;
+  filter: drop-shadow(0 0 2px rgba(196, 168, 74, 0.7));
+  background-clip: text;
+}
+
+.piltover-engine {
+  animation: rotate 15s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(196, 168, 74, 0.7));
+}
+
+.rotate {
+  animation: rotate 30s linear infinite;
+}
+
+.piltover-background {
+  --color-1: #f5f5dc;
+  --color-2: #ffffff;
+  background-image: radial-gradient(
+    circle at 50%,
+    var(--color-1) 10%,
+    var(--color-2) 60%
+  );
+}
+
+.piltover-dark-background {
+  --color-1: #ffffff;
+  --color-2: #ffffff;
+  background: linear-gradient(to bottom, var(--color-2), var(--color-1));
+}
+
+.brightness-filter {
+  backdrop-filter: brightness(80%);
+}
+
+.fog {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent -10%,
+    white,
+    white,
+    transparent 110%
+  );
+}
+
+.positive-col,
+.negative-col {
+  will-change: transform;
+}
+
+.piltover-personagens {
+  will-change: mask-image;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border: 1px transparent solid;
+  border-radius: 10px;
+  background: #dfdff2;
+  color: #000;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+    border: 1px solid #e8e8ed;
   }
+}
 
-  .hidden-clip-path {
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0 100%);
-  }
+.sticky-section {
+  mask-image: radial-gradient(circle, black 0%, transparent 85%);
+}
 
-  /* todo menu */
+.slider {
+  backdrop-filter: blur(30px) brightness(0.55);
+}
 
-  .menu-nav {
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    z-index: 99;
-    justify-content: space-between;
-    backdrop-filter: blur(10px) brightness(0.25);
-  }
+.overlay {
+  background: #7a7454;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  backdrop-filter: brightness(0.5);
+}
 
-  .magic {
-    color: #ffd700;
-    background: linear-gradient(180deg, #b0e0e6, #c71585);
-    background-blend-mode: overlay;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 2 3 1px rgba(0, 0, 0, 0.13);
-  }
+.current-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 16rem;
+  width: 16rem;
+  border: 1px solid black;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.75);
+  border-radius: 0.5rem;
+  visibility: hidden;
+  z-index: 20;
+}
 
-  .srdev {
-    background: linear-gradient(
-      90deg,
-      #b0e0e6,
-      #b0e0e6,
-      #b0e0e6,
-      #b0e0e6,
-      #b0e0e6,
-      #b0e0e6,
-      #f5f5dc,
-      #f5f5dc,
-      #f5f5dc,
-      #f5f5dc,
-      #f5f5dc,
-      #f5f5dc
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    background-position: 0%;
-    background-size: 300%;
-    transition: background 2.4s;
+.full-size-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.75);
+}
 
-    &:hover {
-      background-position: 250%;
-    }
-  }
+.bentoCard-background {
+  background: linear-gradient(360deg, #000000 15%, transparent);
+}
 
-  .arcane {
-    background: linear-gradient(
-      90deg,
-      #b0e0e6,
-      #b376ec,
-      #b376ec,
-      #b0e0e6,
-      #b0e0e6
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    background-size: 300%;
-    background-position: 0%;
-    animation: change-color 4s;
-  }
+.bento-reveal {
+  perspective: 1000px;
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+}
 
-  .curtain-reveal-container {
-    position: relative;
-  }
-
-  .curtain-left,
-  .curtain-right {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    background-color: #ffffff;
-    z-index: 10;
-    transition: transform 1.5s ease-out;
-  }
-
-  .curtain-left {
-    left: 0;
-    transform-origin: left;
-  }
-
-  .curtain-right {
-    right: 0;
-    transform-origin: right;
-  }
-
-  .piltover {
-    color: #000;
-    background: linear-gradient(180deg, #c4a84a, #c4a84a99);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: #c4a84a 1px;
-    filter: drop-shadow(0 0 2px rgba(196, 168, 74, 0.7));
-    background-clip: text;
-  }
-
-  .piltover-engine {
-    animation: rotate 15s linear infinite;
-    filter: drop-shadow(0 0 5px rgba(196, 168, 74, 0.7));
-  }
-
-  .rotate {
-    animation: rotate 30s linear infinite;
-  }
-
-  .piltover-background {
-    --color-1: #f5f5dc;
-    --color-2: #ffffff;
-    background-image: radial-gradient(
-      circle at 50%,
-      var(--color-1) 10%,
-      var(--color-2) 60%
-    );
-  }
-
-  .piltover-dark-background {
-    --color-1: #ffffff;
-    --color-2: #ffffff;
-    background: linear-gradient(to bottom, var(--color-2), var(--color-1));
-  }
-
-  .brightness-filter {
-    backdrop-filter: brightness(80%);
-  }
-
-  .fog {
-    mask-image: linear-gradient(
-      to bottom,
-      transparent -10%,
-      white,
-      white,
-      transparent 110%
-    );
-  }
-
-  .positive-col,
-  .negative-col {
-    will-change: transform;
-  }
-
-  .piltover-personagens {
-    will-change: mask-image;
-  }
-
-  .buttons {
-    display: flex;
-    width: 100%;
-    gap: 12px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border: 1px transparent solid;
-    border-radius: 10px;
-    background: #dfdff2;
-    color: #000;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background: #000;
-      color: #fff;
-      border: 1px solid #e8e8ed;
-    }
-  }
-
-  .sticky-section {
-    mask-image: radial-gradient(circle, black 0%, transparent 85%);
-  }
-
-  .slider {
-    backdrop-filter: blur(30px) brightness(0.55);
-  }
-
-  .overlay {
-    background: #7a7454;
-    background: radial-gradient(
-      circle,
-      rgba(0, 0, 0, 0) 35%,
-      rgba(0, 0, 0, 0.5) 100%
-    );
-    backdrop-filter: brightness(0.5);
-  }
-
-  .current-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 16rem;
-    width: 16rem;
-    border: 1px solid black;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(0.75);
-    border-radius: 0.5rem;
-    visibility: hidden;
-    z-index: 20;
-  }
-
-  .full-size-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    filter: brightness(0.75);
-  }
-
-  .bentoCard-background {
-    background: linear-gradient(360deg, #000000 15%, transparent);
-  }
-
-  .bento-reveal {
-    perspective: 1000px;
-    will-change: transform, opacity;
-    transform-style: preserve-3d;
-  }
-
-  .transition-div-title {
-    color: #000;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .sword-man-clip-path {
-    clip-path: polygon(16% 0, 89% 15%, 75% 100%, 0 97%);
-  }
-
-  .contact-clip-path-1 {
-    clip-path: polygon(25% 0%, 74% 0, 69% 64%, 34% 73%);
-  }
-
-  .contact-clip-path-2 {
-    clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
-  }
+.transition-div-title {
+  color: #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .indicator-line.active {
@@ -669,7 +657,7 @@ html.lenis body {
 
 @media (max-height: 450px) {
   .character-name {
-    top: 33%
+    top: 33%;
   }
   .mini-video {
     top: 50%;
