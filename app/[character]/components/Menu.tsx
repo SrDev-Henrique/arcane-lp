@@ -16,6 +16,7 @@ import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
+import { useWindowScroll } from "react-use";
 
 interface PlaylistItem {
   songName: string;
@@ -64,6 +65,7 @@ const Menu = ({
   const playlistHeadingRef = useRef<HTMLHeadingElement>(null);
   const playlistContainerRef = useRef<HTMLDivElement>(null);
 
+  const { y: currentScrollY } = useWindowScroll();
   const activeSection = useActiveSection();
 
   const getAudioSrc = (index: number) => name === "Cecil B." ? `/audio/${lastName}-${index}.m4a` : `/audio/${name}-${index}.m4a`;
@@ -124,14 +126,46 @@ const Menu = ({
   };
 
   useEffect(() => {
+    const mm = gsap.matchMedia();
+    const ctx = gsap.context(() => {
+      mm.add("(min-width: 610px)", () => {
+        gsap.from(menuRef.current, {
+          opacity: 0,
+          duration: 0.5,
+          ease: "power1.out",
+          delay: 1.5,
+        });
+      })
+    })
+
+    return  () => ctx.revert();
+  }, [])
+
+  useEffect(() => {
     gsap.to(menuRef.current, {
       y: isCharNavVisible ? 0 : -100,
-      opacity: isCharNavVisible ? 1 : 0,
+      opacity: isCharNavVisible && currentScrollY != 0 ? 1 : 0,
       pointerEvents: isCharNavVisible ? "auto" : "none",
       duration: 0.3,
       ease: "power1.out",
     });
-  }, [isCharNavVisible, isMenuOpen]);
+  }, [isCharNavVisible, currentScrollY]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      tl.current?.play();
+    } else {
+      tl.current?.reverse();
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isAudioPlaying) {
+      audioRef.current?.play();
+    } else {
+      audioRef.current?.pause();
+    }
+  }, [isAudioPlaying]);
 
   useGSAP(() => {
     const mm = gsap.matchMedia();
@@ -141,7 +175,7 @@ const Menu = ({
         paused: true,
         defaults: {
           duration: 0.53,
-          ease: "power2.out",
+          ease: "cubic-bezier(0.1, 0.7, 0.1)",
         },
       })
       .to(menuRef.current, {
@@ -196,11 +230,11 @@ const Menu = ({
           paused: true,
           defaults: {
             duration: 0.53,
-            ease: "elastic.out(1, 0.9)",
+            ease: "cubic-bezier(0.1, 0.7, 0.1)",
           },
         })
         .to(menuRef.current, {
-          width: "95%",
+          width: "98%",
         })
         .to(
           nameRef.current,
@@ -246,29 +280,13 @@ const Menu = ({
     });
   });
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      tl.current?.play();
-    } else {
-      tl.current?.reverse();
-    }
-  }, [isMenuOpen]);
-
-  useEffect(() => {
-    if (isAudioPlaying) {
-      audioRef.current?.play();
-    } else {
-      audioRef.current?.pause();
-    }
-  }, [isAudioPlaying]);
-
   return (
     <div
       ref={menuRef}
       style={{
         backgroundImage: `linear-gradient(120deg, ${color}80, ${secondaryColor}80)`,
       }}
-      className="fixed top-2 h-14 max-h-[505px] w-64 max-w-[600px] pt-14 transform left-1/2 -translate-x-1/2 z-40 rounded-xl filter backdrop-blur-[12px] backdrop-brightness-[40%] overflow-hidden select-none"
+      className="fixed top-2 h-14 max-h-[505px] w-[16.5rem] max-w-[600px] pt-14 transform left-1/2 -translate-x-1/2 z-40 rounded-xl filter backdrop-blur-[12px] backdrop-brightness-[40%] overflow-hidden select-none"
     >
       <div
         ref={menuContentRef}
@@ -279,12 +297,12 @@ const Menu = ({
             <h3
               ref={nameRef}
               style={{ color: `${secondaryColor}` }}
-              className="font-cinzel font-bold uppercase sm:text-xl transform -translate-y-full will-change-transform"
+              className="font-cinzel font-bold uppercase text-xl transform -translate-y-full will-change-transform"
             >
               {name === "Cecil B." ? lastName : name}
             </h3>
           </div>
-          <div className="flex-center gap-2 flex-wrap">
+          <div className="flex-center gap-2 flex-wrap w-[390px] sm:w-[410px]">
             {items.map((item, index) => (
               <div
                 ref={addToRefs}
@@ -307,7 +325,7 @@ const Menu = ({
                   style={{
                     color: activeSection === item.title ? "#0a0a0a" : "#dfdff2",
                   }}
-                  className="text-xs sm:text-sm text-accent-light font-lora font-bold p-1"
+                  className="text-sm text-accent-light font-lora font-bold p-1"
                 >
                   {item.title}
                 </button>
@@ -319,7 +337,7 @@ const Menu = ({
           <div className="w-fit ms-4 overflow-hidden">
             <h3
               ref={playlistHeadingRef}
-              className="text-neutral-light font-lora sm:text-lg transform -translate-y-full will-change-transform"
+              className="text-neutral-light font-lora text-lg transform -translate-y-full will-change-transform"
             >
               Playlist de {name === "Cecil B." ? lastName : name}:
             </h3>
@@ -346,8 +364,8 @@ const Menu = ({
                     className="size-full object-cover rounded-md"
                   />
                 </div>
-                <div className="flex flex-col w-full pl-1 text-neutral-light font-lora">
-                  <h2 className="leading-none sm:text-lg text-nowrap font-lora">
+                <div className="flex flex-col w-full pl-1 gap-1 text-neutral-light font-lora">
+                  <h2 className="leading-none text-lg text-nowrap font-lora">
                     {song.songName}
                   </h2>
                   <h3 className="text-xs sm:text-sm text-black-light font-lora">

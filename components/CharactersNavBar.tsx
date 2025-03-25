@@ -42,7 +42,7 @@ const CharactersNavBar = memo(
   ({ color, secondaryColor, icon, name, lastName, playlist }: CharactersNavBarProps) => {
     const activeSection = useActiveSection();
 
-    const [isCharNavVisible, setIsCharNavVisible] = useState(false);
+    const [isCharNavVisible, setIsCharNavVisible] = useState(true);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [isAudioPlaying, setIsAudioPlaying] = useState(false);
@@ -57,17 +57,31 @@ const CharactersNavBar = memo(
     const { width } = useDimension();
 
     useEffect(() => {
-      if (currentScrollY === 0 && width < 768) {
-        setIsCharNavVisible(false);
-      } else if (currentScrollY === 0 && width > 1020) {
-        setIsCharNavVisible(true)
-      } else if (currentScrollY > lastScrollYRef.current) {
+      const mm = gsap.matchMedia();
+      const ctx = gsap.context(() => {
+        mm.add("(min-width: 610px)", () => {
+          gsap.from(charactersNavRef.current, {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power1.out",
+            delay: 1.5,
+          });
+        })
+      })
+
+      return () => ctx.revert();
+    }, [])
+
+    useEffect(() => {
+      if (currentScrollY > lastScrollYRef.current) {
         setIsCharNavVisible(false);
       } else if (currentScrollY < lastScrollYRef.current) {
         setIsCharNavVisible(true);
       }
       lastScrollYRef.current = currentScrollY;
     }, [currentScrollY, width]);
+
+    console.log(isCharNavVisible)
 
     useEffect(() => {
       if (isMenuOpen) {
@@ -82,11 +96,11 @@ const CharactersNavBar = memo(
     useEffect(() => {
       gsap.to(charactersNavRef.current, {
         y: isCharNavVisible ? 0 : -100,
-        opacity: isCharNavVisible ? 1 : 0,
+        opacity: isCharNavVisible && currentScrollY != 0 ? 1 : 0,
         duration: 0.3,
         ease: "power1.out",
       });
-    }, [isCharNavVisible, isMenuOpen]);
+    }, [isCharNavVisible, currentScrollY]);
 
     useGSAP(() => {
       const mm = gsap.matchMedia();
@@ -94,7 +108,7 @@ const CharactersNavBar = memo(
       tl.current = gsap
         .timeline({
           paused: true,
-          defaults: { duration: 0.53, ease: "power2.out" },
+          defaults: { duration: 0.53, ease: "cubic-bezier(0.1, 0.7, 0.1)" },
         })
         .to(charactersNavRef.current, {
           width: "600px",
@@ -118,7 +132,7 @@ const CharactersNavBar = memo(
         tl.current = gsap
           .timeline({
             paused: true,
-            defaults: { duration: 0.53, ease: "power2.out" },
+            defaults: { duration: 0.53, ease: "cubic-bezier(0.1, 0.7, 0.1)" },
           })
           .to(charactersNavRef.current, {
             width: "95%",
@@ -133,7 +147,7 @@ const CharactersNavBar = memo(
           .to(
             openMenuRef.current,
             {
-              rotate: 270,
+              rotate: 45,
             },
             "<"
           );
@@ -155,10 +169,10 @@ const CharactersNavBar = memo(
       <>
         <div
           ref={charactersNavRef}
-          className="fixed top-2 h-14 w-64 max-w-[600px] transform will-change-transform left-1/2 -translate-x-1/2 z-50 rounded-xl select-none"
+          className="fixed top-2 h-14 w-64 max-w-[600px] transform will-change-transform left-1/2 -translate-x-1/2 z-50 opacity-100 rounded-xl select-none"
         >
           <header className="absolute top-1/2 w-full -translate-y-1/2 flex justify-center">
-            <nav className="flex items-center justify-between size-full overflow-hidden px-4">
+            <nav className="flex items-center justify-between size-full overflow-hidden px-2">
               <button
                 onClick={() => setIsAudioPlaying(false)}
                 className="flex items-center space-x-1.5"
@@ -190,7 +204,7 @@ const CharactersNavBar = memo(
               </button>
               <button
                 ref={sectionsTitleRef}
-                className="relative h-6 w-[6.2rem] -ml-3 overflow-hidden transform will-change-transform"
+                className="relative h-6 w-[6.2rem] -ml-7 overflow-hidden transform will-change-transform"
               >
                 {navItems.map((item, index) => (
                   <div
