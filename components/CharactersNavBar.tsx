@@ -81,8 +81,6 @@ const CharactersNavBar = memo(
       lastScrollYRef.current = currentScrollY;
     }, [currentScrollY, width]);
 
-    console.log(isCharNavVisible)
-
     useEffect(() => {
       if (isMenuOpen) {
         tl.current?.play();

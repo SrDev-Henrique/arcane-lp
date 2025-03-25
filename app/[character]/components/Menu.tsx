@@ -73,8 +73,6 @@ const Menu = ({
   const upcomingAudioIndex = (currentIndex % totalAudio) + 1;
   const prevAudioIndex = (currentIndex % totalAudio) - 1 * -1;
 
-  console.log(currentIndex)
-
   const { duration = 0 } = audioRef.current || {};
   const progressPercent = (currentTime / duration) * 100 || 0;
 
