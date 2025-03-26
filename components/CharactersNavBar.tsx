@@ -121,7 +121,7 @@ const CharactersNavBar = memo(
         .to(
           openMenuRef.current,
           {
-            rotate: 45,
+            rotate: 135,
           },
           "<"
         );
@@ -145,7 +145,7 @@ const CharactersNavBar = memo(
           .to(
             openMenuRef.current,
             {
-              rotate: 45,
+              rotate: 135,
             },
             "<"
           );
