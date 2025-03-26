@@ -159,6 +159,20 @@ const Personagens = () => {
           );
       });
 
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: ".slider-wrapper",
+            start: () => `top -${height * 4}`,
+            end: () => "+=" + height * 0.5,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        })
+        .to(".slider-wrapper", {
+          backgroundColor: "#0a0a0a",
+        });
+
       ScrollTrigger.create({
         trigger: ".slider-wrapper",
         start: "top top",
