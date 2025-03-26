@@ -5,7 +5,7 @@ const Apresentacao = dynamic(() => import("./components/Apresentacao"));
 
 const Zaun = () => {
   return (
-    <div className="min-h-screen w-screen">
+    <div className="relative min-h-screen w-screen">
       <Apresentacao />
     </div>
   );
