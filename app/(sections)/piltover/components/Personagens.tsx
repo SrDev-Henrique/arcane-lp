@@ -163,7 +163,7 @@ const Personagens = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".slider-wrapper",
-            start: () => `top -${height * 4}`,
+            start: () => `top -${height * 4.65}`,
             end: () => "+=" + height * 0.5,
             scrub: true,
             invalidateOnRefresh: true,
@@ -171,7 +171,9 @@ const Personagens = () => {
         })
         .to(".slider-wrapper", {
           backgroundColor: "#0a0a0a",
-        });
+        }).to(".slider", {
+          opacity: 0,
+        })
 
       ScrollTrigger.create({
         trigger: ".slider-wrapper",
