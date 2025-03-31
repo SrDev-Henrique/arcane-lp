@@ -1,10 +1,10 @@
 "use client";
 
 import { sectionRefs } from "@/utils/sectionRefs";
+import Intro from "./Intro";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Intro from "./Intro";
 
 gsap.registerPlugin(ScrollTrigger);
 

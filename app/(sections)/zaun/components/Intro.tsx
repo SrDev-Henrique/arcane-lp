@@ -21,7 +21,7 @@ const Intro = () => {
       if (!circleUpRef.current) return;
 
       gsap.set(circleUpRef.current, {
-        clipPath: "circle(0% at 50% 140%)",
+        clipPath: "circle(30% at 50% 150%)",
       });
 
       gsap
@@ -29,7 +29,7 @@ const Intro = () => {
           scrollTrigger: {
             trigger: introContainerRef.current,
             start: "top top",
-            end: () => `+=${window.innerHeight * 1.2}`,
+            end: () => `+=${window.innerHeight}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -48,7 +48,7 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${window.innerHeight * 1.2}`,
+            start: () => `top -${window.innerHeight}`,
             end: () => `+=${window.innerHeight * 2}`,
             scrub: true,
             invalidateOnRefresh: true,
@@ -64,7 +64,7 @@ const Intro = () => {
           },
         })
         .to(circleUpRef.current, {
-          clipPath: "circle(0% at 50% -40%)",
+          clipPath: "circle(30% at 50% -50%)",
         });
 
       if (!topHeadingRef.current || !bottomHeadingRef.current) return;
@@ -156,7 +156,7 @@ const Intro = () => {
           <div className="sticky top-0 left-0 right-0 flex-center">
             <h1
               ref={zaunTitleRef}
-              className="special-font font-zentry leading-none text-[33vw] pt-[45%] text-blue-50"
+              className="special-font font-zentry leading-none text-[33vw] pt-[46.5%] zaun-intro-heading"
             >
               <b>Z</b>aun
             </h1>
@@ -173,7 +173,7 @@ const Intro = () => {
             >
               <h1
                 ref={topHeadingRef}
-                className="special-font font-zentry leading-none text-[33vw] text-zaun-light will-change-transform transform-gpu translate-y-[100%]"
+                className="special-font font-zentry leading-none text-[33vw] zaun-intro-heading will-change-transform transform-gpu translate-y-[100%]"
               >
                 <b>Z</b>aun
               </h1>
@@ -184,7 +184,7 @@ const Intro = () => {
             >
               <h1
                 ref={bottomHeadingRef}
-                className="special-font font-zentry leading-none text-[33vw] text-zaun-light will-change-transform transform-gpu rotate-180 translate-y-[-100%] opacity-60"
+                className="special-font font-zentry leading-none text-[33vw] zaun-intro-heading will-change-transform transform-gpu rotate-180 translate-y-[-100%] opacity-60"
               >
                 nua<b>Z</b>
               </h1>
@@ -196,14 +196,14 @@ const Intro = () => {
             ref={circleUpRef}
             className="h-[100vh] w-full absolute top-0 left-0 flex-center z-[3] zaun-circle-up"
           >
-            <div className="size-full bg-[radial-gradient(circle,_#dfdff2_0%,_#0a0a0a_100%)] bg-neutral-light flex-center flex-col text-center text-[20vw] xl:text-[16vw] text-black-dark leading-none z-[3]">
-              <h2 className="special-font font-zentry">
+            <div className="size-full bg-[radial-gradient(circle,_#2E8B57_0%,_#0a0a0a_100%)] filter brightness-75 flex-center flex-col text-center text-[20vw] xl:text-[16vw] text-black-dark leading-none z-[3]">
+              <h2 className="special-font font-zentry stained-background">
                 <b>A</b> cid<b>a</b>d<b>e</b>
               </h2>
-              <h2 className="special-font font-zentry">
+              <h2 className="special-font font-zentry stained-background-center">
                 <b>D</b>as
               </h2>
-              <h2 className="special-font font-zentry">
+              <h2 className="special-font font-zentry stained-background-bottom">
                 s<b>o</b>
                 <b>m</b>bras
               </h2>
@@ -214,7 +214,9 @@ const Intro = () => {
           ref={zaunIntroRef}
           className="absolute zaun-intro top-0 left-0 size-full bg-piltover-fadedBrown z-[2]"
         >
-          <div className="size-full zaun-filter"></div>
+          <div className="size-full zaun-filter flex justify-center items-start font-general font-semibold uppercase text-neutral-light pt-24">
+            <h3 className="w-fit">Welcome to the playground</h3>
+          </div>
         </div>
       </div>
       <div className="bg-black-dark min-h-[100dvh] w-full"></div>

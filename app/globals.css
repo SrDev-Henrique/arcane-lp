@@ -512,12 +512,45 @@ html.lenis body {
 }
 
 .zaun-circle-up {
-  clip-path: circle(0% at 50% 140%);
+  clip-path: circle(30% at 50% 150%);
 }
 
 .zaun-intro {
   clip-path: circle(100% at 50% 50%);
   background-image: radial-gradient(cir);
+}
+
+.stained-background {
+  background-image: url("/images/zaun.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: top right;
+}
+
+.stained-background-center {
+  background-image: url("/images/zaun.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: right;
+}
+
+.stained-background-bottom {
+  background-image: url("/images/zaun.jpg");
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-position: bottom left;
+}
+
+.zaun-intro-heading {
+  background: linear-gradient(to bottom, #2E8B57, #A6E22E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: #A6E22E50 4px;
+  text-shadow: 2 3 1px rgba(0, 0, 0, 0.13);
+  background-clip: text;
 }
 
 /* From Uiverse.io by G4b413l */
