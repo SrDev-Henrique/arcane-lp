@@ -511,12 +511,13 @@ html.lenis body {
   backdrop-filter: brightness(0.55);
 }
 
-.zaun-headings-container {
-  clip-path: circle(0% at 50% 50%);
+.zaun-circle-up {
+  clip-path: circle(0% at 50% 140%);
 }
 
-.zaun-circle-up {
-  clip-path: circle(0% at 50% -40%);
+.zaun-intro {
+  clip-path: circle(100% at 50% 50%);
+  background-image: radial-gradient(cir);
 }
 
 /* From Uiverse.io by G4b413l */
