@@ -157,22 +157,6 @@ const Personagens = () => {
           );
       });
 
-      gsap
-        .timeline({
-          scrollTrigger: {
-            trigger: ".slider-wrapper",
-            start: () => `top -${window.innerHeight * 4.65}`,
-            end: () => "+=" + window.innerHeight * 0.5,
-            scrub: true,
-            invalidateOnRefresh: true,
-          },
-        })
-        .to(".slider-wrapper", {
-          backgroundColor: "#0a0a0a",
-        }).to(".slider", {
-          opacity: 0,
-        })
-
       ScrollTrigger.create({
         trigger: ".slider-wrapper",
         start: "top top",

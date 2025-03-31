@@ -78,7 +78,7 @@ const Tabs = ({ personalidade, aparencia, habilidades, name }: TabsProps) => {
         ref={(el) => {
           contentRefs.current[tabIndex] = el!;
         }}
-        className="flex flex-col size-full xl:flex-row xl:flex-center mb-2"
+        className="flex flex-col size-full mb-2"
       >
         {imageItems.length > 0 && (
           <div className="w-full">

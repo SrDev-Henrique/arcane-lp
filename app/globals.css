@@ -180,7 +180,7 @@ html.lenis body {
 /* todo clip-paths */
 
 .mask-clip-path {
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
 }
 
 .hidden-clip-path {
@@ -427,6 +427,10 @@ html.lenis body {
   transform-style: preserve-3d;
 }
 
+.zaun-heading {
+  -webkit-text-stroke: #39FF14 1px;
+}
+
 .transition-div-title {
   color: #000;
   -webkit-background-clip: text;
@@ -445,13 +449,14 @@ html.lenis body {
 
 .animate-diagonal {
   width: calc(33.3333% - 31px);
-  margin-left: 13px;
+  margin-left: 11px;
   will-change: transform;
 }
 
 .animate-diagonal:nth-child(1) {
   animation-delay: 0s;
   height: calc(60% - 20px);
+  margin-left: 15px;
 }
 
 .animate-diagonal:nth-child(2) {
@@ -500,6 +505,18 @@ html.lenis body {
 
 .tab-image {
   filter: grayscale(50%);
+}
+
+.zaun-filter {
+  backdrop-filter: brightness(0.55);
+}
+
+.zaun-headings-container {
+  clip-path: circle(0% at 50% 50%);
+}
+
+.zaun-circle-up {
+  clip-path: circle(0% at 50% -40%);
 }
 
 /* From Uiverse.io by G4b413l */
