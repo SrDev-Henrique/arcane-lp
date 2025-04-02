@@ -40,10 +40,6 @@ const Intro = () => {
 
       if (!zaunIntroRef.current) return;
 
-      gsap.set(zaunIntroRef.current, {
-        clipPath: "circle(100% at 50% 50%)",
-      });
-
       gsap
         .timeline({
           scrollTrigger: {
@@ -147,7 +143,7 @@ const Intro = () => {
     });
 
     return () => ctx.revert();
-  });
+  }, []);
 
   return (
     <>
@@ -156,7 +152,7 @@ const Intro = () => {
           <div className="sticky top-0 left-0 right-0 flex-center">
             <h1
               ref={zaunTitleRef}
-              className="special-font font-zentry leading-none text-[33vw] pt-[46.5%] zaun-intro-heading"
+              className="special-font font-zentry leading-none text-[33vw] pt-[46.5%] zaun-intro-heading will-change-transform"
             >
               <b>Z</b>aun
             </h1>
@@ -169,7 +165,7 @@ const Intro = () => {
           <div className="size-full flex flex-col z-[1] justify-center">
             <div
               ref={topContainerRef}
-              className="w-full h-[35vw] flex items-end justify-center overflow-hidden"
+              className="w-full h-[35vw] flex items-end justify-center overflow-hidden will-change-transform"
             >
               <h1
                 ref={topHeadingRef}
@@ -180,7 +176,7 @@ const Intro = () => {
             </div>
             <div
               ref={bottomContainerRef}
-              className="w-full h-[35vw] bg-black-dark flex items-start justify-center overflow-hidden z-[1]"
+              className="w-full h-[35vw] bg-black-dark flex items-start justify-center overflow-hidden z-[1] will-change-transform"
             >
               <h1
                 ref={bottomHeadingRef}
@@ -194,7 +190,7 @@ const Intro = () => {
         <div className="absolute top-0 left-0 h-[100dvh] w-full">
           <div
             ref={circleUpRef}
-            className="h-[100vh] w-full absolute top-0 left-0 flex-center z-[3] zaun-circle-up"
+            className="h-[100vh] w-full absolute top-0 left-0 flex-center z-[3] zaun-circle-up will-change-transform"
           >
             <div className="size-full bg-[radial-gradient(circle,_#2E8B57_0%,_#0a0a0a_100%)] filter brightness-75 flex-center flex-col text-center text-[20vw] xl:text-[16vw] text-black-dark leading-none z-[3]">
               <h2 className="special-font font-zentry stained-background">
@@ -212,14 +208,13 @@ const Intro = () => {
         </div>
         <div
           ref={zaunIntroRef}
-          className="absolute zaun-intro top-0 left-0 size-full bg-piltover-fadedBrown z-[2]"
+          className="absolute zaun-intro top-0 left-0 size-full bg-piltover-fadedBrown z-[2] will-change-transform"
         >
           <div className="size-full zaun-filter flex justify-center items-start font-general font-semibold uppercase text-neutral-light pt-24">
             <h3 className="w-fit">Welcome to the playground</h3>
           </div>
         </div>
       </div>
-      <div className="bg-black-dark min-h-[100dvh] w-full"></div>
     </>
   );
 };

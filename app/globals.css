@@ -80,6 +80,31 @@ html.lenis body {
     font-family: "cinzel";
     src: url("/fonts/cinzel.woff2") format("woff2");
   }
+
+  @font-face {
+    font-family: "cinzelDecorative-regular";
+    src: url("/fonts/cinzelDecorative-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "cinzelDecorative-bold";
+    src: url("/fonts/cinzelDecorative-Bold.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "cinzelDecorative-black";
+    src: url("/fonts/cinzelDecorative-Black.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "playfair";
+    src: url("/fonts/PlayfairDisplay-VariableFont_wght.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "playfair-italic";
+    src: url("/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2") format("woff2");
+  }
 }
 
 @layer utilities {
@@ -170,6 +195,10 @@ html.lenis body {
   .indicator-line {
     @apply h-1 w-[2px] rounded-full bg-white transition-all duration-200 ease-in-out;
   }
+}
+
+.background-position-top {
+  background-position: top;
 }
 
 .special-font b {
@@ -321,6 +350,10 @@ html.lenis body {
 
 .brightness-filter {
   backdrop-filter: brightness(80%);
+}
+
+.brightness-low {
+  filter: brightness(0.8);
 }
 
 .fog {
@@ -515,11 +548,6 @@ html.lenis body {
   clip-path: circle(30% at 50% 150%);
 }
 
-.zaun-intro {
-  clip-path: circle(100% at 50% 50%);
-  background-image: radial-gradient(cir);
-}
-
 .stained-background {
   background-image: url("/images/zaun.jpg");
   -webkit-background-clip: text;
@@ -551,6 +579,16 @@ html.lenis body {
   -webkit-text-stroke: #A6E22E50 4px;
   text-shadow: 2 3 1px rgba(0, 0, 0, 0.13);
   background-clip: text;
+}
+
+.zaun-ap span {
+  font-weight: bold;
+  font-family: "playfair";
+  color: #A6E22E;
+}
+
+.zaun-intro-image {
+  clip-path: polygon(0 0, 100% 0%, 100% 0%, 0% 0%);
 }
 
 /* From Uiverse.io by G4b413l */
