@@ -147,7 +147,7 @@ const Apresentacao = () => {
                   : index === 2
                   ? "bottom-0 left-0"
                   : "top-0 left-0"
-              } h-[72%] xl:h-[100%] w-[90%] sm:w-[60%] max-w-[750px] absolute rounded-xl overflow-hidden zaun-intro-image`}
+              } h-[72%] xl:h-[100%] w-[90%] sm:w-[50%] max-w-[650px] absolute rounded-xl overflow-hidden zaun-intro-image`}
             >
               <Image
                 ref={addToImageRefs}
