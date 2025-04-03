@@ -1,7 +1,7 @@
 "use client";
 
 import { sectionRefs } from "@/utils/sectionRefs";
-// import Intro from "./Intro";
+import Intro from "./Intro";
 import { apresentacao } from "@/data/zaun";
 
 import gsap from "gsap";
@@ -72,8 +72,8 @@ const Apresentacao = () => {
           .timeline({
             scrollTrigger: {
               trigger: image,
-              start: "top bottom-=200",
-              end: "bottom bottom-=200",
+              start: "top bottom-=150",
+              end: "bottom bottom-=150",
               scrub: true,
             },
           })
@@ -111,14 +111,14 @@ const Apresentacao = () => {
       }}
       className="min-h-screen w-full relative bg-black-dark"
     >
-      {/* <Intro /> */}
+      <Intro />
       <div
         ref={apContainerRef}
         className="h-[100dvh] w-full flex justify-center pt-[2%] relative"
       >
         <div
           ref={apImageContainerRef}
-          className="h-[80%] w-[90%] scale-75 rounded-3xl flex-center overflow-hidden transform-gpu will-change-transform"
+          className="h-[80%] w-[90%] max-w-[1724px] scale-75 rounded-3xl flex-center overflow-hidden transform-gpu will-change-transform"
         >
           <Image
             src={"/images/arcane_zaun/intro.webp"}
@@ -128,25 +128,25 @@ const Apresentacao = () => {
             className="size-full object-cover object-top rounded-3xl"
           />
         </div>
-        <div className="absolute bottom-16 w-fit">
+        <div className="absolute bottom-16 2xl:bottom-20 w-fit">
           <h3 className="text-zaun-light text-sm font-general font-semibold uppercase mix-blend-color-dodge">
             Welcome to the Playground
           </h3>
         </div>
       </div>
-      <div className="min-h-screen w-full flex flex-col gap-24">
+      <div className="min-h-screen w-full flex-center flex-col py-24 gap-24">
         {apresentacao.map((item, index) => (
-          <div key={index} className="h-screen w-full relative">
+          <div key={index} className="h-[100dvh] w-[90%] max-w-[1724px] relative">
             <div
               ref={addToContainerRefs}
               className={`${
                 index === 0
-                  ? "bottom-5 right-2"
+                  ? "bottom-0 right-0"
                   : index === 1
-                  ? "top-5 right-2"
+                  ? "top-0 right-0"
                   : index === 2
-                  ? "bottom-5 left-2"
-                  : "top-5 left-2"
+                  ? "bottom-0 left-0"
+                  : "top-0 left-0"
               } h-[72%] xl:h-[100%] w-[90%] sm:w-[60%] max-w-[750px] absolute rounded-xl overflow-hidden zaun-intro-image`}
             >
               <Image
@@ -161,19 +161,19 @@ const Apresentacao = () => {
             <div
               className={`${
                 index === 0
-                  ? "top-5 left-[2%] flex-col"
+                  ? "top-0 left-0 flex-col"
                   : index === 1
-                  ? "bottom-5 left-[2%] flex-col-reverse"
+                  ? "bottom-0 left-0 flex-col-reverse"
                   : index === 2
-                  ? "top-5 right-[2%] flex-col"
-                  : "bottom-5 right-[2%] flex-col-reverse"
-              } flex gap-4 max-w-96 xl:max-w-[42rem] absolute mix-blend-difference`}
+                  ? "top-0 right-0 flex-col"
+                  : "bottom-0 right-0 flex-col-reverse"
+              } flex gap-4 max-w-[28rem] 2xl:max-w-[38rem] absolute mix-blend-difference`}
             >
               <div
-                className="text-white-dark text-lg xl:text-2xl font-playfair zaun-ap text-wrap"
+                className="text-white-dark text-lg xl:text-xl 2xl:text-2xl font-playfair zaun-ap text-wrap"
                 dangerouslySetInnerHTML={{ __html: item.content }}
               />
-              <div className="text-3xl xl:text-5xl text-zaun-purple font-cinzelDecorative-bold">
+              <div className="text-3xl 2xl:text-5xl text-zaun-purple font-cinzelDecorative-bold">
                 {item.title}
               </div>
             </div>
