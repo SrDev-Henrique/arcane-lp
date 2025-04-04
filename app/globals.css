@@ -12,6 +12,11 @@
   outline: none;
 }
 
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 body {
   width: 100dvw;
   font-family: "General Sans", sans-serif;

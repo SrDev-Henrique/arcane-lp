@@ -17,40 +17,89 @@ const Historia = () => {
   const storyContainerRef = useRef<HTMLDivElement>(null);
   const storyImagesRef = useRef<HTMLDivElement>(null);
   const storyRef = useRef<HTMLDivElement>(null);
+  const storyIntroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (!storyContainerRef.current) return;
+      if (!storyIntroRef.current) return;
+
+      gsap.set(storyIntroRef.current, {
+        clipPath: "polygon(0 0, 100% 0%, 100% 100%, 0 100%)",
+      });
 
       gsap
         .timeline({
           scrollTrigger: {
             trigger: ".story-container",
             start: "top top",
-            end: () => `+=${window.innerHeight * 8}`,
+            end: () => `+=${window.innerHeight}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
         })
-        .to(storyRef.current, {
-          x: "-700vw",
-          ease: "power1.out",
-        })
-        .to(
-          storyImagesRef.current,
-          {
-            x: "-400%",
+        .to(storyIntroRef.current, {
+          clipPath: "polygon(0 0, 0% 0%, 0% 100%, 0 100%)",
+        });
+
+      if (!storyContainerRef.current) return;
+
+      const mm = gsap.matchMedia();
+      mm.add("(max-width: 450px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".story-container",
+              start: () => `top -${window.innerHeight}`,
+              end: () => `+=${window.innerHeight * 8}`,
+              scrub: true,
+              invalidateOnRefresh: true,
+            },
+          })
+          .to(storyRef.current, {
+            x: "-700vw",
             ease: "power1.out",
-          },
-          "<"
-        );
+          })
+          .to(
+            storyImagesRef.current,
+            {
+              x: "-900%",
+              ease: "power1.out",
+            },
+            "<"
+          );
+      });
+
+      mm.add("(min-width: 451px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: ".story-container",
+              start: () => `top -${window.innerHeight}`,
+              end: () => `+=${window.innerHeight * 8}`,
+              scrub: true,
+              invalidateOnRefresh: true,
+            },
+          })
+          .to(storyRef.current, {
+            x: "-700vw",
+            ease: "power1.out",
+          })
+          .to(
+            storyImagesRef.current,
+            {
+              x: "-400%",
+              ease: "power1.out",
+            },
+            "<"
+          );
+      });
 
       ScrollTrigger.create({
         trigger: ".story-container",
         scrub: true,
         pin: true,
         start: "top top",
-        end: () => `+=${window.innerHeight * 8}`,
+        end: () => `+=${window.innerHeight * 9}`,
         invalidateOnRefresh: true,
       });
     });
@@ -66,22 +115,39 @@ const Historia = () => {
       className="min-h-screen w-full relative bg-black-dark story-container"
     >
       <div
+        ref={storyIntroRef}
+        className="absolute top-0 left-0 inset-0 bg-black-dark mask-clip-path z-[1]"
+      >
+        <div className="size-full relative flex-center">
+          <div className="absolute top-1/2 -translate-y-[80%] right-1/2 translate-x-1/2 w-fit text-zaun-celadon text-nowrap flex flex-col">
+            <h1 className="font-cinzelDecorative-bold text-4xl sm:text-6xl lg:text-8xl">
+              A História De
+            </h1>
+            <h1 className="font-cinzelDecorative-regular text-6xl sm:text-8xl lg:text-[10rem] text-center">
+              Zaun
+            </h1>
+          </div>
+          <div className="w-full flex justify-between px-3 font-playfair text-xs text-zaun-sageGreen">
+            <p>(Arcane)</p>
+            <p>(Riot Games)</p>
+          </div>
+        </div>
+      </div>
+      <div
         ref={storyContainerRef}
         className="h-[100dvh] w-full filter relative"
       >
         <div
           ref={storyImagesRef}
-          className="absolute filter brightness-50 top-0 h-[100dvh] w-full flex items-center gap-24 transform will-change-transform"
+          className="absolute filter brightness-50 top-20 md:top-0 h-[100dvh] w-[60%] flex items-start gap-14 xl:gap-32 transform translate-x-[10%] will-change-transform"
         >
           {historiaImgs.map((item) =>
             item.imagePath.map((src, imgIndex) => (
               <div
                 key={imgIndex}
                 className={`${
-                  imgIndex % 2 !== 0
-                    ? "translate-y-[70%]"
-                    : "-translate-y-[70%]"
-                } w-[80%] h-[40%] max-w-[484px] aspect-[3/1] transform`}
+                  imgIndex % 2 !== 0 ? "-translate-y-[-70%]" : ""
+                } w-[100%] h-[20%] md:h-[35%] max-w-[584px] aspect-[3/2] transform`}
               >
                 <Image
                   src={src}
@@ -94,22 +160,22 @@ const Historia = () => {
             ))
           )}
         </div>
-        <div ref={storyRef} className="size-full flex transform will-change-transform">
+        <div
+          ref={storyRef}
+          className="size-full flex transform will-change-transform mix-blend-difference"
+        >
           {historia.map((item, index) => (
-            <div key={index} className="h-[100dvh] min-w-[100dvw] flex-center">
-              <div
-                className={`${
-                  index % 2 !== 0 ? "flex-col-reverse" : "flex-col"
-                } size-full max-h-[600px] flex-center py-6 px-4 text-zaun-sageGreen select-none mix-blend-difference`}
-              >
-                <h1 className="text-[4vw] text-zaun-celadon text-center mb-10 w-fit leading-normal font-cinzelDecorative-bold font-bold">
+            <div
+              key={index}
+              className="h-[100dvh] min-w-[100dvw] flex items-end justify-center"
+            >
+              <div className="size-full max-h-[50%] flex flex-col gap-10 py-6 px-10 md:px-24 text-zaun-sageGreen select-none">
+                <h1 className="text-xl sm:text-3xl text-zaun-celadon w-fit leading-none font-cinzelDecorative-bold font-bold">
                   {item.title}
                 </h1>
-                <div className="size-full flex-center self-center">
-                  <p className="text-[2.5vw] max-w-[55rem] font-playfair">
-                    {item.content}
-                  </p>
-                </div>
+                <p className="text-xs sm:text-base lg:text-xl max-w-[55rem] font-playfair">
+                  {item.content}
+                </p>
               </div>
             </div>
           ))}

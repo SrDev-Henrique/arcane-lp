@@ -71,7 +71,7 @@ export const historia = [
 export const historiaImgs = [
   {
     imagePath: Array.from(
-      { length: 17 },
+      { length: 10 },
       (_, i) => `/images/arcane_zaun/historia-${i + 1}.webp`
     ),
   },
