@@ -120,7 +120,7 @@ const Personagens = () => {
               key={index}
               className="h-[100dvh] flex-center w-full relative"
             >
-              <div className="h-[80dvh] py-32 lg:py-20 w-full flex flex-col items-center justify-between zaun-chars-container">
+              <div className="h-[80dvh] max-h-[730px] py-32 lg:py-20 w-full flex flex-col items-center justify-between zaun-chars-container">
                 <div className="text-lg">
                   <h2 className="font-playfair-italic">{personagem.title}</h2>
                 </div>
