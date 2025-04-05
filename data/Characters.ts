@@ -1109,4 +1109,794 @@ export const characters = {
       },
     ],
   },
+
+  silco: {
+    color: "",
+    secondaryColor: "",
+    icon: "",
+    heroImage: "",
+    name: "",
+    lastName: "",
+    description: "",
+    quote: "",
+    personalidade: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    aparencia: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    habilidades: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    jornada: {
+      title: "Jornada",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada1: {
+      title: "Temporada 1",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte5: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte6: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    conclusion: {
+      title: "",
+      parte1: [
+        {
+          content: "",
+        },
+      ],
+    },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc: "",
+      },
+    ],
+  },
+
+  vander: {
+    color: "",
+    secondaryColor: "",
+    icon: "",
+    heroImage: "",
+    name: "",
+    lastName: "",
+    description: "",
+    quote: "",
+    personalidade: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    aparencia: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    habilidades: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    jornada: {
+      title: "Jornada",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada1: {
+      title: "Temporada 1",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte5: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte6: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    conclusion: {
+      title: "",
+      parte1: [
+        {
+          content: "",
+        },
+      ],
+    },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc: "",
+      },
+    ],
+  },
+
+  violet: {
+    color: "",
+    secondaryColor: "",
+    icon: "",
+    heroImage: "",
+    name: "",
+    lastName: "",
+    description: "",
+    quote: "",
+    personalidade: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    aparencia: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    habilidades: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    jornada: {
+      title: "Jornada",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada1: {
+      title: "Temporada 1",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte5: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte6: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    conclusion: {
+      title: "",
+      parte1: [
+        {
+          content: "",
+        },
+      ],
+    },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc: "",
+      },
+    ],
+  },
+
+  jinx: {
+    color: "",
+    secondaryColor: "",
+    icon: "",
+    heroImage: "",
+    name: "",
+    lastName: "",
+    description: "",
+    quote: "",
+    personalidade: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    aparencia: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    habilidades: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    jornada: {
+      title: "Jornada",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada1: {
+      title: "Temporada 1",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte5: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte6: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    conclusion: {
+      title: "",
+      parte1: [
+        {
+          content: "",
+        },
+      ],
+    },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc: "",
+      },
+    ],
+  },
+
+  ekko: {
+    color: "",
+    secondaryColor: "",
+    icon: "",
+    heroImage: "",
+    name: "",
+    lastName: "",
+    description: "",
+    quote: "",
+    personalidade: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    aparencia: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    habilidades: [
+      {
+        src: ["", "", ""],
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+      {
+        title: "",
+        content: "",
+      },
+    ],
+    jornada: {
+      title: "Jornada",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada1: {
+      title: "Temporada 1",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    temporada2: {
+      title: "Temporada 2",
+      parte1: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte2: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte3: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte4: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte5: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+      parte6: [
+        {
+          image: "",
+          content: "",
+        },
+      ],
+    },
+    conclusion: {
+      title: "",
+      parte1: [
+        {
+          content: "",
+        },
+      ],
+    },
+    playlist: [
+      {
+        songName: "",
+        artistName: "",
+        imgSrc: "",
+      },
+    ],
+  },
 };
