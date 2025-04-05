@@ -76,3 +76,46 @@ export const historiaImgs = [
     ),
   },
 ];
+export const charsIntroImages = [
+  {
+    nome: "Silco",
+    imagens: Array.from(
+      { length: 3 },
+      (_, i) =>
+        `/images/arcane_zaun/zaun_characters/silco/silco-${i + 1}.webp`
+    ),
+  },
+  {
+    nome: "Vander",
+    imagens: Array.from(
+      { length: 3 },
+      (_, i) => `/images/arcane_zaun/zaun_characters/vander/vander-${i + 1}.webp`
+    ),
+  },
+  {
+    nome: "Vi",
+    imagens: Array.from(
+      { length: 3 },
+      (_, i) =>
+        `/images/arcane_zaun/zaun_characters/vi/vi-${i + 1}.webp`
+    ),
+  },
+  {
+    nome: "Jinx",
+    imagens: Array.from(
+      { length: 3 },
+      (_, i) =>
+        `/images/arcane_zaun/zaun_characters/jinx/jinx-${i + 1}.webp`
+    ),
+  },
+  {
+    nome: "Ekko",
+    imagens: Array.from(
+      { length: 3 },
+      (_, i) =>
+        `/images/arcane_zaun/zaun_characters/ekko/ekko-${
+          i + 1
+        }.webp`
+    ),
+  },
+];
