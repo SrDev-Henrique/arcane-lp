@@ -192,7 +192,7 @@ const Intro = () => {
             ref={circleUpRef}
             className="h-[100vh] w-full absolute top-0 left-0 flex-center z-[3] zaun-circle-up will-change-transform"
           >
-            <div className="size-full bg-[radial-gradient(circle,_#2E8B57_0%,_#0a0a0a_100%)] filter brightness-75 flex-center flex-col text-center text-[20vw] xl:text-[16vw] text-black-dark leading-none z-[3]">
+            <div className="size-full bg-[radial-gradient(circle,_#8A9A5B_0%,_#0a0a0a_100%)] filter brightness-75 flex-center flex-col text-center text-[20vw] xl:text-[16vw] text-black-dark leading-none z-[3]">
               <h2 className="special-font font-zentry stained-background">
                 <b>A</b> cid<b>a</b>d<b>e</b>
               </h2>
