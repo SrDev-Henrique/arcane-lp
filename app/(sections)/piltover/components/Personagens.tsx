@@ -172,7 +172,7 @@ const Personagens = () => {
   return (
     <section id="personagens-section" className="min-h-screen mt-[100vh]">
       <div
-        className="slider-wrapper z-[1] w-screen h-screen relative bg-piltover-fadedBrown"
+        className="slider-wrapper z-[12] w-screen h-screen relative bg-piltover-fadedBrown"
         id="pilto<b>v</b>er-personagens"
         ref={(el) => {
           if (el) sectionRefs.current["pilto<b>v</b>er-personagens"] = el;

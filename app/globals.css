@@ -412,6 +412,7 @@ html.lenis body {
 
 .sticky-section {
   mask-image: radial-gradient(circle, black 0%, transparent 85%);
+  clip-path: circle(0% at 50% 50%);
 }
 
 .slider {

@@ -76,23 +76,23 @@ const PiltoverHistoria = () => {
         );
     });
 
-    gsap.set(".black-section", {
-      clipPath: "circle(100% at 50% 50%)",
-    });
+    // gsap.set(".black-section", {
+    //   clipPath: "circle(100% at 50% 50%)",
+    // });
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: ".black-section",
-          start: () => `top -${images.length * window.innerHeight}`,
-          end: () => `+=${window.innerHeight * 1.5}`,
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-      })
-      .to(".black-section", {
-        clipPath: "circle(0% at 50% 50%)",
-      });
+    // gsap
+    //   .timeline({
+    //     scrollTrigger: {
+    //       trigger: ".black-section",
+    //       start: () => `top -${images.length * window.innerHeight}`,
+    //       end: () => `+=${window.innerHeight * 1.5}`,
+    //       scrub: true,
+    //       invalidateOnRefresh: true,
+    //     },
+    //   })
+    //   .to(".black-section", {
+    //     clipPath: "circle(0% at 50% 50%)",
+    //   });
 
     ScrollTrigger.create({
       trigger: ".black-section",

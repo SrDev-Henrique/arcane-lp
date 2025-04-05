@@ -24,6 +24,22 @@ const StickyDiv = () => {
         end: () => "+=" + windowHeight,
       });
 
+      gsap.set(stickyRef.current, {
+        clipPath: "circle(0% at 50% 50%)",
+      })
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: stickyRef.current,
+          start: "top top",
+          end: () => "+=" + windowHeight,
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      }).to(stickyRef.current, {
+        clipPath: "circle(100% at 50% 50%)",
+      })
+
       const carrouselTl = gsap.timeline({
         scrollTrigger: {
           trigger: stickyRef.current,
@@ -58,7 +74,7 @@ const StickyDiv = () => {
   return (
     <section
       ref={stickyRef}
-      className="sticky-section -mt-[200vh] h-screen w-screen bg-piltover-fadedBrown sticky top-0 flex-center"
+      className="sticky-section -mt-[210vh] h-screen w-screen bg-piltover-fadedBrown sticky top-0 flex-center z-[11]"
     >
       <div className="relative w-full h-[100dvh] z-[1]">
         <div className="flex-center size-full overflow-hidden">
