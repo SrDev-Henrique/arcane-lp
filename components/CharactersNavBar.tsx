@@ -190,7 +190,7 @@ const CharactersNavBar = memo(
                     <div
                       key={index}
                       className={`indicator-line opacity-0 mt-2 ${
-                        isAudioPlaying ? "opacity-100 active" : ""
+                        isAudioPlaying && !isMenuOpen && !isTransitioning ? "opacity-100 active" : ""
                       }`}
                       style={{
                         animationDelay: `${index * 0.1}s`,

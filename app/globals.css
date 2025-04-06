@@ -796,6 +796,19 @@ html.lenis body {
     height: 22px;
     margin-top: 4px;
   }
+  #menu {
+    padding-top: 0px;
+  }
+  #playlist-image {
+    width: 100px;
+  }
+  #menu-content {
+    gap: 22px;
+  }
+  #playlist-content {
+   flex-direction: row;
+   width: 22rem;
+  }
 }
 
 @media(max-height: 570px) {
