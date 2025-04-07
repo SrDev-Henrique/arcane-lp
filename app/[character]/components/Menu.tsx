@@ -36,6 +36,7 @@ interface MenuProps {
   name: string;
   lastName: string;
   playlist: PlaylistItem[];
+  theme: string;
 }
 
 const Menu = ({
@@ -50,6 +51,7 @@ const Menu = ({
   name,
   lastName,
   playlist,
+  theme,
 }: MenuProps) => {
   const [currentIndex, setCurrentIndex] = useState(1);
   const [currentTime, setCurrentTime] = useState(0);
@@ -247,7 +249,7 @@ const Menu = ({
         .to(
           menuRef.current,
           {
-            height: "505px",
+            height: "510px",
           },
           "<"
         )
@@ -288,7 +290,7 @@ const Menu = ({
       style={{
         backgroundImage: `linear-gradient(120deg, ${color}80, ${secondaryColor}80)`,
       }}
-      className="fixed top-2 h-14 max-h-[505px] w-[16.5rem] max-w-[600px] pt-8 sm:pt-14 transform left-1/2 -translate-x-1/2 z-40 rounded-xl filter backdrop-blur-[12px] backdrop-brightness-[40%] overflow-hidden select-none"
+      className="fixed top-2 h-14 max-h-[510px] w-[16.5rem] max-w-[600px] pt-8 sm:pt-14 transform left-1/2 -translate-x-1/2 z-40 rounded-2xl filter backdrop-blur-[12px] backdrop-brightness-[40%] overflow-hidden select-none"
     >
       <div
         ref={menuContentRef}
@@ -300,7 +302,9 @@ const Menu = ({
             <h3
               ref={nameRef}
               style={{ color: `${secondaryColor}` }}
-              className="font-cinzel font-bold uppercase text-xl transform -translate-y-full will-change-transform"
+              className={`${
+                theme === "piltover" ? "font-cinzel" : "font-playfair"
+              } font-bold uppercase text-xl transform -translate-y-full will-change-transform`}
             >
               {name === "Cecil B." ? lastName : name}
             </h3>
@@ -328,7 +332,9 @@ const Menu = ({
                   style={{
                     color: activeSection === item.title ? "#0a0a0a" : "#dfdff2",
                   }}
-                  className="text-sm text-accent-light font-lora font-bold p-1"
+                  className={`text-sm text-accent-light font-bold p-1 ${
+                    theme === "piltover" ? "font-lora" : "font-playfair"
+                  }`}
                 >
                   {item.title}
                 </button>
@@ -340,7 +346,9 @@ const Menu = ({
           <div className="w-fit ms-4 overflow-hidden">
             <h3
               ref={playlistHeadingRef}
-              className="text-neutral-light font-lora text-lg transform -translate-y-full will-change-transform"
+              className={`text-neutral-light text-lg transform -translate-y-full will-change-transform ${
+                theme === "piltover" ? "font-lora" : "font-playfair"
+              }`}
             >
               Playlist de {name === "Cecil B." ? lastName : name}:
             </h3>
@@ -372,11 +380,20 @@ const Menu = ({
                   </div>
                 </div>
                 <div className="w-full flex-center flex-col gap-1">
-                  <div className="flex flex-col text-center w-full gap-1 text-neutral-light font-lora">
-                    <h2 className="leading-none text-lg text-nowrap font-lora">
+                  <div className="flex flex-col text-center w-full gap-1 text-neutral-light">
+                    <h2
+                      className={`leading-none text-lg ${
+                        theme === "piltover" ? "font-lora" : "font-playfair"
+                      }`}
+                    >
                       {song.songName}
                     </h2>
-                    <h3 className="text-xs sm:text-sm text-black-light font-lora">
+                    <h3
+                      style={{ color: `${secondaryColor}` }}
+                      className={`text-xs sm:text-sm ${
+                        theme === "piltover" ? "font-lora" : "font-playfair"
+                      }`}
+                    >
                       {song.artistName}
                     </h3>
                   </div>
@@ -386,9 +403,7 @@ const Menu = ({
                       <button
                         onClick={handlePrevAudioClick}
                         className={`${
-                          playlist.length <= 1
-                            ? "opacity-20 pointer-events-none"
-                            : ""
+                          playlist.length <= 1 ? "hidden" : ""
                         } focus:outline-none`}
                       >
                         <FaStepBackward
@@ -406,9 +421,7 @@ const Menu = ({
                       <button
                         onClick={handleNextAudioClick}
                         className={`${
-                          playlist.length <= 1
-                            ? "opacity-20 pointer-events-none"
-                            : ""
+                          playlist.length <= 1 ? "hidden" : ""
                         } focus:outline-none`}
                       >
                         <FaStepForward
@@ -422,7 +435,7 @@ const Menu = ({
                             key={index}
                             className={`indicator-line mt-2 ${
                               isAudioPlaying ? "active" : ""
-                            }`}
+                            }`}  
                             style={{
                               animationDelay: `${index * 0.1}s`,
                               backgroundColor: `${secondaryColor}`,

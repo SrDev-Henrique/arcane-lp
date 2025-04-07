@@ -32,6 +32,7 @@ export default function CharacterPageClient({
         name={data.name}
         lastName={data.lastName}
         playlist={data.playlist}
+        theme={data.theme}
       />
       <Hero
         key={character}
@@ -41,6 +42,7 @@ export default function CharacterPageClient({
         description={data.description}
         quote={data.quote}
         color={data.color}
+        theme={data.theme}
       />
       <About
         personalidade={data.personalidade}

@@ -36,10 +36,11 @@ interface CharactersNavBarProps {
   name: string;
   lastName: string;
   playlist: PlaylistItem[];
+  theme: string;
 }
 
 const CharactersNavBar = memo(
-  ({ color, secondaryColor, icon, name, lastName, playlist }: CharactersNavBarProps) => {
+  ({ color, secondaryColor, icon, name, lastName, playlist, theme }: CharactersNavBarProps) => {
     const activeSection = useActiveSection();
 
     const [isCharNavVisible, setIsCharNavVisible] = useState(true);
@@ -160,7 +161,7 @@ const CharactersNavBar = memo(
 
       setTimeout(() => {
         setIsTransitioning(false);
-      }, 500);
+      }, 800);
     };
 
     return (
@@ -190,7 +191,9 @@ const CharactersNavBar = memo(
                     <div
                       key={index}
                       className={`indicator-line opacity-0 mt-2 ${
-                        isAudioPlaying && !isMenuOpen && !isTransitioning ? "opacity-100 active" : ""
+                        isAudioPlaying && !isMenuOpen && !isTransitioning
+                          ? "opacity-100 active"
+                          : ""
                       }`}
                       style={{
                         animationDelay: `${index * 0.1}s`,
@@ -213,7 +216,9 @@ const CharactersNavBar = memo(
                   >
                     <p
                       style={{ color: `${secondaryColor}` }}
-                      className=" uppercase font-lora font-bold text-sm text-nowrap"
+                      className={`uppercase font-bold text-sm text-nowrap ${
+                        theme === "piltover" ? "font-lora" : "font-playfair"
+                      }`}
                     >
                       {item.title}
                     </p>
@@ -241,6 +246,7 @@ const CharactersNavBar = memo(
           playlist={playlist}
           setIsMenuOpen={setIsMenuOpen}
           setIsAudioPlaying={setIsAudioPlaying}
+          theme={theme}
         />
       </>
     );

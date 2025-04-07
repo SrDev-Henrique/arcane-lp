@@ -1,5 +1,6 @@
 export const characters = {
   caitlyn: {
+    theme: "piltover",
     color: "#35637C",
     secondaryColor: "#A4B3B5",
     icon: "/images/piltover-characters/characters-page/caitlyn/icon.webp",
@@ -244,6 +245,7 @@ export const characters = {
   },
 
   mel: {
+    theme: "piltover",
     color: "#B79E58",
     secondaryColor: "#D0C5A1",
     icon: "/images/piltover-characters/characters-page/mel/icon.webp",
@@ -431,6 +433,7 @@ export const characters = {
   },
 
   jayce: {
+    theme: "piltover",
     color: "#8C5A3C",
     secondaryColor: "#B4B0A2",
     icon: "/images/piltover-characters/characters-page/jayce/icon.webp",
@@ -659,6 +662,7 @@ export const characters = {
   },
 
   viktor: {
+    theme: "piltover",
     color: "#B87148",
     secondaryColor: "#6E5E4B",
     icon: "/images/piltover-characters/characters-page/viktor/icon.webp",
@@ -815,7 +819,7 @@ export const characters = {
           image:
             "/images/piltover-characters/characters-page/viktor/viktor-19.webp",
           content:
-            "Confrontado com sua própria fragilidade e debilitado por uma <b>doença que corroía seu corpo</b>, Viktor tomou uma decisão radical: experimentar em si mesmo. Utilizando uma <b>injeção de shimmer</b> – uma substância que permitiria que seu organismo aceitasse as transmutações do Hexcore – ele transformou parte de seu corpo, convertendo uma perna em uma fusão entre <b>metal escuro, cacos dourados e energia pulsante</b>. ",
+            "Confrontado com sua própria fragilidade e debilitado por uma <b>doença que corroía seu corpo</b>, Viktor tomou uma decisão radical: experimentar em si mesmo. Utilizando uma <b>injeção de shimmer</b> – uma substância que permitiria que seu organismo aceitasse as transmutações do Hexcore – ele transformou parte de seu corpo, convertendo uma perna em uma fusão entre <b>metal escuro, cacos dourados e energia pulsante</b>.",
         },
       ],
       parte7: [
@@ -904,6 +908,7 @@ export const characters = {
   },
 
   heimerdinger: {
+    theme: "piltover",
     color: "#D6A741",
     secondaryColor: "#A1B77A",
     icon: "/images/piltover-characters/characters-page/heimerdinger/icon.webp",
@@ -1111,77 +1116,113 @@ export const characters = {
   },
 
   silco: {
-    color: "",
-    secondaryColor: "",
-    icon: "",
-    heroImage: "",
-    name: "",
+    theme: "zaun",
+    color: "#511D26",
+    secondaryColor: "#B22222",
+    icon: "/images/arcane_zaun/zaun_characters/silco/character-page/icon.webp",
+    heroImage:
+      "/images/arcane_zaun/zaun_characters/silco/character-page/silco-1.webp",
+    name: "Silco",
     lastName: "",
-    description: "",
-    quote: "",
+    description:
+      "Silco é o estrategista impiedoso de Zaun, cuja visão obscura transcende os limites da moralidade. Sua ambição se mescla com uma astuta manipulação, moldando o caos em um império sombrio que desafia convenções.",
+    quote: "Há um monstro dentro de todos nós.",
     personalidade: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-2.webp",
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-3.webp",
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-4.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Visionário Obsessivo:",
+        content:
+          "Silco é um idealista implacável. Seu sonho de uma Zaun livre e soberana o guia a qualquer custo. Ele enxerga os meios mais brutais como necessários quando se trata da liberdade de seu povo.",
       },
       {
-        title: "",
-        content: "",
+        title: "Manipulador Magistral:",
+        content:
+          "Ele usa palavras como armas e estratégias como escudos. Silco corrompe Marcus, negocia com barões químicos e manipula emocionalmente Jinx, tudo em nome de sua visão. É paciente, frio e altamente estratégico.",
       },
       {
-        title: "",
-        content: "",
+        title: "Paterno e Contraditório:",
+        content:
+          "Apesar da crueldade, Silco demonstra profunda afeição por Jinx. Ele a protege mesmo quando todos a temem. Essa dualidade entre brutalidade e carinho revela um homem quebrado, tentando recriar, à sua maneira, uma família.",
       },
     ],
     aparencia: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-5.webp",
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-6.webp",
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-7.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Cicatriz da Traição:",
+        content:
+          "Seu rosto carrega a marca do passado: uma cicatriz grotesca no lado esquerdo, resultante da tentativa de afogamento por Vander. O olho atingido brilha de forma anormal por conta do shimmer.",
       },
       {
-        title: "",
-        content: "",
+        title: "Elegância Sombriamente Imponente:",
+        content:
+          "Silco veste-se com roupas finas, geralmente escuras, que contrastam com o ambiente decadente de Zaun. Seu visual transmite autoridade e controle, destacando-se em meio à sujeira que o cerca.",
       },
       {
-        title: "",
-        content: "",
+        title: "Olhar Penetrante:",
+        content:
+          "Seus olhos, especialmente o danificado, são expressivos. Transmitem julgamento, ameaça ou afeto com igual intensidade. Quando ele fala, seus olhos fixam-se nos interlocutores, dominando-os sem precisar gritar.",
       },
     ],
     habilidades: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-8.webp",
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-9.webp",
+          "/images/arcane_zaun/zaun_characters/silco/character-page/silco-10.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Mestre da Persuasão:",
+        content:
+          "Silco domina a arte da oratória. Ele convence, coage e manipula com naturalidade. Suas palavras fazem aliados hesitarem e inimigos duvidarem de si mesmos.",
       },
       {
-        title: "",
-        content: "",
+        title: "Líder de Zaun:",
+        content:
+          "Ele não lidera com força física, mas com inteligência, influência e medo. Comanda uma rede criminosa poderosa, sustenta barões químicos e lida com as forças de Piltover nos bastidores.",
       },
       {
-        title: "",
-        content: "",
+        title: "Vínculo Psicológico:",
+        content:
+          "Com Jinx, Silco desenvolve uma relação que transcende a lógica. Ele sabe como contê-la, acalmá-la ou incendiá-la. Sua habilidade de entender a mente quebrada dela é sua arma mais poderosa — e sua maior fraqueza.",
       },
     ],
     jornada: {
       title: "Jornada",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-11.webp",
+          content:
+            "Desde cedo, Silco e Vander foram como irmãos, unidos pelo ideal de libertar Zaun da opressão de Piltover. Ao lado de Felicia – uma figura maternal e símbolo de esperança para Powder e Vi – os jovens alimentavam sonhos grandiosos, acreditando que a união poderia transformar a realidade de seu povo.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-12.webp",
+          content:
+            "A tentativa de revolta, na qual Silco e Vander se empenharam para derrubar o governo opressor, terminou em tragédia. A revolta fracassou, resultando na morte de centenas de inocentes, inclusive Felicia e seu marido Connol. Esse massacre não só selou o destino dos sonhos juvenis, como dividiu irremediavelmente os caminhos dos dois, com Vander assumindo a responsabilidade pelos sobreviventes e transformando a luta num refúgio familiar.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-13.webp",
+          content:
+            "A perda de Felicia aprofundou a fissura entre Silco e Vander. Num ato de desespero, Vander tentou afogar Silco nas águas tóxicas de Zaun. Ferido gravemente – com cicatrizes marcantes e o olho esquerdo mutado pelo contato com produtos químicos –, Silco sobreviveu. Esse trauma o transformou, despertando nele uma sede de vingança e a convicção de que sua dor o fortaleceria para uma nova era de poder.",
         },
       ],
     },
@@ -1189,26 +1230,82 @@ export const characters = {
       title: "Temporada 1",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-14.webp",
+          content:
+            "Após o trauma, Silco se recolheu aos subúrbios de Zaun e iniciou a reconstrução de sua identidade. Durante anos, ele forjou uma rede criminosa com ex-integrantes da tripulação de Vander, que haviam perdido a fé na abordagem mais branda do antigo líder. Foi nesse período que Silco contratou Singed – o cientista de reputação duvidosa – para desenvolver uma droga baseada em shimmer, destinada a fortalecer o underground contra os Topsiders.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-15.webp",
+          content:
+            "Oportunidades surgiram quando Deckard, um dos jovens lacaios, informou Silco sobre uma explosão em Piltover causada pelos filhos adotivos de Vander. Percebendo que aquela era a chance de reverter o passado, Silco convenceu Deckard a ser o primeiro sujeito de teste do shimmer de Singed e, ao mesmo tempo, aproximou um jovem Enforcer chamado Marcus.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-16.webp",
+          content:
+            "Com a pressão exercida por Marcus, Vander foi forçado a se entregar em Piltover, mas, antes que a transferência pudesse ocorrer, Silco e Deckard emboscaram a caravana – eliminando a xerife Grayson e o segundo em comando, Benzo. Em meio ao confronto, Silco, que ainda nutria um resquício de respeito por seu antigo aliado, tentou persuadir Vander a se unir à sua nova revolução. Ao ser rejeitado e insultado por não ser mais o homem de outrora, Vander foi amarrado, enquanto Silco aguardava a chegada dos seus 'filhos' para consumar a vingança.",
         },
       ],
       parte4: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-17.webp",
+          content:
+            "No clímax do embate, os resgatadores – Violet, Mylo e Claggor – chegaram para salvar Vander, mas caíram na armadilha armada por Silco. Uma bomba improvisada, detonada por Powder (irmã de Vi), explodiu, ceifando a vida de Mylo e Claggor e quase atingindo o próprio Silco, que só sobreviveu graças à intervenção rápida de Sevika.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-18.webp",
+          content:
+            "Em meio à confusão, Vander, em um ato desesperado para proteger Vi, enfrentou os capangas de Silco. Mesmo dominado e esfaqueado, Vander reagiu injetando-se com um frasco de shimmer, adquirindo força sobre-humana para revidar contra Deckard – embora não tenha matado Silco, optando por salvar Vi.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-19.webp",
+          content:
+            "Ao final dessa luta, Vander parecia ter sido eliminado, Vi estava desaparecida e Powder (futura Jinx) encontrava-se em um colapso emocional nas ruas. Surpreso com a traição de Vi – que a abandonara ao lado da morte de seu pai adotivo – Silco acolheu Powder, abraçando-a e fazendo dela uma aliada, ao mesmo tempo em que consolidava sua ascensão como novo líder de Zaun.",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-20.webp",
+          content:
+            "Com Vander fora do cenário, Silco rapidamente se firmou como o líder indiscutível de Zaun. Ele transformou o antigo Last Drop – bar de Vander – em sua sede pessoal, construiu um império criminoso baseado na venda de shimmer e reuniu os Chem-Barons para administrar as fábricas da cidade. Mesmo renegando acordos passados com figuras como Marcus, Silco manteve relações estratégicas que lhe permitiam operar sem que as investigações dos Topsiders se aproximassem de sua verdadeira face.",
+        },
+      ],
+      parte8: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-21.webp",
+          content:
+            "No novo regime, Powder foi renomeada para Jinx, passando por um intenso treinamento que a transformou em uma combatente e inventora temida. Embora a tripulação de Silco demonstrasse receio diante da instabilidade mental de Jinx, ele a protegia com rigor e carinho, tratando-a quase como filha. Entretanto, os eventos em Piltover – especialmente a explosão na Ponte do Progresso, que matou vários Enforcers e deixou Jinx gravemente ferida – aprofundaram as fissuras entre os ideais do novo poder e as lealdades pessoais. A traição, o suborno e as operações clandestinas continuavam a moldar o cenário, enquanto Silco procurava consolidar seu domínio sobre a revolução.",
+        },
+      ],
+      parte9: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-22.webp",
+          content:
+            "Em meio às crescentes tensões entre Piltover e Zaun, o conflito alcançou seu ápice quando Jayce Talis e Vi invadiram as instalações de Silco, visando pôr fim à influência do líder subversivo. Durante um encontro marcado – onde Piltover oferecia a independência de Zaun em troca de Jinx – Silco, em um momento de vulnerabilidade, declarou seu ideal a uma estátua de Vander, sem saber que Jinx o espionava.",
+        },
+      ],
+      parte10: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-23.webp",
+          content:
+            "Convencida de uma traição iminente e incapaz de suportar o peso dos seus sentimentos, Jinx sequestrou Silco, Vi e Caitlyn para interrogá-los. O clima se tornou insuportável: em meio à tensão e à confusão do interrogatório, Jinx, em um colapso emocional, desferiu disparos descontrolados com sua minigun. Uma bala fatal atingiu o peito de Silco, encerrando sua trajetória de forma trágica – mas deixando uma marca que reverberaria por toda a história de Zaun e na memória daqueles que ele influenciou.",
         },
       ],
     },
@@ -1232,48 +1329,44 @@ export const characters = {
           content: "",
         },
       ],
-      parte4: [
-        {
-          image: "",
-          content: "",
-        },
-      ],
-      parte5: [
-        {
-          image: "",
-          content: "",
-        },
-      ],
-      parte6: [
-        {
-          image: "",
-          content: "",
-        },
-      ],
     },
     conclusion: {
-      title: "",
+      title: "Conclusão",
       parte1: [
         {
-          content: "",
+          content:
+            "Silco foi, antes de tudo, um homem de contradições: um revolucionário que encontrou na dor a força para se reinventar, e um mentor que, ao mesmo tempo em que guiava os desamparados, carregava o fardo de suas próprias cicatrizes. Sua jornada é o retrato da luta incessante entre esperança e desesperança, onde cada ato de violência ecoa com a promessa de uma nova aurora para Zaun. Em seu fim trágico reside a essência de uma revolução que nunca se extingue – um lembrete de que a verdadeira mudança, por mais dolorosa que seja, pode nascer dos momentos mais sombrios e transformar o futuro de uma cidade marcada pelo conflito.",
+        },
+      ],
+      parte2: [
+        {
+          content:
+            "A narrativa de Silco é, portanto, um poema épico de vingança, amor e redenção, onde a luta pelo poder se mistura à busca por um ideal inatingível, deixando um legado que, mesmo na ausência do líder, continua a inspirar e a desafiar as convenções do mundo.",
         },
       ],
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
-        imgSrc: "",
+        songName: "Sucker",
+        artistName: "Marcus King, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/silco/song/silco-1.webp",
+      },
+      {
+        songName: "Goodbye",
+        artistName: "Ramsey, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/silco/song/silco-2.webp",
       },
     ],
   },
 
   vander: {
-    color: "",
-    secondaryColor: "",
-    icon: "",
-    heroImage: "",
-    name: "",
+    theme: "zaun",
+    color: "#A05A2C",
+    secondaryColor: "#D2691E",
+    icon: "/images/arcane_zaun/zaun_characters/vander/character-page/icon.webp",
+    heroImage:
+      "/images/arcane_zaun/zaun_characters/vander/character-page/vander-1.webp",
+    name: "Vander",
     lastName: "",
     description: "",
     quote: "",
@@ -1390,24 +1483,6 @@ export const characters = {
           content: "",
         },
       ],
-      parte4: [
-        {
-          image: "",
-          content: "",
-        },
-      ],
-      parte5: [
-        {
-          image: "",
-          content: "",
-        },
-      ],
-      parte6: [
-        {
-          image: "",
-          content: "",
-        },
-      ],
     },
     conclusion: {
       title: "",
@@ -1419,19 +1494,25 @@ export const characters = {
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
-        imgSrc: "",
+        songName: "Remember Me",
+        artistName: "d4vd, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/vander/song/vander-1.webp",
+      },
+      {
+        songName: "what have they done to us",
+        artistName: "Mako, Grey, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/vander/song/vander-2.webp",
       },
     ],
   },
 
   violet: {
-    color: "",
-    secondaryColor: "",
-    icon: "",
+    theme: "zaun",
+    color: "#B12C3D",
+    secondaryColor: "#C62B4E",
+    icon: "/images/arcane_zaun/zaun_characters/vi/character-page/icon.webp",
     heroImage: "",
-    name: "",
+    name: "Violet",
     lastName: "",
     description: "",
     quote: "",
@@ -1577,14 +1658,20 @@ export const characters = {
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
-        imgSrc: "",
+        songName: "Cupcake",
+        artistName: "Akashi Cruz, Rodrigo Zin",
+        imgSrc: "/images/arcane_zaun/zaun_characters/vi/song/vi-1.webp",
+      },
+      {
+        songName: "what have they done to us",
+        artistName: "Mako, Grey, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/vi/song/vi-2.webp",
       },
     ],
   },
 
   jinx: {
+    theme: "zaun",
     color: "",
     secondaryColor: "",
     icon: "",
@@ -1743,6 +1830,7 @@ export const characters = {
   },
 
   ekko: {
+    theme: "zaun",
     color: "",
     secondaryColor: "",
     icon: "",

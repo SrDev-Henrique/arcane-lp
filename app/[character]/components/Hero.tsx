@@ -12,6 +12,7 @@ interface HeroProps {
   description: string;
   quote: string;
   color: string;
+  theme: string;
 }
 const Hero = ({
   heroImage,
@@ -20,6 +21,7 @@ const Hero = ({
   description,
   quote,
   color,
+  theme,
 }: HeroProps) => {
   const heroRef = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -34,7 +36,7 @@ const Hero = ({
       });
 
       gsap.from(".animate-name", {
-        y: 100,
+        y: 130,
         delay: 1,
         duration: 1,
         stagger: { amount: 0.2 },
@@ -78,7 +80,7 @@ const Hero = ({
             <div
               key={i}
               style={{ backgroundColor: `${color}` }}
-              className={`filter brightness-[140%] animate-diagonal max-h-[640px] ${
+              className={`filter brightness-[190%] animate-diagonal max-h-[640px] ${
                 i === 0
                   ? " self-center rounded-es-md max-h-[404px]"
                   : i === 2
@@ -101,7 +103,9 @@ const Hero = ({
           />
           <h3
             style={{ borderBottom: `${color} 1px solid` }}
-            className="animate-quote transform will-change-transform text-white-dark text-xs sm:text-sm md:text-lg"
+            className={`animate-quote transform will-change-transform text-white-dark text-xs sm:text-sm md:text-lg ${
+              theme === "piltover" ? "font-lora" : "font-playfair"
+            }`}
           >
             {quote}
           </h3>
@@ -111,10 +115,14 @@ const Hero = ({
             lastName === "Heimerdinger" ? "text-4xl" : "text-5xl"
           } md:text-7xl lg:text-8xl`}
         >
-          <div className="overflow-hidden">
+          <div className={`${theme === "zaun" ? "p-3 lg:py-4 lg:pr-8" : ""} overflow-hidden`}>
             <h1
               style={{ color: `${color}` }}
-              className="animate-name font-cinzel font-bold uppercase tracking-wide"
+              className={`animate-name font-bold uppercase tracking-wide ${
+                theme === "piltover"
+                  ? "font-cinzel"
+                  : "font-cinzelDecorative-bold"
+              }`}
             >
               {name}
             </h1>

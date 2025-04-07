@@ -22,6 +22,7 @@ interface SecondSeasonProps {
 }
 
 const SecondSeason = ({ temporada2, name, color }: SecondSeasonProps) => {
+  if (name === "Silco" || "Vander") return;
   return CharacterSection(temporada2, name, color);
 };
 
