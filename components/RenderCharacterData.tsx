@@ -61,7 +61,7 @@ const CharacterSection = (
     mm.add("(min-width: 800px)", () => {
       gsap.utils.toArray(".character-about-text").forEach((el) => {
         gsap.fromTo(
-          el as Element,
+          el as HTMLDivElement,
           { y: "30%", opacity: 0 },
           {
             y: 0,
@@ -69,8 +69,8 @@ const CharacterSection = (
             duration: 0.6,
             ease: "power1.out",
             scrollTrigger: {
-              trigger: el as Element,
-              start: "top 140%",
+              trigger: el as HTMLDivElement,
+              start: "top 190%",
               toggleActions: "play none none reverse",
             },
           }
@@ -78,7 +78,7 @@ const CharacterSection = (
       });
       gsap.utils.toArray(".about-image-container").forEach((el) => {
         gsap.fromTo(
-          el as Element,
+          el as HTMLDivElement,
           { y: "-15%", opacity: 0 },
           {
             y: 0,
@@ -86,8 +86,8 @@ const CharacterSection = (
             duration: 0.6,
             ease: "power1.out",
             scrollTrigger: {
-              trigger: el as Element,
-              start: "top 85%",
+              trigger: el as HTMLDivElement,
+              start: "top 135%",
               toggleActions: "play none none reverse",
             },
           }
@@ -95,7 +95,7 @@ const CharacterSection = (
       });
       gsap.utils.toArray(".character-about-image").forEach((el) => {
         gsap.fromTo(
-          el as Element,
+          el as HTMLImageElement,
           { scale: 1.5, width: "10%" },
           {
             scale: 1,
@@ -103,8 +103,8 @@ const CharacterSection = (
             duration: 0.6,
             ease: "power1.out",
             scrollTrigger: {
-              trigger: el as Element,
-              start: "top 65%",
+              trigger: el as HTMLImageElement,
+              start: "top 115%",
               toggleActions: "play none none reverse",
             },
           }
@@ -115,7 +115,7 @@ const CharacterSection = (
     mm.add("(max-width: 799px)", () => {
       gsap.utils.toArray(".character-about-text").forEach((el) => {
         gsap.fromTo(
-          el as Element,
+          el as HTMLDivElement,
           { y: "30%", opacity: 0 },
           {
             y: 0,
@@ -123,7 +123,7 @@ const CharacterSection = (
             duration: 0.6,
             ease: "power1.out",
             scrollTrigger: {
-              trigger: el as Element,
+              trigger: el as HTMLDivElement,
               start: "top 95%",
               toggleActions: "play none none reverse",
             },
@@ -132,7 +132,7 @@ const CharacterSection = (
       });
       gsap.utils.toArray(".about-image-container").forEach((el) => {
         gsap.fromTo(
-          el as Element,
+          el as HTMLDivElement,
           { y: "-15%", opacity: 0 },
           {
             y: 0,
@@ -140,7 +140,7 @@ const CharacterSection = (
             duration: 0.6,
             ease: "power1.out",
             scrollTrigger: {
-              trigger: el as Element,
+              trigger: el as HTMLDivElement,
               start: "top 75%",
               toggleActions: "play none none reverse",
             },
@@ -149,7 +149,7 @@ const CharacterSection = (
       });
       gsap.utils.toArray(".character-about-image").forEach((el) => {
         gsap.fromTo(
-          el as Element,
+          el as HTMLImageElement,
           { scale: 1.5, width: "10%" },
           {
             scale: 1,
@@ -157,7 +157,7 @@ const CharacterSection = (
             duration: 0.6,
             ease: "power1.out",
             scrollTrigger: {
-              trigger: el as Element,
+              trigger: el as HTMLImageElement,
               start: "top 75%",
               toggleActions: "play none none reverse",
             },
@@ -185,7 +185,7 @@ const CharacterSection = (
             ? "text-[3.5rem]"
             : "text-7xl"
         } sm:text-8xl text-black-dark w-fit font-lora-italic`}
-        scrollStart="top 130%"
+        scrollStart="top 170%"
       />
       <div className="w-full bg-black-dark rounded-2xl flex-center flex-col pt-14 pb-2 overflow-hidden">
         {allParts.map((item, index) => (

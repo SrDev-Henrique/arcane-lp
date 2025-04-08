@@ -1313,20 +1313,10 @@ export const characters = {
       title: "Temporada 2",
       parte1: [
         {
-          image: "",
-          content: "",
-        },
-      ],
-      parte2: [
-        {
-          image: "",
-          content: "",
-        },
-      ],
-      parte3: [
-        {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/silco/character-page/silco-24.webp",
+          content:
+            "Após a morte de Silco, o vácuo de poder em Zaun se torna um ponto de inflexão para o equilíbrio entre as cidades e para o destino dos personagens. Sem o líder carismático e impiedoso que moldara as ações e crenças de muitos, especialmente de Jinx, surgem novas dinâmicas e conflitos. Essa ausência não só modifica a geopolítica entre Piltover e Zaun, mas também intensifica as lutas internas dos personagens, principalmente de Jinx, que passa a lidar com suas próprias dúvidas e traumas representados pela persistente alucinação de Silco.",
         },
       ],
     },
@@ -1368,71 +1358,105 @@ export const characters = {
       "/images/arcane_zaun/zaun_characters/vander/character-page/vander-1.webp",
     name: "Vander",
     lastName: "",
-    description: "",
-    quote: "",
+    description:
+      "Vander é o patriarca resiliente de Zaun, um líder que carrega nas cicatrizes de sua história a luta incessante por justiça e proteção. Sua presença marcante reflete o sacrifício e a esperança de um povo em constante rebeldia.",
+    quote: "Não importa se você cair. Proteja a família.",
     personalidade: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-2.webp",
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-3.webp",
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-4.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "O Protetor Determinado:",
+        content:
+          "Vander, em seus dias como humano, foi marcado pela bravura e dedicação em proteger os desamparados de Zaun. Mesmo após enfrentar tragédias e perdas devastadoras, seu instinto paterno o impulsionava a cuidar dos seus filhos adotivos e de toda a comunidade.",
       },
       {
-        title: "",
-        content: "",
+        title: "O Homem Que Buscava a Paz:",
+        content:
+          "Após o fracasso da revolta e as terríveis consequências da luta contra Piltover, Vander transformou-se em um pacifista relutante. Seus esforços para manter a paz, por meio de acordos com os Enforcers, refletiam seu desejo de preservar vidas – ainda que, na prática, essa escolha o levasse a confrontos inevitáveis.",
       },
       {
-        title: "",
-        content: "",
+        title: "A Dualidade do Sacrifício:",
+        content:
+          "Mesmo quando forçado a empregar violência para proteger Vi, Vander demonstrou um profundo conflito interno. Sua disposição para sacrificar a própria vida em prol dos outros revela a complexidade de um homem que, embora marcado pela dor, sempre colocou a comunidade acima de si mesmo.",
       },
     ],
     aparencia: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-5.webp",
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-6.webp",
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-7.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "O Homem Forte dos Subterrâneos:",
+        content:
+          "Antes da transformação, Vander era um homem grande e musculoso de meia-idade, com olhos cinzentos intensos, cabelos escuros e uma barba grisalha bem aparada. Seu vestuário, composto por calças azuis, botas de couro e uma jaqueta marrom, transmitia a autoridade e o vigor de um líder nato.",
       },
       {
-        title: "",
-        content: "",
+        title: "A Marca da Batalha:",
+        content:
+          "Vander ostentava uma ombreira de couro no braço direito, que ocultava a cicatriz adquirida durante o violento confronto com Silco – um símbolo permanente das lutas que travou pelo bem de Zaun.",
       },
       {
-        title: "",
-        content: "",
+        title: "A Metamorfose em Bestialidade:",
+        content:
+          "Na sua forma final como Warwick, ele apresenta um corpo anormalmente musculoso, coberto por pelo cinza escuro, com elementos metálicos e traços lupinos – o rosto transformado, com orelhas pontudas, nariz e focinho, e olhos que misturam a selvageria e a dor de uma existência além da humanidade.",
       },
     ],
     habilidades: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-8.webp",
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-9.webp",
+          "/images/arcane_zaun/zaun_characters/vander/character-page/vander-10.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Força e Combate:",
+        content:
+          "Vander sempre foi excepcionalmente forte e habilidoso no combate corpo a corpo. Sua destreza permitia dominar lutas mesmo contra adversários melhorados pelo shimmer, e ele foi fundamental na formação de Vi como lutadora.",
       },
       {
-        title: "",
-        content: "",
+        title: "Tolerância à Dor:",
+        content:
+          "Sua notável resistência física permitia suportar numerosos ataques sem ceder, o que o tornava um combatente formidável mesmo em meio a ferimentos graves.",
       },
       {
-        title: "",
-        content: "",
+        title: "Liderança e Ensino:",
+        content:
+          "Como dono do The Last Drop e líder dos Subterrâneos, Vander exercia uma autoridade paternal, guiando e ensinando seus protegidos – uma lição de vida que ressoaria com Vi e Powder muito depois de sua suposta morte.",
       },
     ],
     jornada: {
       title: "Jornada",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-11.webp",
+          content:
+            "Na juventude, Vander forjou laços indestrutíveis com Silco e Felicia, compartilhando sonhos de liberdade para Zaun. Juntos, eles idealizavam uma nação unida, onde a justiça e a proteção prevaleceriam sobre a opressão de Piltover. Contudo, um conflito acirrado – no qual Vander tentou afogar Silco num rio poluído e precisou se defender cortando o braço do amigo – prenunciava que os caminhos de ambos iriam se separar, moldando o futuro de Zaun com sacrifício e rivalidade.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-12.webp",
+          content:
+            "O ideal revolucionário levou Vander a tentar uma revolta pela ponte que ligava Zaun a Piltover. A insurreição, no entanto, terminou em desastre, resultando na trágica perda de vidas, incluindo as de Felicia e Connol. Diante desse massacre, Vander largou suas armas e abraçou o papel de protetor. Assumindo um novo significado, ganhou o apelido de 'Cão do Subterrâneo' e acolheu Vi, Powder – futuras herdeiras de seu afeto – e, com o tempo, também Mylo e Claggor, prometendo dedicar sua vida à segurança dos seus.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-13.webp",
+          content:
+            "Na tentativa de restaurar a paz em Zaun, Vander firmou um acordo com os Enforcers, especialmente com o xerife Grayson, garantindo que os zaunitas não provocassem a fúria dos Topsiders. Porém, essa aparente trégua causou descontentamento em Silco, que via a decisão como uma traição aos ideais de liberdade. Assim, enquanto Vander lutava para equilibrar os interesses de sua comunidade, as sementes de um futuro conflituoso já estavam sendo semeadas.",
         },
       ],
     },
@@ -1440,26 +1464,66 @@ export const characters = {
       title: "Temporada 1",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-14.webp",
+          content:
+            "Após um audacioso roubo em Piltover, orquestrado por Vi, a tensão cresce na região. O assalto, que teve sua motivação em um heist que saiu do controle, afetou significativamente a relação entre Piltover e os habitantes de Zaun. O alvo do roubo foi um workshop pertencente ao clã Kiramman, e a explosão decorrente do ocorrido agravou ainda mais o conflito. A missão dos Enforcers, sob as ordens do conselho governante de Piltover, era capturar os responsáveis a qualquer custo.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-15.webp",
+          content:
+            "Apesar da pressão dos Enforcers, Vander, que possuía laços fortes com a comunidade local, recusou-se a entregar os cidadãos de Zaun, demonstrando sua prioridade em proteger seu próprio povo e, especialmente, seus filhos. Essa decisão gerou uma reação violenta dos Enforcers, que passaram a interrogar brutalmente os habitantes do submundo de Zaun na busca dos criminosos. Em meio à escalada de tensão, Vander tentou acalmar a população, conscientizando-os de que a resistência violenta poderia agravar a situação e ocasionar mais vítimas.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-16.webp",
+          content:
+            "Vi, cuja personalidade era marcada pela impulsividade e desejo de defender seu lar com força, inicialmente demonstrou irritação com a postura de Vander, criticando-o por impedir que ela usasse suas habilidades para enfrentar os Topsiders. Contudo, após uma conversa em que Vander argumentou que a violência não levaria à solução dos problemas, Vi acabou sendo convencida a adotar uma postura mais comedida para preservar o que restava de sua comunidade.",
         },
       ],
       parte4: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-17.webp",
+          content:
+            "Em uma tentativa de evitar uma rebelião e a escalada do conflito, Vi tentou se render aos Enforcers. No entanto, antes que pudesse efetuar a entrega, Vander tomou a iniciativa de se sacrificar, trocando de lugar com ela ao se entregar. Essa atitude, porém, não foi suficiente para garantir sua segurança. Quando Vander foi encaminhado para a cidade superior, Silco surgiu inesperadamente. Com a ajuda de Deckard, seu henchman com habilidades aprimoradas pelo shimmer, e após a execução violenta contra Grayson e Benzo, Vander foi imobilizado e levado de volta ao esconderijo de Silco.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-18.webp",
+          content:
+            "No esconderijo, Silco, demonstrando sua ambição de iniciar uma nova insurreição utilizando um soro químico chamado shimmer, tentou convencer Vander a unir forças novamente. No entanto, Vander rejeitou a proposta, afirmando que não mais possuía o espírito combativo de outrora e que seu foco estava em proteger sua comunidade. Essa recusa enfureceu Silco, que criticou a aparente falta de comprometimento de Vander, prendendo-o em correntes.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-19.webp",
+          content:
+            "Durante a tentativa de resgate, Vi, acompanhada por Mylo e Claggor, entrou no esconderijo para libertar Vander. Porém, eles não perceberam que a captura fazia parte de uma armadilha meticulosamente planejada por Silco. Diante da situação, Vi assumiu o papel de defensora, calçando as antigas manoplas de Vander para se defender dos capangas de Silco, enquanto Mylo e Claggor trabalhavam para libertá-lo.",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-20.webp",
+          content:
+            "Durante a operação de fuga, a situação se complicou quando o esconderijo foi destruído por uma bomba improvisada de Powder. O resultado foi devastador: Mylo e Claggor foram mortos, e Vander sofreu graves ferimentos. Com Vi parcialmente soterrada por destroços, Vander demonstrou sua coragem ao improvisar um combate, utilizando knuckles improvisados para proteger Vi dos restantes capangas.",
+        },
+      ],
+      parte8: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-21.webp",
+          content:
+            "No auge do conflito, Vander enfrentou Deckard, que havia se transformado novamente com os efeitos do shimmer, e acabou sendo gravemente ferido após ser esfaqueado no estômago por Silco. Mesmo debilitado, Vander teve uma última atitude heroica: ele injetou-se com um vial de shimmer que o fortaleceu temporariamente, permitindo-lhe estrangular Deckard e impedir que Silco continuasse a atacar Vi. Contudo, percebendo que o perigo iminente do desabamento do esconderijo poderia fatalmente comprometer Vi, Vander priorizou salvá-la, conseguindo retirá-la do local antes que Silco interviesse. Ferido gravemente tanto pela queda quanto pelos ataques de Silco, Vander, já próximo da morte, destinou suas últimas energias para instruir Vi a cuidar de Powder, encerrando sua trajetória com um ato de sacrifício e proteção.",
         },
       ],
     },
@@ -1467,28 +1531,59 @@ export const characters = {
       title: "Temporada 2",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-22.webp",
+          content:
+            "Após seu confronto com Silco, Vander foi dado como morto. Entretanto, mesmo após a suposta morte de Vander e a ascensão de Silco no submundo, Vander continuou sendo respeitado pelo povo de Zaun e lembrado de forma positiva por muitos. Uma estátua em sua homenagem foi erguida nos Lanes, local onde Silco posteriormente buscava consolo.​",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-23.webp",
+          content:
+            "Contrariando as crenças populares, Vander sobreviveu à batalha com Silco e foi capturado por Singed, que manteve seu corpo preservado e oculto em seu laboratório. Após a morte de Silco, Singed iniciou experimentos em Vander com o objetivo de utilizar sua biologia para encontrar uma cura para a morte de sua filha, Orianna. Esses experimentos transformaram Vander em Warwick, uma criatura selvagem e sanguinária, com sua consciência humana suprimida por instintos primitivos.​",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-24.webp",
+          content:
+            "Meses após a morte de Silco, Singed foi preso por Enforcers durante um comício rebelde em Zaun liderado por Sevika. Antes de ser capturado, Singed cortou intencionalmente sua mão, criando um rastro de sangue que despertou Warwick. Este escapou do laboratório e perseguiu Singed até a prisão de Stillwater Hold. Lá, Warwick enfrentou Jinx e Sevika, que estavam resgatando Isha. Durante o confronto, Warwick reconheceu Jinx como sua filha adotiva, Powder, e sua humanidade começou a emergir.​",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-25.webp",
+          content:
+            "Após o encontro com Jinx, Warwick se refugiou em uma mina remota. Determinado a ajudar o homem que conheceram, Jinx convenceu Vi a procurá-lo, levando Isha junto. Durante a busca, Warwick, atraído pelo cheiro de sangue, atacou Vi e Isha. Vi conseguiu fazer Warwick lembrar-se de sua identidade como Vander, resultando em uma reunião emocional entre ele, Vi, Jinx e Isha.​",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-26.webp",
+          content:
+            "Com Vander recuperando o controle, as irmãs o levaram ao santuário de Viktor, esperando que ele pudesse reverter a transformação. Apesar dos esforços, Viktor percebeu a complexidade da situação. Singed propôs usar o sangue regenerativo de Warwick para aprimorar a evolução de Viktor, mas este recusou. Mais tarde, Jayce chegou ao santuário e aparentemente matou Viktor, causando caos. Singed aproveitou a oportunidade para injetar outro soro em Warwick, tornando-o incontrolavelmente selvagem. Ambessa e seus soldados tentaram capturá-lo, mas Warwick os massacrou. Em um ato desesperado, Isha sacrificou-se usando uma arma sobrecarregada com gemas hextec para deter Warwick, criando uma explosão de energia arcana que aparentemente matou ambos. No entanto, Warwick sobreviveu e foi recapturado por Singed.​",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vander/character-page/vander-27.webp",
+          content:
+            "Singed utilizou o sangue de Warwick para curar Viktor, apesar das objeções anteriores deste. O processo apagou a maioria das memórias de Warwick, fazendo-o esquecer sua vida passada. Viktor então controlou Warwick através de seus poderes, transformando-o em um de seus servos na busca pela 'Gloriosa Evolução'. Durante uma batalha, Warwick atacou Vi e Jinx. Vi tentou resgatar a humanidade de Warwick, mas ele a atacou novamente. Percebendo o perigo, Jinx sacrificou-se ativando uma bomba enquanto caía com Warwick, criando uma explosão de energia arcana que presumivelmente matou ambos.",
         },
       ],
     },
     conclusion: {
-      title: "",
+      title: "Conclusão",
       parte1: [
         {
-          content: "",
+          content:
+            "A trajetória de Vander, que o transformou de um zeloso protetor em uma besta implacável, é um conto de sacrifício, redenção e tragédia. Ele trilhou o caminho da luta e da dor, sempre tentando proteger aqueles que amava, mesmo que isso significasse abrir mão de sua própria humanidade. Em sua metamorfose para Warwick, o espírito do 'Cão dos Subterrâneos' ecoa, lembrando que o verdadeiro legado não está apenas na forma física, mas na lembrança eterna de um homem que fez de Zaun sua família. Sua história é um poema sombrio que fala sobre os limites do sacrifício e da transformação, onde a proteção se mistura à dor, e a fúria cede lugar a um último, tênue sussurro de humanidade.",
         },
       ],
     },
@@ -1672,11 +1767,11 @@ export const characters = {
 
   jinx: {
     theme: "zaun",
-    color: "",
-    secondaryColor: "",
+    color: "#417AA5",
+    secondaryColor: "#4671AC",
     icon: "",
     heroImage: "",
-    name: "",
+    name: "Jinx",
     lastName: "",
     description: "",
     quote: "",
@@ -1813,7 +1908,7 @@ export const characters = {
       ],
     },
     conclusion: {
-      title: "",
+      title: "Conclusão",
       parte1: [
         {
           content: "",
@@ -1822,9 +1917,19 @@ export const characters = {
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
-        imgSrc: "",
+        songName: "Wasteland",
+        artistName: "Royal & the Serpent, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/jinx/song/jinx-1.webp",
+      },
+      {
+        songName: "Ma Meilleure Ennemie",
+        artistName: "Stromae, Pomme, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/jinx/song/jinx-2.gif",
+      },
+      {
+        songName: "Ritmo do Caos",
+        artistName: "TakaB",
+        imgSrc: "/images/arcane_zaun/zaun_characters/jinx/song/jinx.webp",
       },
     ],
   },

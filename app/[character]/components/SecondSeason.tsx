@@ -8,8 +8,8 @@ interface SecondSeasonItem {
 interface SecondSeasonData {
   title: string;
   parte1: SecondSeasonItem[];
-  parte2: SecondSeasonItem[];
-  parte3: SecondSeasonItem[];
+  parte2?: SecondSeasonItem[];
+  parte3?: SecondSeasonItem[];
   parte4?: SecondSeasonItem[];
   parte5?: SecondSeasonItem[];
   parte6?: SecondSeasonItem[];
@@ -22,7 +22,6 @@ interface SecondSeasonProps {
 }
 
 const SecondSeason = ({ temporada2, name, color }: SecondSeasonProps) => {
-  if (name === "Silco" || "Vander") return;
   return CharacterSection(temporada2, name, color);
 };
 

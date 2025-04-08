@@ -92,6 +92,26 @@ export default {
           DEFAULT: "#D6A741",
           transparent: "#D6A74199",
         },
+        silco: {
+          DEFAULT: "#511D26",
+          transparent: "#511D2699",
+        },
+        vander: {
+          DEFAULT: "#A05A2C",
+          transparent: "#A05A2C99",
+        },
+        violet: {
+          DEFAULT: "#B12C3D",
+          transparent: "#B12C3D99",
+        },
+        jinx: {
+          DEFAULT: "#417AA5",
+          transparent: "#417AA599",
+        },
+        ekko: {
+          DEFAULT: "#8A9A79",
+          transparent: "#8A9A7999",
+        },
       },
       fontFamily: {
         zentry: ["zentry", "sans-serif"],
@@ -138,6 +158,16 @@ export default {
     "to-viktor-transparent",
     "from-heimerdinger",
     "to-heimerdinger-transparent",
+    "from-silco",
+    "to-silco-transparent",
+    "from-vander",
+    "to-vander-transparent",
+    "from-violet",
+    "to-violet-transparent",
+    "from-jinx",
+    "to-jinx-transparent",
+    "from-ekko",
+    "to-ekko-transparent",
   ],
   plugins: [],
 } satisfies Config;

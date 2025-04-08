@@ -32,7 +32,7 @@ interface MenuProps {
   isMenuOpen: boolean;
   color: string;
   secondaryColor: string;
-  items: { title: string }[];
+  items: { title: string, boolean?: string }[];
   name: string;
   lastName: string;
   playlist: PlaylistItem[];
@@ -398,7 +398,7 @@ const Menu = ({
                     </h3>
                   </div>
 
-                  <div className="w-full flex-center flex-col gap-2 rounded-xl bg-[#00000099] px-2 py-2">
+                  <div className="w-full flex-center flex-col gap-2 rounded-xl bg-[#00000085] px-2 py-2">
                     <div className="w-full mt-1 flex-center relative">
                       <button
                         onClick={handlePrevAudioClick}
@@ -435,7 +435,7 @@ const Menu = ({
                             key={index}
                             className={`indicator-line mt-2 ${
                               isAudioPlaying ? "active" : ""
-                            }`}  
+                            }`}
                             style={{
                               animationDelay: `${index * 0.1}s`,
                               backgroundColor: `${secondaryColor}`,

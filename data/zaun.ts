@@ -150,13 +150,13 @@ export const personagens = [
   },
   {
     nome: "Jinx",
-    color: "#D16B84",
+    color: "#A3C6EA",
     title: "Crimson Renaissance",
     imagens: [
       `/images/arcane_zaun/zaun_characters/jinx/jinx-3.webp`,
       `/images/arcane_zaun/zaun_characters/jinx/jinx-5.webp`,
     ],
-    gradient: "linear-gradient(90deg, #A3C6EA 0%, #D16B84 45%, #1C1C1C 100%)",
+    gradient: "linear-gradient(90deg, #D16B84 0%, #A3C6EA 45%, #1C1C1C 100%)",
   },
   {
     nome: "Ekko",
