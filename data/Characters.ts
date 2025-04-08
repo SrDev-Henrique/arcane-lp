@@ -1609,7 +1609,8 @@ export const characters = {
     heroImage: "",
     name: "Violet",
     lastName: "",
-    description: "",
+    description:
+      "Vi é a guerreira de alma indomável, cuja força bruta e coragem transformam cada soco em um grito por liberdade. Entre batalhas e redenção, ela reescreve sua trajetória, unindo justiça e um passado repleto de cicatrizes.",
     quote: "",
     personalidade: [
       {

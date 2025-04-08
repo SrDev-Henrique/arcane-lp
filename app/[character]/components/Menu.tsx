@@ -183,6 +183,7 @@ const Menu = ({
       })
       .to(menuRef.current, {
         width: "600px",
+        borderRadius: "16px",
       })
       .to(
         nameRef.current,
@@ -238,6 +239,7 @@ const Menu = ({
         })
         .to(menuRef.current, {
           width: "98%",
+          borderRadius: "16px",
         })
         .to(
           nameRef.current,
@@ -290,7 +292,7 @@ const Menu = ({
       style={{
         backgroundImage: `linear-gradient(120deg, ${color}80, ${secondaryColor}80)`,
       }}
-      className="fixed top-2 h-14 max-h-[510px] w-[16.5rem] max-w-[600px] pt-8 sm:pt-14 transform left-1/2 -translate-x-1/2 z-40 rounded-2xl filter backdrop-blur-[12px] backdrop-brightness-[40%] overflow-hidden select-none"
+      className="fixed top-2 h-14 max-h-[510px] w-[16.5rem] max-w-[600px] pt-8 sm:pt-14 transform left-1/2 -translate-x-1/2 z-40 rounded-3xl filter backdrop-blur-[12px] backdrop-brightness-[40%] overflow-hidden select-none"
     >
       <div
         ref={menuContentRef}
