@@ -13,6 +13,13 @@ interface SecondSeasonData {
   parte4?: SecondSeasonItem[];
   parte5?: SecondSeasonItem[];
   parte6?: SecondSeasonItem[];
+  parte7?: SecondSeasonItem[];
+  parte8?: SecondSeasonItem[];
+  parte9?: SecondSeasonItem[];
+  parte10?: SecondSeasonItem[];
+  parte11?: SecondSeasonItem[];
+  parte12?: SecondSeasonItem[];
+  parte13?: SecondSeasonItem[];
 }
 
 interface SecondSeasonProps {

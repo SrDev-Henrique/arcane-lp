@@ -1603,78 +1603,136 @@ export const characters = {
 
   violet: {
     theme: "zaun",
-    color: "#B12C3D",
-    secondaryColor: "#C62B4E",
+    color: "#C62B4E",
+    secondaryColor: "#B12C3D",
     icon: "/images/arcane_zaun/zaun_characters/vi/character-page/icon.webp",
-    heroImage: "",
+    heroImage:
+      "/images/arcane_zaun/zaun_characters/vi/character-page/vi-1.webp",
     name: "Violet",
     lastName: "",
     description:
       "Vi é a guerreira de alma indomável, cuja força bruta e coragem transformam cada soco em um grito por liberdade. Entre batalhas e redenção, ela reescreve sua trajetória, unindo justiça e um passado repleto de cicatrizes.",
-    quote: "",
+    quote: "O que te faz diferente te faz forte.",
     personalidade: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-2.webp",
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-3.webp",
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-4.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "A Guerreira de Coração Ardente:",
+        content:
+          "Destemida e impulsiva, Vi transforma a fúria forjada pelas cicatrizes de um passado de perdas e injustiça em uma liderança nata nos Subterrâneos.",
       },
       {
-        title: "",
-        content: "",
+        title: "A Protetora Intransigente:",
+        content:
+          "Apesar do temperamento explosivo, ela nutre uma profunda compaixão - especialmente por sua irmã, e a culpa de ter abandonado Powder alimenta sua incansável busca por redenção e justiça contra a opressão de Piltover.",
       },
       {
-        title: "",
-        content: "",
+        title: "A Mulher que Aprende com a Dor:",
+        content:
+          "De adolescente cabeça quente a líder pragmática, as lições vividas na prisão e na relação com Caitlyn despertaram nela a vulnerabilidade e a convicção de que confiança e perdão são essenciais para a reconstrução de si mesma e do seu mundo.",
       },
     ],
     aparencia: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-5.webp",
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-6.webp",
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-7.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Marcas do Passado e da Luta:",
+        content:
+          "Pele clara, olhos azuis intensos e músculos forjados na batalha. Tatuagens que lembram um exoesqueleto mecânico e o “6” romano reforçam sua identidade e trajetória.",
       },
       {
-        title: "",
-        content: "",
+        title: "Estilo e Versatilidade:",
+        content:
+          "Seu guarda-roupa transita do casual dos Subterrâneos aos uniformes dos Enforcers, refletindo tanto o dia a dia duro quanto a constante evolução de sua identidade.",
       },
       {
-        title: "",
-        content: "",
+        title: "A Expressão de uma Guerreira:",
+        content:
+          "Com cortes de cabelo assimétricos, piercings e cicatrizes, Vi irradia força e resiliência, revelando em seus traços a intensidade dos combates e a marca de um passado inesquecível.",
       },
     ],
     habilidades: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-8.webp",
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-9.webp",
+          "/images/arcane_zaun/zaun_characters/vi/character-page/vi-10.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Brawler Implacável:",
+        content:
+          "Treinada por Vander, Vi domina o combate corpo a corpo, utilizando seu boxe e movimentos de esquiva para contra-atacar até mesmo inimigos aprimorados pelo shimmer.",
       },
       {
-        title: "",
-        content: "",
+        title: "Força e Tecnologia em Sinergia:",
+        content:
+          "Adaptando as Manoplas Atlas – originalmente para mineradores – Vi as transformou em poderosas luvas de boxe, ampliando sua força, criando escudos e impulsionando-se com a tecnologia hextec.",
       },
       {
-        title: "",
-        content: "",
+        title: "Agilidade Urbana:",
+        content:
+          "Além de ser uma combatente formidável, sua aptidão em parkour e arrombamento, aliada à sua determinação, inspira os Subterrâneos e a torna indispensável em missões de infiltração e resgate.",
       },
     ],
     jornada: {
       title: "Jornada",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-11.webp",
+          content:
+            "Violet, conhecida como Vi, nasceu em Zaun e foi criada por seus pais, Felicia e Connol, juntamente com sua irmã mais nova, Powder. Crescendo em meio à pobreza e nas profundezas das trincheiras, onde seus pais trabalhavam como mineiros, Vi e Powder dividiam a mesma cama. Mesmo na infância, as duas irmãs se uniam em brincadeiras – como quando fingiam ser monstros assustadores – nas quais Vi, embora exagerasse e assustasse Powder, sempre a consolava, prometendo que nenhum monstro as separaria enquanto ela estivesse por perto.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-12.webp",
+          content:
+            "Desde cedo, Vi sentia que era inferior aos habitantes de Piltover, que viviam na prosperidade e dominavam a região do outro lado do rio. Esse sentimento era comum entre os moradores do submundo, prenunciando que um dia Zaun e Piltover entrariam em conflito.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-13.webp",
+          content:
+            "Em um dia fatídico, durante uma revolta contra os Piltover Enforcers, os pais de Vi foram mortos na Ponte do Progresso. Tentando proteger sua irmã dos horrores do derramamento de sangue, Vi acabou se abrindo em lágrimas ao ver os corpos de seus pais, um momento que marcaria profundamente sua vida.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-14.webp",
+          content:
+            "Pouco tempo após a tragédia, Vi e Powder foram adotadas por Vander, um velho amigo de Felicia e um dos líderes da revolta. Enquanto Vander as retirava da zona de violência, Vi lançou um olhar de ódio para as torres douradas de Piltover, jurando que faria o que fosse necessário para conquistar o respeito do “topside” e mudar o destino de seu povo.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-15.webp",
+          content:
+            "Conforme Vi crescia, ela presenciou a transformação de Vander, que abandonou sua luta contra Piltover e passou a trabalhar como barkeeper no Last Drop, desistindo de usar suas Brawler’s Gloves. Incompreendendo a mudança de seu protetor, Vi, determinada a provar seu valor, passou a se envolver em atividades ilegais – como roubos, assaltos e brigas – sempre acompanhada dos irmãos adotivos Mylo e Claggor. Mesmo Powder, apesar de ser a mais nova e frequentemente desacompanhada, seguia o grupo; embora Mylo a chamasse de “jinx” devido às suas falhas, Vi a apoiava e demonstrava interesse pelos gadgets e invenções que ela criava.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-16.webp",
+          content:
+            "O grupo contava com a colaboração de Ekko, apelidado de “Little Man”, que atuava como informante, fornecendo dicas sobre locais para roubos. Vander permitia as atividades ilícitas de Vi como forma de gerar renda, mas impunha uma regra clara: Vi não poderia interferir com Piltover – o outro lado do rio era considerado território proibido.",
         },
       ],
     },
@@ -1682,26 +1740,58 @@ export const characters = {
       title: "Temporada 1",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-17.webp",
+          content:
+            "Vi recebe uma dica de Ekko sobre um rico topsider, identificado como Jayce. Convencida de que já tem idade suficiente para agir em Piltover, ela reúne sua gangue – composta por Mylo, Claggor e sua irmã Powder – e invade o apartamento do homem. No local, encontram equipamentos caros e começam a recolher tudo o que conseguem. Contudo, o retorno se torna caótico quando o proprietário retorna inesperadamente, provocando uma grande explosão que destrói o prédio e denuncia a localização dos assaltantes aos Enforcers. Durante a fuga, Powder é obrigada a descartar o saque no rio; Mylo culpa a irmã, e o grupo retorna sem nada ao bar de Vander.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-18.webp",
+          content:
+            "Ao saber da explosão, Vander fica furioso com a desobediência de Vi e a repreende severamente, enfatizando sua responsabilidade como líder dos Subterrâneos. Vi, por sua vez, argumenta que a hesitação de Vander em enfrentar Piltover permite que os Enforcers circulem livremente pelas ruas, o que agravaria a situação. Durante uma conversa na Ponte do Progresso, Vander revela que nada de bom saiu de sua insurreição fracassada – e se culpa pela morte dos pais de Vi. Impactada pelas palavras do líder, Vi decide assumir total responsabilidade pelo roubo, optando por se entregar para proteger seus irmãos.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-19.webp",
+          content:
+            "Enquanto Grayson e seu vice Marcus chegam para prender Vi, Vander intervém, oferecendo-se em seu lugar e trancando-a no porão para evitar interferências. Da janela, Vi assiste, horrorizada, quando Silco, acompanhado por um enorme Deckard mutante, aparece, assassina Grayson e sequestra Vander, levando-o para sua sede criminal. Determinada a resgatar o pai adotivo, Vi parte com Mylo e Claggor rumo ao esconderijo de Silco, deixando Powder para trás e entregando a ela um sinalizador azul para emergências.",
         },
       ],
       parte4: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-20.webp",
+          content:
+            "Reunidos com Vander, Vi e sua equipe descobrem que foram levados para uma armadilha: Silco pretende eliminar Vander e assumir o controle dos Subterrâneos. Durante a batalha, Vi, usando as manoplas herdadas de Vander, enfrenta vários capangas até ser forçada a fugir do Deckard mutante. Em meio ao confronto, uma nova explosão, semelhante à do roubo, abala o edifício, ceifando a vida de Mylo e Claggor. Durante o resgate, Vander, em um ato desesperado, utiliza shimmer – transformando-se temporariamente em um mutante desajeitado – e, ao salvar Vi do prédio em colapso, cai e aparentemente morre, deixando como última mensagem: “Cuide de Powder.”",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-21.webp",
+          content:
+            "Logo após a tragédia, Powder chega e revela que a explosão foi causada por uma de suas próprias bombas, chocando Vi ao perceber que sua irmã, mesmo involuntariamente, foi responsável pela morte de tantos inocentes. Tomada pela raiva e pela dor, Vi agride Powder, ecoando a acusação de que ela é “uma jinx”, conforme Mylo havia dito. Porém, ao ver a fragilidade de Powder, Vi percebe que ultrapassou seus limites e se afasta, chorando contra a parede. No mesmo instante, Silco surge armado com uma faca, e quando Vi corre para salvar sua irmã, ela é impedida por Marcus, que a droga e a arrasta para a prisão de Stillwater.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-22.webp",
+          content:
+            "Vi passa os anos seguintes em Stillwater, onde é mantida sem julgamento e sujeita a constantes tentativas de fuga e ataques de prisioneiros violentos. Classificada como uma encrenqueira e alvo das “conversas” do Guardião Warden, Vi luta diariamente para sobreviver. A esperança de um futuro reencontro com sua irmã é o que a mantém determinada a resistir, mesmo diante da dura realidade do cárcere.",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-23.webp",
+          content:
+            "Após a celebração do bicentenário do Dia do Progresso de Piltover, Vi, agora liberta de Stillwater por meio de uma ordem oficial do Conselheiro Jayce Talis, retoma o contato com o mundo exterior. Ela se alia a Caitlyn Kiramman, que investiga as atividades de Silco, e juntas começam a buscar pistas nos becos de Zaun. Durante a investigação, Vi ataca a principal capanga de Silco, Sevika, e descobre, para seu horror, que Powder foi adotada por Silco e passou a se chamar Jinx. Ferida e esfaqueada, Vi é resgatada por Caitlyn e, posteriormente, as irmãs se reencontram de forma emocionante em uma torre, embora Jinx demonstre ter se transformado em uma pessoa violenta e paranoica devido ao trauma. Pouco depois, Vi e Caitlyn são sequestradas para um “tea party” macabro organizado por Jinx, onde a nova identidade de Powder é imposta, e em meio a confrontos intensos, Silco é mortalmente ferido. O episódio culmina com a partida de Jinx, que dispara um foguete que destrói as câmaras do Conselho de Piltover, sugerindo que a crise está longe de terminar.",
         },
       ],
     },
@@ -1709,46 +1799,107 @@ export const characters = {
       title: "Temporada 2",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-24.webp",
+          content:
+            "Após a morte da mãe de Caitlyn causada por um ataque de Jinx, Vi permanece na casa de Caitlyn, mesmo contra a vontade do pai desta. Essa decisão marca o início de tensões pessoais, já que Vi carrega o peso da perda de seus próprios pais e guarda ressentimento.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-25.webp",
+          content:
+            "Caitlyn, na tentativa de reconstruir a ordem, oferece a Vi um lugar entre os Enforcers. Contudo, Vi inicialmente recusa devido à profunda desconfiança e à culpa pelo que aconteceu com seus pais. Um segundo ataque terrorista, comandado por um dos tenentes dos chembarons de Silco (Renni), obriga Vi a repensar sua posição e a se unir à nova equipe de Caitlyn – composta também por Loris, Maddie e Steb –, com o objetivo de erradicar os remanescentes do império criminoso de Silco, eliminar o shimmer e enfrentar Jinx.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-26.webp",
+          content:
+            "Vi e Caitlyn adotam táticas brutais contra as forças de Silco, inclusive utilizando o Grey – uma forma de smog industrial tóxico estocado nos sistemas de ventilação dos Kirammans – para esvaziar as ruas e capturar os gangsters, conseguindo inclusive convencer Smeech a capturar Jinx em troca de sua recompensa. Essa fase também resulta na neutralização parcial das operações dos chembarons Margot e Chross.",
         },
       ],
       parte4: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-27.webp",
+          content:
+            "Seguindo os rastros de Jinx, Vi e Caitlyn adentram os níveis inferiores da cidade para confrontá-la. Durante a perseguição, Caitlyn questiona Vi quanto à possibilidade de matar sua própria irmã, evidenciando o profundo conflito interno de Vi. Em resposta, Vi declara que a irmã “já se foi” e, em meio à tensão, as duas compartilham um beijo enquanto se preparam para a batalha.",
         },
       ],
       parte5: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-28.webp",
+          content:
+            "Vi e Caitlyn localizam Jinx no templo de Janna, o qual está decorado com desenhos coloridos que narram a vida de Jinx com Vi. O plano inicial envolve Vi atraindo Jinx para que Caitlyn pudesse, de longe, efetuar um disparo certeiro.",
         },
       ],
       parte6: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-29.webp",
+          content:
+            "Jinx, usando artifícios como truques com espelhos, consegue fazer com que Caitlyn revele sua posição e envie Sevika para lutar contra ela. Durante uma troca intensa de palavras e ataques, Jinx se precipita na batalha, e a situação se agrava com a ativação de uma bomba por Sevika – que redireciona o Grey para Vi e Caitlyn, prendendo-as fora do templo. No rescaldo, Caitlyn culpa Vi pelo insucesso da missão e a abandona na Undercity, ocasionando profunda dor e desolação em Vi.",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-30.webp",
+          content:
+            "Isolada e magoada, Vi abandona os Enforcers e se torna uma lutadora de arena no estabelecimento de Tommy. Em seu novo cotidiano, ela enfrenta combates como cage fighter, vence adversários notáveis (como o campeão do Piltover Boxing League, Gustove “the Scowler” Jowler) e se envolve em um ciclo de brigas, consumo de bebidas e momentos de blackouts, sem conseguir esquecer o trauma e os conflitos não resolvidos com Caitlyn.",
+        },
+      ],
+      parte8: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-31.webp",
+          content:
+            "A reaproximação de Jinx ocorre quando ela invade o apartamento de Vi com a notícia de que Vander ainda está vivo. Ainda que Vi inicialmente reaja com hostilidade, os desdobramentos durante a jornada – inclusive uma busca pelos vestígios e uma carta encontrada na antiga residência de Vander – fazem com que Vi considere a possibilidade de perdoar Jinx. Durante esse trajeto, ocorrem discussões e confrontos, que culminam na localização do antigo lar de Vander, onde conflitos com uma criatura química (Warwick) testam as lealdades e as emoções dos envolvidos.",
+        },
+      ],
+      parte9: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-32.webp",
+          content:
+            "Na tentativa de restaurar a mente de Vander, Vi e Jinx recorrem a Viktor, que promete ajuda sob certas condições. Entretanto, a chegada do exército noxiano comandado por Ambessa Medarda gera novo caos, levando à intervenção de Caitlyn – que, apesar de ter se separado de Vi anteriormente, se envolve na batalha para salvar Vander, ainda que mantendo tensões não resolvidas com Vi.",
+        },
+      ],
+      parte10: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-33.webp",
+          content:
+            "Durante a intensa batalha no Hexgate, as forças de Ambessa, aprimoradas pelo shimmer, pressionam as defesas de Piltover. Apesar do esforço dos combatentes, Vi testemunha a perda de aliados próximos, como Loris. No auge do confronto, Jinx retorna em uma investida surpreendente com um exército de zaunitas, reforçando as defesas.",
+        },
+      ],
+      parte11: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-34.webp",
+          content:
+            "A luta se intensifica quando Vi e Jinx se veem frente a frente com Warwick – que, sob a influência de Viktor, se transforma em uma ameaça quase imparável. Em meio à confusão, o confronto toma proporções trágicas: Vander morre e Vi, tomada pela dor, fica gravemente ferida. Em um ato extremo de auto-sacrifício, Jinx arremessa-se, juntamente com Warwick, para evitar que a situação piore, ativando uma bomba e causando uma explosão que simboliza o preço alto da luta.",
+        },
+      ],
+      parte12: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/vi/character-page/vi-35.webp",
+          content:
+            "Algum tempo após o clímax, Vi se recupera dos intensos traumas e da perda de Jinx. Superando a dor e os conflitos internos, ela passa a viver na mansão Kiramman, ao lado de Caitlyn, com quem restabeleceu um forte vínculo de confiança e afeto. A jornada de Vi na segunda temporada revela uma transformação marcada pela brutalidade dos confrontos e pela determinação de restaurar a justiça e os laços familiares, culminando em uma nova esperança de reconstruir um futuro para Zaun, onde o passado doloroso possa, aos poucos, dar lugar à redenção e à união.",
         },
       ],
     },
     conclusion: {
-      title: "",
+      title: "Conclusão",
       parte1: [
         {
-          content: "",
+          content:
+            "Na aurora de sua trajetória, Vi percorre um labirinto de sombras e explosões, onde cada cicatriz revela uma coragem forjada na dor e na perda. Seu caminho, entre a desordem dos assaltos e a redenção dos reencontros, transforma o caos das ruas de Piltover e Zaun em um hino de luta e resistência. Em cada conflito, desde a traição que separou irmãs até os combates intensos no Hexgate, a protagonista descobre que até a desolação pode semear o renascer de esperanças. E, na dança entre a vingança e o perdão, a narrativa nos deixa com a promessa tênue de um novo amanhecer, onde os ventos do destino sussurram a possibilidade de cura e reconciliação.",
         },
       ],
     },
@@ -1770,61 +1921,84 @@ export const characters = {
     theme: "zaun",
     color: "#417AA5",
     secondaryColor: "#4671AC",
-    icon: "",
-    heroImage: "",
+    icon: "/images/arcane_zaun/zaun_characters/jinx/character-page/icon.webp",
+    heroImage:
+      "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-1.webp",
     name: "Jinx",
     lastName: "",
-    description: "",
-    quote: "",
+    description:
+      "Jinx é uma jovem intensamente caótica, marcada pelo abandono e pela dor. Sua imprevisibilidade e explosiva energia contrastam com momentos de profunda vulnerabilidade, refletindo a luta interna entre o desespero e o anseio por redenção em Arcane.",
+    quote: "Eu sou o monstro que você criou.",
     personalidade: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-2.webp",
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-3.webp",
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-4.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Fragmentada e Emocional:",
+        content:
+          "Jinx oscila entre a doçura esquecida de Powder e a intensa fúria de sua nova identidade. Sua alma está dilacerada pelas perdas, e cada ação violenta é tanto uma resposta ao trauma quanto uma tentativa de preencher um vazio interno.",
       },
       {
-        title: "",
-        content: "",
+        title: "Manipuladora e Inconstante:",
+        content:
+          "Embora utilize um comportamento alegre e até bobo para disfarçar sua profunda instabilidade, Jinx é capaz de manipular as pessoas ao seu redor com sua imprevisibilidade. Essa contradição – entre encanto e terror – torna-a uma figura tão fascinante quanto perigosa.",
       },
       {
-        title: "",
-        content: "",
+        title: "Genial e Criativa:",
+        content:
+          "Desde jovem, seu talento nato para a engenharia, especialmente na criação de explosivos, a destaca. Jinx aperfeiçoou suas invenções ao longo dos anos, transformando simples bombas em armas químicas sofisticadas, demonstrando que, por trás da insanidade, há um cérebro brilhante e inventivo.",
       },
     ],
     aparencia: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-5.webp",
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-6.webp",
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-7.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Marcas do Passado:",
+        content:
+          "Jinx apresenta uma pele pálida que contrasta com os intensos traços das cicatrizes de sua infância. Seus olhos, que variam entre tons de azul a um hipnótico rosa-violeta (devido ao Shimmer), contam a história de um passado repleto de dor e perda.",
       },
       {
-        title: "",
-        content: "",
+        title: "Estilo Rebeldemente Único:",
+        content:
+          "Seus longos cabelos azuis, dispostos em tranças adornadas por bullet casings e desenhos feitos por ela mesma, conferem-lhe um ar inconfundível de rebeldia. O vestuário de Jinx, composto por peças rasgadas, armadilhas improvisadas e acessórios peculiares, ressalta sua individualidade e sua conexão com o mundo caótico de Zaun.",
       },
       {
-        title: "",
-        content: "",
+        title: "Transformações Marcantes:",
+        content:
+          "A evolução de Powder para Jinx é visível não só em sua personalidade, mas também em sua aparência. Enquanto as roupas simples e infantis deram lugar a trajes que mesclam funcionalidade com agressividade, detalhes como tatuagens e marcas de explosões reforçam a narrativa de uma transformação dolorosa e definitiva.",
       },
     ],
     habilidades: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-8.webp",
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-9.webp",
+          "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-10.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Maestria com Explosivos:",
+        content:
+          "Jinx é excepcionalmente talentosa na criação e manuseio de explosivos. Sua expertise vai desde bombas improvisadas até armas chemtech avançadas – cada dispositivo é uma extensão de sua emoção crua e incontrolável, fazendo de cada explosão uma demonstração de genialidade destrutiva.",
       },
       {
-        title: "",
-        content: "",
+        title: "Precisão Letal com Armas:",
+        content:
+          "Seja com pistolas ou armamentos de alta potência, Jinx demonstra uma precisão que supera a de seus adversários. Essa habilidade de atirar com extrema eficácia transforma-a em uma combatente formidável, capaz de dominar até mesmo os inimigos mais experientes.",
       },
       {
-        title: "",
-        content: "",
+        title: "Acelerada por Shimmer:",
+        content:
+          "A exposição ao Shimmer aprimorou seus atributos físicos, concedendo-lhe uma velocidade e força super-humanas que a tornam quase intocável em combate. Essa combinação de reflexos acelerados e resiliência física permite que ela se desloque com destreza letal, surpreendendo seus oponentes em cada movimento.",
       },
     ],
     jornada: {
@@ -1918,6 +2092,11 @@ export const characters = {
     },
     playlist: [
       {
+        songName: "What Could Have Been",
+        artistName: "Sting, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/jinx/song/jinx.webp",
+      },
+      {
         songName: "Wasteland",
         artistName: "Royal & the Serpent, Arcane",
         imgSrc: "/images/arcane_zaun/zaun_characters/jinx/song/jinx-1.webp",
@@ -1930,7 +2109,7 @@ export const characters = {
       {
         songName: "Ritmo do Caos",
         artistName: "TakaB",
-        imgSrc: "/images/arcane_zaun/zaun_characters/jinx/song/jinx.webp",
+        imgSrc: "/images/arcane_zaun/zaun_characters/jinx/song/jinx-3.webp",
       },
     ],
   },
@@ -2093,4 +2272,4 @@ export const characters = {
       },
     ],
   },
-};
+};        
