@@ -27,6 +27,13 @@ interface CharacterData {
   parte11?: CharacterItem[];
   parte12?: CharacterItem[];
   parte13?: CharacterItem[];
+  parte14?: CharacterItem[];
+  parte15?: CharacterItem[];
+  parte16?: CharacterItem[];
+  parte17?: CharacterItem[];
+  parte18?: CharacterItem[];
+  parte19?: CharacterItem[];
+  parte20?: CharacterItem[];
 }
 
 const CharacterSection = (
@@ -47,6 +54,13 @@ const CharacterSection = (
   const eleventhPart = subject.parte11 || [];
   const twelfthPart = subject.parte12 || [];
   const thirteenthPart = subject.parte13 || [];
+  const fourteenthPart = subject.parte14 || [];
+  const fifteenthPart = subject.parte15 || [];
+  const sixteenthPart = subject.parte16 || [];
+  const seventeenthPart = subject.parte17 || [];
+  const eighteenthPart = subject.parte18 || [];
+  const nineteenthPart = subject.parte19 || [];
+  const twentiethPart = subject.parte20 || [];
 
   const allParts = [
     ...firstPart,
@@ -62,6 +76,13 @@ const CharacterSection = (
     ...eleventhPart,
     ...twelfthPart,
     ...thirteenthPart,
+    ...fourteenthPart,
+    ...fifteenthPart,
+    ...sixteenthPart,
+    ...seventeenthPart,
+    ...eighteenthPart,
+    ...nineteenthPart,
+    ...twentiethPart,
   ];
 
   useEffect(() => {

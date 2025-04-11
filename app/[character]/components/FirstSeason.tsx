@@ -12,6 +12,16 @@ interface FirstSeasonData {
   parte3: FirstSeasonItem[];
   parte4?: FirstSeasonItem[];
   parte5?: FirstSeasonItem[];
+  parte6?: FirstSeasonItem[];
+  parte7?: FirstSeasonItem[];
+  parte8?: FirstSeasonItem[];
+  parte9?: FirstSeasonItem[];
+  parte10?: FirstSeasonItem[];
+  parte11?: FirstSeasonItem[];
+  parte12?: FirstSeasonItem[];
+  parte13?: FirstSeasonItem[];
+  parte14?: FirstSeasonItem[];
+  parte15?: FirstSeasonItem[];
 }
 
 interface FirstSeasonProps {

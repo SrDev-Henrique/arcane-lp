@@ -8,6 +8,7 @@ interface ConclusionData {
     title: string;
     parte1: ConclusionItem[];
     parte2?: ConclusionItem[];
+    parte3?: ConclusionItem[];
 }
 
 interface ConclusionProps {

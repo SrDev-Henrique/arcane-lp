@@ -2005,14 +2005,34 @@ export const characters = {
       title: "Jornada",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-11.webp",
+          content:
+            "Ainda muito jovem, Powder acompanhava seus pais e Vi durante a insurreição contra Piltover, liderada por Vander e Silco, que teve início na Ponte do Progresso. Nesse trágico evento, a tentativa de criar uma nação independente para os zaunitas resultou em uma violenta batalha com os Enforcers, onde muitos inocentes, incluindo os pais de Powder e Vi, foram mortos.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-12.webp",
+          content:
+            "Diante do horror da situação, Vi, ciente de que Powder era muito nova para compreender toda aquela carnificina, pediu que ela tapasse os olhos e se concentrasse em uma canção, tentando amenizar o sofrimento que a rodeava. Nesse momento, elas foram encontradas por Vander, que, relembrando sua antiga amizade com a mãe das meninas, reconheceu-as e se compadeceu da situação, assumindo o papel de pai ao recolhê-las.",
+        },
+      ],
+      parte3: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-13.webp",
+          content:
+            "Sob os cuidados de Vander, Powder cresceu em um ambiente tão inusitado quanto desafiador, habitando o bar que servia de refúgio para os que viviam à margem. Ao lado dos seus irmãos adotivos, Mylo e Claggor, ela rapidamente demonstrou um talento nato para a pontaria e para a engenharia, habilidades que se destacavam mesmo na dura rotina do submundo de Zaun.",
+        },
+      ],
+      parte4: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-14.webp",
+          content:
+            "Durante sua infância e adolescência, Powder também cultivou uma forte amizade com Ekko, que, trabalhando como assistente de Benzo – grande amigo de Vander – dividia momentos lúdicos com ela nas ruas. Em jogos inusitados, Powder tentava acertar Ekko com uma pistola de paintball antes que ele a “atingisse” com sua espada de madeira, consolidando assim uma aliança e uma cumplicidade que marcariam sua trajetória futura.",
         },
       ],
     },
@@ -2020,26 +2040,114 @@ export const characters = {
       title: "Temporada 1",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-15.webp",
+          content:
+            "Anos após os primeiros acontecimentos, Powder, já na pré-adolescência, e Vi, em sua adolescência tardia, receberam uma dica de Ekko sobre um rico topsider que poderia ser roubado para conseguir dinheiro rápido. Junto com Mylo e Claggor, os quatro se infiltraram no apartamento do homem.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-16.webp",
+          content:
+            "Durante a invasão, Powder encontrou um baú repleto de pequenos cristais azuis e os guardou em seu bolso. Contudo, antes que pudesse examiná-los, o proprietário – Jayce – retornou de forma abrupta, batendo na porta. No corre-corre para fugir, Powder deixou cair um cristal que, ao atingir a parede, explodiu, provocando a destruição de boa parte do prédio e alertando os Enforcers.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-17.webp",
+          content:
+            "Em meio à fuga, os garotos se depararam com bandidinhos liderados por Deckard, que exigiram parte do saque; Powder, com um explosivo caseiro ineficaz, acabou sendo forçada a descartar o roubo no rio. Apesar das acusações por parte de Mylo, Vi se mostrou aliviada por saber que sua irmã não havia se ferido e o grupo retornou ao Last Drop, sendo severamente repreendido por Vander. Mais tarde, durante a confusão, Powder descobriu que ainda possuía os cristais e, após um momento de consolo junto a Vi, as duas decidiram manter o segredo entre si.",
         },
       ],
       parte4: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-18.webp",
+          content:
+            "Com o passar das semanas, os Enforcers intensificaram a perseguição aos jovens, e, para protegê-los, Vander se entregou. No entanto, antes que pudesse ser levado para Piltover, ele foi surpreendido por uma emboscada conduzida por Silco e Deckard – que resultou na morte de Grayson e de Benzo – e acabou sendo sequestrado. Ao descobrir o paradeiro de Vander por meio de Ekko, Vi, acompanhada de Mylo e Claggor, partiu para resgatar o pai adotivo, enquanto ordenava que Powder ficasse em segurança, entregando-lhe um sinalizador azul.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-19.webp",
+          content:
+            "Sozinha e devastada por ter sido deixada para trás, Powder passou a chorar e, ao refletir sobre os acontecimentos, percebeu que os cristais roubados foram os responsáveis pela explosão durante o roubo. Movida pela esperança de ajudar a família, ela seguiu sozinha até o esconderijo de Silco para observar a batalha – mas sua tentativa de intervir com um explosivo caseiro (a chamada “monkey bomb”) desencadeou uma explosão descomunal, ceifando as vidas de Mylo e Claggor e ferindo gravemente Vander e Vi.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-20.webp",
+          content:
+            "Ao ver os corpos e a destruição causada por seu erro, Powder se viu tomada pelo horror e pela culpa, o que culminou com Vi, enfurecida, agredindo-a e confirmando as acusações de que ela era uma “jinx”.",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-21.webp",
+          content:
+            "Assombrada pelo dia em que, sem querer, ceifou a vida de sua família adotiva e sentindo o abandono de Vi, Powder começou a ser atormentada por vozes e alucinações que a acusavam e rotulavam de “quebrada” e “sem valor”. Em suas páginas, o diário transbordava de pedidos de desculpas, mas a culpa persistia, levando-a a abandonar sua antiga identidade e adotar o nome de Jinx.",
+        },
+      ],
+      parte8: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-22.webp",
+          content:
+            "Sob o olhar de Silco, que a acolheu e incentivou seus talentos como inventora e atiradora, Jinx passou a aperfeiçoar seus dispositivos explosivos – criando armas de chemtech como suas icônicas minigun, lançador de foguetes e outras engenhocas letais. Mesmo após romper o laço com Ekko e consolidar seu papel no bando de Silco, ela permanecia dividida entre a dor do passado e a busca por uma nova identidade.",
+        },
+      ],
+      parte9: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-23.webp",
+          content:
+            "Os acontecimentos tomaram novos rumos quando, durante o bicentenário de Piltover, Jinx soube que Vi estava viva e a procurava. Movida pela esperança contida naquele antigo sinal – o azul flare que Vi lhe dera na infância – Jinx se deslocou até o local de encontro.",
+        },
+      ],
+      parte10: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-24.webp",
+          content:
+            "Num emocionante reencontro, as irmãs trocaram abraços e pedidos de desculpas, mas o alívio logo se misturou à tensão: a presença de Caitlyn revelou a aliança de Vi com os Enforcers, desencadeando desconfiança e paranoia em Jinx, que passou a acreditar que Vi manipulava a situação para lhe tomar o controle do cristal. Essa desavença culminou em um embate, e, num instante de angústia, ambas foram surpreendidas pela emboscada dos Firelights, que capturaram Vi e Caitlyn, além de roubar o precioso cristal. Sem o sinal do laço fraterno, Jinx se viu sozinha e desesperada.",
+        },
+      ],
+      parte11: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-25.webp",
+          content:
+            "Durante uma perseguição na Ponte do Progresso, Jinx, tomada por ciúmes e alucinações, atacou Vi e Caitlyn com bombas mecânicas, resultando em um massacre que deixou apenas Vi, Ekko e Caitlyn vivos entre os Enforcers. Na sequência do caos, enquanto tentava reaver o cristal, Jinx se envolveu em um violento confronto com Ekko, que a dominou temporariamente; entretanto, uma explosão inesperada a feriu gravemente.",
+        },
+      ],
+      parte12: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-26.webp",
+          content:
+            "Recuperada parcialmente, Jinx foi então resgatada por Silco, que a conduziu até o laboratório de Singed, onde passou por um doloroso procedimento experimental envolvendo injeções de shimmer para curar suas feridas e permitir que ela continuasse a sua missão.",
+        },
+      ],
+      parte13: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-27.webp",
+          content:
+            "Recuperada do procedimento, Jinx desencadeou um novo e bizarro capítulo em sua trajetória ao sequestrar Caitlyn, Silco e, posteriormente, Vi. Levou-os para a antiga fábrica de shimmer, onde organizou um macabro “tea party” repleto de pertences do passado – incluindo bonecas que remetiam a Mylo e Claggor – e impôs uma escolha simbólica a Vi: sentar na cadeira que representava “Powder” ou na que indicava “Jinx”.",
+        },
+      ],
+      parte14: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-28.webp",
+          content:
+            "A tensão atingiu seu ápice quando Silco, tentando intervir, acabou sendo acidentalmente alvejado e morrendo em seus braços, o que, juntamente com a cena caótica do confronto, acabou selando a transformação definitiva de Powder em Jinx. Sem mais vínculos com seu antigo eu, Jinx pegou o cristal que havia sido weaponizado e, em um gesto de despedida dolorosa, disparou um foguete contra o Conselho de Piltover, provocando destruição e marcando a nova realidade brutal que passaria a reger seu destino.",
         },
       ],
     },
@@ -2047,38 +2155,162 @@ export const characters = {
       title: "Temporada 2",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-29.webp",
+          content:
+            "Após a morte de Silco, Jinx realiza um funeral particular no local onde Vander quase o afogara, lançando o corpo nas profundezas e, com isso, suas alucinações cessam temporariamente.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-30.webp",
+          content:
+            "Sem Silco e com seu império se fragmentando entre os diversos capangas chembarões, ela passa a ser a criminosa mais procurada em Piltover e Zaun. Nesse período de constante violência, Jinx se aproxima de Isha, uma jovem órfã que ela resgatou de capangas de Chross e que passa a se interessar por suas engenhocas. Ao mesmo tempo, ela reata seu relacionamento com Sevika, cuja perda de braço motiva Jinx a construir um novo membro a partir de sucata.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-31.webp",
+          content:
+            "Enquanto continua sua trajetória de crimes, Jinx se depara com o grupo de Caitlyn – que utiliza o tóxico “Grey” acumulado num antigo sistema de ventilação – e se entristece ao descobrir que Vi agora integra os Enforcers, sentindo-se traída pela irmã. Capturada momentaneamente pelo chembarão Smeech, Jinx é salva por Sevika, que utiliza o braço recém-construído para eliminar os inimigos.",
         },
       ],
       parte4: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-32.webp",
+          content:
+            " Planejando vingar os que considera responsáveis por sua desgraça familiar, Jinx organiza uma armadilha na antiga sede de Janna, decorando o templo com murais que recordam sua vida ao lado de Vi, e provoca um intenso confronto com Caitlyn e Vi, resultando na perda de seus equipamentos – e até de um dedo, por conta do rifle de Caitlyn.",
         },
       ],
       parte5: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-33.webp",
+          content:
+            "Após o fracasso na armadilha, e sentindo-se indignada por não ter alcançado o desfecho dramático que esperava, Jinx se esconde em seu refúgio, declarando “Jinx is dead”. Mesmo sem o desejo de ser símbolo, amigos como Sevika e Isha a incentivam a sair do esconderijo para unir os zaunitas.",
         },
       ],
       parte6: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-34.webp",
+          content:
+            "Enquanto Jinx se considera incapaz de ser heroína, Isha começa a agir em seu lugar, inspirando atos de resistência – gesto que, porém, a coloca em perigo e resulta em sua captura. Preocupada com a amiga, Jinx sai em busca de Isha, armando-se com um novo hextech shock pistol, o Zap! Zapper, e resgata os moradores do submundo, assumindo o papel de “grande heroína” para os Jinxers e Firelights.",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-35.webp",
+          content:
+            "Enquanto tenta livrar o submundo do cerco de forças piltoveranas e, ao mesmo tempo, de antigos aliados transformados, Jinx se depara com Vander Warwick – um ser químico selvagem criado por Singed. Em meio a um confronto tenso, Warwick, reconhecendo Jinx como “Powder” ao olhar em seus olhos, demonstra uma estranha empatia ao evocar a voz de Vander.",
+        },
+      ],
+      parte8: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-36.webp",
+          content:
+            "Jinx procurou a ajuda de Vi que havia se transformado em uma briguenta bêbada de ringue depois de ser abandonada por Caitlyn. Apesar de Jinx ter tentado se reconciliar com Vi, o reencontro se mostrou complicado, especialmente após terem tentado se matar em seu último encontro. Embora Jinx garantisse que Vander estava vivo, Vi pensou que ela estivesse mentindo ou alucinando, mas, mesmo assim, decidiu ajudá-la com relutância.",
+        },
+      ],
+      parte9: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-37.webp",
+          content:
+            "Jinx e Isha levaram Vi até as minas, onde as irmãs acabaram brigando; o conflito provocou um sangramento nasal em Isha, atraindo a atenção de Warwick. Mais tarde, Jinx e Vi encontraram a antiga residência de Vander e Silco. Lá, descobriram mais sobre o passado dos mineradores e depararam com um bilhete antigo escrito por Vander, no qual ele expressava arrependimento por quase ter matado Silco tantos anos atrás.",
+        },
+      ],
+      parte10: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-38.webp",
+          content:
+            "Jinx se perguntou se tudo poderia ter sido diferente caso Silco tivesse encontrado o bilhete. Ao retornarem, foram atacadas por Warwick, que, enlouquecido pelo cheiro de sangue, investiu contra elas. Jinx implorou a Vi que não agravasse a situação, e, quando finalmente foi atendida, conseguiram despertar as antigas memórias de Vander, fazendo com que o homem interior da fera voltasse à tona. Vi abraçou o pai e convidou Jinx a se juntar a eles, proporcionando um emocionante reencontro familiar.",
+        },
+      ],
+      parte11: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-39.webp",
+          content:
+            "Apesar de terem recuperado algumas memórias do pai, a mente de Vander permanecia distorcida e atormentada pelos experimentos de Singed. Determinadas a restaurá-lo por completo, Jinx e Vi buscaram uma solução e souberam de um curandeiro mágico capaz de realizar milagres. Assim, recorreram a Viktor, que concordou em ajudá-las. Embora Jinx demonstrasse ceticismo quanto ao sucesso dos esforços de Viktor, a comunidade, construída próximo às ruínas de sua antiga casa, fazia com que ela e Vi se questionassem se poderiam construir uma nova vida naquele lugar.",
+        },
+      ],
+      parte12: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-40.webp",
+          content:
+            "No entanto, a paz não durou: o exército de Ambessa Medarda logo marchou em direção à comuna. Jinx e Isha prepararam-se para defender Warwick, que buscava capturar Singed e Caitlyn. Em um momento inesperado, Caitlyn traiu Singed, levando Jinx a defendê-la contra Rictus – braço direito de Ambessa. Mesmo tendo sido derrotada por Rictus, Jinx foi salva pela intervenção de Vander, o que deixou ela e Vi radiantes pelo retorno do pai. Poucos segundos depois, porém, os cultistas da comuna de Viktor entraram em colapso repentinamente, e Warwick voltou a se exaltar, matando Rictus e desencadeando uma batalha em larga escala contra as forças de Ambessa.",
+        },
+      ],
+      parte13: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-41.webp",
+          content:
+            "No clímax do conflito, Jinx tentou argumentar com Warwick, mas foi violentamente atacada por ele. Para salvar a vida de Jinx, Isha sobrecarregou seu Zapper com três gemas hextec, sacrificando-se numa explosão massiva. Com profunda tristeza pela perda de Isha e Vander, Jinx, em meio à confusão, levou a ferida Vi às pressas para um local seguro, antes de finalmente se entregar às autoridades.",
+        },
+      ],
+      parte14: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-42.webp",
+          content:
+            "Após se entregar, Jinx aparentemente perdeu a vontade de viver. Em um momento de profundo desespero, ela se desculpou com Caitlyn por ter matado sua mãe e pediu para ser executada. As alucinações voltaram a assombrá-la após a perda de Isha, e sua voz passou a ecoar como a de Silco, que explicou os ciclos de vingança que haviam mergulhado ele e Vander no sofrimento. Durante essa conversa, Jinx percebeu que a única saída para encerrar o ciclo era 'ir embora'.",
+        },
+      ],
+      parte15: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-43.webp",
+          content:
+            "Mais tarde, quando Vi se recuperou, tentou libertar Jinx, afirmando que ela poderia usar seus poderes para o bem e 'reescrever' sua própria história. Consciente de que sua irmã jamais desistiria dela, Jinx reagiu violentamente: desferiu um soco em Vi e a trancou em uma cela, ordenando que Vi se esquecesse dela e vivesse uma vida feliz com Caitlyn. Quando Vi indagou sobre os planos de Jinx, ela simplesmente respondeu que 'quebraria o ciclo'.",
+        },
+      ],
+      parte16: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-44.webp",
+          content:
+            "Após cortar o cabelo e atear fogo na Última Gota, Jinx tentou pôr fim à sua vida em seu covil, utilizando uma bomba hextec recém-construída. Contudo, ela foi impedida por Ekko que a lembrou de que, apesar de seus erros, nunca é tarde para construir algo novo.",
+        },
+      ],
+      parte17: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-45.webp",
+          content:
+            "Em preparação para a invasão de Piltover por Ambessa, Jinx uniu forças com Ekko e se dirigiu ao esconderijo dos Firelight. Lá, combinou suas antigas armas em um novo dispositivo que batizou de “Rinoceronte”. Além disso, adaptou as hélices de seu covil para integrá-las a um balão de guerra pintado, liderando o ataque dos habitantes da cidade subterrânea – incluindo Ekko e Sevika – para lutar na batalha final contra Ambessa e Viktor, e assim resgatar Vi e Caitlyn de uma derrota certa.",
+        },
+      ],
+      parte18: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-46.webp",
+          content:
+            "Embora o ataque de Jinx tenha virado a maré, Vander Warwick – transformado em um dos fantoches irracionais de Viktor – surgiu com os drones do próprio Viktor e lançou um ataque contra Vi, atingindo também Jinx e Ekko, ao lançar sua aeronave contra a torre. Após uma reconciliação entre as irmãs, Jinx e Vi lutaram bravamente contra Warwick dentro do Hexgate, mas acabaram sendo capturadas por uma tempestade anômala, habilidade de Viktor, que ameaçava absorvê-las na mente coletiva do Arauto.",
+        },
+      ],
+      parte19: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-47.webp",
+          content:
+            "Jayce e Ekko conseguiram derrotar Viktor, libertando-as do campo gravitacional, embora Vi tenha ficado presa em uma saliência instável. Jinx implorou que Vi pulasse para a segurança, mas, ferida e perturbada, Vi não conseguiu se mover, enquanto Warwick despertava em estado selvagem e inconsciente. Percebendo que Vi não conseguiria deixar Vander ir, Jinx optou pelo sacrifício: ela se lançou, junto com Warwick, pelo poço da torre, abraçando-a uma última vez. Em seguida, ativou sua bomba-macaco, aparentemente ceifando as vidas de ambos.",
+        },
+      ],
+      parte20: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-48.webp",
+          content:
+            "Jinx foi dada como morta após a explosão, e seu luto ficou marcado por Vi, Ekko e, presumivelmente, pelos demais Jinxers e Firelights. No entanto, Caitlyn iniciou uma investigação sobre os esquemas do Hexgate e os destroços da bomba-macaco, levantando suspeitas de que o corpo de Jinx jamais fora encontrado e que ela poderia ter fingido sua morte, escapando por um duto de ventilação. Enquanto ponderava essas evidências e discutia com Vi, uma aeronave semelhante àquela sobre a qual Powder sonhou voar um dia sobrevoou o mar e se perdeu na distância, rumo a um destino desconhecido.",
         },
       ],
     },
@@ -2086,7 +2318,20 @@ export const characters = {
       title: "Conclusão",
       parte1: [
         {
-          content: "",
+          content:
+            "Jinx é a personificação da luta incessante entre a escuridão interior e a tênue esperança de redenção. Sua jornada, marcada por conflitos devastadores, perdas irreparáveis e escolhas impetuosas, revela a complexidade de uma alma que se recusa a se deixar definir apenas pelo caos. Em cada explosão, cada sacrifício e cada ato de autoconfrontação, ela demonstrou que a fragilidade humana pode, paradoxalmente, ser a fonte de uma força transformadora.",
+        },
+      ],
+      parte2: [
+        {
+          content:
+            "Embora sua trajetória tenha sido pavimentada por cicatrizes e sombras, Jinx deixou um legado que transcende a mera destruição: um convite à reflexão sobre os ciclos de dor e vingança, a necessidade de confrontar os demônios internos e, sobretudo, a possibilidade de recomeço. Seu rompimento com o passado tormentoso simboliza a coragem de desafiar destinos imutáveis e a convicção de que a verdadeira libertação reside, não na fuga, mas na aceitação das próprias imperfeições, convertendo-as em chaves para um futuro renovado.",
+        },
+      ],
+      parte3: [
+        {
+          content:
+            "Assim, a história de Jinx ecoa como um lembrete perene de que, mesmo nas profundezas do desespero, a centelha da transformação pode acender um novo caminho – um caminho onde os erros do passado se tornam a semente para a construção de uma realidade mais justa e esperançosa.",
         },
       ],
     },
@@ -2116,15 +2361,16 @@ export const characters = {
 
   ekko: {
     theme: "zaun",
-    color: "",
-    secondaryColor: "",
-    icon: "",
-    heroImage: "",
-    name: "",
+    color: "#8A9A79",
+    secondaryColor: "#4F7942",
+    icon: "/images/arcane_zaun/zaun_characters/ekko/character-page/icon.jpeg",
+    heroImage:
+      "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-1.webp",
+    name: "Ekko",
     lastName: "",
     description:
       "Ekko é o prodígio resiliente de Zaun, forjado na pobreza e nos segredos da loja de Benzo. Transformado pelo tempo e pelas tragédias, ele lidera os Firelights, invertendo o destino com engenho e paixão, tecendo esperança e redenção em cada segundo.",
-    quote: "",
+    quote: "As vezes saltar significa deixar algumas coisas para tràs",
     personalidade: [
       {
         src: ["", "", ""],
@@ -2267,10 +2513,15 @@ export const characters = {
     },
     playlist: [
       {
-        songName: "",
-        artistName: "",
-        imgSrc: "",
+        songName: "Lapso Temporal",
+        artistName: "Shooter",
+        imgSrc: "/images/arcane_zaun/zaun_characters/ekko/song/ekko-1.webp",
+      },
+      {
+        songName: "Ma Meilleure Ennemie",
+        artistName: "Stromae, Pomme, Arcane",
+        imgSrc: "/images/arcane_zaun/zaun_characters/ekko/song/ekko-2.gif",
       },
     ],
   },
-};        
+};
