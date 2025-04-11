@@ -2122,7 +2122,8 @@ export const characters = {
     heroImage: "",
     name: "",
     lastName: "",
-    description: "",
+    description:
+      "Ekko é o prodígio resiliente de Zaun, forjado na pobreza e nos segredos da loja de Benzo. Transformado pelo tempo e pelas tragédias, ele lidera os Firelights, invertendo o destino com engenho e paixão, tecendo esperança e redenção em cada segundo.",
     quote: "",
     personalidade: [
       {

@@ -118,7 +118,7 @@ const Apresentacao = () => {
       >
         <div
           ref={apImageContainerRef}
-          className="h-[80%] w-[90%] max-w-[1724px] scale-75 rounded-3xl flex-center overflow-hidden transform-gpu will-change-transform"
+          className="h-[80%] w-[90%] max-w-[1724px] scale-[65%] rounded-3xl flex-center overflow-hidden transform-gpu will-change-transform"
         >
           <Image
             src={"/images/arcane_zaun/intro.webp"}
@@ -134,7 +134,7 @@ const Apresentacao = () => {
           </h3>
         </div>
       </div>
-      <div className="min-h-screen w-full flex-center flex-col py-24 gap-24">
+      <div className="min-h-screen w-full flex-center flex-col pb-24 pt-80 gap-24">
         {apresentacao.map((item, index) => (
           <div key={index} className="h-[100dvh] w-[90%] max-w-[1724px] relative">
             <div
