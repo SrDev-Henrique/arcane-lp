@@ -2302,7 +2302,7 @@ export const characters = {
           image:
             "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-47.webp",
           content:
-            "Jayce e Ekko conseguiram derrotar Viktor, libertando-as do campo gravitacional, embora Vi tenha ficado presa em uma saliência instável. Jinx implorou que Vi pulasse para a segurança, mas, ferida e perturbada, Vi não conseguiu se mover, enquanto Warwick despertava em estado selvagem e inconsciente. Percebendo que Vi não conseguiria deixar Vander ir, Jinx optou pelo sacrifício: ela se lançou, junto com Warwick, pelo poço da torre, abraçando-a uma última vez. Em seguida, ativou sua bomba-macaco, aparentemente ceifando as vidas de ambos.",
+            "Jayce e Ekko conseguiram derrotar Viktor, libertando-as do campo gravitacional, embora Vi tenha ficado presa em uma saliência instável. Jinx implorou que Vi pulasse para a segurança, mas, ferida e perturbada, Vi não conseguiu se mover, enquanto Warwick despertava em estado selvagem e inconsciente. Percebendo que Vi não conseguiria deixar Vander ir, Jinx optou pelo sacrifício: ela se lançou, junto com Warwick, pelo poço da torre, abraçando-o uma última vez. Em seguida, ativou sua bomba-macaco, aparentemente ceifando as vidas de ambos.",
         },
       ],
       parte20: [
@@ -2363,7 +2363,7 @@ export const characters = {
     theme: "zaun",
     color: "#8A9A79",
     secondaryColor: "#4F7942",
-    icon: "/images/arcane_zaun/zaun_characters/ekko/character-page/icon.jpeg",
+    icon: "/images/arcane_zaun/zaun_characters/ekko/character-page/icon.webp",
     heroImage:
       "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-1.webp",
     name: "Ekko",
@@ -2373,67 +2373,92 @@ export const characters = {
     quote: "As vezes saltar significa deixar algumas coisas para tràs",
     personalidade: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-2.webp",
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-3.webp",
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-4.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Determinado e Protetor:",
+        content:
+          "Movido pelo desejo de transformar Zaun e proteger os seus, Ekko luta contra injustiças mesmo após perdas profundas, garantindo que a esperança nunca se perca.",
       },
       {
-        title: "",
-        content: "",
+        title: "Inventivo e Resiliente:",
+        content:
+          "Desde cedo, Ekko demonstrou um talento natural para engenharia e mecânica, criando dispositivos como o Z-Drive que transformam obstáculos em oportunidades.",
       },
       {
-        title: "",
-        content: "",
+        title: "Líder de Coração Sensível:",
+        content:
+          "Apesar das adversidades e conflitos, ele valoriza as memórias dos que perdeu e se empenha em construir um futuro para os mais vulneráveis.",
       },
     ],
     aparencia: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-5.webp",
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-6.webp",
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-7.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Visual de Jovem Guerreador:",
+        content:
+          "Ekko exibe pele escura, olhos castanho-avelã intensos e cabelos brancos em dreads, refletindo a dureza de sua infância e a luta diária em Zaun.",
       },
       {
-        title: "",
-        content: "",
+        title: "Estilo Urbano e Funcional:",
+        content:
+          "Seu visual, composto por cachecol laranja, arnês marrom, regata branca, calças cargo e botas robustas, alia estilo urbano com a funcionalidade necessária para as ruas implacáveis de Zaun.",
       },
       {
-        title: "",
-        content: "",
+        title: "Marca da Jornada:",
+        content:
+          "Uma pintura de guerra em forma de ampulheta no rosto simboliza a passagem do tempo e suas batalhas, contando a história da sua incessante busca pelo controle do tempo.",
       },
     ],
     habilidades: [
       {
-        src: ["", "", ""],
+        src: [
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-8.webp",
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-9.webp",
+          "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-10.webp",
+        ],
       },
       {
-        title: "",
-        content: "",
+        title: "Domínio do Tempo – Chronobreak:",
+        content:
+          "Utilizando o Z-Drive, Ekko pode retroceder o tempo em até quatro segundos, corrigindo erros e escapando de situações críticas com maestria.",
       },
       {
-        title: "",
-        content: "",
+        title: "Manobras Incríveis com Aeroplanador:",
+        content:
+          "Sua habilidade no aeroplanador demonstra reflexos sobrenaturais e mobilidade, essenciais para se esquivar de ataques e surpreender os inimigos.",
       },
       {
-        title: "",
-        content: "",
+        title: "Gênio Inventivo e Criativo:",
+        content:
+          "Sem formação formal, ele transforma sua experiência em invenções que vão desde explosivos artesanais até engenhocas que sabotam os planos de Silco, destacando-o como um mestre em tecnologia e sobrevivência.",
       },
     ],
     jornada: {
       title: "Jornada",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-11.webp",
+          content:
+            "Ekko nasceu em Zaun, em uma família pobre, e desde cedo demonstrou um talento natural para engenharia e mecânica. Enquanto seus pais raramente estavam presentes, ele trabalhou como assistente na loja de penhores de Benzo, que se tornou seu mentor e o introduziu nos segredos e nas conversas privadas dos frequentadores do local.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-12.webp",
+          content:
+            "Foi nesse ambiente que Ekko se aproximou de Vi, Powder, Mylo e Claggor – os amigos com quem viria a formar seu “bando” – ganhando o apelido de “Little Man” e desenvolvendo vínculos afetivos, inclusive participando de brincadeiras de rua e treinamentos básicos de combate.",
         },
       ],
     },
@@ -2441,26 +2466,130 @@ export const characters = {
       title: "Temporada 1",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-13.webp",
+          content:
+            "Enquanto trabalhava na loja de Benzo, um jovem de Piltover, identificado como Jayce, entrou para comprar diversos itens raramente disponibilizados aos clientes – peças que normalmente ficavam em exibição. Consciente de que aquele rapaz devia ter recursos, Ekko aproveitou a oportunidade e o enganou, cobrando o dobro do valor por cada item adquirido. Em seguida, Ekko passou a segui-lo discretamente até sua residência em Piltover, imaginando que seus amigos poderiam lucrar rapidamente ao invadir o apartamento do jovem. Assim, ele informou a localização de Jayce.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-14.webp",
+          content:
+            "Entretanto, o plano desmoronou quando Powder, inadvertidamente, deixou cair um dos vários cristais hexagonais encontrados no apartamento. A queda do cristal desencadeou uma explosão que destruiu a maior parte do prédio, ferindo diversas pessoas que passavam pelo local.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-15.webp",
+          content:
+            "Após o fracasso do roubo, os amigos conseguiram escapar dos Executores e retornaram em segurança para a Cidade Baixa. Do lado de fora da loja de Benzo, Ekko encontrou Claggor e relatou como conheceu Jayce e descobriu sua morada. Contudo, antes que pudessem continuar a conversa, dois Executores surgiram repentinamente, forçando Claggor a fugir enquanto Ekko permaneceu.",
         },
       ],
       parte4: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-16.webp",
+          content:
+            "Mais tarde, os Executores adentraram a loja para conversar com Benzo e Vander. Aproveitando uma engenhoca que havia construído acima da sala, Ekko escutou secretamente a conversa e descobriu que Vander mantinha um acordo antigo com o xerife Grayson para preservar a paz entre as duas cidades – informação que ele compartilhou com Vi e Powder, embora com certa hesitação.",
+        },
+      ],
+      parte5: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-17.webp",
+          content:
+            "Em seguida, Ekko testemunhou o assassinato de Benzo, cometido por Deckard sob as ordens de Silco. Após Silco ordenar que Deckard levasse Vander de volta ao seu esconderijo, Ekko seguiu-os discretamente e, em lágrimas, revelou a Vi a localização do refúgio de Silco. Infelizmente, a missão de resgatar Vander terminou em desastre: Powder, desobedecendo às ordens de Vi para permanecer à distância, detonou sua bomba caseira – conhecida como bomba de macaco. A explosão devastou a maior parte do esconderijo de Silco, ceifando as vidas de Mylo e Claggor e deixando Vander e Vi gravemente feridos.",
+        },
+      ],
+      parte6: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-18.webp",
+          content:
+            "Quando Vi não retornou do esconderijo e acabou desaparecendo por completo da cidade subterrânea, após sua tentativa fracassada de salvar Vander, Ekko passou a acreditar que ela havia perecido junto com seus irmãos adotivos. Sem poder fazer mais nada, ele só pôde assistir, impotente, enquanto Powder era acolhida por Silco e treinado para servir à sua causa.",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-19.webp",
+          content:
+            "Após Silco inundar as Lanes com shimmer, Ekko reuniu inúmeros zaunitas de sua geração e assumiu a missão de criar um refúgio seguro para todos eles. Forçado a sobreviver sem a proteção de seus amigos, Ekko acabou se refugiando com um grupo de jovens zaunitas em um grande esgoto surpreendentemente limpo, que abrigava uma das poucas – se não a única – árvores em toda Zaun. Com o tempo, ele se destacou como líder desse grupo, que passou a ser conhecido como Firelights, e utilizou seus talentos em engenharia para sabotar as remessas de shimmer de Silco, na esperança de frustrar os planos da organização do vilão. Os esforços das Firelights se mostraram eficazes, culminando na destruição de inúmeras remessas de shimmer nos anos seguintes, por meio de invenções que incluíam aeroplanadores quimicamente tecnológicos, granadas de fumaça e bombas de cristal.",
+        },
+      ],
+      parte8: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-20.webp",
+          content:
+            "Em sua cruzada contra o império criminoso de Silco, Ekko infelizmente rompeu sua amizade com Powder, que havia adotado o nome Jinx. Embora haja evidências de que ele tenha tentado, repetidas vezes, convencê-la a abandonar a influência de Silco, todas as tentativas terminaram em fracassos dolorosos, frequentemente custando a vida de muitos companheiros das Firelights. Assim, Ekko acabou aceitando a ideia de que Powder havia desaparecido, restando apenas Jinx – a garota que ele um dia conheceu. O trauma de perder Vi, Mylo, Claggor e tantos outros membros das Firelights, que morreram às mãos de Jinx, transformou o jovem em alguém rude e calejado pela batalha, contrastando fortemente com o garoto alegre e despreocupado que ele fora quando Vander ainda controlava a Cidade Baixa.",
+        },
+      ],
+      parte9: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-21.webp",
+          content:
+            "Durante uma missão para sabotar mais um carregamento de shimmer de Silco, Ekko e os Firelights executaram um ataque preciso: imobilizaram os capangas do vilão com bombas de cristal e destruíram a maior parte — se não toda — da carga. No entanto, a vitória teve um preço amargo. Jinx os emboscou enquanto queimavam o carregamento e massacrou todos os membros da gangue presentes, com exceção de Ekko e Scar. Tomado pela fúria ao ver seus companheiros tombarem, Ekko tentou atacar Jinx com seu bastão, mas Scar o puxou para um local seguro antes que o confronto se concretizasse. Quando Jinx abriu fogo com sua metralhadora Pow-Pow, Ekko abandonou a ideia de enfrentá-la ali mesmo e fugiu rapidamente da cena com Scar em seus aeroplanos, escapando antes que os reforços de Silco chegassem.",
+        },
+      ],
+      parte10: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-22.webp",
+          content:
+            "Algum tempo depois do primeiro ataque de Jinx em Piltover, Ekko descobriu que Vi ainda estava viva — contra todas as expectativas — e havia retornado à Cidade Baixa ao lado de Caitlyn, uma Executora de Piltover. Apesar do passado de amizade com Vi, Ekko hesitava em confiar nela, especialmente por sua irmã agora servir a Silco e por muitos Executores terem contribuído para a opressão de Zaun. De forma cautelosa, ele instruiu os Firelights a espionar Vi e Caitlyn à distância, até que Vi finalmente se reencontrou com Jinx.",
+        },
+      ],
+      parte11: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-23.webp",
+          content:
+            "O reencontro rapidamente saiu do controle, culminando em uma batalha intensa entre as três. Ao perceber o conflito, Ekko deu ordem para que seus Firelights interviessem. Apesar da resistência de Vi e Jinx, o número superior dos Firelights prevaleceu. Eles conseguiram capturar Vi e Caitlyn, recuperar a hextec e escapar da cena a bordo de seus aeroplanos, antes que Jinx pudesse reagir.",
+        },
+      ],
+      parte12: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-24.webp",
+          content:
+            "Ao retornar ao esconderijo dos Firelights, Ekko se apresentou a Vi e passou a interrogá-la, buscando confirmar que ela não estava colaborando com Silco. Ao constatar que Vi ainda era a mesma jovem que conhecera na infância, Ekko a acolheu com amizade e compartilhou como fundou os Firelights para lutar contra o regime criminoso de Silco, além de revelar sua convicção de que Jinx não tinha salvação. Cumprindo a promessa feita a Caitlyn, Ekko se ofereceu para escoltá-la de volta a Piltover, relatando que vários de seus companheiros Executores haviam sido contratados para caçar seus amigos sob as ordens de Silco.",
+        },
+      ],
+      parte13: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-25.webp",
+          content:
+            "Quando Caitlyn se mostrou relutante em acreditar nessas informações, Ekko segurou a gema hextec e exigiu uma explicação sobre sua importância para os habitantes da Superfície. Caitlyn esclareceu que fora Jinx quem a furtara e que o Conselho temia que essa gema fosse transformada em arma contra eles, o que justificava a postura mais agressiva dos Executores recentemente. Embora Ekko tenha cogitado manter a gema para usá-la contra Silco e, assim, fazer o bem ao povo de Zaun, Caitlyn conseguiu convencê-lo a devolvê-la a Piltover, argumentando que o ciclo de violência persistiria enquanto os crimes de Silco permanecessem encobertos. Ela ainda revelou ter contatos no Conselho dispostos a ouvi-la, e Ekko acabou aceitando a condição de entregar a gema pessoalmente à Superfície.",
+        },
+      ],
+      parte14: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-26.webp",
+          content:
+            "Enquanto atravessavam a Ponte do Progresso, Ekko e Caitlyn foram subitamente interceptados pelo Xerife Marcus e um pequeno esquadrão de Executores. Assim que Caitlyn revelou que portava a pedra preciosa, Marcus não hesitou: disparou contra o peito de Ekko, agarrou o recipiente que continha a gema e avançou com a intenção de ceifar a vida dela. Entretanto, antes que pudesse efetuar o disparo fatal, Jinx entrou em cena, lançando suas bombas mecânicas de Luz de Fogo. A explosão resultante desencadeou uma série de detonados que dizimaram todos na ponte, poupando apenas Vi, Ekko e Caitlyn.",
+        },
+      ],
+      parte15: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-27.webp",
+          content:
+            "Algum tempo depois, em meio ao caos provocado pela ação de Jinx, ela começou a disparar com sua metralhadora Pow-Pow contra Vi e Caitlyn ao vê-las próximas. Nesse instante, Ekko recobrou a consciência e, com rapidez, lançou um ataque contra Jinx a partir de seu aeroplanador. Sua sorte foi tamanha que sobreviveu ao disparo de Marcus no peito, protegido por uma placa de metal oculta sob suas roupas. Aproveitando a confusão, Ekko desarmou Jinx, recuperou o recipiente com a pedra preciosa e o entregou a Vi e Caitlyn, ordenando que fugissem enquanto ele se mantinha para enfrentar Jinx.",
+        },
+      ],
+      parte16: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-28.webp",
+          content:
+            "Durante o confronto, enquanto Jinx se preparava para disparar sua pistola, Ekko recordou os velhos jogos de paintball de sua infância e, antecipando os movimentos dela, desviou de seus tiros com precisão, conseguindo derrubá-la. Em um acesso de fúria, desferiu golpes brutalmente com seu bastão. Quando finalmente dominou e imobilizou Jinx, Ekko se dispôs a acabar com ela. No entanto, o olhar assustado e familiar em seu rosto o fez hesitar, reavivando a memória da garota que ele conhecera. Esse instante de indecisão foi suficiente para que Jinx ativasse um de seus Flame Chompers, detonando-o próximo a eles e se ferindo gravemente no processo.",
         },
       ],
     },
@@ -2468,46 +2597,151 @@ export const characters = {
       title: "Temporada 2",
       parte1: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-29.webp",
+          content:
+            "Após a batalha, Ekko acabou caindo da ponte, ferindo o tornozelo, e finalmente alcançou o lado zaunita do rio. Foi então que Heimerdinger, que havia se deslocado a Zaun na esperança de ajudar os moradores, encontrou seu aeroplanador danificado, pouco antes de retornar a Piltover. Ao perceber o estado de Ekko e constatar que este havia machucado a perna, Heimerdinger prontamente o auxiliou para que pudesse retornar ao esconderijo dos Firelights. Surpreso com os rápidos avanços e as construções dos zaunitas, os dois amigos iniciaram uma animada discussão sobre as invenções de Ekko. Durante esse diálogo, Heimerdinger aceitou Ekko como seu próximo pupilo, e juntos, empenharam-se na tarefa de consertar e atualizar o aeroplanador, traçando planos para novas aventuras.",
         },
       ],
       parte2: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-30.webp",
+          content:
+            "Com o passar do tempo, Ekko passou a notar cada vez mais a deterioração ambiental que lentamente consumia a Árvore da Luz do Fogo. Preocupado, ele procurou Heimerdinger, que logo identificou padrões estranhos nas folhas – traços compatíveis com as anomalias geradas pelo hexcore e a habilidade Tempestade Arcana de Viktor. Unidos pelo mesmo objetivo, os dois partiram em direção ao laboratório de Piltover, movendo-se sorrateiramente pelos recantos do terreno da Academia. No entanto, sua trajetória foi interrompida pela inesperada aparição de Jayce, que permanecia adormecido no local desde o ataque de Jinx.",
         },
       ],
       parte3: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-31.webp",
+          content:
+            "Sem encontrar vestígios de Viktor e seu hexcore no laboratório, Ekko e Heimerdinger recorreram a Jayce para esclarecer a teoria das “runas selvagens” que Viktor havia proposto. Juntos, eles passaram a conjecturar que a corrupção que afligia a árvore não era mera consequência externa, mas sim uma propriedade intrínseca do próprio arcano – um efeito colateral indesejado do uso desenfreado da tecnologia hextec.",
         },
       ],
       parte4: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-32.webp",
+          content:
+            "Para investigar a origem do problema, Jayce conduziu Ekko e Heimerdinger até as profundezas do Hexgate, um local situado próximo aos canos responsáveis pelo suprimento de água de Zaun. Durante a descida, Ekko não poupou críticas, culpando Jayce por ter permitido que os zaunitas sofressem as consequências ambientais dos dispositivos de Piltover. Contudo, a discussão foi abruptamente interrompida com o surgimento de uma enorme Anomalia esférica. Revelada como a verdadeira fonte da corrupção, a Anomalia absorveu os três em sua esfera, lançando-os por um túnel de tempo, espaço – e, possivelmente, pelo nada.",
         },
       ],
       parte5: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-33.webp",
+          content:
+            "A Anomalia enviou Ekko para uma realidade alternativa, onde sua mente habitava a versão de si mesmo daquela linha do tempo. Ele se encontrou na Loja de Benzo, sendo recebido por uma versão alternativa de Jinx – inicialmente, sua reação foi de hostilidade, até que percebeu que Benzo estava vivo, assim como Mylo, Claggor e Vander. Atordoado, ele se acomodou na Última Gota, rabiscando anotações sobre a Anomalia em seu caderno enquanto tentava se ajustar à nova realidade. Pouco tempo depois, Heimerdinger apareceu e o reconheceu como o Ekko daquela linha, explicando que havia chegado vários anos antes e que Jayce não estava em lugar algum, pois a Anomalia reagia de forma distinta com ele. Preocupado com os entes queridos que havia deixado para trás em sua linha do tempo original, Ekko se mostrou determinado a encontrar uma maneira de voltar para casa, embora soubesse que seria uma missão árdua num mundo onde a tecnologia hextec jamais fora inventada.",
         },
       ],
       parte6: [
         {
-          image: "",
-          content: "",
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-34.webp",
+          content:
+            "Sem conseguir identificar um caminho de retorno imediato, Ekko visitou o espaço de trabalho de Powder e descobriu, com pesar, que sua versão de Violeta Vi havia perecido na explosão original ocorrida no apartamento de Jayce, muitos anos atrás. Ao indagar se ela seria responsável pelo ocorrido, Powder ficou furiosa e encerrou o diálogo, deixando Ekko solitário para explorar a cidade. Ao caminhar pela Ponte do Progresso, ele constatou que o ambiente era vibrante e animado – um forte contraste com a Zaun de sua infância, onde o sofrimento e os conflitos eram a tônica do cotidiano.",
+        },
+      ],
+      parte7: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-35.webp",
+          content:
+            "Nas ruínas do apartamento de Jayce, Ekko recuperou fragmentos de um cristal de hexita quebrado e levou os cacos a Heimerdinger em busca de sua valiosa expertise. Após solicitar a colaboração do professor para projetar sua nova invenção, Ekko decidiu se reconciliar com Powder. Para isso, pintou um mural representando uma Vi adulta da sua própria realidade, encorajando-a a explorar e desenvolver seus talentos como inventora. Aceitando o gesto de reconciliação, Powder passou a colaborar com ele, e juntos, retornaram ao seu ambiente de trabalho para iniciar os experimentos com o dispositivo que Ekko idealizava para a competição.",
+        },
+      ],
+      parte8: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-36.webp",
+          content:
+            "Após inúmeros testes e cálculos meticulosos, Ekko conseguiu criar uma Anomalia estável utilizando os fragmentos quebrados, confinando-a dentro de um dispositivo hextec que passou a ser conhecido como Z-Drive. Ao experimentar o aparelho, descobriu que ele tinha a extraordinária capacidade de retroceder o tempo por até quatro segundos – uma função alcançada ao inverter a runa de aceleração originalmente atribuída a Jayce. Com mais alguns testes bem-sucedidos, Heimerdinger se ofereceu para impulsionar a Anomalia dentro do dispositivo, possibilitando que Ekko os levasse de volta para sua realidade original, enquanto o professor se dedicava a aprimorar ainda mais o aparelho, incentivando-o a aproveitar a festa na nova linha do tempo.",
+        },
+      ],
+      parte9: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-37.webp",
+          content:
+            "De volta à Última Gota, Ekko celebrou com Powder: os dois dançaram com vista panorâmica para a cidade, compartilharam um momento íntimo e selaram a reconciliação com um beijo. Antes de retornar à oficina, Ekko presenteou Powder com um delicado colar, símbolo de um novo começo",
+        },
+      ],
+      parte10: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-38.webp",
+          content:
+            "Ao chegar, encontrou Heimerdinger com a nova configuração da Anomalia pronta para ativação. Surpreendentemente, o professor deixou a bolha protetora para ajustar o dispositivo do lado de fora, declarando ter “verdadeiramente vivido” após ter o conhecido antes de desaparecer no ar.",
+        },
+      ],
+      parte11: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-39.webp",
+          content:
+            "Quando Powder alcançou Ekko, ela testemunhou um momento marcante: o jovem se separava de sua versão alternativa, que repousava no chão à sua frente. Seus olhares se encontraram e, em um silencioso adeus, Ekko retornou à sua própria linha do tempo, levando consigo a esperança de reconstruir seu futuro.",
+        },
+      ],
+      parte12: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-40.webp",
+          content:
+            "Retornando à sua própria linha do tempo, Ekko disparou em busca de Jinx em seu covil – local onde ela havia queimado a Última Gota, cortado as tranças e se preparado para pôr fim à própria vida utilizando uma nova bomba hextec, apelidada de 'bomba de macaco.' Determinado a impedi-la de ativar o explosivo, Ekko empregou repetidamente seu Z-Drive Resonance para retroceder o tempo, mas suas primeiras tentativas fracassaram, evidenciadas pela fumaça que começava a subir de seu corpo e roupas.",
+        },
+      ],
+      parte13: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-41.webp",
+          content:
+            "Com perseverança, Ekko conseguiu convencer Jinx de que ela merecia uma segunda chance ao apontar para seu Z-Drive – agora repleto dos característicos macacos de brinquedo girando em seu interior – como símbolo de potencial. Aceitando a proposta, Jinx acompanhou-o até o esconderijo dos Firelights, onde decidiu transformar seu covil em um poderoso balão de guerra. Jinx, com a provável ajuda de Ekko, reuniu os Jinxers, os Firelights e até mesmo Sevika, organizando forças para defender Piltover contra o exército de Ambessa.",
+        },
+      ],
+      parte14: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-42.webp",
+          content:
+            "No clímax do confronto, Ekko lançou-se à batalha a partir do aeroplanador, desprendido do balão de guerra de Jinx, e conduziu um ataque contra as forças noxianas. Conforme os bonecos de Viktor entraram na briga e Vi, de forma surpreendente, envolveu um evoluído Warwick – que atacou e destruiu a aeronave de Jinx –, Ekko perdeu a consciência no Hexgate. Ele recobrou os sentidos justamente no instante em que Viktor liberou uma Anomalia no céu, dando origem a uma tempestade massiva, a encarnação da Tempestade Arcana, que ameaçava consumir toda Piltover.",
+        },
+      ],
+      parte15: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-43.webp",
+          content:
+            "Determinado a reverter a situação, Ekko utilizou um ponteiro quebrado do relógio da torre para guiar seu aeroglider até o telhado, de onde lançou um ataque contra Viktor, que naquele momento se encontrava absorvendo as memórias coletivas de Jayce. Cada vez que Ekko era derrubado por um dos bonecos, ele rebobinava o tempo, numa tentativa desesperada de alcançar seu oponente. Contudo, acabou sendo capturado. Quando tudo parecia perdido, Ekko removeu a trava de segurança de seu Z-Drive e o empurrou além dos limites, desfazendo momentaneamente a vitória do Arauto. Em um último e ousado gesto, ele lançou o dispositivo na direção de Viktor, que explodiu violentamente. Após a explosão, tanto Jayce quanto Viktor desapareceram, deixando Ekko inconsciente no telhado.",
+        },
+      ],
+      parte16: [
+        {
+          image:
+            "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-44.webp",
+          content:
+            "Posteriormente, Vi informou a Ekko que Jinx aparentemente havia perecido em uma explosão envolvendo Warwick no Hexgate. No funeral, o jovem se sentou sozinho, exatamente no local onde outrora ele e Powder – a substituta de Jinx – haviam se beijado. Lá, Ekko acendeu um pequeno pedaço de papel, que foi solto junto aos demais, como uma silenciosa homenagem ao passado e aos momentos marcantes que o haviam transformado.",
         },
       ],
     },
     conclusion: {
-      title: "",
+      title: "Conclusão",
       parte1: [
         {
-          content: "",
+          content:
+            "Ekko representa a personificação da resiliência e da reinvenção diante do tempo implacável. Sua jornada, marcada por constantes reviravoltas e desafios insuperáveis, transcende as barreiras da própria realidade. Forjado nas lutas que dividiam o passado e o presente, ele se transformou num símbolo da esperança renascida das cinzas – um homem que, mesmo esculpido pelas dores e perdas de Zaun, nunca permitiu que o desespero o definisse.",
+        },
+      ],
+      parte2: [
+        {
+          content:
+            "Cada retrocesso, cada sacrifício e cada vitória reescrito com seu Z-Drive não só reverteram a marcha do tempo, mas também iluminaram o caminho para um futuro onde a coragem se alia à inovação. Ekko aprendeu que, por mais que os erros do passado pesem sobre o presente, a determinação em reescrevê-lo pode ser a ferramenta mais poderosa para a transformação. Com seu espírito inquebrantável, ele nos convida a acreditar que, mesmo nas adversidades, o poder de mudar nosso destino está em nossas mãos.",
+        },
+      ],
+      parte3: [
+        {
+          content:
+            "O legado de Ekko não reside somente em suas invenções ou nas batalhas travadas, mas no fato de que ele soube transformar cada cicatriz em uma lição e cada revés em uma nova oportunidade para crescer. Sua história é um chamado para todos que, mesmo diante do inevitável fluxo do tempo, se atrevem a sonhar com um amanhã melhor – onde o passado é apenas uma semente para a construção de um futuro iluminado pela coragem e pela criatividade.",
         },
       ],
     },
