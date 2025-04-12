@@ -1923,7 +1923,7 @@ export const characters = {
     secondaryColor: "#4671AC",
     icon: "/images/arcane_zaun/zaun_characters/jinx/character-page/icon.webp",
     heroImage:
-      "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-5.png",
+      "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-5.webp",
     name: "Jinx",
     lastName: "",
     description:
