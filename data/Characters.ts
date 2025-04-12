@@ -1923,7 +1923,7 @@ export const characters = {
     secondaryColor: "#4671AC",
     icon: "/images/arcane_zaun/zaun_characters/jinx/character-page/icon.webp",
     heroImage:
-      "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-1.webp",
+      "/images/arcane_zaun/zaun_characters/jinx/character-page/jinx-5.png",
     name: "Jinx",
     lastName: "",
     description:
@@ -2365,7 +2365,7 @@ export const characters = {
     secondaryColor: "#4F7942",
     icon: "/images/arcane_zaun/zaun_characters/ekko/character-page/icon.webp",
     heroImage:
-      "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-1.webp",
+      "/images/arcane_zaun/zaun_characters/ekko/character-page/ekko-5.webp",
     name: "Ekko",
     lastName: "",
     description:
