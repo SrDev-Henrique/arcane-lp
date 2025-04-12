@@ -80,7 +80,7 @@ const IntroPersonagens = () => {
           {personagens.imagens.map((src, imgIndex) => (
             <div
               key={imgIndex}
-              className="w-[100%] aspect-[150/250] h-fit relative"
+              className="w-[100%] aspect-[150/300] md:aspect-[150/250] h-fit relative"
             >
               <Image
                 src={src}
