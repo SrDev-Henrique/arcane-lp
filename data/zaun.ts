@@ -132,8 +132,8 @@ export const personagens = [
     color: "#A05A2C",
     title: "Hound of the Underground",
     imagens: [
-      `/images/arcane_zaun/zaun_characters/vander/vander-3.webp`,
       `/images/arcane_zaun/zaun_characters/vander/vander-1.webp`,
+      `/images/arcane_zaun/zaun_characters/vander/vander-3.webp`,
     ],
     gradient: "linear-gradient(90deg, #4B3621 0%, #A05A2C 50%, #1C1C1C 100%)",
   },
