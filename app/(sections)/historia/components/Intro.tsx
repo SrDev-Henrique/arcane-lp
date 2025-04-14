@@ -23,13 +23,15 @@ const Intro = () => {
 
     useEffect(() => {
       const ctx = gsap.context(() => {
+        const mm = gsap.matchMedia();
+        
         if (!firstLettersRef.current || !secondLettersRef.current) return;
 
         gsap.set([firstLettersRef.current, secondLettersRef.current], {
           y: 0,
         });
 
-        gsap
+        const tl = gsap
           .timeline({
             scrollTrigger: {
               trigger: firstLettersRef.current,
@@ -38,16 +40,39 @@ const Intro = () => {
               scrub: 1,
               invalidateOnRefresh: true,
             },
-          })
-          .to(firstLettersRef.current, {
+          });
+        
+        mm.add("(min-width: 1024px)", () => {
+          tl.to(firstLettersRef.current, {
+            y: "75vh",
+            ease: "power1.out",
+            duration: 0.6,
+            stagger: {
+              amount: -0.2,
+            },
+          }).to(
+            secondLettersRef.current,
+            {
+              y: "75vh",
+              ease: "power1.out",
+              duration: 0.6,
+              stagger: {
+                amount: -0.2,
+              },
+            },
+            "<"
+          );
+        })
+          
+        mm.add("(max-width: 1024px)", () => {
+          tl.to(firstLettersRef.current, {
             y: "60vh",
             ease: "power1.out",
             duration: 0.6,
             stagger: {
               amount: -0.2,
             },
-          })
-          .to(
+          }).to(
             secondLettersRef.current,
             {
               y: "60vh",
@@ -59,35 +84,60 @@ const Intro = () => {
             },
             "<"
           );
+        })
+        
+        mm.add("(max-width: 640px)", () => {
+          tl.to(firstLettersRef.current, {
+            y: "40vh",
+            ease: "power1.out",
+            duration: 0.6,
+            stagger: {
+              amount: -0.2,
+            },
+          })
+          .to(
+            secondLettersRef.current,
+            {
+              y: "40vh",
+              ease: "power1.out",
+              duration: 0.6,
+              stagger: {
+                amount: -0.2,
+              },
+            },
+            "<"
+          );
+        })
       });
 
       return () => ctx.revert();
     }, []);
 
   return (
-    <div className="min-h-screen w-screen relative bg-accent-pink">
-      <div className="absolute h-[60dvh] w-full flex-center bg-black-dark z-[1] overflow-hidden">
+    <div className="min-h-[80dvh] w-screen relative bg-accent-pink">
+      <div className="absolute h-[40dvh] sm:h-[60dvh] lg:h-[75dvh] w-full flex-center bg-black-dark z-[1] overflow-hidden">
         {letters.map((letter, index) => (
           <h1
             key={index}
             ref={addToFirstRefs}
-            className="font-cinzelDecorative-regular text-[14vw] text-accent-pink uppercase will-change-transform"
+            className="font-cinzelDecorative-regular text-[18vw] text-accent-pink uppercase will-change-transform"
           >
             {letter}
           </h1>
         ))}
       </div>
-      <div className="h-[60dvh] w-full flex-center">
+      <div className="h-[40dvh] sm:h-[60dvh] lg:h-[75dvh] w-full flex-center">
         {letters.map((letter, index) => (
           <h1
             key={index}
             ref={addToSecondRefs}
-            className="font-cinzelDecorative-regular text-[14vw] text-black-dark uppercase will-change-transform"
+            className="font-cinzelDecorative-regular text-[18vw] text-black-dark uppercase will-change-transform"
           >
             {letter}
           </h1>
         ))}
       </div>
+      <div className="h-[40dvh] sm:h-[60dvh] lg:h-[75dvh]"/>
     </div>
   );
 };
