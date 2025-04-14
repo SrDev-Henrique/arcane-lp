@@ -53,6 +53,7 @@ export default {
         arcane: {
           pink: "#C71585",
           purple: "#8A2BE2",
+          background: "#FF6F61",
         },
         white: {
           DEFAULT: "#FFFFFF",

@@ -125,7 +125,7 @@ const Navbar = memo(() => {
                 ref={chatBoxRef}
                 className="absolute opacity-0 -bottom-28 left-10 bg-black w-40 rounded-lg"
               >
-                <div className="relative text-neutral-light text-center text-sm font-bold p-2 after:absolute after:-top-5 after:left-4 after:h-5 after:w-[10px] after:border-l-[10px] after:border-r-[10px] after:border-b-[10px] after:border-r-transparent after:border-l-transparent after:border-black">
+                <div className="relative hidden text-neutral-light text-center text-sm font-bold p-2 after:absolute after:-top-5 after:left-4 after:h-5 after:w-[10px] after:border-l-[10px] after:border-r-[10px] after:border-b-[10px] after:border-r-transparent after:border-l-transparent after:border-black">
                   <h2>Gostaria de ouvir uma música?</h2>
                   <div className="buttons px-5 mt-2">
                     <button onClick={toggleChatBox} className="button">
