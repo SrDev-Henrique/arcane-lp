@@ -52,7 +52,8 @@ export default {
         },
         arcane: {
           pink: "#C71585",
-          purple: "#8A2BE2",
+          purple: "#b376ec",
+          blue: "#b0e0e6",
           background: "#FF6F61",
         },
         white: {

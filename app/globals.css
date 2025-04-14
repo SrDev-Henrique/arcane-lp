@@ -603,6 +603,15 @@ html.lenis body {
   clip-path: polygon(0 0, 100% 0%, 100% 0%, 0% 0%);
 }
 
+.historia-buttons {
+  width: fit-content;
+  text-transform: uppercase;
+  font-family: lora, sans-serif;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+}
+
 /* From Uiverse.io by G4b413l */
 /* https://uiverse.io/G4b413l/tidy-walrus-92 */
 .three-body {

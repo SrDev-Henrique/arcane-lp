@@ -114,13 +114,13 @@ const Intro = () => {
     }, []);
 
   return (
-    <div className="min-h-[80dvh] w-screen relative bg-accent-pink">
+    <div className="min-h-[80dvh] w-screen relative bg-arcane-blue">
       <div className="absolute h-[40dvh] sm:h-[60dvh] lg:h-[75dvh] w-full flex-center bg-black-dark z-[1] overflow-hidden">
         {letters.map((letter, index) => (
           <h1
             key={index}
             ref={addToFirstRefs}
-            className="font-cinzelDecorative-regular text-[18vw] text-accent-pink uppercase will-change-transform"
+            className="font-cinzelDecorative-regular text-[18vw] text-arcane-blue uppercase will-change-transform"
           >
             {letter}
           </h1>
