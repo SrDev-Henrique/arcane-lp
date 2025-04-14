@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
-const letters = ["H", "I", "S", "T", "Ó", "R", "I", "A"];
+const letters = ["A", "R", "C", "A", "N", "E"];
 
 const Intro = () => {
     const firstLettersRef = useRef<HTMLHeadingElement[]>([]);
