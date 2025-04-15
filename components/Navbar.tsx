@@ -150,7 +150,7 @@ const Navbar = memo(() => {
                 rightIcon={
                   isMenuOpen ? <TiArrowSortedUp /> : <TiArrowSortedDown />
                 }
-                containerClass="bg-blue-50 flex w-[128px] md:w-[176px] items-center justify-center gap-1"
+                containerClass="bg-blue-50 flex w-[128px] md:w-[176px] items-center justify-center gap-1 py-3 px-7"
                 onClick={toggleMenu}
               />
             </div>

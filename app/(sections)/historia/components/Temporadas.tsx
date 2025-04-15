@@ -1,7 +1,9 @@
+import Button from "@/components/Button";
 import Image from "next/image";
 
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
+import { TiLocationArrow } from "react-icons/ti";
 
 const episódios = [
   {
@@ -84,7 +86,7 @@ const Temporadas = () => {
           </div>
         </nav> */}
           <div className="relative h-screen w-screen">
-            <div className="absolute top-0 left-0 inset-0 brightness-low">
+            <div className="size-full brightness-low">
               <Image
                 alt={"temporada-1 episódio-1"}
                 src={"/images/Temporadas/Temporada_1/episódio-1.webp"}
@@ -93,8 +95,45 @@ const Temporadas = () => {
                 className="object-cover object-center size-full"
               />
             </div>
-            <div className="size-full flex flex-col">
-              
+            <div className="absolute top-0 left-0 inset-0 flex flex-col justify-between text-neutral-light">
+              <div className="flex flex-col gap-4 ps-4 font-semibold">
+                <div className="flex items-center gap-3 pt-16 pb-4 w-full brightness-filter">
+                  <button>
+                    <FaArrowLeft className="" />
+                  </button>
+                  <h3 className="font-lora">Episódio 1</h3>
+                </div>
+                <div className="flex flex-col justify-center gap-4">
+                  <h1 className="font-lora text-lg">Entrando na brincadeira</h1>
+                  <Button
+                    id="watch-series"
+                    title="Assistir Episódio"
+                    leftIcon={<TiLocationArrow />}
+                    containerClass="flex-center gap-1 hover:bg-netflix-dark w-fit bg-arcane-blue py-3 px-3"
+                    onClick={() =>
+                      window.open(
+                        "https://www.netflix.com/title/81435684",
+                        "_blank"
+                      )
+                    }
+                  />
+                </div>
+              </div>
+              <div className="w-full flex flex-col gap-4 ps-2 py-4 brightness-filter">
+                <div className="">
+                  <h3 className="text-lg  font-semibold font-lora">
+                    Episódios
+                  </h3>
+                </div>
+                <div className="flex gap-2 overflow-x-scroll minha-div">
+                  {episódios.map((episodio, index) => (
+                    <div
+                      key={index}
+                      className="min-w-40 border aspect-square"
+                    ></div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

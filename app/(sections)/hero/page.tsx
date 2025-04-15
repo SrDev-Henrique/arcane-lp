@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 
 import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
-import { FaVolumeUp, FaVolumeMute } from  "react-icons/fa";
+import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
@@ -20,7 +20,7 @@ const Hero = () => {
   const [loadedVideos, setLoadedVideos] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [windowScrolled, setWindowScrolled] = useState(false);
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
   const { isAudioOn, setIsAudioOn } = useMenu();
 
   const totalVideos = 4;
@@ -36,7 +36,7 @@ const Hero = () => {
   useEffect(() => {
     if (loadedVideos <= totalVideos && fullSizeVideoRef.current) {
       setIsLoading(false);
-      fullSizeVideoRef.current.volume=0.10
+      fullSizeVideoRef.current.volume = 0.1;
     }
   }, [loadedVideos]);
 
@@ -56,7 +56,7 @@ const Hero = () => {
         gsap.to(audioRef.current, {
           opacity: 0,
           duration: 0.1,
-        })
+        });
       } else {
         gsap.to(divRef.current, {
           width: "128px",
@@ -93,14 +93,14 @@ const Hero = () => {
       } else {
         setIsMobile(false);
       }
-    }
+    };
 
     window.addEventListener("resize", checkMobile);
 
     return () => {
       window.removeEventListener("resize", checkMobile);
-    }
-  }, [])
+    };
+  }, []);
 
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
@@ -257,7 +257,10 @@ const Hero = () => {
           />
         </div>
 
-        <div ref={audioRef} className="absolute z-[51] bottom-0 left-0 will-change-transform transition-transform duration-300 ease-in-out">
+        <div
+          ref={audioRef}
+          className="absolute z-[51] bottom-0 left-0 will-change-transform transition-transform duration-300 ease-in-out"
+        >
           <div
             className="relative mb-8 mx-3 sm:mx-8 p-2 rounded-full text-accent-light text-2xl border-hsla cursor-pointer"
             onClick={toggleAudio}
@@ -281,7 +284,7 @@ const Hero = () => {
               id="watch-series"
               title="Assista agora"
               leftIcon={<TiLocationArrow />}
-              containerClass="flex-center gap-1 hover:bg-netflix-dark"
+              containerClass="w-44 bg-violet-50 px-7 py-3 flex-center gap-1 hover:bg-netflix-dark"
               onClick={() =>
                 window.open("https://www.netflix.com/title/81435684", "_blank")
               }
