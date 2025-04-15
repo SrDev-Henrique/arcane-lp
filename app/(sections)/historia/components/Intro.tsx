@@ -64,7 +64,7 @@ const Intro = () => {
           );
         })
           
-        mm.add("(max-width: 1024px)", () => {
+        mm.add("(min-width: 640px)", () => {
           tl.to(firstLettersRef.current, {
             y: "60vh",
             ease: "power1.out",
