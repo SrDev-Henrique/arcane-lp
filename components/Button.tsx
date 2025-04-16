@@ -6,13 +6,15 @@ const Button = ({
   rightIcon,
   leftIcon,
   containerClass,
+  textClass,
   onClick,
 }: {
   title: string;
   id?: string;
   rightIcon?: React.ReactNode;
   leftIcon?: React.ReactNode;
-  containerClass?: string;
+    containerClass?: string;
+    textClass?: string;
     onClick?: () => void;
 }) => {
 
@@ -28,7 +30,7 @@ const Button = ({
       >
         {leftIcon}
         <span className="relative incline-flex overflow-hidden font-general text-xs uppercase">
-          <div>{title}</div>
+          <div className={`font-lora font-semibold ${textClass}`}>{title}</div>
         </span>
         {rightIcon}
       </div>
@@ -38,7 +40,7 @@ const Button = ({
       >
         {leftIcon}
         <span className="relative incline-flex overflow-hidden font-general text-xs uppercase">
-          <div>{title}</div>
+          <div className={`font-lora font-semibold ${textClass}`}>{title}</div>
         </span>
         {rightIcon}
       </div>
