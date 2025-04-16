@@ -54,7 +54,7 @@ export default {
           pink: "#C71585",
           purple: "#b376ec",
           blue: "#b0e0e6",
-          background: "#FF6F61",
+          white: "#c1c1ba",
         },
         white: {
           DEFAULT: "#FFFFFF",

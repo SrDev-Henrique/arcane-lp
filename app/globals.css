@@ -682,28 +682,13 @@ html.lenis body {
 }
 
 .minha-div {
-  scrollbar-width: thin; /* Define a barra fina */
-  scrollbar-color: #b0e0e6 #0a0a0a; /* Thumb e track */
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Para navegadores baseados em Webkit (Chrome, Edge, Safari) */
 .minha-div::-webkit-scrollbar {
-  width: 8px;  /* Largura da barra vertical */
-  height: 8px; /* Altura da barra horizontal */
-}
-
-.minha-div::-webkit-scrollbar-track {
-  background: #0a0a0a; /* Cor de fundo da track */
-}
-
-.minha-div::-webkit-scrollbar-thumb {
-  background-color: #b0e0e6; /* Cor da barra (thumb) */
-  border-radius: 4px; /*borda arredondada */
-  border: 2px solid #0a0a0a; /*para criar um "espaço" entre o thumb e a track */
-}
-
-.minha-div::-webkit-scrollbar-button {
-  background-color: #b0e0e6;
+  display: none;
 }
 
 @keyframes spin78236 {
