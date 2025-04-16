@@ -64,7 +64,7 @@ const Intro = () => {
           );
         })
           
-        mm.add("(min-width: 640px max-width: 1024px)", () => {
+        mm.add("(min-width: 640px) and (max-width: 1024px)", () => {
           tl.to(firstLettersRef.current, {
             y: "60vh",
             ease: "power1.out",
@@ -84,7 +84,7 @@ const Intro = () => {
             },
             "<"
           );
-        })
+        });
         
         mm.add("(max-width: 640px)", () => {
           tl.to(firstLettersRef.current, {
