@@ -26,7 +26,8 @@ const Temporadas = () => {
           <div className="absolute top-8 left-4 z-[1]">
             <Button
               title="Fechar"
-              containerClass="flex-center gap-1 hover:bg-accent-pink w-fit bg-arcane-white py-3 px-3 font-lora"
+              containerClass="flex-center gap-1 hover:bg-accent-pink w-fit bg-arcane-white py-3 px-3"
+              textClass="text-xs font-lora font-semibold"
               onClick={() =>
                 window.open("https://www.netflix.com/title/81435684", "_blank")
               }
@@ -68,13 +69,13 @@ const Temporadas = () => {
                             episode.imdb >= 9 ? "" : "opacity-0"
                           }`}
                         >
-                          <MdOutlineStarPurple500 className="text-piltover text-xs" />
+                          <MdOutlineStarPurple500 className="text-piltover text-xs"/>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div className="w-[90dvw] max-w-[32rem] ms-4 px-2 blur-filter py-2 rounded-xl">
-                    <h3 className="text-arcane-white font-lora">
+                    <h3 className="text-white-dark font-lora">
                       {episode.description}
                     </h3>
                   </div>

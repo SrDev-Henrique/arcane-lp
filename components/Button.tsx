@@ -30,7 +30,7 @@ const Button = ({
       >
         {leftIcon}
         <span className="relative incline-flex overflow-hidden font-general text-xs uppercase">
-          <div className={`font-lora font-semibold ${textClass}`}>{title}</div>
+          <div className={`${textClass}`}>{title}</div>
         </span>
         {rightIcon}
       </div>
@@ -40,7 +40,7 @@ const Button = ({
       >
         {leftIcon}
         <span className="relative incline-flex overflow-hidden font-general text-xs uppercase">
-          <div className={`font-lora font-semibold ${textClass}`}>{title}</div>
+          <div className={`${textClass}`}>{title}</div>
         </span>
         {rightIcon}
       </div>
