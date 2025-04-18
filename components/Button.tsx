@@ -7,20 +7,22 @@ const Button = ({
   leftIcon,
   containerClass,
   textClass,
+  style,
   onClick,
 }: {
   title: string;
   id?: string;
   rightIcon?: React.ReactNode;
   leftIcon?: React.ReactNode;
-    containerClass?: string;
-    textClass?: string;
-    onClick?: () => void;
+  containerClass?: string;
+  textClass?: string;
+  style?: React.CSSProperties;
+  onClick?: () => void;
 }) => {
-
   return (
     <button
       id={id}
+      style={style}
       className={`group transition-all duration-300 relative z-10 cursor-pointer overflow-hidden rounded-full text-black ${containerClass}`}
       onClick={onClick}
     >
@@ -46,5 +48,6 @@ const Button = ({
       </div>
     </button>
   );
+};
 
-};export default Button;
+export default Button;

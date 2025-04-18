@@ -147,6 +147,9 @@ export default {
       screens: {
         "md-lg": "880px",
       },
+      transitionTimingFunction: {
+        "in-out-expo": "cubic-bezier(0.1, 0.7, 0.1)",
+      },
     },
   },
   safelist: [

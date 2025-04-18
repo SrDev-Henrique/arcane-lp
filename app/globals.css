@@ -212,7 +212,7 @@ html.lenis body {
 }
 
 .blur-filter {
-  backdrop-filter: blur(4px) brightness(0.9);
+  backdrop-filter: brightness(0.6);
 }
 
 /* todo clip-paths */
@@ -611,9 +611,27 @@ html.lenis body {
   width: fit-content;
   text-transform: uppercase;
   font-family: lora, sans-serif;
-  font-weight: bold;
+  font-size: 0.75rem;
+  background-color: #0a0a0a;
+  color: #c1c1ba;
   padding: 0.5rem;
-  border-radius: 0.8rem;
+  border-radius: 1.2rem;
+  transition: all 0.3s ease-out;
+
+  &.active {
+    background-color: #c1c1ba;
+    color: #0a0a0a;
+  }
+}
+
+.historia-buttons:hover {
+  background-color: #c1c1ba;
+  color: #0a0a0a;
+}
+
+#episodes-next {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
 }
 
 /* From Uiverse.io by G4b413l */
@@ -839,5 +857,32 @@ html.lenis body {
     padding-top: 50px;
     padding-bottom: 50px;
     height: 100dvh;
+  }
+  #episodes-container {
+    margin-top: 1.5rem;
+  }
+  #episodes-next {
+    right: 0.5rem;
+    transform: translatex(0%);
+    min-width: 10rem;
+
+    & p {
+      font-size: 0.785rem;
+    }
+    & h3 {
+      font-size: 0.785rem;
+    }
+    & h2 {
+      font-size: 0.8rem;
+    }
+  }
+  #watch-episode {
+    transform: translatex(-50%);
+  }
+}
+
+@media(min-height: 700px) {
+  #episodes-container {
+    gap: 8dvh;
   }
 }
