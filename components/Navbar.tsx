@@ -103,6 +103,7 @@ const Navbar = memo(() => {
                   alt="logo"
                   width={40}
                   height={40}
+                  priority
                   className="mr-4 rounded-full filter brightness-75"
                 />
                 <audio

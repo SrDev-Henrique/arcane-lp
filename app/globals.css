@@ -218,11 +218,23 @@ html.lenis body {
 /* todo clip-paths */
 
 .mask-clip-path {
-  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
 .hidden-clip-path {
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0 100%);
+}
+
+.hidden-clip-path-left {
+  clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+}
+
+.hidden-clip-path-right {
+  clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+}
+
+.will-change-clip-path {
+  will-change: clip-path;
 }
 
 /* todo menu */
@@ -629,11 +641,6 @@ html.lenis body {
   color: #0a0a0a;
 }
 
-#episodes-next {
-  border-top-left-radius: 0.75rem;
-  border-top-right-radius: 0.75rem;
-}
-
 /* From Uiverse.io by G4b413l */
 /* https://uiverse.io/G4b413l/tidy-walrus-92 */
 .three-body {
@@ -797,6 +804,13 @@ html.lenis body {
   animation: pulse 1.2s infinite;
 }
 
+@media(min-width: 621px) {
+  #episodes-container {
+    border-top-left-radius: 1.875rem;
+    border-top-right-radius: 1.875rem;
+  }
+}
+
 @media (max-height: 455px) {
   .character-name {
     top: 33%;
@@ -857,32 +871,5 @@ html.lenis body {
     padding-top: 50px;
     padding-bottom: 50px;
     height: 100dvh;
-  }
-  #episodes-container {
-    margin-top: 1.5rem;
-  }
-  #episodes-next {
-    right: 0.5rem;
-    transform: translatex(0%);
-    min-width: 10rem;
-
-    & p {
-      font-size: 0.785rem;
-    }
-    & h3 {
-      font-size: 0.785rem;
-    }
-    & h2 {
-      font-size: 0.8rem;
-    }
-  }
-  #watch-episode {
-    transform: translatex(-50%);
-  }
-}
-
-@media(min-height: 700px) {
-  #episodes-container {
-    gap: 8dvh;
   }
 }
