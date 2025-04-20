@@ -212,10 +212,7 @@ const Temporadas = () => {
                           containerClass="w-fit min-w-34 px-3 py-2 md:py-3 md:px-7 flex-center gap-1 bg-black-dark hover:bg-arcane-white"
                           textClass="font-lora font-semibold text-arcane-white text-nowrap group-hover:text-black-dark"
                           onClick={() =>
-                            window.open(
-                              "https://www.netflix.com/title/81435684",
-                              "_blank"
-                            )
+                            window.open(`${episode.link}`, "_blank")
                           }
                         />
                         <Button
@@ -231,9 +228,9 @@ const Temporadas = () => {
                       </div>
                       <div
                         id="episodes-next"
-                        className="flex items-start gap-2 overflow-hidden bg-black-light px-2 rounded-s-xl -me-2 sm:-me-3"
+                        className="flex-center gap-2 overflow-hidden bg-black-light px-2 py-2 pe-3 rounded-s-xl -me-2 sm:-me-3"
                       >
-                        <div className="w-fit max-w-36 sm:max-w-64 pt-2 flex flex-col gap-1 text-arcane-white">
+                        <div className="w-fit max-w-36 sm:max-w-64 flex flex-col gap-1 text-arcane-white">
                           <p className="font-lora font-semibold text-sm">
                             Próximo:
                           </p>
@@ -246,7 +243,7 @@ const Temporadas = () => {
                         </div>
                         <div
                           onClick={handleNextEpisodeClick}
-                          className="w-[12dvh] min-w-16 aspect-square relative cursor-pointer py-1 transition duration-300 hover:scale-90"
+                          className="w-[12dvh] min-w-20 aspect-square relative cursor-pointer transition duration-300 hover:scale-90"
                         >
                           <Image
                             alt={`Temporada-1 episódio-${nextEpisode}`}

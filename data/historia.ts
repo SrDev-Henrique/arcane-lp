@@ -5,6 +5,7 @@ export const firstSeason = [
     title: "Entrando na brincadeira",
     imdb: 8.5,
     image: "/images/Temporadas/Temporada_1/episódio-1.webp",
+    link: "https://www.netflix.com/watch/81446667?trackId=200257858",
     description:
       "Após um roubo na luxuosa cidade de Piltover, as irmãs órfãs Vi e Powder se metem em confusão nas ruas subterrâneas de Zaun.",
   },
@@ -14,6 +15,7 @@ export const firstSeason = [
     title: "Alguns mistérios não devem ser desvendados",
     imdb: 8.5,
     image: "/images/Temporadas/Temporada_1/episódio-2.webp",
+    link: "https://www.netflix.com/watch/81446668?trackId=200257859",
     description:
       "Contrariando os conselhos do seu mentor, o inventor Jayce tenta aliar magia e ciência. O criminoso Silco testa uma substância poderosa.",
   },
@@ -23,6 +25,7 @@ export const firstSeason = [
     title: "A violência é essencial para a mudança",
     imdb: 9.7,
     image: "/images/Temporadas/Temporada_1/episódio-3.webp",
+    link: "https://www.netflix.com/watch/81446669?trackId=200257858",
     description:
       "Um confronto épico entre antigos rivais tem um desfecho fatídico para Zaun. Jayce e Viktor arriscam tudo em nome da pesquisa.",
   },
@@ -32,6 +35,7 @@ export const firstSeason = [
     title: "Feliz dia do progresso!",
     imdb: 8.7,
     image: "/images/Temporadas/Temporada_1/episódio-4.webp",
+    link: "https://www.netflix.com/watch/81446670?trackId=200257858",
     description:
       "Com Piltover prosperando, Jayce e Viktor avaliam o próximo passo. Uma conhecida ressurge de Zaun para provocar o caos.",
   },
@@ -41,6 +45,7 @@ export const firstSeason = [
     title: "Todos querem ser meus inimigos",
     imdb: 8.9,
     image: "/images/Temporadas/Temporada_1/episódio-5.webp",
+    link: "https://www.netflix.com/watch/81446671?trackId=200257858",
     description:
       "Caitlyn, a defensora rebelde, vai à Subferia para encontrar Silco. Tentando acabar com a corrupção em Piltover, Jayce se torna um alvo.",
   },
@@ -50,6 +55,7 @@ export const firstSeason = [
     title: "Quando as paredes desabam",
     imdb: 9.3,
     image: "/images/Temporadas/Temporada_1/episódio-6.webp",
+    link: "https://www.netflix.com/watch/81446672?trackId=200257858",
     description:
       "Um jovem enfraquece o próprio mentor no conselho. Perseguida pelas autoridades, Jinx deve encarar o passado.",
   },
@@ -59,6 +65,7 @@ export const firstSeason = [
     title: "O garoto salvador",
     imdb: 9.3,
     image: "/images/Temporadas/Temporada_1/episódio-7.webp",
+    link: "https://www.netflix.com/watch/81446673?trackId=200257858",
     description:
       "Caitlyn e Vi encontram um aliado nas ruas de Zaun e partem para a briga com uma inimiga em comum. Viktor toma uma decisão extrema.",
   },
@@ -68,6 +75,7 @@ export const firstSeason = [
     title: "Água e óleo",
     imdb: 9.2,
     image: "/images/Temporadas/Temporada_1/episódio-8.webp",
+    link: "https://www.netflix.com/watch/81446674?trackId=200257858",
     description:
       "Mel, a herdeira renegada, e sua mãe trocam técnicas de combate. Caitlyn e Vi formam uma aliança improvável. Jinx passa por uma mudança radical.",
   },
@@ -77,6 +85,7 @@ export const firstSeason = [
     title: "O monstro que você criou",
     imdb: 9.7,
     image: "/images/Temporadas/Temporada_1/episódio-9.webp",
+    link: "https://www.netflix.com/watch/81446675?trackId=200257858",
     description:
       "Com a guerra cada vez mais próxima, os líderes de Piltover e Zaun chegam a um ultimato. Mas um impasse fatídico muda as duas cidades para sempre.",
   },
