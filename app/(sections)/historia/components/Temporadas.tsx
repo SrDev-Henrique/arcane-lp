@@ -1,7 +1,8 @@
 import Button from "@/components/Button";
 
 import { FaArrowLeft } from "react-icons/fa";
-import PrimeiraTemporada from "./PrimeiraTemporada";
+// import PrimeiraTemporada from "./PrimeiraTemporada";
+import SegundaTemporada from "./SegundaTemporada";
 
 const Temporadas = () => {
   
@@ -35,7 +36,7 @@ const Temporadas = () => {
               }
             />
           </div>
-          <PrimeiraTemporada/>
+          <SegundaTemporada/>
         </div>
       </div>
     </div>

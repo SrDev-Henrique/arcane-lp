@@ -3,7 +3,7 @@ import RenderSeasons from "./RenderSeasons";
 
 const SegundaTemporada = () => {
   return (
-    <RenderSeasons subject={seasons.secondSeason} temporada="Temporada_1" />
+    <RenderSeasons subject={seasons.secondSeason} temporada="Temporada_2" />
   );
 };
 

@@ -107,7 +107,7 @@ const Personagens = () => {
         if (el)
           sectionRefs.current["<b>z</b>aun-personagens"] = el as HTMLElement;
       }}
-      className="min-h-screen w-full relative bg-black-dark"
+      className="min-h-screen w-full relative pb-64 bg-black-dark"
     >
       <IntroPersonagens />
       <div ref={mainContainerRef} className="min-h-screen mt-64 flex flex-col gap-64 md:gap-96">

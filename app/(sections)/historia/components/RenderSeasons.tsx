@@ -11,111 +11,111 @@ import gsap from "gsap";
 import { FaArrowLeft } from "react-icons/fa";
 
 interface seasonItems {
-    id: number;
-    episode: string;
-    title: string;
-    imdb: number;
-    image: string;
-    link: string;
-    description: string;
+  id: number;
+  episode: string;
+  title: string;
+  imdb: number;
+  image: string;
+  link: string;
+  description: string;
 }
 
 interface SeasonsProps {
-    subject: seasonItems[];
-    temporada: string;
+  subject: seasonItems[];
+  temporada: string;
 }
 
-const RenderSeasons = ({subject, temporada}: SeasonsProps) => {
-    const [currentIndex, setCurrentIndex] = useState(1);
-    const [currentEpisode, setCurrentEpisode] = useState(1);
-    const [isTransitioning, setIsTransitioning] = useState(false);
-    const [nextClicked, setNextClicked] = useState(false);
-    const [prevClicked, setPrevClicked] = useState(false);
+const RenderSeasons = ({ subject, temporada }: SeasonsProps) => {
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentEpisode, setCurrentEpisode] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [nextClicked, setNextClicked] = useState(false);
+  const [prevClicked, setPrevClicked] = useState(false);
 
-    const season = subject
+  const season = subject;
 
-    const totalImages = 9;
+  const totalImages = 9;
 
-    const getImageSrc = (index: number) =>
-        `/images/Temporadas/${temporada}/episódio-${index}.webp`;
+  const getImageSrc = (index: number) =>
+    `/images/Temporadas/${temporada}/episódio-${index}.webp`;
 
-    const upcomingIndex = (currentIndex % totalImages) + 1;
-    const prevIndex = ((currentIndex - 2 + totalImages) % totalImages) + 1;
-    const nextEpisode = (currentEpisode % totalImages) + 1;
+  const upcomingIndex = (currentIndex % totalImages) + 1;
+  const prevIndex = ((currentIndex - 2 + totalImages) % totalImages) + 1;
+  const nextEpisode = (currentEpisode % totalImages) + 1;
 
-    const handleNextEpisodeClick = () => {
-      if (isTransitioning) return;
-      setIsTransitioning(true);
-      setNextClicked(true);
-      setCurrentEpisode(upcomingIndex);
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(upcomingIndex);
-      }, 600);
-    };
+  const handleNextEpisodeClick = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setNextClicked(true);
+    setCurrentEpisode(upcomingIndex);
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setCurrentIndex(upcomingIndex);
+    }, 600);
+  };
 
-    const handlePrevEpisodeClick = () => {
-      if (isTransitioning) return;
-      setIsTransitioning(true);
-      setPrevClicked(true);
-      setCurrentEpisode(prevIndex);
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(prevIndex);
-      }, 600);
-    };
+  const handlePrevEpisodeClick = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setPrevClicked(true);
+    setCurrentEpisode(prevIndex);
+    setTimeout(() => {
+      setIsTransitioning(false);
+      setCurrentIndex(prevIndex);
+    }, 600);
+  };
 
-    useEffect(() => {
-      const ctx = gsap.context(() => {
-        if (nextClicked) {
-          const nextTl = gsap.timeline({
-            defaults: {
-              duration: 0.6,
-              ease: "power1.out",
-              force3D: true,
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (nextClicked) {
+        const nextTl = gsap.timeline({
+          defaults: {
+            duration: 0.6,
+            ease: "power1.out",
+            force3D: true,
+          },
+          onComplete: () => {
+            setNextClicked(false);
+            setPrevClicked(false);
+          },
+        });
+        nextTl
+          .to(".active-episode", {
+            clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+          })
+          .to(
+            ".next-episode",
+            {
+              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             },
-            onComplete: () => {
-              setNextClicked(false);
-              setPrevClicked(false);
+            "<"
+          );
+      } else if (prevClicked) {
+        const prevTl = gsap.timeline({
+          defaults: {
+            duration: 0.6,
+            ease: "power1.out",
+          },
+          onComplete: () => {
+            setNextClicked(false);
+            setPrevClicked(false);
+          },
+        });
+        prevTl
+          .to(".active-episode", {
+            clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+          })
+          .to(
+            ".prev-episode",
+            {
+              clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
             },
-          });
-          nextTl
-            .to(".active-episode", {
-              clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
-            })
-            .to(
-              ".next-episode",
-              {
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-              },
-              "<"
-            );
-        } else if (prevClicked) {
-          const prevTl = gsap.timeline({
-            defaults: {
-              duration: 0.6,
-              ease: "power1.out",
-            },
-            onComplete: () => {
-              setNextClicked(false);
-              setPrevClicked(false);
-            },
-          });
-          prevTl
-            .to(".active-episode", {
-              clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
-            })
-            .to(
-              ".prev-episode",
-              {
-                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-              },
-              "<"
-            );
-        }
-      });
-      return () => ctx.revert();
-    }, [nextClicked, prevClicked]);
+            "<"
+          );
+      }
+    });
+    return () => ctx.revert();
+  }, [nextClicked, prevClicked]);
 
   return (
     <>
@@ -162,7 +162,7 @@ const RenderSeasons = ({subject, temporada}: SeasonsProps) => {
                       className="object-cover object-center size-full"
                     />
                   </div>
-                  <div className="flex-center w-10 md:w-14 aspect-square rounded-full border border-black-lighter text-black-light text-2xl md:text-4xl font-lora">
+                  <div className="flex-center w-12 md:w-14 aspect-square rounded-full border border-black-lighter text-black-light text-3xl md:text-4xl font-lora">
                     {episode.episode}
                   </div>
                   <div className="flex flex-col">
@@ -175,11 +175,14 @@ const RenderSeasons = ({subject, temporada}: SeasonsProps) => {
                         IMDb: {episode.imdb}/10
                       </p>
                       <div
-                        className={`flex-center p-[0.05rem] border border-piltover-title rounded-full ${
+                        className={`flex-center gap-1 w-14 h-6 bg-piltover-transparent rounded-full ${
                           episode.imdb >= 9 ? "" : "opacity-0"
                         }`}
                       >
-                        <MdOutlineStarPurple500 className="text-piltover-title text-xs" />
+                        <MdOutlineStarPurple500 className="text-black-dark text-sm" />
+                        <p className="text-black-dark text-xs font-lora font-bold uppercase">
+                          favs
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -237,6 +240,11 @@ const RenderSeasons = ({subject, temporada}: SeasonsProps) => {
                         width={1920}
                         height={1080}
                         className="size-full object-cover object-center rounded-xl"
+                        priority={
+                          index + 1 === currentIndex ||
+                          index + 1 === upcomingIndex ||
+                          index + 1 === prevIndex
+                        }
                       />
                     </div>
                   </div>
