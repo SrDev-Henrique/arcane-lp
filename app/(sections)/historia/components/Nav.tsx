@@ -5,12 +5,21 @@ interface TabsProps {
   navItems: { id: string; label: string }[];
   activeTab: string;
   setActiveTab: (tab: string) => void;
+  isEpisodeActive: boolean;
+  setIsEpisodeActive: (isEpisodeActive: boolean) => void;
   activeSeason: string;
   temporada: string;
 }
 
-const Nav = ({ navItems, activeTab, setActiveTab, temporada, activeSeason }: TabsProps) => {
-  
+const Nav = ({
+  navItems,
+  activeTab,
+  setActiveTab,
+  temporada,
+  activeSeason,
+  isEpisodeActive,
+  setIsEpisodeActive,
+}: TabsProps) => {
   if (temporada === activeSeason)
     return (
       <>
@@ -30,9 +39,20 @@ const Nav = ({ navItems, activeTab, setActiveTab, temporada, activeSeason }: Tab
         <div className="absolute top-8 right-1/2 translate-x-1/2 w-full max-w-[620px] px-2 sm:px-0 flex items-center justify-between select-none z-[1]">
           <Button
             title="voltar"
-            containerClass="flex-center w-fit p-3 bg-black-lighter"
-            textClass="font-lora font-semibold uppercase text-arcane-white text-xs"
-            leftIcon={<FaArrowLeft className="text-arcane-white text-xs" />}
+            containerClass={`flex-center w-fit p-3 bg-black-lighter ${
+              isEpisodeActive ? "scale-100" : "scale-0"
+            }`}
+            textClass={`font-lora font-semibold uppercase text-arcane-white text-xs transition duration-300 ease-out ${
+              isEpisodeActive ? "opacity-100" : "opacity-0"
+            }`}
+            leftIcon={
+              <FaArrowLeft
+                className={`text-arcane-white text-xs transition duration-300 ease-out ${
+                  isEpisodeActive ? "opacity-100" : "opacity-0"
+                }`}
+              />
+            }
+            onClick={() => setIsEpisodeActive(false)}
           />
           <Button
             title="Fechar"

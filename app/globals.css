@@ -641,6 +641,16 @@ html.lenis body {
   color: #0a0a0a;
 }
 
+.episode-onview {
+  & #episode-image {
+    filter: brightness(0.50);
+  }
+
+  & #episode-heading {
+    opacity: 1;
+  }
+}
+
 /* From Uiverse.io by G4b413l */
 /* https://uiverse.io/G4b413l/tidy-walrus-92 */
 .three-body {
