@@ -7,6 +7,11 @@ interface TabsProps {
   setActiveTab: (tab: string) => void;
   isEpisodeActive: boolean;
   setIsEpisodeActive: (isEpisodeActive: boolean) => void;
+  isTransitioning: boolean;
+  setIsTransitioning: (isTransitioning: boolean) => void;
+  activeEpisode: number;
+  setActiveEpisode: (activeEpisode: number) => void;
+  setIsEpisodeClicked: (isEpisodeClicked: boolean) => void;
   activeSeason: string;
   temporada: string;
 }
@@ -19,6 +24,11 @@ const Nav = ({
   activeSeason,
   isEpisodeActive,
   setIsEpisodeActive,
+  isTransitioning,
+  setIsTransitioning,
+  activeEpisode,
+  setActiveEpisode,
+  setIsEpisodeClicked
 }: TabsProps) => {
   if (temporada === activeSeason)
     return (
@@ -36,7 +46,7 @@ const Nav = ({
             </button>
           ))}
         </nav>
-        <div className="absolute top-8 right-1/2 translate-x-1/2 w-full max-w-[620px] px-2 sm:px-0 flex items-center justify-between select-none z-[1]">
+        <div className="absolute top-8 right-1/2 translate-x-1/2 w-full max-w-[620px] px-2 sm:px-0 flex items-center justify-between select-none z-[2]">
           <Button
             title="voltar"
             containerClass={`flex-center w-fit p-3 bg-black-lighter ${
@@ -52,16 +62,23 @@ const Nav = ({
                 }`}
               />
             }
-            onClick={() => setIsEpisodeActive(false)}
+            onClick={() => {
+              if(isTransitioning) return;
+              setIsEpisodeActive(false);
+              setIsEpisodeClicked(false);
+              setIsTransitioning(true);
+              setTimeout(() => {
+                setActiveEpisode(0);
+                setIsTransitioning(false);
+              }, 1200);
+            }}
           />
           <Button
             title="Fechar"
             style={{ backgroundColor: "#FF6F61" }}
             containerClass="flex-center w-fit bg-arcane-white p-3"
             textClass="text-xs font-lora font-semibold"
-            onClick={() =>
-              window.open("https://www.netflix.com/title/81435684", "_blank")
-            }
+            onClick={() => setActiveEpisode(activeEpisode + 1)}
           />
         </div>
       </>

@@ -7,6 +7,8 @@ interface MenuContextType {
   setIsMenuOpen: (isOpen: boolean) => void;
   isAudioOn: boolean;
   setIsAudioOn: (isOn: boolean) => void;
+  isSeasonActive: boolean;
+  setIsSeasonActive: (isActive: boolean) => void;
 }
 
 const MenuContext = createContext<MenuContextType | undefined>(undefined);
@@ -16,9 +18,10 @@ export const MenuProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isAudioOn, setIsAudioOn] = useState(false);
+  const [isSeasonActive, setIsSeasonActive] = useState(false);
 
   return (
-    <MenuContext.Provider value={{ isMenuOpen, setIsMenuOpen, isAudioOn, setIsAudioOn }}>
+    <MenuContext.Provider value={{ isMenuOpen, setIsMenuOpen, isAudioOn, setIsAudioOn, isSeasonActive, setIsSeasonActive }}>
       {children}
     </MenuContext.Provider>
   );

@@ -641,14 +641,12 @@ html.lenis body {
   color: #0a0a0a;
 }
 
-.episode-onview {
-  & #episode-image {
-    filter: brightness(0.50);
-  }
-
-  & #episode-heading {
-    opacity: 1;
-  }
+.episode {
+  width: 70dvw;
+  height: 70dvw;
+  max-width: 340px;
+  max-height: 340px;
+  border-radius: 0.5rem;
 }
 
 /* From Uiverse.io by G4b413l */
@@ -818,6 +816,13 @@ html.lenis body {
   #episodes-container {
     border-top-left-radius: 1.875rem;
     border-top-right-radius: 1.875rem;
+  }
+}
+
+@media(min-width: 768px) {
+  .episode {
+    max-width: 740px;
+    max-height: 740px;
   }
 }
 

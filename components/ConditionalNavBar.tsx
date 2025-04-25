@@ -8,7 +8,7 @@ import { useMenu } from "@/contexts/MenuContext";
 
 export default function ConditionalNavbar() {
   const lenisRef = React.useRef<Lenis | null>(null);
-  const { isMenuOpen } = useMenu();
+  const { isMenuOpen, isSeasonActive } = useMenu();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -40,13 +40,13 @@ export default function ConditionalNavbar() {
 
   useEffect(() => {
     if (lenisRef.current) {
-      if (isMenuOpen) {
+      if (isMenuOpen || isSeasonActive) {
         lenisRef.current.stop();
       } else {
         lenisRef.current.start();
       }
     }
-  }, [isMenuOpen]);
+  }, [isMenuOpen, isSeasonActive]);
 
   return <div>{pathname === "/" && <Navbar />}</div>;
 }

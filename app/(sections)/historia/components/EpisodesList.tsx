@@ -1,10 +1,12 @@
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+
 import Lenis from "lenis";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 interface EpisodesItems {
   id: number;
@@ -15,28 +17,93 @@ interface EpisodesItems {
 
 interface EpisodesListProps {
   episodes: EpisodesItems[];
+  firstSeasonActiveTab: string;
   setIsEpisodeActive: (isEpisodeActive: boolean) => void;
+  activeEpisode: number;
+  setActiveEpisode: (activeEpisode: number) => void;
+  isEpisodeClicked: boolean;
+  setIsEpisodeClicked: (isEpisodeClicked: boolean) => void;
+  isTransitioning: boolean;
+  setIsTransitioning: (isTransitioning: boolean) => void;
+  activeSeason: string;
+  temporada: string;
 }
 
-const EpisodesList = ({ episodes, setIsEpisodeActive }: EpisodesListProps) => {
+const EpisodesList = ({
+  episodes,
+  setIsEpisodeActive,
+  firstSeasonActiveTab,
+  activeEpisode,
+  setActiveEpisode,
+  isEpisodeClicked,
+  setIsEpisodeClicked,
+  isTransitioning,
+  setIsTransitioning,
+  activeSeason,
+  temporada,
+}: EpisodesListProps) => {
+  const [prevIndexClicked, setPrevIndexClicked] = useState(0);
+  const [isMobile, setIsMobile] = useState(false)
+
   const imageContainerRef = useRef<HTMLDivElement[]>([]);
+  const clickedContainerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement[]>([]);
+  const clickedTitleRef = useRef<HTMLHeadingElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const tl = useRef<gsap.core.Timeline | null>(null);
+  const clickedTl = useRef<gsap.core.Timeline | null>(null);
+  const lenisRef = useRef<Lenis | null>(null);
 
-  console.log(imageContainerRef.current);
-
-  const handleEpisodeClick = (episodeId: number) => {
-    setIsEpisodeActive(true);
-    console.log(episodeId);
+  const addToTitleRefs = (el: HTMLHeadingElement | null, i: number) => {
+    if (!el) return;
+    titleRef.current[i] = el;
   };
 
-  const addToImagesRefs = (el: HTMLDivElement) => {
-    if (el && !imageContainerRef.current.includes(el)) {
-      imageContainerRef.current.push(el);
-    }
+  const addToImagesRefs = (el: HTMLDivElement | null, i: number) => {
+    if (!el) return;
+    imageContainerRef.current[i] = el;
+  };
+
+  const handleEpisodeClick = (episodeId: number, index: number) => {
+    if (isTransitioning || activeEpisode > 0) return;
+    lenisRef.current?.stop();
+    setIsEpisodeActive(true);
+    setPrevIndexClicked(episodeId);
+    clickedContainerRef.current = imageContainerRef.current[index];
+    clickedTitleRef.current = titleRef.current[index];
+    setActiveEpisode(episodeId);
+    setIsEpisodeClicked(true);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 1200);
   };
 
   useEffect(() => {
-    if (!scrollRef.current) return;
+    const checkMobile = () => {
+      if (window.innerWidth <= 799) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    window.addEventListener("resize", checkMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
+  //todo lenis
+
+  useEffect(() => {
+    if (
+      !scrollRef.current ||
+      activeSeason !== "Temporada_1" ||
+      activeEpisode > 0
+    )
+      return;
     const localLenis = new Lenis({
       wrapper: scrollRef.current,
       duration: 1.5,
@@ -45,6 +112,7 @@ const EpisodesList = ({ episodes, setIsEpisodeActive }: EpisodesListProps) => {
       orientation: "vertical",
       gestureOrientation: "vertical",
     });
+    lenisRef.current = localLenis;
 
     function animate(time: number) {
       localLenis.raf(time);
@@ -52,105 +120,207 @@ const EpisodesList = ({ episodes, setIsEpisodeActive }: EpisodesListProps) => {
     }
     requestAnimationFrame(animate);
 
-    return () => localLenis.destroy();
-  }, []);
+    return () => {
+      localLenis.destroy();
+      lenisRef.current = null;
+    };
+  }, [activeEpisode, activeSeason]);
+
+  //todo animações
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
+    const context = gsap.context(() => {
+      if (firstSeasonActiveTab !== "episódios") return;
       imageContainerRef.current.forEach((containerEl) => {
-        const img = containerEl.querySelector<HTMLElement>(".episode-image");
-        const title = containerEl.querySelector<HTMLElement>(".episode-title");
-        if (!img || !title) return;
-
-        const startTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerEl,
-            scroller: scrollRef.current,
-            start: "top center",
-            end: "-=100",
-            scrub: true,
-            invalidateOnRefresh: true,
-          },
+        gsap.to(containerEl, {
+          opacity: 1,
+          y: "0%",
+          scale: 1,
+          duration: 0.8,
+          ease: "power2.out",
         });
-
-        const endTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerEl,
-            scroller: scrollRef.current,
-            start: "bottom center",
-            end: "-=100",
-            scrub: true,
-            invalidateOnRefresh: true,
-          },
-        });
-
-        startTl
-          .to(img, {
-            filter: "brightness(0.5)",
-          })
-          .to(
-            title,
-            {
-              opacity: 1,
-            },
-            "<"
-          );
-
-        endTl
-          .to(img, {
-            filter: "brightness(1)",
-          })
-          .to(
-            title,
-            {
-              opacity: 0,
-            },
-            "<"
-          );
       });
     }, scrollRef);
 
-    return () => ctx.revert();
-  }, []);
+    return () => context.revert();
+  }, [firstSeasonActiveTab, activeSeason]);
 
-  return (
-    <div
-      ref={scrollRef}
-      data-lenis-prevent
-      className="absolute top-0 inset-0 overflow-y-auto flex flex-col items-center gap-16 episode-scroll pt-28 pb-[30dvh]"
-    >
-      {episodes.map((episode) => (
-        <div
-          key={episode.id}
-          ref={addToImagesRefs}
-          onClick={() => handleEpisodeClick(episode.id)}
-          className={`w-screen max-w-[340px] md:max-w-[540px] lg:max-w-[740px] 2xl:max-w-[940px] cursor-pointer aspect-square relative overflow-hidden shrink-0 rounded-lg`}
-        >
-          <Image
-            alt={`episódio-${episode.episode}`}
-            src={episode.image}
-            width={1920}
-            height={1080}
-            className="size-full object-cover object-center brightness-low transition duration-300 ease-out episode-image"
-          />
-          <div className="absolute top-0 right-0 inset-0 flex flex-col items-center px-2">
-            <div className="w-full h-[50%] flex justify-center pt-4">
-              <div className="size-fit bg-arcane-white rounded-xl p-2">
-                <h2 className="font-lora font-semibold text-xs md:text-sm">
-                  Episódio {episode.episode}
-                </h2>
+  useEffect(() => {
+    clickedTl.current = gsap.timeline({
+      paused: true,
+      defaults: { duration: 0.1, ease: "power2.out" },
+      onComplete: () => {
+        gsap.set([clickedContainerRef.current, clickedTitleRef.current], {
+          idth: "20vw",
+          height: "20vw",
+          maxWidth: isMobile ? "340px" : "740px",
+          maxHeight: isMobile ? "340px" : "740px",
+          borderRadius: "0.5rem",
+          y: "0%",
+        });
+      },
+    });
+
+    if (prevIndexClicked !== activeEpisode && activeEpisode !== 0) {
+      clickedTl.current?.play();
+    }
+
+    return () => {
+      clickedTl.current?.kill();
+    };
+  }, [activeEpisode, prevIndexClicked, isMobile]);
+
+  useEffect(() => {
+    if (!isEpisodeClicked) return;
+
+    const mm = gsap.matchMedia();
+
+    const idx = episodes.findIndex((ep) => ep.id === activeEpisode);
+    if (idx < 0) {
+      return () => mm.revert();
+    }
+
+    tl.current?.kill();
+
+    const target = imageContainerRef.current[idx];
+    const title = titleRef.current[idx];
+
+    target!.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    mm.add("(max-width: 767px)", () => {
+      tl.current = gsap
+        .timeline({
+          paused: true,
+          defaults: { duration: 0.6, ease: "power2.out" },
+          onReverseComplete: () => {
+            gsap.set(target, {
+              clearProps: "width, height, borderRadius",
+            });
+          },
+        })
+        .set(target, {
+          width: "20vw",
+          height: "20vw",
+          maxWidth: "100dvw",
+          maxHeight: "100dvh",
+          borderRadius: "0.5rem",
+        })
+        .to(target, {
+          width: "100dvw",
+          height: "100dvh",
+          maxWidth: "100dvw",
+          maxHeight: "100dvh",
+          borderRadius: "0rem",
+        }).to(title, {
+          y: "-120%"
+        });
+      
+      return () => tl.current?.kill();
+    });
+
+    mm.add("(min-width: 768px)", () => {
+      tl.current = gsap
+        .timeline({
+          paused: true,
+          defaults: { duration: 0.6, ease: "power2.out" },
+          onReverseComplete: () => {
+            gsap.set(target, {
+              clearProps: "width, height, borderRadius",
+            });
+          },
+        })
+        .set(target, {
+          width: "20vw",
+          height: "20vw",
+          maxWidth: "100dvw",
+          maxHeight: "100dvh",
+          borderRadius: "0.5rem",
+        })
+        .to(target, {
+          width: "100dvw",
+          height: "100dvh",
+          maxWidth: "100dvw",
+          maxHeight: "100dvh",
+          borderRadius: "0rem",
+        })
+        .to(title, {
+          y: "-120%",
+        });
+
+      return () => tl.current?.kill();
+    });
+  }, [isEpisodeClicked, activeEpisode, episodes]);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (isEpisodeClicked) {
+      tl.current?.play(0);
+      container?.classList.add("overflow-y-hidden");
+      lenisRef.current?.stop();
+    } else {
+      setTimeout(() => {
+        tl.current?.reverse(0);
+      }, 600);
+      container?.classList.remove("overflow-y-hidden");
+      lenisRef.current?.start();
+    }
+
+    return () => {
+      container?.classList.remove("overflow-y-hidden");
+      lenisRef.current?.start();
+    };
+  }, [isEpisodeClicked]);
+
+  if (activeSeason === temporada)
+    return (
+      <div
+        ref={scrollRef}
+        className="size-full overflow-y-auto flex flex-col items-center gap-16 md:gap-32 episode-scroll pt-28 pb-[60dvh]"
+      >
+        {episodes.map((episode, index) => (
+          <div
+            key={episode.id}
+            ref={(el) => addToImagesRefs(el, index)}
+            onClick={() => handleEpisodeClick(episode.id, index)}
+            style={{
+              minWidth: isMobile ? "340px" : "740px",
+              minHeight: isMobile ? "340px" : "740px",
+            }}
+            className="w-[20dvw] aspect-square relative cursor-pointer overflow-hidden shrink-0 rounded-lg group opacity-0 translate-y-1/2 scale-50"
+          >
+            <Image
+              alt={`episódio-${episode.episode}`}
+              src={episode.image}
+              width={3840}
+              height={1632}
+              className="size-full object-cover object-center brightness-50"
+            />
+            <div className="absolute top-0 right-0 inset-0 flex flex-col items-center px-2">
+              <div className="w-full h-[50%] flex justify-center pt-8">
+                <div className="size-fit bg-arcane-white rounded-xl p-2">
+                  <h2 className="font-lora font-semibold text-xs md:text-sm">
+                    Episódio {episode.episode}
+                  </h2>
+                </div>
+              </div>
+              <div className="w-full h-[50%] flex justify-center">
+                <div className="w-fit overflow-hidden">
+                  <h1
+                    ref={(el) => addToTitleRefs(el, index)}
+                    style={{
+                      transform: "translate(0px, 0px)",
+                    }}
+                    className="font-cinzel uppercase text-lg md:text-2xl lg:text-4xl text-neutral-light text-center leading-8"
+                  >
+                    {episode.title}
+                  </h1>
+                </div>
               </div>
             </div>
-            <div className="w-full h-[50%] flex justify-center">
-              <h1 className="font-lora uppercase text-lg md:text-2xl lg:text-3xl text-arcane-white text-center leading-8 opacity-0 transition duration-300 ease-out episode-title">
-                {episode.title}
-              </h1>
-            </div>
           </div>
-        </div>
-      ))}{" "}
-    </div>
-  );
+        ))}
+      </div>
+    );
 };
 
 export default EpisodesList;

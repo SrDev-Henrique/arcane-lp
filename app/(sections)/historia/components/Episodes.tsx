@@ -2,7 +2,7 @@ import Button from "@/components/Button";
 
 import Image from "next/image";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { HiOutlinePlayCircle } from "react-icons/hi2";
 import { MdOutlineStarPurple500 } from "react-icons/md";
@@ -23,14 +23,28 @@ interface SeasonsProps {
   subject: seasonItems[];
   temporada: string;
   activeSeason: string;
+  activeEpisode: number;
+  isEpisodeActive: boolean;
+  setActiveEpisode: (activeEpisode: number) => void;
 }
 
-const Episodes = ({ subject, temporada, activeSeason }: SeasonsProps) => {
+const Episodes = ({
+  subject,
+  temporada,
+  activeSeason,
+  setActiveEpisode,
+  activeEpisode,
+  isEpisodeActive,
+}: SeasonsProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentEpisode, setCurrentEpisode] = useState(currentIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [nextClicked, setNextClicked] = useState(false);
   const [prevClicked, setPrevClicked] = useState(false);
+
+  const timeline = useRef<gsap.core.Timeline | null>(null);
+  const episodesRefs = useRef<HTMLDivElement[]>([]);
+
   const season = subject;
 
   const totalImages = 9;
@@ -42,6 +56,11 @@ const Episodes = ({ subject, temporada, activeSeason }: SeasonsProps) => {
   const prevIndex = ((currentIndex - 2 + totalImages) % totalImages) + 1;
   const nextEpisode = (currentEpisode % totalImages) + 1;
 
+  const addToEpisodesRefs = (el: HTMLDivElement | null, i: number) => {
+    if (!el) return;
+    episodesRefs.current[i] = el;
+  };
+
   const handleNextEpisodeClick = () => {
     if (isTransitioning) return;
     setIsTransitioning(true);
@@ -50,6 +69,7 @@ const Episodes = ({ subject, temporada, activeSeason }: SeasonsProps) => {
     setTimeout(() => {
       setIsTransitioning(false);
       setCurrentIndex(upcomingIndex);
+      setActiveEpisode(upcomingIndex);
     }, 600);
   };
 
@@ -61,8 +81,47 @@ const Episodes = ({ subject, temporada, activeSeason }: SeasonsProps) => {
     setTimeout(() => {
       setIsTransitioning(false);
       setCurrentIndex(prevIndex);
+      setActiveEpisode(prevIndex);
     }, 600);
   };
+
+  useEffect(() => {
+    if (activeEpisode >= 0) {
+      setCurrentEpisode(activeEpisode);
+      setCurrentIndex(activeEpisode);
+    }
+  }, [activeEpisode]);
+
+  useEffect(() => {
+    const episodes = gsap.utils.toArray(".episodes");
+    const episode = gsap.utils.toArray(".active-episode");
+
+    if (!episode || !episodes) return;
+
+    timeline.current?.kill();
+
+    timeline.current = gsap
+      .timeline({
+        paused: true,
+        defaults: { duration: 0.7, ease: "power1.out" },
+        onReverseComplete: () => {
+          gsap.set([episodes, episode], { clearProps: "all" });
+        },
+      })
+      .to([episodes, episode], {
+        opacity: 1,
+      });
+  }, [currentIndex, activeEpisode]);
+
+  useEffect(() => {
+    if (isEpisodeActive) {
+      setTimeout(() => {
+        timeline.current?.play();
+      }, 700);
+    } else {
+      timeline.current?.reverse();
+    }
+  }, [isEpisodeActive]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -123,9 +182,10 @@ const Episodes = ({ subject, temporada, activeSeason }: SeasonsProps) => {
         {season.map((episode, index) => (
           <div
             key={index}
-            className={`absolute top-0 left-0 inset-0 will-change-clip-path ${
+            ref={(el) => addToEpisodesRefs(el, index)}
+            className={`absolute top-0 left-0 inset-0 episodes will-change-clip-path episodes opacity-0 ${
               index + 1 === currentIndex
-                ? "active-episode mask-clip-path"
+                ? "active-episode mask-clip-path opacity-0"
                 : index + 1 === prevIndex
                 ? "prev-episode hidden-clip-path-left"
                 : index + 1 === upcomingIndex
