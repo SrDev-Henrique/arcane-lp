@@ -833,6 +833,17 @@ html.lenis body {
     max-width: 740px;
     max-height: 740px;
   }
+  .historia-buttons {
+    width: 40px;
+
+    &.active:nth-child(1) {
+    width: 132px;
+  }
+
+  &.active:nth-child(2) {
+    width: 148px;
+  }	
+  }
 }
 
 @media (max-height: 455px) {

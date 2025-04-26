@@ -41,16 +41,16 @@ const Nav = ({
           {navItems.map((tab) => (
             <button
               key={tab.id}
-              className={`historia-buttons md:text-base overflow-hidden flex items-center gap-2 ${
+              className={`historia-buttons md:text-base overflow-hidden flex items-center gap-2 md:gap-3 ${
                 activeTab === tab.id ? "active" : ""
               }`}
               onClick={() => setActiveTab(tab.id)}
             >
-              <span className="ml-[0.14rem]">
+              <span className="ml-[0.14rem] md:ml-[0.27rem]">
                 {tab.id === "episódios" ? (
-                  <RiPlayList2Fill className="text-base" />
+                  <RiPlayList2Fill className="text-base md:text-lg" />
                 ) : (
-                  <BsStars className="text-base" />
+                  <BsStars className="text-base md:text-lg" />
                 )}
               </span>
               {tab.label}

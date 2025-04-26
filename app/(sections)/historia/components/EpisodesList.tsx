@@ -184,12 +184,14 @@ const EpisodesList = ({
       paused: true,
       defaults: { duration: 0.1, ease: "power2.out" },
       onComplete: () => {
-        gsap.set([clickedContainerRef.current, clickedTitleRef.current], {
-          idth: "20vw",
+        gsap.set(clickedContainerRef.current, {
+          width: "20vw",
           height: "20vw",
           maxWidth: isMobile ? "340px" : "740px",
           maxHeight: isMobile ? "340px" : "740px",
           borderRadius: "0.5rem",
+        });
+        gsap.set(clickedTitleRef.current, {
           y: "0%",
         });
       },
