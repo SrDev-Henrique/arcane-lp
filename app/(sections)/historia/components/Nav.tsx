@@ -1,4 +1,6 @@
 import Button from "@/components/Button";
+
+import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
 
 interface TabsProps {
@@ -28,7 +30,7 @@ const Nav = ({
   setIsTransitioning,
   activeEpisode,
   setActiveEpisode,
-  setIsEpisodeClicked
+  setIsEpisodeClicked,
 }: TabsProps) => {
   if (temporada === activeSeason)
     return (

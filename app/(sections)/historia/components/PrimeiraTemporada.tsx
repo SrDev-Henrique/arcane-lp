@@ -18,12 +18,15 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const PrimeiraTemporada = () => {
   const firstSeasonContainerRef = useRef<HTMLDivElement>(null);
+  const activeEpisodeRef = useRef<HTMLDivElement[]>([]);
+
   const [firstSeasonActiveTab, setfirstSeasonActiveTab] = useState("episódios");
   const [activeSeason, setActiveSeason] = useState("");
   const [isEpisodeActive, setIsEpisodeActive] = useState(false);
   const [isEpisodeClicked, setIsEpisodeClicked] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeEpisode, setActiveEpisode] = useState(0);
+  const [prevIndexClicked, setPrevIndexClicked] = useState(0);
 
   const { isSeasonActive, setIsSeasonActive } = useMenu();
 
@@ -102,6 +105,9 @@ const PrimeiraTemporada = () => {
             isTransitioning={isTransitioning}
             setIsTransitioning={setIsTransitioning}
             activeSeason={activeSeason}
+            prevIndexClicked={prevIndexClicked}
+            setPrevIndexClicked={setPrevIndexClicked}
+            activeEpisodeRef={activeEpisodeRef}
             temporada="Temporada_1"
           />
         </div>
@@ -111,6 +117,8 @@ const PrimeiraTemporada = () => {
           activeEpisode={activeEpisode}
           activeSeason={activeSeason}
           isEpisodeActive={isEpisodeActive}
+          prevIndexClicked={prevIndexClicked}
+          activeEpisodeRef={activeEpisodeRef}
           temporada="Temporada_1"
         />
       </div>

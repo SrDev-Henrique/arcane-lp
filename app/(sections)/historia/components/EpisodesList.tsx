@@ -25,6 +25,9 @@ interface EpisodesListProps {
   setIsEpisodeClicked: (isEpisodeClicked: boolean) => void;
   isTransitioning: boolean;
   setIsTransitioning: (isTransitioning: boolean) => void;
+  prevIndexClicked: number;
+  setPrevIndexClicked: (prevIndexClicked: number) => void;
+  activeEpisodeRef: React.RefObject<HTMLDivElement[]>;
   activeSeason: string;
   temporada: string;
 }
@@ -39,11 +42,13 @@ const EpisodesList = ({
   setIsEpisodeClicked,
   isTransitioning,
   setIsTransitioning,
+  prevIndexClicked,
+  setPrevIndexClicked,
+  activeEpisodeRef,
   activeSeason,
   temporada,
 }: EpisodesListProps) => {
-  const [prevIndexClicked, setPrevIndexClicked] = useState(0);
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(true);
 
   const imageContainerRef = useRef<HTMLDivElement[]>([]);
   const clickedContainerRef = useRef<HTMLDivElement>(null);
@@ -53,6 +58,8 @@ const EpisodesList = ({
   const tl = useRef<gsap.core.Timeline | null>(null);
   const clickedTl = useRef<gsap.core.Timeline | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
+
+  const total = 9
 
   const addToTitleRefs = (el: HTMLHeadingElement | null, i: number) => {
     if (!el) return;
@@ -71,6 +78,26 @@ const EpisodesList = ({
     setPrevIndexClicked(episodeId);
     clickedContainerRef.current = imageContainerRef.current[index];
     clickedTitleRef.current = titleRef.current[index];
+    gsap.set(activeEpisodeRef.current[index], {
+      opacity: 0,
+      duration: 0,
+      onComplete: () => {
+        setTimeout(() => {
+          gsap.to(activeEpisodeRef.current[((index % total) + total) % total], {
+            opacity: 1,
+            duration: 0.7,
+          });
+          gsap.to(activeEpisodeRef.current[((((index % total) + total) % total) - 1 + total) % total], {
+            opacity: 1,
+            duration: 0.7,
+          });
+          gsap.to(activeEpisodeRef.current[((((index % total) + total) % total) + 1) % total], {
+            opacity: 1,
+            duration: 0.7,
+          });
+        }, 700);
+      },
+    });
     setActiveEpisode(episodeId);
     setIsEpisodeClicked(true);
     setIsTransitioning(true);
@@ -80,8 +107,14 @@ const EpisodesList = ({
   };
 
   useEffect(() => {
+    if (window.innerWidth <= 768 && activeSeason === "Temporada_1") {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+
     const checkMobile = () => {
-      if (window.innerWidth <= 799) {
+      if (window.innerWidth <= 768 && activeSeason === "Temporada_1") {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -93,7 +126,7 @@ const EpisodesList = ({
     return () => {
       window.removeEventListener("resize", checkMobile);
     };
-  }, []);
+  }, [activeSeason]);
 
   //todo lenis
 
@@ -137,6 +170,7 @@ const EpisodesList = ({
           y: "0%",
           scale: 1,
           duration: 0.8,
+          delay: 0.1,
           ease: "power2.out",
         });
       });
@@ -211,10 +245,11 @@ const EpisodesList = ({
           maxWidth: "100dvw",
           maxHeight: "100dvh",
           borderRadius: "0rem",
-        }).to(title, {
-          y: "-120%"
+        })
+        .to(title, {
+          y: "-120%",
         });
-      
+
       return () => tl.current?.kill();
     });
 
@@ -258,9 +293,7 @@ const EpisodesList = ({
       container?.classList.add("overflow-y-hidden");
       lenisRef.current?.stop();
     } else {
-      setTimeout(() => {
-        tl.current?.reverse(0);
-      }, 600);
+      tl.current?.reverse(0);
       container?.classList.remove("overflow-y-hidden");
       lenisRef.current?.start();
     }

@@ -26,6 +26,8 @@ interface SeasonsProps {
   activeEpisode: number;
   isEpisodeActive: boolean;
   setActiveEpisode: (activeEpisode: number) => void;
+  prevIndexClicked: number;
+  activeEpisodeRef: React.RefObject<HTMLDivElement[]>;
 }
 
 const Episodes = ({
@@ -33,17 +35,19 @@ const Episodes = ({
   temporada,
   activeSeason,
   setActiveEpisode,
-  activeEpisode,
   isEpisodeActive,
+  activeEpisode,
+  activeEpisodeRef,
+  prevIndexClicked,
 }: SeasonsProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentEpisode, setCurrentEpisode] = useState(currentIndex);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [nextClicked, setNextClicked] = useState(false);
   const [prevClicked, setPrevClicked] = useState(false);
-
-  const timeline = useRef<gsap.core.Timeline | null>(null);
   const episodesRefs = useRef<HTMLDivElement[]>([]);
+
+  activeEpisodeRef.current = episodesRefs.current;
 
   const season = subject;
 
@@ -93,39 +97,17 @@ const Episodes = ({
   }, [activeEpisode]);
 
   useEffect(() => {
-    const episodes = gsap.utils.toArray(".episodes");
-    const episode = gsap.utils.toArray(".active-episode");
+    const episode = document.querySelector(".active-episode");
 
-    if (!episode || !episodes) return;
+    if (!episode) return;
 
-    timeline.current?.kill();
-
-    timeline.current = gsap
-      .timeline({
-        paused: true,
-        defaults: { duration: 0.7, ease: "power1.out" },
-        onReverseComplete: () => {
-          gsap.set([episodes, episode], { clearProps: "all" });
-        },
-      })
-      .to([episodes, episode], {
-        opacity: 1,
-      });
-  }, [currentIndex, activeEpisode]);
-
-  useEffect(() => {
-    if (isEpisodeActive) {
-      setTimeout(() => {
-        timeline.current?.play();
-      }, 700);
-    } else {
-      timeline.current?.reverse();
-    }
-  }, [isEpisodeActive]);
+    gsap.to(episode as HTMLDivElement, { opacity: 0, duration: 0.7 });
+    
+  }, [prevIndexClicked, isEpisodeActive]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      if (nextClicked) {
+      if (nextClicked) { 
         const nextTl = gsap.timeline({
           defaults: {
             duration: 0.6,
@@ -135,16 +117,21 @@ const Episodes = ({
           onComplete: () => {
             setNextClicked(false);
             setPrevClicked(false);
+            gsap.set(".active-episode", {
+              opacity: 1,
+            });
           },
         });
         nextTl
           .to(".active-episode", {
             clipPath: "polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
+            opacity: 1,
           })
           .to(
             ".next-episode",
             {
               clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+              opacity: 1,
             },
             "<"
           );
@@ -158,16 +145,21 @@ const Episodes = ({
           onComplete: () => {
             setNextClicked(false);
             setPrevClicked(false);
+            gsap.set(".active-episode", {
+              opacity: 1,
+            });
           },
         });
         prevTl
           .to(".active-episode", {
             clipPath: "polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%)",
+            opacity: 1,
           })
           .to(
             ".prev-episode",
             {
               clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+              opacity: 1,
             },
             "<"
           );
@@ -183,9 +175,9 @@ const Episodes = ({
           <div
             key={index}
             ref={(el) => addToEpisodesRefs(el, index)}
-            className={`absolute top-0 left-0 inset-0 episodes will-change-clip-path episodes opacity-0 ${
+            className={`absolute top-0 left-0 inset-0 will-change-clip-path ${
               index + 1 === currentIndex
-                ? "active-episode mask-clip-path opacity-0"
+                ? "active-episode mask-clip-path"
                 : index + 1 === prevIndex
                 ? "prev-episode hidden-clip-path-left"
                 : index + 1 === upcomingIndex
