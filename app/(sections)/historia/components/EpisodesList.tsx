@@ -321,7 +321,7 @@ const EpisodesList = ({
               minWidth: isMobile ? "340px" : "740px",
               minHeight: isMobile ? "340px" : "740px",
             }}
-            className="w-[20dvw] aspect-square relative cursor-pointer overflow-hidden shrink-0 rounded-lg group opacity-0 translate-y-1/2 scale-50"
+            className="w-[20dvw] aspect-square relative cursor-pointer overflow-hidden shrink-0 rounded-lg group opacity-0 translate-y-1/2 will-change-transform scale-50"
           >
             <Image
               alt={`episódio-${episode.episode}`}

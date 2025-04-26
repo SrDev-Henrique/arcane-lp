@@ -110,17 +110,17 @@ const PrimeiraTemporada = () => {
             activeEpisodeRef={activeEpisodeRef}
             temporada="Temporada_1"
           />
+          <Episodes
+            subject={seasons.firstSeason}
+            setActiveEpisode={setActiveEpisode}
+            activeEpisode={activeEpisode}
+            activeSeason={activeSeason}
+            isEpisodeActive={isEpisodeActive}
+            prevIndexClicked={prevIndexClicked}
+            activeEpisodeRef={activeEpisodeRef}
+            temporada="Temporada_1"
+          />
         </div>
-        <Episodes
-          subject={seasons.firstSeason}
-          setActiveEpisode={setActiveEpisode}
-          activeEpisode={activeEpisode}
-          activeSeason={activeSeason}
-          isEpisodeActive={isEpisodeActive}
-          prevIndexClicked={prevIndexClicked}
-          activeEpisodeRef={activeEpisodeRef}
-          temporada="Temporada_1"
-        />
       </div>
     </div>
   );

@@ -215,7 +215,7 @@ const Episodes = ({
                         className="object-cover object-center size-full"
                       />
                     </div>
-                    <div className="flex-center w-12 md:w-14 aspect-square rounded-full border border-black-lighter text-black-light text-3xl md:text-4xl font-lora">
+                    <div className="flex-center min-w-12 md:min-w-14 aspect-square rounded-full border border-black-lighter text-black-light text-3xl md:text-4xl font-lora">
                       {episode.episode}
                     </div>
                     <div className="flex flex-col">

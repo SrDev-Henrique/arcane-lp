@@ -1,9 +1,11 @@
 import Button from "@/components/Button";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { RiPlayList2Fill } from "react-icons/ri";
 import { BsStars } from "react-icons/bs";
+
+import gsap from "gsap";
 
 interface TabsProps {
   navItems: { id: string; label: string }[];
@@ -34,10 +36,41 @@ const Nav = ({
   setActiveEpisode,
   setIsEpisodeClicked,
 }: TabsProps) => {
+  const navContainerRef = useRef<HTMLElement>(null);
+  const buttonsContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (
+        activeSeason !== temporada ||
+        !navContainerRef.current ||
+        !buttonsContainerRef.current
+      )
+        return;
+      gsap.to(navContainerRef.current, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.7,
+        ease: "power3.out",
+      });
+      gsap.to(buttonsContainerRef.current, {
+        opacity: 1,
+        duration: 0.7,
+        delay: 0.2,
+        ease: "power3.out",
+      });
+    });
+
+    return () => ctx.revert();
+  }, [activeSeason, temporada]);
+
   if (temporada === activeSeason)
     return (
       <>
-        <nav className="w-fit h-fit relative flex-center gap-1 p-2 mt-7 md:mt-6 bg-black-lighter rounded-3xl select-none z-[10]">
+        <nav
+          ref={navContainerRef}
+          className="w-fit h-fit relative flex-center gap-1 p-2 mt-7 md:mt-6 bg-black-lighter rounded-3xl select-none z-[10] will-change-transform opacity-0 scale-50"
+        >
           {navItems.map((tab) => (
             <button
               key={tab.id}
@@ -57,7 +90,10 @@ const Nav = ({
             </button>
           ))}
         </nav>
-        <div className="absolute top-8 right-1/2 translate-x-1/2 w-full max-w-[620px] px-2 sm:px-0 flex items-center justify-between select-none z-[2]">
+        <div
+          ref={buttonsContainerRef}
+          className="absolute top-8 right-1/2 translate-x-1/2 w-full max-w-[620px] px-2 sm:px-0 flex items-center justify-between select-none z-[2] will-change-transform opacity-0"
+        >
           <Button
             title="voltar"
             containerClass={`flex-center w-fit p-3 bg-black-lighter ${
