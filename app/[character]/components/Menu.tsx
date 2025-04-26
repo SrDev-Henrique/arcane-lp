@@ -173,60 +173,62 @@ const Menu = ({
   useGSAP(() => {
     const mm = gsap.matchMedia();
 
-    tl.current = gsap
-      .timeline({
-        paused: true,
-        defaults: {
-          duration: 0.53,
-          ease: "cubic-bezier(0.1, 0.7, 0.1)",
-        },
-      })
-      .to(menuRef.current, {
-        width: "600px",
-        borderRadius: "16px",
-      })
-      .to(
-        nameRef.current,
-        {
-          y: 0,
-          ease: "power2.out",
-        },
-        "<"
-      )
-      .to(
-        menuRef.current,
-        {
-          height: "505px",
-        },
-        "<"
-      )
-      .to(
-        buttonsRef.current,
-        {
-          opacity: 1,
-          stagger: {
-            amount: 0.4,
+    mm.add("(min-width: 610px)", () => {
+      tl.current = gsap
+        .timeline({
+          paused: true,
+          defaults: {
+            duration: 0.53,
+            ease: "cubic-bezier(0.1, 0.7, 0.1)",
           },
-          ease: "cubic-bezier(.15, 0, .333, 1)",
-        },
-        "<"
-      )
-      .to(
-        playlistHeadingRef.current,
-        {
-          y: 0,
-          ease: "cubic-bezier(.15, 0, .333, 1)",
-        },
-        "<"
-      )
-      .to(
-        playlistContainerRef.current,
-        {
-          opacity: 1,
-          ease: "cubic-bezier(.15, 0, .333, 1)",
-        },
-        "<"
-      );
+        })
+        .to(menuRef.current, {
+          width: "600px",
+          borderRadius: "16px",
+        })
+        .to(
+          nameRef.current,
+          {
+            y: 0,
+            ease: "power2.out",
+          },
+          "<"
+        )
+        .to(
+          menuRef.current,
+          {
+            height: "505px",
+          },
+          "<"
+        )
+        .to(
+          buttonsRef.current,
+          {
+            opacity: 1,
+            stagger: {
+              amount: 0.4,
+            },
+            ease: "cubic-bezier(.15, 0, .333, 1)",
+          },
+          "<"
+        )
+        .to(
+          playlistHeadingRef.current,
+          {
+            y: 0,
+            ease: "cubic-bezier(.15, 0, .333, 1)",
+          },
+          "<"
+        )
+        .to(
+          playlistContainerRef.current,
+          {
+            opacity: 1,
+            ease: "cubic-bezier(.15, 0, .333, 1)",
+          },
+          "<"
+        );
+    })
 
     mm.add("(max-width: 610px)", () => {
       tl.current = gsap

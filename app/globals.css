@@ -620,7 +620,6 @@ html.lenis body {
 }
 
 .historia-buttons {
-  width: fit-content;
   text-transform: uppercase;
   font-family: lora, sans-serif;
   font-size: 0.75rem;
@@ -629,11 +628,21 @@ html.lenis body {
   padding: 0.5rem;
   border-radius: 1.2rem;
   transition: all 0.3s ease-out;
+  width: 35px;
 
-  &.active {
+  &.active:nth-child(1) {
     background-color: #c1c1ba;
     color: #0a0a0a;
+    gap: 0.25rem;
+    width: 105px;
   }
+
+  &.active:nth-child(2) {
+    background-color: #c1c1ba;
+    color: #0a0a0a;
+    gap: 0.25rem;
+    width: 115px;
+  }	
 }
 
 .historia-buttons:hover {

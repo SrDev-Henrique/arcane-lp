@@ -2,6 +2,8 @@ import Button from "@/components/Button";
 
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa";
+import { RiPlayList2Fill } from "react-icons/ri";
+import { BsStars } from "react-icons/bs";
 
 interface TabsProps {
   navItems: { id: string; label: string }[];
@@ -39,11 +41,18 @@ const Nav = ({
           {navItems.map((tab) => (
             <button
               key={tab.id}
-              className={`historia-buttons md:text-base ${
+              className={`historia-buttons md:text-base overflow-hidden flex items-center gap-2 ${
                 activeTab === tab.id ? "active" : ""
               }`}
               onClick={() => setActiveTab(tab.id)}
             >
+              <span className="ml-[0.14rem]">
+                {tab.id === "episódios" ? (
+                  <RiPlayList2Fill className="text-base" />
+                ) : (
+                  <BsStars className="text-base" />
+                )}
+              </span>
               {tab.label}
             </button>
           ))}
@@ -65,7 +74,7 @@ const Nav = ({
               />
             }
             onClick={() => {
-              if(isTransitioning) return;
+              if (isTransitioning) return;
               setIsEpisodeActive(false);
               setIsEpisodeClicked(false);
               setIsTransitioning(true);
