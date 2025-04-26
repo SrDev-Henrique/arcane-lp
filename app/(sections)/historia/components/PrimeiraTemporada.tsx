@@ -49,6 +49,7 @@ const PrimeiraTemporada = () => {
   }
 
   const firstSeasonClick = () => {
+    if (isSeasonActive) return;
     const target = firstSeasonContainerRef.current;
     setIsSeasonActive(true);
     target!.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -88,8 +89,8 @@ const PrimeiraTemporada = () => {
           isTransitioning={isTransitioning}
           setIsTransitioning={setIsTransitioning}
           setIsEpisodeClicked={setIsEpisodeClicked}
-          activeEpisode={activeEpisode}
           setActiveEpisode={setActiveEpisode}
+          setActiveSeason={setActiveSeason}
           activeSeason={activeSeason}
           temporada="Temporada_1"
         />

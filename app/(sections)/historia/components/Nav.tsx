@@ -6,6 +6,7 @@ import { RiPlayList2Fill } from "react-icons/ri";
 import { BsStars } from "react-icons/bs";
 
 import gsap from "gsap";
+import { useMenu } from "@/contexts/MenuContext";
 
 interface TabsProps {
   navItems: { id: string; label: string }[];
@@ -15,9 +16,9 @@ interface TabsProps {
   setIsEpisodeActive: (isEpisodeActive: boolean) => void;
   isTransitioning: boolean;
   setIsTransitioning: (isTransitioning: boolean) => void;
-  activeEpisode: number;
   setActiveEpisode: (activeEpisode: number) => void;
   setIsEpisodeClicked: (isEpisodeClicked: boolean) => void;
+  setActiveSeason: (activeSeason: string) => void;
   activeSeason: string;
   temporada: string;
 }
@@ -27,17 +28,19 @@ const Nav = ({
   activeTab,
   setActiveTab,
   temporada,
+  setActiveSeason,
   activeSeason,
   isEpisodeActive,
   setIsEpisodeActive,
   isTransitioning,
   setIsTransitioning,
-  activeEpisode,
   setActiveEpisode,
   setIsEpisodeClicked,
 }: TabsProps) => {
   const navContainerRef = useRef<HTMLElement>(null);
   const buttonsContainerRef = useRef<HTMLDivElement>(null);
+
+  const { setIsSeasonActive } = useMenu();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -136,7 +139,10 @@ const Nav = ({
             style={{ backgroundColor: "#FF6F61" }}
             containerClass="flex-center w-fit bg-arcane-white p-3"
             textClass="text-xs font-lora font-semibold"
-            onClick={() => setActiveEpisode(activeEpisode + 1)}
+            onClick={() => {
+              setIsSeasonActive(false);
+              setActiveSeason("a");
+            }}
           />
         </div>
       </>
