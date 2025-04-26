@@ -93,34 +93,36 @@ const PrimeiraTemporada = () => {
           activeSeason={activeSeason}
           temporada="Temporada_1"
         />
-        <div className="absolute top-0 inset-0">
-          <EpisodesList
-            episodes={episodes}
-            setIsEpisodeActive={setIsEpisodeActive}
-            firstSeasonActiveTab={firstSeasonActiveTab}
-            activeEpisode={activeEpisode}
-            setActiveEpisode={setActiveEpisode}
-            isEpisodeClicked={isEpisodeClicked}
-            setIsEpisodeClicked={setIsEpisodeClicked}
-            isTransitioning={isTransitioning}
-            setIsTransitioning={setIsTransitioning}
-            activeSeason={activeSeason}
-            prevIndexClicked={prevIndexClicked}
-            setPrevIndexClicked={setPrevIndexClicked}
-            activeEpisodeRef={activeEpisodeRef}
-            temporada="Temporada_1"
-          />
-          <Episodes
-            subject={seasons.firstSeason}
-            setActiveEpisode={setActiveEpisode}
-            activeEpisode={activeEpisode}
-            activeSeason={activeSeason}
-            isEpisodeActive={isEpisodeActive}
-            prevIndexClicked={prevIndexClicked}
-            activeEpisodeRef={activeEpisodeRef}
-            temporada="Temporada_1"
-          />
-        </div>
+        {firstSeasonActiveTab === "episódios" && (
+          <div className="absolute top-0 inset-0">
+            <EpisodesList
+              episodes={episodes}
+              setIsEpisodeActive={setIsEpisodeActive}
+              firstSeasonActiveTab={firstSeasonActiveTab}
+              activeEpisode={activeEpisode}
+              setActiveEpisode={setActiveEpisode}
+              isEpisodeClicked={isEpisodeClicked}
+              setIsEpisodeClicked={setIsEpisodeClicked}
+              isTransitioning={isTransitioning}
+              setIsTransitioning={setIsTransitioning}
+              activeSeason={activeSeason}
+              prevIndexClicked={prevIndexClicked}
+              setPrevIndexClicked={setPrevIndexClicked}
+              activeEpisodeRef={activeEpisodeRef}
+              temporada="Temporada_1"
+            />
+            <Episodes
+              subject={seasons.firstSeason}
+              setActiveEpisode={setActiveEpisode}
+              activeEpisode={activeEpisode}
+              activeSeason={activeSeason}
+              isEpisodeActive={isEpisodeActive}
+              prevIndexClicked={prevIndexClicked}
+              activeEpisodeRef={activeEpisodeRef}
+              temporada="Temporada_1"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

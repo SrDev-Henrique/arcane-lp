@@ -77,7 +77,18 @@ const Nav = ({
               className={`historia-buttons md:text-base overflow-hidden flex items-center gap-2 md:gap-3 ${
                 activeTab === tab.id ? "active" : ""
               }`}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={
+                activeTab === tab.id
+                  ? () => {
+                      return;
+                    }
+                  : () => {
+                      setActiveTab(tab.id);
+                      setActiveEpisode(0);
+                      setIsEpisodeActive(false);
+                      setIsEpisodeClicked(false);
+                    }
+              }
             >
               <span className="ml-[0.14rem] md:ml-[0.27rem]">
                 {tab.id === "episódios" ? (
