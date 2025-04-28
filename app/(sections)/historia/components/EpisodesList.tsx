@@ -78,20 +78,23 @@ const EpisodesList = ({
     setPrevIndexClicked(episodeId);
     clickedContainerRef.current = imageContainerRef.current[index];
     clickedTitleRef.current = titleRef.current[index];
+    const current = ((index % total) + total) % total;
+    const prev = ((((index % total) + total) % total) - 1 + total) % total;
+    const next = ((((index % total) + total) % total) + 1) % total;
     gsap.set(activeEpisodeRef.current[index], {
       opacity: 0,
       duration: 0,
       onComplete: () => {
         setTimeout(() => {
-          gsap.to(activeEpisodeRef.current[((index % total) + total) % total], {
+          gsap.to(activeEpisodeRef.current[current], {
             opacity: 1,
             duration: 0.7,
           });
-          gsap.to(activeEpisodeRef.current[((((index % total) + total) % total) - 1 + total) % total], {
+          gsap.to(activeEpisodeRef.current[prev], {
             opacity: 1,
             duration: 0.7,
           });
-          gsap.to(activeEpisodeRef.current[((((index % total) + total) % total) + 1) % total], {
+          gsap.to(activeEpisodeRef.current[next], {
             opacity: 1,
             duration: 0.7,
           });
@@ -107,12 +110,6 @@ const EpisodesList = ({
   };
 
   useEffect(() => {
-    if (window.innerWidth <= 768 && activeSeason === "Temporada_1") {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-
     const checkMobile = () => {
       if (window.innerWidth <= 768 && activeSeason === "Temporada_1") {
         setIsMobile(true);
@@ -121,6 +118,8 @@ const EpisodesList = ({
       }
     };
 
+    checkMobile();
+    
     window.addEventListener("resize", checkMobile);
 
     return () => {
@@ -137,6 +136,7 @@ const EpisodesList = ({
       activeEpisode > 0
     )
       return;
+    
     const localLenis = new Lenis({
       wrapper: scrollRef.current,
       duration: 1.5,
@@ -169,7 +169,7 @@ const EpisodesList = ({
           opacity: 1,
           y: "0%",
           scale: 1,
-          duration: 0.8,
+          duration: 1,
           delay: 0.1,
           ease: "power2.out",
         });
@@ -221,7 +221,9 @@ const EpisodesList = ({
     const target = imageContainerRef.current[idx];
     const title = titleRef.current[idx];
 
-    target!.scrollIntoView({ behavior: "smooth", block: "start" });
+    const variableBehavior = activeEpisode === prevIndexClicked ? "smooth" : "instant";
+
+    target!.scrollIntoView({ behavior: variableBehavior, block: "start" });
 
     mm.add("(max-width: 767px)", () => {
       tl.current = gsap
@@ -286,7 +288,7 @@ const EpisodesList = ({
 
       return () => tl.current?.kill();
     });
-  }, [isEpisodeClicked, activeEpisode, episodes]);
+  }, [isEpisodeClicked, activeEpisode, episodes, prevIndexClicked]);
 
   useEffect(() => {
     const container = scrollRef.current;
