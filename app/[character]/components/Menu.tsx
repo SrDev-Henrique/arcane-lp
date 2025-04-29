@@ -76,7 +76,9 @@ const Menu = ({
       : `/audio/${name}-${index}.m4a`;
   const totalSongs = playlist.length;
   const upcomingAudioIndex = (currentIndex % totalSongs) + 1;
-  const prevAudioIndex = (currentIndex % totalSongs) - 1 * -1;
+  const prevAudioIndex = currentIndex - 1 || totalSongs;
+
+  console.log(prevAudioIndex)
 
   const { duration = 0 } = audioRef.current || {};
   const progressPercent = (currentTime / duration) * 100 || 0;
