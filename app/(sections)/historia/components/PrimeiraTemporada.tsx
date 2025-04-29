@@ -79,7 +79,11 @@ const PrimeiraTemporada = () => {
       onClick={firstSeasonClick}
       className="h-[100dvh] w-full"
     >
-      <div className="size-full relative flex flex-col items-center justify-between bg-black-dark z-[101]">
+      <div
+        className={`size-full relative flex flex-col items-center justify-between bg-black-dark ${
+          isSeasonActive ? "z-[101]" : ""
+        }`}
+      >
         <Nav
           navItems={firstNavTabs}
           activeTab={firstSeasonActiveTab}
