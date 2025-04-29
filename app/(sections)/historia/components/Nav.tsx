@@ -72,7 +72,7 @@ const Nav = ({
       <>
         <nav
           ref={navContainerRef}
-          className="w-fit h-fit relative flex-center gap-1 p-2 mt-7 md:mt-6 bg-black-lighter rounded-3xl select-none z-[10] will-change-transform opacity-0 scale-50"
+          className="w-fit h-fit relative flex-center gap-1 p-2 mt-7 md:mt-6 bg-black-light rounded-3xl select-none z-[10] will-change-transform opacity-0 scale-50"
         >
           {navItems.map((tab) => (
             <button
@@ -110,7 +110,7 @@ const Nav = ({
         >
           <Button
             title="voltar"
-            containerClass={`flex-center w-fit p-3 bg-black-lighter ${
+            containerClass={`flex-center w-fit p-3 bg-black-light ${
               isEpisodeActive ? "scale-100" : "scale-0"
             }`}
             textClass={`font-lora font-semibold uppercase text-arcane-white text-xs transition duration-300 ease-out ${

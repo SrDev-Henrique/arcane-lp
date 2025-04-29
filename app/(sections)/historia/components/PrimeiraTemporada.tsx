@@ -80,7 +80,7 @@ const PrimeiraTemporada = () => {
       className="h-[100dvh] w-full"
     >
       <div
-        className={`size-full relative flex flex-col items-center justify-between bg-black-dark ${
+        className={`size-full relative flex flex-col items-center justify-between bg-black-lighter ${
           isSeasonActive ? "z-[101]" : ""
         }`}
       >
