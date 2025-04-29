@@ -3,7 +3,7 @@ import Button from "@/components/Button";
 import React, { useEffect, useRef } from "react";
 import { FaArrowLeft } from "react-icons/fa";
 import { RiPlayList2Fill } from "react-icons/ri";
-import { BsStars } from "react-icons/bs";
+import { MdOndemandVideo } from "react-icons/md";
 
 import gsap from "gsap";
 import { useMenu } from "@/contexts/MenuContext";
@@ -97,7 +97,7 @@ const Nav = ({
                 {tab.id === "episódios" ? (
                   <RiPlayList2Fill className="text-base md:text-lg" />
                 ) : (
-                  <BsStars className="text-base md:text-lg" />
+                  <MdOndemandVideo className="text-base md:text-lg" />
                 )}
               </span>
               {tab.label}
