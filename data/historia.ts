@@ -223,7 +223,7 @@ export const seasons = {
     {
       id: 10,
       episode: "Episódio 9",
-      title: "Vi vs Sevika (2)",
+      title: "Vi vs Sevika (revanche)",
       emote: "😤",
       image: "/images/highlights/Temporada_1/vi_sevika_bar.webp",
       src: "https://d3v6dicq4pzaym.cloudfront.net/vi_vs_sevika_bar.mp4",

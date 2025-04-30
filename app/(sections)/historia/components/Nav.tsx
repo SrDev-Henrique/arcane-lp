@@ -19,6 +19,7 @@ interface TabsProps {
   setActiveEpisode: (activeEpisode: number) => void;
   setIsEpisodeClicked: (isEpisodeClicked: boolean) => void;
   setActiveSeason: (activeSeason: string) => void;
+  isHighlightActive: boolean;
   activeSeason: string;
   temporada: string;
 }
@@ -36,6 +37,7 @@ const Nav = ({
   setIsTransitioning,
   setActiveEpisode,
   setIsEpisodeClicked,
+  isHighlightActive,
 }: TabsProps) => {
   const navContainerRef = useRef<HTMLElement>(null);
   const buttonsContainerRef = useRef<HTMLDivElement>(null);
@@ -73,7 +75,9 @@ const Nav = ({
         <nav
           ref={navContainerRef}
           style={{
-            opacity: "10%",
+            opacity: isHighlightActive ? "0%" : "100%",
+            pointerEvents: isHighlightActive ? "none" : "auto",
+            transition: "opacity 0.5s ease-out",
           }}
           className="w-fit h-fit relative flex-center gap-1 p-2 mt-7 md:mt-6 bg-black-light rounded-3xl select-none z-[10] will-change-transform opacity-0 scale-50"
         >
@@ -108,10 +112,12 @@ const Nav = ({
           ))}
         </nav>
         <div
-          style={{
-            opacity: "10%",
-          }}
           ref={buttonsContainerRef}
+          style={{
+            opacity: isHighlightActive ? "0%" : "100%",
+            pointerEvents: isHighlightActive ? "none" : "auto",
+            transition: "opacity 0.5s ease-out",
+          }}
           className="absolute top-8 right-1/2 translate-x-1/2 w-full max-w-[620px] px-2 sm:px-0 flex items-center justify-between select-none z-[2] will-change-transform opacity-0"
         >
           <Button

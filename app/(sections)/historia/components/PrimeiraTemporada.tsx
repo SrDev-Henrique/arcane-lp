@@ -24,8 +24,10 @@ const PrimeiraTemporada = () => {
   const [firstSeasonActiveTab, setfirstSeasonActiveTab] = useState("episódios");
   const [activeSeason, setActiveSeason] = useState("");
   const [isEpisodeActive, setIsEpisodeActive] = useState(false);
+  const [isHighlightActive, setIsHighlightActive] = useState(false);
   const [isEpisodeClicked, setIsEpisodeClicked] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [activeHighlight, setActiveHighlight] = useState(0);
   const [activeEpisode, setActiveEpisode] = useState(0);
   const [prevIndexClicked, setPrevIndexClicked] = useState(0);
 
@@ -59,6 +61,21 @@ const PrimeiraTemporada = () => {
       setActiveSeason("Temporada_1");
     }, 600);
   };
+
+  useEffect(() => {
+    if (activeSeason !== "Temporada_1") return;
+    const target = firstSeasonContainerRef.current;
+
+    window.addEventListener("resize", () => {
+      target!.scrollIntoView({ behavior: "instant", block: "start" });
+    })
+
+    return () => {
+      window.removeEventListener("resize", () => {
+        target!.scrollIntoView({ behavior: "instant", block: "start" });
+      });
+    };
+  }, [activeSeason]);
 
   useEffect(() => {
     const el = document.body;
@@ -97,6 +114,7 @@ const PrimeiraTemporada = () => {
           setIsEpisodeClicked={setIsEpisodeClicked}
           setActiveEpisode={setActiveEpisode}
           setActiveSeason={setActiveSeason}
+          isHighlightActive={isHighlightActive}
           activeSeason={activeSeason}
           temporada="Temporada_1"
         />
@@ -135,6 +153,14 @@ const PrimeiraTemporada = () => {
             <HighlightsList
               highlights={highlights}
               activeSeason={activeSeason}
+              firstSeasonActiveTab={firstSeasonActiveTab}
+              isHighlightActive={isHighlightActive}
+              setIsHighlightActive={setIsHighlightActive}
+              activeHighlight={activeHighlight}
+              setActiveHighlight={setActiveHighlight}
+              isTransitioning={isTransitioning}
+              setIsTransitioning={setIsTransitioning}
+              temporada="Temporada_1"
             />
           </div>
         )}

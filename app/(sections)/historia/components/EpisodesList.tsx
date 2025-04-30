@@ -2,11 +2,8 @@ import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 import gsap from "gsap";
-import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 import Lenis from "lenis";
-
-gsap.registerPlugin(ScrollToPlugin);
 
 interface EpisodesItems {
   id: number;
@@ -294,7 +291,7 @@ const EpisodesList = ({
   useEffect(() => {
     const container = scrollRef.current;
     const lenis = lenisRef.current;
-    
+
     if (isEpisodeClicked) {
       tl.current?.play(0);
       container?.classList.add("overflow-y-hidden");
