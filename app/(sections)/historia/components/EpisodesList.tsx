@@ -59,7 +59,7 @@ const EpisodesList = ({
   const clickedTl = useRef<gsap.core.Timeline | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
 
-  const total = 9
+  const total = 9;
 
   const addToTitleRefs = (el: HTMLHeadingElement | null, i: number) => {
     if (!el) return;
@@ -119,7 +119,7 @@ const EpisodesList = ({
     };
 
     checkMobile();
-    
+
     window.addEventListener("resize", checkMobile);
 
     return () => {
@@ -136,7 +136,7 @@ const EpisodesList = ({
       activeEpisode > 0
     )
       return;
-    
+
     const localLenis = new Lenis({
       wrapper: scrollRef.current,
       duration: 1.5,
@@ -221,7 +221,8 @@ const EpisodesList = ({
     const target = imageContainerRef.current[idx];
     const title = titleRef.current[idx];
 
-    const variableBehavior = activeEpisode === prevIndexClicked ? "smooth" : "instant";
+    const variableBehavior =
+      activeEpisode === prevIndexClicked ? "smooth" : "instant";
 
     target!.scrollIntoView({ behavior: variableBehavior, block: "start" });
 
@@ -292,21 +293,23 @@ const EpisodesList = ({
 
   useEffect(() => {
     const container = scrollRef.current;
+    const lenis = lenisRef.current;
+    
     if (isEpisodeClicked) {
       tl.current?.play(0);
       container?.classList.add("overflow-y-hidden");
-      lenisRef.current?.stop();
+      lenis?.stop();
     } else {
       tl.current?.reverse(0);
       container?.classList.remove("overflow-y-hidden");
-      lenisRef.current?.start();
+      lenis?.start();
     }
 
     return () => {
       container?.classList.remove("overflow-y-hidden");
-      lenisRef.current?.start();
+      lenis?.start();
     };
-  }, [isEpisodeClicked]);
+  }, [isEpisodeClicked, lenisRef]);
 
   if (activeSeason === temporada)
     return (
@@ -323,7 +326,7 @@ const EpisodesList = ({
               minWidth: isMobile ? "340px" : "740px",
               minHeight: isMobile ? "340px" : "740px",
             }}
-            className="w-[20dvw] aspect-square relative cursor-pointer overflow-hidden shrink-0 rounded-lg group opacity-0 translate-y-1/2 will-change-transform scale-50"
+            className="w-[20dvw] aspect-square h-auto relative cursor-pointer overflow-hidden shrink-0 rounded-lg group opacity-0 translate-y-1/2 will-change-transform scale-50"
           >
             <Image
               alt={`episódio-${episode.episode}`}

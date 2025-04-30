@@ -72,6 +72,9 @@ const Nav = ({
       <>
         <nav
           ref={navContainerRef}
+          style={{
+            opacity: "10%",
+          }}
           className="w-fit h-fit relative flex-center gap-1 p-2 mt-7 md:mt-6 bg-black-light rounded-3xl select-none z-[10] will-change-transform opacity-0 scale-50"
         >
           {navItems.map((tab) => (
@@ -105,6 +108,9 @@ const Nav = ({
           ))}
         </nav>
         <div
+          style={{
+            opacity: "10%",
+          }}
           ref={buttonsContainerRef}
           className="absolute top-8 right-1/2 translate-x-1/2 w-full max-w-[620px] px-2 sm:px-0 flex items-center justify-between select-none z-[2] will-change-transform opacity-0"
         >

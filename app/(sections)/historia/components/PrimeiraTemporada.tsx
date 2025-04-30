@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
 import { useMenu } from "@/contexts/MenuContext";
+import HighlightsList from "./HighlightsList";
 
 const firstNavTabs = [
   { id: "episódios", label: "Episódios" },
@@ -31,6 +32,7 @@ const PrimeiraTemporada = () => {
   const { isSeasonActive, setIsSeasonActive } = useMenu();
 
   const episodes = seasons.firstSeasonEpisodes;
+  const highlights = seasons.firstSeasonHighlights;
 
   function setDataAttr(el: HTMLElement, name: string, value = "") {
     el.dataset[name] = value;
@@ -125,6 +127,14 @@ const PrimeiraTemporada = () => {
               prevIndexClicked={prevIndexClicked}
               activeEpisodeRef={activeEpisodeRef}
               temporada="Temporada_1"
+            />
+          </div>
+        )}
+        {firstSeasonActiveTab === "highlights" && (
+          <div className="absolute top-0 inset-0">
+            <HighlightsList
+              highlights={highlights}
+              activeSeason={activeSeason}
             />
           </div>
         )}
