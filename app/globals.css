@@ -221,6 +221,10 @@ html.lenis body {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
+.season-clip-path {
+  clip-path: polygon(30% 30%, 70% 35%, 70% 75%, 30% 70%);
+}
+
 .hidden-clip-path {
   clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0 100%);
 }

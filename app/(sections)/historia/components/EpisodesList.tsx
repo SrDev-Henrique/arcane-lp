@@ -24,6 +24,7 @@ interface EpisodesListProps {
   setIsTransitioning: (isTransitioning: boolean) => void;
   prevIndexClicked: number;
   setPrevIndexClicked: (prevIndexClicked: number) => void;
+  isSeasonActive: boolean;
   activeEpisodeRef: React.RefObject<HTMLDivElement[]>;
   activeSeason: string;
   temporada: string;
@@ -42,6 +43,7 @@ const EpisodesList = ({
   prevIndexClicked,
   setPrevIndexClicked,
   activeEpisodeRef,
+  isSeasonActive,
   activeSeason,
   temporada,
 }: EpisodesListProps) => {
@@ -171,6 +173,19 @@ const EpisodesList = ({
 
     return () => context.revert();
   }, [activeTab, activeSeason, temporada]);
+
+  useEffect(() => {
+    if (!isSeasonActive) {
+      imageContainerRef.current.forEach((containerEl) => {
+        gsap.to(containerEl, {
+          opacity: 0,
+          scale: 0.5,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+      });
+    }
+  }, [isSeasonActive]);
 
   useEffect(() => {
     clickedTl.current = gsap.timeline({

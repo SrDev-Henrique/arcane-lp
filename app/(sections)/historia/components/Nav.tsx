@@ -20,8 +20,10 @@ interface TabsProps {
   setIsEpisodeClicked: (isEpisodeClicked: boolean) => void;
   setActiveSeason: (activeSeason: string) => void;
   isHighlightActive?: boolean;
+  isSeasonActive: boolean;
   activeSeason: string;
   temporada: string;
+  setTemporada: (temporada: string) => void;
 }
 
 const Nav = ({
@@ -37,7 +39,9 @@ const Nav = ({
   setIsTransitioning,
   setActiveEpisode,
   setIsEpisodeClicked,
+  isSeasonActive,
   isHighlightActive,
+  setTemporada,
 }: TabsProps) => {
   const navContainerRef = useRef<HTMLElement>(null);
   const buttonsContainerRef = useRef<HTMLDivElement>(null);
@@ -52,7 +56,7 @@ const Nav = ({
         !buttonsContainerRef.current
       )
         return;
-      
+
       gsap.to(navContainerRef.current, {
         scale: 1,
         opacity: 1,
@@ -76,8 +80,8 @@ const Nav = ({
         <nav
           ref={navContainerRef}
           style={{
-            opacity: isHighlightActive ? "0%" : "100%",
-            pointerEvents: isHighlightActive ? "none" : "auto",
+            opacity: isHighlightActive || !isSeasonActive ? "0%" : "100%",
+            pointerEvents: isHighlightActive || !isSeasonActive ? "none" : "auto",
             transition: "opacity 0.5s ease-out",
           }}
           className="w-fit h-fit relative flex-center gap-1 p-2 mt-7 md:mt-6 bg-black-light rounded-3xl select-none z-[10] will-change-transform opacity-0 scale-50"
@@ -115,8 +119,8 @@ const Nav = ({
         <div
           ref={buttonsContainerRef}
           style={{
-            opacity: isHighlightActive ? "0%" : "100%",
-            pointerEvents: isHighlightActive ? "none" : "auto",
+            opacity: isHighlightActive || !isSeasonActive ? "0%" : "100%",
+            pointerEvents: isHighlightActive || !isSeasonActive ? "none" : "auto",
             transition: "opacity 0.5s ease-out",
           }}
           className="absolute top-8 right-1/2 translate-x-1/2 w-full max-w-[620px] px-2 sm:px-0 flex items-center justify-between select-none z-[2] will-change-transform opacity-0"
@@ -154,7 +158,12 @@ const Nav = ({
             textClass="text-xs font-lora font-semibold"
             onClick={() => {
               setIsSeasonActive(false);
-              setActiveSeason("null");
+              setIsEpisodeActive(false);
+              setActiveEpisode(0);
+              setTimeout(() => {
+                setActiveSeason("null");
+                setTemporada("noSeason");
+              }, 600);
             }}
           />
         </div>

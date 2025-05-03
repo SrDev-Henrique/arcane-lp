@@ -30,6 +30,7 @@ interface HighlightsListProps {
   setActiveHighlight: (highlighActive: number) => void;
   isTransitioning: boolean;
   setIsTransitioning: (isTransitioning: boolean) => void;
+  isSeasonActive: boolean;
   temporada: string;
 }
 
@@ -43,6 +44,7 @@ const HighlightsList = ({
   setActiveHighlight,
   isTransitioning,
   setIsTransitioning,
+  isSeasonActive,
   temporada,
 }: HighlightsListProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -84,7 +86,7 @@ const HighlightsList = ({
         block: "center",
         inline: "center",
       });
-    }
+    };
 
     window.addEventListener("resize", scrollIntoView);
 
@@ -185,7 +187,7 @@ const HighlightsList = ({
           opacity: 1,
           y: "0%",
           scale: 1,
-          duration: 1,
+          duration: 0.6,
           delay: 0.1,
           ease: "power2.out",
         });
@@ -195,14 +197,23 @@ const HighlightsList = ({
     return () => context.revert();
   }, [seasonActiveTab, activeSeason]);
 
+  useEffect(() => {
+    if (!isSeasonActive) {
+      highlightsRef.current.forEach((containerEl) => {
+        gsap.to(containerEl, {
+          opacity: 0,
+          scale: 0.5,
+          duration: 1,
+          ease: "power2.out",
+        });
+      });
+    }
+  }, [isSeasonActive]);
+
   //todo lenis
 
   useEffect(() => {
-    if (
-      !scrollRef.current ||
-      activeSeason !== temporada ||
-      isHighlightActive
-    )
+    if (!scrollRef.current || activeSeason !== temporada || isHighlightActive)
       return;
 
     const localLenis = new Lenis({

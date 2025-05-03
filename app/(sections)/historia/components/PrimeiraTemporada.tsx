@@ -19,7 +19,9 @@ gsap.registerPlugin(ScrollToPlugin);
 
 const PrimeiraTemporada = () => {
   const firstSeasonContainerRef = useRef<HTMLDivElement>(null);
+  const firstSeasonContentRef = useRef<HTMLDivElement>(null);
   const activeEpisodeRef = useRef<HTMLDivElement[]>([]);
+  const tl = useRef<gsap.core.Timeline | null>(null);
 
   const [firstSeasonActiveTab, setFirstSeasonActiveTab] = useState("episódios");
   const [activeSeason, setActiveSeason] = useState("null");
@@ -31,6 +33,8 @@ const PrimeiraTemporada = () => {
   const [activeEpisode, setActiveEpisode] = useState(0);
   const [prevIndexClicked, setPrevIndexClicked] = useState(0);
   const [temporada, setTemporada] = useState("");
+
+  const currentSeason = "Temporada_1";
 
   const { isSeasonActive, setIsSeasonActive } = useMenu();
 
@@ -71,7 +75,7 @@ const PrimeiraTemporada = () => {
 
     window.addEventListener("resize", () => {
       target!.scrollIntoView({ behavior: "instant", block: "start" });
-    })
+    });
 
     return () => {
       window.removeEventListener("resize", () => {
@@ -95,14 +99,41 @@ const PrimeiraTemporada = () => {
     };
   }, [isSeasonActive]);
 
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      tl.current = gsap
+        .timeline({
+          paused: true,
+          defaults: {
+            duration: 0.6,
+            ease: "power2.out",
+          },
+        })
+        .set(firstSeasonContentRef.current, {
+          clipPath: "polygon(30% 30%, 70% 35%, 70% 75%, 30% 70%)",
+        })
+        .to(firstSeasonContentRef.current, {
+          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+        });
+    }, firstSeasonContainerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    if (isSeasonActive && currentSeason === temporada) {
+      tl.current?.play();
+    } else {
+      tl.current?.reverse();
+    }
+  }, [isSeasonActive, temporada]);
+
   return (
-    <div
-      ref={firstSeasonContainerRef}
-      onClick={firstSeasonClick}
-      className="h-[100dvh] w-full"
-    >
+    <div ref={firstSeasonContainerRef} className="h-[100dvh] w-full">
       <div
-        className={`size-full relative flex flex-col items-center justify-between bg-black-lighter ${
+        onClick={firstSeasonClick}
+        ref={firstSeasonContentRef}
+        className={`size-full relative flex flex-col items-center justify-between bg-black-lighter season-clip-path ${
           isSeasonActive ? "z-[101]" : ""
         }`}
       >
@@ -119,6 +150,8 @@ const PrimeiraTemporada = () => {
           setActiveSeason={setActiveSeason}
           isHighlightActive={isHighlightActive}
           activeSeason={activeSeason}
+          isSeasonActive={isSeasonActive}
+          setTemporada={setTemporada}
           temporada={temporada}
         />
         {firstSeasonActiveTab === "episódios" && (
@@ -137,6 +170,7 @@ const PrimeiraTemporada = () => {
               prevIndexClicked={prevIndexClicked}
               setPrevIndexClicked={setPrevIndexClicked}
               activeEpisodeRef={activeEpisodeRef}
+              isSeasonActive={isSeasonActive}
               temporada={temporada}
             />
             <Episodes
@@ -163,6 +197,7 @@ const PrimeiraTemporada = () => {
               setActiveHighlight={setActiveHighlight}
               isTransitioning={isTransitioning}
               setIsTransitioning={setIsTransitioning}
+              isSeasonActive={isSeasonActive}
               temporada={temporada}
             />
           </div>
