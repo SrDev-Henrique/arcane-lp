@@ -19,7 +19,7 @@ interface TabsProps {
   setActiveEpisode: (activeEpisode: number) => void;
   setIsEpisodeClicked: (isEpisodeClicked: boolean) => void;
   setActiveSeason: (activeSeason: string) => void;
-  isHighlightActive: boolean;
+  isHighlightActive?: boolean;
   activeSeason: string;
   temporada: string;
 }
@@ -52,6 +52,7 @@ const Nav = ({
         !buttonsContainerRef.current
       )
         return;
+      
       gsap.to(navContainerRef.current, {
         scale: 1,
         opacity: 1,
@@ -153,7 +154,7 @@ const Nav = ({
             textClass="text-xs font-lora font-semibold"
             onClick={() => {
               setIsSeasonActive(false);
-              setActiveSeason("a");
+              setActiveSeason("null");
             }}
           />
         </div>

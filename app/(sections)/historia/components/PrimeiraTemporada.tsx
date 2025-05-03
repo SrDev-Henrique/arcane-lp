@@ -21,8 +21,8 @@ const PrimeiraTemporada = () => {
   const firstSeasonContainerRef = useRef<HTMLDivElement>(null);
   const activeEpisodeRef = useRef<HTMLDivElement[]>([]);
 
-  const [firstSeasonActiveTab, setfirstSeasonActiveTab] = useState("episódios");
-  const [activeSeason, setActiveSeason] = useState("");
+  const [firstSeasonActiveTab, setFirstSeasonActiveTab] = useState("episódios");
+  const [activeSeason, setActiveSeason] = useState("null");
   const [isEpisodeActive, setIsEpisodeActive] = useState(false);
   const [isHighlightActive, setIsHighlightActive] = useState(false);
   const [isEpisodeClicked, setIsEpisodeClicked] = useState(false);
@@ -30,6 +30,7 @@ const PrimeiraTemporada = () => {
   const [activeHighlight, setActiveHighlight] = useState(0);
   const [activeEpisode, setActiveEpisode] = useState(0);
   const [prevIndexClicked, setPrevIndexClicked] = useState(0);
+  const [temporada, setTemporada] = useState("");
 
   const { isSeasonActive, setIsSeasonActive } = useMenu();
 
@@ -56,6 +57,8 @@ const PrimeiraTemporada = () => {
     if (isSeasonActive) return;
     const target = firstSeasonContainerRef.current;
     setIsSeasonActive(true);
+    setTemporada("Temporada_1");
+    setFirstSeasonActiveTab("episódios");
     target!.scrollIntoView({ behavior: "smooth", block: "start" });
     setTimeout(() => {
       setActiveSeason("Temporada_1");
@@ -63,7 +66,7 @@ const PrimeiraTemporada = () => {
   };
 
   useEffect(() => {
-    if (activeSeason !== "Temporada_1") return;
+    if (activeSeason !== temporada) return;
     const target = firstSeasonContainerRef.current;
 
     window.addEventListener("resize", () => {
@@ -75,7 +78,7 @@ const PrimeiraTemporada = () => {
         target!.scrollIntoView({ behavior: "instant", block: "start" });
       });
     };
-  }, [activeSeason]);
+  }, [activeSeason, temporada]);
 
   useEffect(() => {
     const el = document.body;
@@ -106,7 +109,7 @@ const PrimeiraTemporada = () => {
         <Nav
           navItems={firstNavTabs}
           activeTab={firstSeasonActiveTab}
-          setActiveTab={setfirstSeasonActiveTab}
+          setActiveTab={setFirstSeasonActiveTab}
           isEpisodeActive={isEpisodeActive}
           setIsEpisodeActive={setIsEpisodeActive}
           isTransitioning={isTransitioning}
@@ -116,14 +119,14 @@ const PrimeiraTemporada = () => {
           setActiveSeason={setActiveSeason}
           isHighlightActive={isHighlightActive}
           activeSeason={activeSeason}
-          temporada="Temporada_1"
+          temporada={temporada}
         />
         {firstSeasonActiveTab === "episódios" && (
           <div className="absolute top-0 inset-0">
             <EpisodesList
               episodes={episodes}
               setIsEpisodeActive={setIsEpisodeActive}
-              firstSeasonActiveTab={firstSeasonActiveTab}
+              activeTab={firstSeasonActiveTab}
               activeEpisode={activeEpisode}
               setActiveEpisode={setActiveEpisode}
               isEpisodeClicked={isEpisodeClicked}
@@ -134,7 +137,7 @@ const PrimeiraTemporada = () => {
               prevIndexClicked={prevIndexClicked}
               setPrevIndexClicked={setPrevIndexClicked}
               activeEpisodeRef={activeEpisodeRef}
-              temporada="Temporada_1"
+              temporada={temporada}
             />
             <Episodes
               subject={seasons.firstSeason}
@@ -144,7 +147,7 @@ const PrimeiraTemporada = () => {
               isEpisodeActive={isEpisodeActive}
               prevIndexClicked={prevIndexClicked}
               activeEpisodeRef={activeEpisodeRef}
-              temporada="Temporada_1"
+              temporada={temporada}
             />
           </div>
         )}
@@ -153,14 +156,14 @@ const PrimeiraTemporada = () => {
             <HighlightsList
               highlights={highlights}
               activeSeason={activeSeason}
-              firstSeasonActiveTab={firstSeasonActiveTab}
+              seasonActiveTab={firstSeasonActiveTab}
               isHighlightActive={isHighlightActive}
               setIsHighlightActive={setIsHighlightActive}
               activeHighlight={activeHighlight}
               setActiveHighlight={setActiveHighlight}
               isTransitioning={isTransitioning}
               setIsTransitioning={setIsTransitioning}
-              temporada="Temporada_1"
+              temporada={temporada}
             />
           </div>
         )}

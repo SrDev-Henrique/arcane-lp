@@ -14,7 +14,7 @@ interface EpisodesItems {
 
 interface EpisodesListProps {
   episodes: EpisodesItems[];
-  firstSeasonActiveTab: string;
+  activeTab: string;
   setIsEpisodeActive: (isEpisodeActive: boolean) => void;
   activeEpisode: number;
   setActiveEpisode: (activeEpisode: number) => void;
@@ -32,7 +32,7 @@ interface EpisodesListProps {
 const EpisodesList = ({
   episodes,
   setIsEpisodeActive,
-  firstSeasonActiveTab,
+  activeTab,
   activeEpisode,
   setActiveEpisode,
   isEpisodeClicked,
@@ -108,7 +108,7 @@ const EpisodesList = ({
 
   useEffect(() => {
     const checkMobile = () => {
-      if (window.innerWidth <= 768 && activeSeason === "Temporada_1") {
+      if (window.innerWidth <= 768 && activeSeason === temporada) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -122,16 +122,12 @@ const EpisodesList = ({
     return () => {
       window.removeEventListener("resize", checkMobile);
     };
-  }, [activeSeason]);
+  }, [activeSeason, temporada]);
 
   //todo lenis
 
   useEffect(() => {
-    if (
-      !scrollRef.current ||
-      activeSeason !== "Temporada_1" ||
-      activeEpisode > 0
-    )
+    if (!scrollRef.current || activeSeason !== temporada || activeEpisode > 0)
       return;
 
     const localLenis = new Lenis({
@@ -154,13 +150,13 @@ const EpisodesList = ({
       localLenis.destroy();
       lenisRef.current = null;
     };
-  }, [activeEpisode, activeSeason]);
+  }, [activeEpisode, activeSeason, temporada]);
 
   //todo animações
 
   useEffect(() => {
     const context = gsap.context(() => {
-      if (firstSeasonActiveTab !== "episódios") return;
+      if (activeTab !== "episódios" || activeSeason !== temporada) return;
       imageContainerRef.current.forEach((containerEl) => {
         gsap.to(containerEl, {
           opacity: 1,
@@ -174,7 +170,7 @@ const EpisodesList = ({
     }, scrollRef);
 
     return () => context.revert();
-  }, [firstSeasonActiveTab, activeSeason]);
+  }, [activeTab, activeSeason, temporada]);
 
   useEffect(() => {
     clickedTl.current = gsap.timeline({

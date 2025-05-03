@@ -23,7 +23,7 @@ interface HighlightsItems {
 interface HighlightsListProps {
   highlights: HighlightsItems[];
   activeSeason: string;
-  firstSeasonActiveTab: string;
+  seasonActiveTab: string;
   isHighlightActive: boolean;
   setIsHighlightActive: (isHighlightActive: boolean) => void;
   activeHighlight: number;
@@ -36,7 +36,7 @@ interface HighlightsListProps {
 const HighlightsList = ({
   highlights,
   activeSeason,
-  firstSeasonActiveTab,
+  seasonActiveTab,
   isHighlightActive,
   setIsHighlightActive,
   activeHighlight,
@@ -73,6 +73,26 @@ const HighlightsList = ({
     }, 600);
   };
 
+  useEffect(() => {
+    const scrollIntoView = () => {
+      const idx = highlights.findIndex((h) => h.id === activeHighlight);
+      if (idx === 0 && window.innerWidth <= 1200) return;
+
+      const target = highlightsRef.current[idx];
+      target!.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+    }
+
+    window.addEventListener("resize", scrollIntoView);
+
+    return () => {
+      window.removeEventListener("resize", scrollIntoView);
+    };
+  }, [activeHighlight, highlights]);
+
   //todo animações
 
   useEffect(() => {
@@ -94,7 +114,7 @@ const HighlightsList = ({
             ease: "power2.inOut",
           },
           onComplete: () => {
-            if (idx === 0) return;
+            if (idx === 0 && window.innerWidth <= 1200) return;
             target.scrollIntoView({
               behavior: "smooth",
               block: "center",
@@ -159,7 +179,7 @@ const HighlightsList = ({
 
   useEffect(() => {
     const context = gsap.context(() => {
-      if (firstSeasonActiveTab !== "highlights") return;
+      if (seasonActiveTab !== "highlights") return;
       highlightsRef.current.forEach((containerEl) => {
         gsap.to(containerEl, {
           opacity: 1,
@@ -173,14 +193,14 @@ const HighlightsList = ({
     }, scrollRef);
 
     return () => context.revert();
-  }, [firstSeasonActiveTab, activeSeason]);
+  }, [seasonActiveTab, activeSeason]);
 
   //todo lenis
 
   useEffect(() => {
     if (
       !scrollRef.current ||
-      activeSeason !== "Temporada_1" ||
+      activeSeason !== temporada ||
       isHighlightActive
     )
       return;
@@ -205,27 +225,29 @@ const HighlightsList = ({
       localLenis.destroy();
       lenisRef.current = null;
     };
-  }, [activeSeason, isHighlightActive]);
+  }, [activeSeason, isHighlightActive, temporada]);
 
   if (activeSeason === temporada)
     return (
       <div
         ref={scrollRef}
-        className="size-full overflow-y-auto flex flex-col items-center gap-32 md:gap-32 episode-scroll pt-32 pb-[60dvh]"
+        className="size-full overflow-y-auto flex flex-col items-center gap-32 episode-scroll pt-32 pb-[60dvh] min-h-screen"
       >
         {highlights.map((highlight, index) => (
           <div
             ref={(el) => addToHighlightsRefs(el, index)}
             key={highlight.id}
             onClick={() => handleHighlightClick(highlight.id)}
-            className="w-[88svw] aspect-[15/5] h-auto relative opacity-0 translate-y-full scale-50 cursor-pointer group"
+            className="w-[88svw] h-auto relative opacity-0 translate-y-full scale-50 cursor-pointer group"
           >
             <div className="size-full relative">
               <video
                 ref={addToVideoRefs}
                 controls
-                className="size-full object-cover object-center opacity-0 rounded-2xl highlight-video"
+                className="size-full aspect-[15/7] object-cover object-center opacity-0 rounded-2xl highlight-video max-h-[695.138px]"
                 src={`${highlight.src}`}
+                poster={highlight.image}
+                preload="none"
               />
             </div>
             <div className="absolute inset-0 opacity-100 highlight-info">
@@ -247,7 +269,7 @@ const HighlightsList = ({
                 </div>
                 <div className="absolute bottom-2 lg:bottom-8 right-2 lg:right-8 w-fit p-2 rounded-xl bg-arcane-white">
                   <p className="font-lora text-black-dark text-xs lg:text-base">
-                    Presente no:{" "}
+                    Cena do:{" "}
                     <span className="font-bold">{highlight.episode}</span>
                   </p>
                 </div>
@@ -267,9 +289,9 @@ const HighlightsList = ({
                   setActiveHighlight(0);
                 }, 600);
               }}
-              className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 flex-center w-10 aspect-square rounded-full filter backdrop-blur-lg backdrop-brightness-75 cursor-pointer opacity-0 highlight-close pointer-events-none"
+              className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 flex-center w-10 3xl:w-16 aspect-square rounded-full filter backdrop-blur-lg backdrop-brightness-75 cursor-pointer opacity-0 highlight-close pointer-events-none"
             >
-              <GrClose className="text-neutral-light" />
+              <GrClose className="text-neutral-light 3xl:text-2xl" />
             </div>
           </div>
         ))}

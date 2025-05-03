@@ -146,6 +146,7 @@ export default {
       },
       screens: {
         "md-lg": "880px",
+        "3xl": "1600px",
       },
       transitionTimingFunction: {
         "in-out-expo": "cubic-bezier(0.1, 0.7, 0.1)",
