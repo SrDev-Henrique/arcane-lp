@@ -1,14 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import PrimeiraTemporada from "./PrimeiraTemporada";
 import SegundaTemporada from "./SegundaTemporada";
 
 const Temporadas = () => {
-  const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="min-h-[100dvh] w-screen bg-arcane-white flex flex-col gap-16">
+    <div className="min-h-[100dvh] w-scree flex flex-col bg-zaun-sageGreen">
       <div className="h-screen w-screen relative">
         <PrimeiraTemporada />
       </div>

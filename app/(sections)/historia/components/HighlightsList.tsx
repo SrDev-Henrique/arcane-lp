@@ -30,6 +30,8 @@ interface HighlightsListProps {
   setActiveHighlight: (highlighActive: number) => void;
   isTransitioning: boolean;
   setIsTransitioning: (isTransitioning: boolean) => void;
+  isFullScreen: boolean;
+  setIsFullScreen: (isFullScreen: boolean) => void;
   isSeasonActive: boolean;
   temporada: string;
 }
@@ -44,6 +46,8 @@ const HighlightsList = ({
   setActiveHighlight,
   isTransitioning,
   setIsTransitioning,
+  isFullScreen,
+  setIsFullScreen,
   isSeasonActive,
   temporada,
 }: HighlightsListProps) => {
@@ -78,7 +82,6 @@ const HighlightsList = ({
   useEffect(() => {
     const scrollIntoView = () => {
       const idx = highlights.findIndex((h) => h.id === activeHighlight);
-      if (idx === 0 && window.innerWidth <= 1200) return;
 
       const target = highlightsRef.current[idx];
       target!.scrollIntoView({
@@ -116,7 +119,6 @@ const HighlightsList = ({
             ease: "power2.inOut",
           },
           onComplete: () => {
-            if (idx === 0 && window.innerWidth <= 1200) return;
             target.scrollIntoView({
               behavior: "smooth",
               block: "center",
@@ -180,14 +182,25 @@ const HighlightsList = ({
   }, [isHighlightActive]);
 
   useEffect(() => {
+
+    const videos = videoRefs.current;
+    videos.forEach((video) => {
+      video.addEventListener("fullscreenchange", () => {
+        setIsFullScreen(!isFullScreen);;
+      });
+    })
+  }, [isFullScreen, setIsFullScreen]);
+
+  useEffect(() => {
     const context = gsap.context(() => {
-      if (seasonActiveTab !== "highlights") return;
+      if (seasonActiveTab !== "highlights" || activeSeason !== temporada)
+        return;
       highlightsRef.current.forEach((containerEl) => {
         gsap.to(containerEl, {
           opacity: 1,
           y: "0%",
           scale: 1,
-          duration: 0.6,
+          duration: 1,
           delay: 0.1,
           ease: "power2.out",
         });
@@ -195,19 +208,24 @@ const HighlightsList = ({
     }, scrollRef);
 
     return () => context.revert();
-  }, [seasonActiveTab, activeSeason]);
+  }, [seasonActiveTab, activeSeason, temporada]);
 
   useEffect(() => {
-    if (!isSeasonActive) {
-      highlightsRef.current.forEach((containerEl) => {
-        gsap.to(containerEl, {
-          opacity: 0,
-          scale: 0.5,
-          duration: 1,
-          ease: "power2.out",
+    const ctx = gsap.context(() => {
+      if (!isSeasonActive) {
+        highlightsRef.current.forEach((containerEl) => {
+          gsap.to(containerEl, {
+            opacity: 0,
+            scale: 0.5,
+            y: "30%",
+            duration: 1,
+            ease: "power2.out",
+          });
         });
-      });
-    }
+      }
+    }, scrollRef);
+
+    return () => ctx.revert();
   }, [isSeasonActive]);
 
   //todo lenis
@@ -242,7 +260,9 @@ const HighlightsList = ({
     return (
       <div
         ref={scrollRef}
-        className="size-full overflow-y-auto flex flex-col items-center gap-32 episode-scroll pt-32 pb-[60dvh] min-h-screen"
+        className={`size-full overflow-y-auto flex flex-col items-center gap-32 episode-scroll pb-[40dvh] min-h-screen transition-all duration-300 ${
+          activeHighlight === 1 ? "pt-72" : "pt-44"
+        }`}
       >
         {highlights.map((highlight, index) => (
           <div
@@ -255,7 +275,7 @@ const HighlightsList = ({
               <video
                 ref={addToVideoRefs}
                 controls
-                className="size-full aspect-[15/7] object-cover object-center opacity-0 rounded-2xl highlight-video max-h-[695.138px]"
+                className="size-full aspect-[15/7] 3xl:aspect-[16/7] object-cover object-center opacity-0 rounded-2xl highlight-video max-h-[695.138px] 3xl:max-h-[823.188px]"
                 src={`${highlight.src}`}
                 poster={highlight.image}
                 preload="none"
@@ -300,9 +320,9 @@ const HighlightsList = ({
                   setActiveHighlight(0);
                 }, 600);
               }}
-              className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 flex-center w-10 3xl:w-16 aspect-square rounded-full filter backdrop-blur-lg backdrop-brightness-75 cursor-pointer opacity-0 highlight-close pointer-events-none"
+              className="absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 flex-center w-10 aspect-square rounded-full filter backdrop-blur-lg backdrop-brightness-75 cursor-pointer opacity-0 highlight-close pointer-events-none"
             >
-              <GrClose className="text-neutral-light 3xl:text-2xl" />
+              <GrClose className="text-neutral-light 3xl:text-xl" />
             </div>
           </div>
         ))}

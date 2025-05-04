@@ -74,6 +74,9 @@ export default {
         blue: {
           light: "#b0e0e6",
         },
+        orange: {
+          DEFAULT: "#D6A77A",
+        },
         caitlyn: {
           DEFAULT: "#35637C",
           transparent: "#35637C99",

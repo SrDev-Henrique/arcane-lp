@@ -222,7 +222,8 @@ html.lenis body {
 }
 
 .season-clip-path {
-  clip-path: polygon(30% 30%, 70% 35%, 70% 75%, 30% 70%);
+  clip-path: polygon(20% 25%, 80% 30%, 80% 75%, 20% 70%);
+  perspective: 1000px;
 }
 
 .hidden-clip-path {
@@ -910,5 +911,8 @@ html.lenis body {
     padding-top: 50px;
     padding-bottom: 50px;
     height: 100dvh;
+  }
+  .season-button {
+    bottom: 14%;
   }
 }

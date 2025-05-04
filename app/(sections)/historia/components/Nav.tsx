@@ -157,13 +157,17 @@ const Nav = ({
             containerClass="flex-center w-fit bg-arcane-white p-3"
             textClass="text-xs font-lora font-semibold"
             onClick={() => {
+              if (isTransitioning) return;
               setIsSeasonActive(false);
               setIsEpisodeActive(false);
-              setActiveEpisode(0);
+              setIsEpisodeClicked(false);
+              setIsTransitioning(true);
               setTimeout(() => {
                 setActiveSeason("null");
                 setTemporada("noSeason");
-              }, 600);
+                setActiveEpisode(0);
+                setIsTransitioning(false);
+              }, 1200);
             }}
           />
         </div>

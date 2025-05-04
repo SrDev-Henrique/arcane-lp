@@ -6,6 +6,8 @@ import HighlightsList from "./HighlightsList";
 import EpisodesList from "./EpisodesList";
 import { useMenu } from "@/contexts/MenuContext";
 import gsap from "gsap";
+import Image from "next/image";
+import Button from "@/components/Button";
 
 const secondNavTabs = [
   { id: "episódios", label: "Episódios" },
@@ -15,16 +17,19 @@ const secondNavTabs = [
 const SegundaTemporada = () => {
   const secondSeasonContainerRef = useRef<HTMLDivElement>(null);
   const secondSeasonContentRef = useRef<HTMLDivElement>(null);
+  const itemRef = useRef<HTMLDivElement>(null);
   const activeEpisodeRef = useRef<HTMLDivElement[]>([]);
   const tl = useRef<gsap.core.Timeline | null>(null);
 
   const [secondSeasonActiveTab, setSecondSeasonActiveTab] =
     useState("episódios");
   const [activeSeason, setActiveSeason] = useState("null");
+  const [transformStyle, setTransformStyle] = useState("");
   const [isEpisodeActive, setIsEpisodeActive] = useState(false);
   const [isHighlightActive, setIsHighlightActive] = useState(false);
   const [isEpisodeClicked, setIsEpisodeClicked] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isFullScreen, setIsFullScreen] = useState(false);
   const [activeHighlight, setActiveHighlight] = useState(0);
   const [activeEpisode, setActiveEpisode] = useState(0);
   const [prevIndexClicked, setPrevIndexClicked] = useState(0);
@@ -54,20 +59,49 @@ const SegundaTemporada = () => {
   }
 
   const secondSeasonClick = () => {
-    if (isSeasonActive) return;
+    if (isSeasonActive || isTransitioning) return;
     const target = secondSeasonContainerRef.current;
     setIsSeasonActive(true);
-    setTemporada("Temporada_2")
+    setTemporada("Temporada_2");
     setSecondSeasonActiveTab("episódios");
+    setIsTransitioning(true);
     target!.scrollIntoView({ behavior: "smooth", block: "start" });
     setTimeout(() => {
       setActiveSeason("Temporada_2");
     }, 600);
   };
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!itemRef.current || isTransitioning) return;
+
+    const { left, top, width, height } =
+      itemRef.current.getBoundingClientRect();
+
+    const relativeX = (e.clientX - left) / width;
+    const relativeY = (e.clientY - top) / height;
+
+    const tiltY = relativeY * 30;
+    const tiltX = relativeX * 30; 
+
+    const baseCenter = "translate(-50%, -50%)";
+    const tilt = `perspective(1000px) translateX(${tiltX}px) translateY(${tiltY}px) scale3d(0.98, 0.98, 0.98)`;
+
+    setTransformStyle(`${baseCenter} ${tilt}`);
+  };
+  const handleMouseLeave = () => {
+    setTransformStyle("");
+  };
+
   useEffect(() => {
     if (activeSeason !== temporada) return;
     const target = secondSeasonContainerRef.current;
+
+    const { top, bottom } = target!.getBoundingClientRect();
+    if (top < window.innerHeight || bottom > window.innerHeight) {
+      setTimeout(() => {
+        target!.scrollIntoView({ behavior: "instant", block: "start" });
+      }, 200);
+    }
 
     window.addEventListener("resize", () => {
       target!.scrollIntoView({ behavior: "instant", block: "start" });
@@ -78,7 +112,7 @@ const SegundaTemporada = () => {
         target!.scrollIntoView({ behavior: "instant", block: "start" });
       });
     };
-  }, [activeSeason, temporada]);
+  }, [activeSeason, temporada, isFullScreen]);
 
   useEffect(() => {
     const el = document.body;
@@ -97,23 +131,78 @@ const SegundaTemporada = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      if (!secondSeasonContainerRef.current) return;
+      const firstMask = secondSeasonContainerRef.current.querySelector(
+        ".first-mask"
+      ) as HTMLDivElement;
+      const secondMask = secondSeasonContainerRef.current.querySelector(
+        ".second-mask"
+      ) as HTMLDivElement;
+      const maskText = secondSeasonContainerRef.current.querySelector(
+        ".mask-text"
+      ) as HTMLHeadingElement;
+      const maskImage = secondSeasonContainerRef.current.querySelector(
+        ".mask-image"
+      ) as HTMLImageElement;
       tl.current = gsap
         .timeline({
           paused: true,
           defaults: {
-            duration: 0.6,
-            ease: "power2.out",
+            duration: 1,
+            ease: "power2.inOut",
+          },
+          onComplete: () => {
+            setTimeout(() => {
+              setIsTransitioning(false);
+            }, 200);
           },
         })
         .set(secondSeasonContentRef.current, {
-          clipPath: "polygon(30% 30%, 70% 35%, 70% 75%, 30% 70%)",
+          clipPath: "polygon(20% 25%, 80% 30%, 80% 75%, 20% 70%)",
         })
         .to(secondSeasonContentRef.current, {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-        });
-    }, secondSeasonContainerRef)
+        })
+        .to(
+          maskImage,
+          {
+            width: "100%",
+            height: "100%",
+            opacity: 0,
+            duration: 0.6,
+          },
+          "<"
+        )
+        .to(
+          firstMask,
+          {
+            height: 0,
+            delay: 0.1,
+          },
+          "<"
+        )
+        .to(
+          secondMask,
+          {
+            height: 0,
+            delay: 0.1,
+          },
+          "<"
+        )
+        .to(
+          maskText,
+          {
+            opacity: 0,
+          },
+          "<"
+        );
+    }, secondSeasonContainerRef);
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      tl.current?.kill();
+      tl.current = null;
+    };
   }, []);
 
   useEffect(() => {
@@ -125,11 +214,15 @@ const SegundaTemporada = () => {
   }, [isSeasonActive, temporada]);
 
   return (
-    <div ref={secondSeasonContainerRef} className="h-[100dvh] w-full">
+    <div
+      ref={secondSeasonContainerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="h-[100dvh] w-full bg-orange"
+    >
       <div
-        onClick={secondSeasonClick}
         ref={secondSeasonContentRef}
-        className={`size-full relative flex flex-col items-center justify-between bg-black-lighter season-clip-path ${
+        className={`size-full relative flex flex-col items-center justify-between bg-black-lighter will-change-clip-path season-clip-path ${
           isSeasonActive ? "z-[101]" : ""
         }`}
       >
@@ -165,8 +258,8 @@ const SegundaTemporada = () => {
               activeSeason={activeSeason}
               prevIndexClicked={prevIndexClicked}
               setPrevIndexClicked={setPrevIndexClicked}
-              isSeasonActive={isSeasonActive}
               activeEpisodeRef={activeEpisodeRef}
+              isSeasonActive={isSeasonActive}
               temporada={temporada}
             />
             <Episodes
@@ -193,11 +286,44 @@ const SegundaTemporada = () => {
               setActiveHighlight={setActiveHighlight}
               isTransitioning={isTransitioning}
               setIsTransitioning={setIsTransitioning}
+              isFullScreen={isFullScreen}
+              setIsFullScreen={setIsFullScreen}
               isSeasonActive={isSeasonActive}
               temporada={temporada}
             />
           </div>
         )}
+        <div className="absolute inset-0 bg-netflix-dark second-mask mask-clip-path">
+          <div className="size-full bg-orange flex-center first-mask mask-clip-path relative">
+            <div
+              ref={itemRef}
+              style={{
+                transform: transformStyle,
+                transition: isTransitioning ? "none" : "all 0.3s ease-out",
+              }}
+              className="absolute-center w-[90%] h-[90%] mask-image will-change-transform"
+            >
+              <Image
+                alt="Temporada 2 Background"
+                src="/images/Temporadas/Temporada_2/episódio-6.webp"
+                width={1920}
+                height={1080}
+                className="size-full object-cover object-center"
+              />
+            </div>
+            <h1 className="text-black-dark text-2xl sm:text-4xl md:text-6xl uppercase mask-text font-lora font-semibold z-[2]">
+              Temporada 2
+            </h1>
+          </div>
+        </div>
+      </div>
+      <div className="absolute right-1/2 translate-x-1/2 bottom-[18%] w-fit season-button">
+        <Button
+          onClick={secondSeasonClick}
+          title="ver detalhes"
+          textClass="text-black-dark font-lora font-semibold text-base"
+          containerClass="flex-center p-2 border border-black-dark rounded-none"
+        />
       </div>
     </div>
   );

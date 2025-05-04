@@ -24,9 +24,9 @@ interface EpisodesListProps {
   setIsTransitioning: (isTransitioning: boolean) => void;
   prevIndexClicked: number;
   setPrevIndexClicked: (prevIndexClicked: number) => void;
-  isSeasonActive: boolean;
   activeEpisodeRef: React.RefObject<HTMLDivElement[]>;
   activeSeason: string;
+  isSeasonActive: boolean;
   temporada: string;
 }
 
@@ -43,8 +43,8 @@ const EpisodesList = ({
   prevIndexClicked,
   setPrevIndexClicked,
   activeEpisodeRef,
-  isSeasonActive,
   activeSeason,
+  isSeasonActive,
   temporada,
 }: EpisodesListProps) => {
   const [isMobile, setIsMobile] = useState(true);
@@ -172,20 +172,26 @@ const EpisodesList = ({
     }, scrollRef);
 
     return () => context.revert();
-  }, [activeTab, activeSeason, temporada]);
+  }, [activeTab, activeSeason, temporada, setIsTransitioning]);
 
   useEffect(() => {
-    if (!isSeasonActive) {
-      imageContainerRef.current.forEach((containerEl) => {
-        gsap.to(containerEl, {
-          opacity: 0,
-          scale: 0.5,
-          duration: 0.6,
-          ease: "power2.out",
+    const ctx = gsap.context(() => {
+      if (activeEpisode > 0) return;
+      if (!isSeasonActive) {
+        imageContainerRef.current.forEach((containerEl) => {
+          gsap.to(containerEl, {
+            opacity: 0,
+            y: "30%",
+            scale: 0.5,
+            duration: 1,
+            ease: "power2.inOut",
+          });
         });
-      });
-    }
-  }, [isSeasonActive]);
+      }
+    }, scrollRef);
+
+    return () => ctx.revert();
+  }, [isSeasonActive, activeEpisode]);
 
   useEffect(() => {
     clickedTl.current = gsap.timeline({
@@ -241,13 +247,13 @@ const EpisodesList = ({
           defaults: { duration: 0.6, ease: "power2.out" },
           onReverseComplete: () => {
             gsap.set(target, {
-              clearProps: "width, height, borderRadius",
+              clearProps: "width, height, maxWidth, maxHeight, borderRadius",
             });
           },
         })
         .set(target, {
-          width: "20vw",
-          height: "20vw",
+          width: "20dvw",
+          height: "20dvh",
           maxWidth: "100dvw",
           maxHeight: "100dvh",
           borderRadius: "0.5rem",
@@ -273,13 +279,13 @@ const EpisodesList = ({
           defaults: { duration: 0.6, ease: "power2.out" },
           onReverseComplete: () => {
             gsap.set(target, {
-              clearProps: "width, height, borderRadius",
+              clearProps: "width, height, maxWidth, maxHeight, borderRadius",
             });
           },
         })
         .set(target, {
-          width: "20vw",
-          height: "20vw",
+          width: "20dvw",
+          height: "20dvh",
           maxWidth: "100dvw",
           maxHeight: "100dvh",
           borderRadius: "0.5rem",
