@@ -80,10 +80,23 @@ const HighlightsList = ({
   };
 
   useEffect(() => {
-    const scrollIntoView = () => {
-      const idx = highlights.findIndex((h) => h.id === activeHighlight);
+    const idx = highlights.findIndex((h) => h.id === activeHighlight);
 
-      const target = highlightsRef.current[idx];
+    const target = highlightsRef.current[idx];
+
+    const videos = videoRefs.current;
+    videos.forEach((video) => {
+      video.addEventListener("fullscreenchange", () => {
+        setTimeout(() => {
+          target!.scrollIntoView({
+            behavior: "smooth",
+            block: "center",
+            inline: "center",
+          });
+        }, 350);
+      });
+    });
+    const scrollIntoView = () => {
       target!.scrollIntoView({
         behavior: "smooth",
         block: "center",
@@ -96,7 +109,7 @@ const HighlightsList = ({
     return () => {
       window.removeEventListener("resize", scrollIntoView);
     };
-  }, [activeHighlight, highlights]);
+  }, [activeHighlight, highlights, isFullScreen, setIsFullScreen]);
 
   //todo animações
 
