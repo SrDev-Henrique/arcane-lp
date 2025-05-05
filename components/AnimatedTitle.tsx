@@ -41,7 +41,7 @@ const AnimatedTitle: React.FC<AnimatedTitleProps> = ({
         stagger: 0.03,
         delay: delay,
       });
-    }, [containerRef]);
+    }, containerRef);
 
     return () => ctx.revert();
   }, [delay]);

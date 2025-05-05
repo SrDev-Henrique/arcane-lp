@@ -31,6 +31,8 @@ const About = ({
   const aboutRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const sobreRef = sectionRefs.current["Sobre"];
+
     const ctx = gsap.context(() => {
       if (!aboutRef.current) return;
 
@@ -49,7 +51,7 @@ const About = ({
           width: "100vw",
           borderRadius: 0,
         });
-    });
+    }, sobreRef);
 
     return () => ctx.revert();
   }, []);

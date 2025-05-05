@@ -141,7 +141,7 @@ const Menu = ({
           delay: 1.5,
         });
       });
-    });
+    }, menuRef);
 
     return () => ctx.revert();
   }, []);

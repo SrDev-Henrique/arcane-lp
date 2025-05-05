@@ -31,6 +31,8 @@ const Apresentacao = () => {
   };
 
   useEffect(() => {
+    const apresentacaoRef = sectionRefs.current["<b>z</b>aun-apresentação"];
+
     const ctx = gsap.context(() => {
       if (!apImageContainerRef.current) return;
 
@@ -96,9 +98,8 @@ const Apresentacao = () => {
           .to(image, {
             y: "-5%",
           });
-      })
-      
-    });
+      });
+    }, apresentacaoRef);
 
     return () => ctx.revert();
   }, []);

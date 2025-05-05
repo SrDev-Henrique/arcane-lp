@@ -140,7 +140,7 @@ const Intro = () => {
         scrub: true,
         invalidateOnRefresh: true,
       });
-    });
+    }, introContainerRef);
 
     return () => ctx.revert();
   }, []);

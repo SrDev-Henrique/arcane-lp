@@ -15,8 +15,9 @@ import { TransitionLink } from "@/components/TransitionLink";
 gsap.registerPlugin(ScrollTrigger);
 
 const Personagens = () => {
-
   useEffect(() => {
+    const personagensRef = sectionRefs.current["pilto<b>v</b>er-personagens"];
+
     const ctx = gsap.context(() => {
       gsap.set(".name-wrapper", {
         clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0 100%)",
@@ -165,7 +166,7 @@ const Personagens = () => {
         scrub: true,
         invalidateOnRefresh: true,
       });
-    });
+    }, personagensRef);
     return () => ctx.revert();
   }, []);
 

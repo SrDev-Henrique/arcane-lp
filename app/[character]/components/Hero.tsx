@@ -62,16 +62,6 @@ const Hero = ({
     return () => ctx.revert();
   }, [heroRef]);
 
-  useEffect(() => {
-    if (!heroRef.current) return;
-    
-    const cntx = gsap.context(() => {
-      
-    })
-
-    return () => cntx.revert();
-  })
-
   return (
     <section ref={heroRef} className="w-full h-[99dvh] flex-center">
       <div className="w-[95dvw] lg:w-[85dvw] max-w-[1920px] h-[90dvh] flex justify-end items-start relative">

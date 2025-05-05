@@ -36,7 +36,7 @@ const CharacterTitle = ({
             },
           }
         );
-      });
+      }, titleRef);
 
       return () => ctx.revert();
     }, [scrollStart]);

@@ -69,7 +69,7 @@ const Nav = ({
         delay: 0.2,
         ease: "power3.out",
       });
-    });
+    }, navContainerRef);
 
     return () => ctx.revert();
   }, [activeSeason, temporada]);

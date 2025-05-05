@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 const letters = ["A", "R", "C", "A", "N", "E"];
 
 const Intro = () => {
+  const introContainerRef = useRef<HTMLDivElement>(null);
     const firstLettersRef = useRef<HTMLHeadingElement[]>([]);
     const secondLettersRef = useRef<HTMLHeadingElement[]>([]);
 
@@ -24,24 +25,23 @@ const Intro = () => {
     useEffect(() => {
       const ctx = gsap.context(() => {
         const mm = gsap.matchMedia();
-        
+
         if (!firstLettersRef.current || !secondLettersRef.current) return;
 
         gsap.set([firstLettersRef.current, secondLettersRef.current], {
           y: 0,
         });
 
-        const tl = gsap
-          .timeline({
-            scrollTrigger: {
-              trigger: firstLettersRef.current,
-              start: "center center",
-              end: () => `+=${window.innerHeight * 0.6}`,
-              scrub: 1,
-              invalidateOnRefresh: true,
-            },
-          });
-        
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: firstLettersRef.current,
+            start: "center center",
+            end: () => `+=${window.innerHeight * 0.6}`,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
         mm.add("(min-width: 1024px)", () => {
           tl.to(firstLettersRef.current, {
             y: "75vh",
@@ -62,8 +62,8 @@ const Intro = () => {
             },
             "<"
           );
-        })
-          
+        });
+
         mm.add("(min-width: 640px) and (max-width: 1024px)", () => {
           tl.to(firstLettersRef.current, {
             y: "60vh",
@@ -85,7 +85,7 @@ const Intro = () => {
             "<"
           );
         });
-        
+
         mm.add("(max-width: 640px)", () => {
           tl.to(firstLettersRef.current, {
             y: "40vh",
@@ -94,8 +94,7 @@ const Intro = () => {
             stagger: {
               amount: -0.2,
             },
-          })
-          .to(
+          }).to(
             secondLettersRef.current,
             {
               y: "40vh",
@@ -107,14 +106,14 @@ const Intro = () => {
             },
             "<"
           );
-        })
-      });
+        });
+      }, introContainerRef);
 
       return () => ctx.revert();
     }, []);
 
   return (
-    <div className="min-h-[80dvh] w-screen relative bg-zaun-sageGreen">
+    <div ref={introContainerRef} className="min-h-[80dvh] w-screen relative bg-zaun-sageGreen">
       <div className="absolute h-[40dvh] sm:h-[60dvh] lg:h-[75dvh] w-full flex-center bg-black-dark z-[1] overflow-hidden">
         {letters.map((letter, index) => (
           <h1

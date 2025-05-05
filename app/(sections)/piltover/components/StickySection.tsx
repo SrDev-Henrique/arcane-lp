@@ -26,19 +26,21 @@ const StickyDiv = () => {
 
       gsap.set(stickyRef.current, {
         clipPath: "circle(0% at 50% 50%)",
-      })
+      });
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: stickyRef.current,
-          start: "top top",
-          end: () => "+=" + windowHeight,
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-      }).to(stickyRef.current, {
-        clipPath: "circle(100% at 50% 50%)",
-      })
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: stickyRef.current,
+            start: "top top",
+            end: () => "+=" + windowHeight,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        })
+        .to(stickyRef.current, {
+          clipPath: "circle(100% at 50% 50%)",
+        });
 
       const carrouselTl = gsap.timeline({
         scrollTrigger: {
@@ -67,7 +69,7 @@ const StickyDiv = () => {
         },
         "<"
       );
-    });
+    }, stickyRef);
     return () => ctx.revert();
   }, []);
 

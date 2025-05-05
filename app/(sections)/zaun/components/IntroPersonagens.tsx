@@ -14,44 +14,48 @@ const IntroPersonagens = () => {
 
   useEffect(() => {
       const ctx = gsap.context(() => {
-          gsap
-            .timeline({
-              scrollTrigger: {
-                trigger: charsIntroContainerRef.current,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true,
-                invalidateOnRefresh: true,
-              },
-            })
-            .to(".column-1", {
-              y: "15%",
-            })
-            .to(
-              ".column-2",
-              {
-                y: "10%",
-              },
-              "<"
-            )
-            .to(
-              ".column-3",
-              {
-                y: "5%",
-              },
-              "<"
-            )
-            .to(
-              ".column-4",
-              {
-                y: "7%",
-              },
-              "<"
-            )
-            .to(".column-5", {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: charsIntroContainerRef.current,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+              invalidateOnRefresh: true,
+            },
+          })
+          .to(".column-1", {
+            y: "15%",
+          })
+          .to(
+            ".column-2",
+            {
               y: "10%",
-            }, "<");
-      });
+            },
+            "<"
+          )
+          .to(
+            ".column-3",
+            {
+              y: "5%",
+            },
+            "<"
+          )
+          .to(
+            ".column-4",
+            {
+              y: "7%",
+            },
+            "<"
+          )
+          .to(
+            ".column-5",
+            {
+              y: "10%",
+            },
+            "<"
+          );
+      }, charsIntroContainerRef);
 
       return () => ctx.revert()
   }, []);

@@ -170,7 +170,7 @@ const HighlightsList = ({
           },
           "<"
         );
-    });
+    }, scrollRef);
 
     return () => ctx.revert();
   }, [activeHighlight, highlights]);

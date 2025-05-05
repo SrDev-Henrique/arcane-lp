@@ -29,7 +29,7 @@ const Historia = () => {
           toggleActions: "play none none reverse",
         },
       });
-    });
+    }, historiaSection);
 
     return () => ctx.revert();
   }, []);

@@ -67,8 +67,8 @@ const CharactersNavBar = memo(
             ease: "power1.out",
             delay: 1.5,
           });
-        })
-      })
+        });
+      }, charactersNavRef);
 
       return () => ctx.revert();
     }, [])
