@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,8 +13,8 @@ const Leave = () => {
   const firstLettersRef = useRef<HTMLParagraphElement>(null);
   const secondLettersRef = useRef<HTMLParagraphElement>(null);
 
-  useGSAP(
-    () => {
+  useEffect(() => {
+    const ctx = gsap.context(() => {
       if (!leaveContainerRef.current) return;
 
       const imageContainer = imageContainerRef.current;
@@ -52,20 +51,27 @@ const Leave = () => {
           },
           "<"
         )
-        .to(firstLetters, {
-          scale: 1,
-          transform: "translate(0%, 50%)",
-          delay: 0.05,
-        }, "<").to(secondLetters, {
-          scale: 1,
-          transform: "translate(0%, 50%)",
-        }, "<")
-    },
-    {
-      scope: leaveContainerRef,
-      revertOnUpdate: true,
-    }
-  );
+        .to(
+          firstLetters,
+          {
+            scale: 1,
+            transform: "translate(0%, 50%)",
+            delay: 0.05,
+          },
+          "<"
+        )
+        .to(
+          secondLetters,
+          {
+            scale: 1,
+            transform: "translate(0%, 50%)",
+          },
+          "<"
+        );
+    }, leaveContainerRef);
+
+    return () => ctx.revert();
+  }, [])
 
   return (
     <div
