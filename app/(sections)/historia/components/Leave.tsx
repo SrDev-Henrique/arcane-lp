@@ -104,7 +104,7 @@ const Leave = () => {
             style={{
               scale: 10,
               transformOrigin: "center",
-              transform: "translate(55%, 0%)",
+              transform: "translate(58%, 0%)",
             }}
             className="absolute bottom-1/2 translate-y-[50%] right-[7%] font-lora font-bold uppercase text-arcane-white text-[20vw] tracking-wider mix-blend-exclusion ms-24"
           >

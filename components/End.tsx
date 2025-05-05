@@ -36,9 +36,12 @@ const End = () => {
       className="h-[100dvh] w-screen bg-zaun-celadon flex-center relative"
       style={{ perspective: "1000px" }}
     >
-      <h2 className="absolute top-2 right-1/2 translate-x-1/2 font-general text-black-dark font-semibold text-sm uppercase md:text-[10px]">
-        the end
-      </h2>
+      <div className="absolute top-2 right-1/2 translate-x-1/2 flex-center flex-col gap-14">
+        <h2 className="font-general text-black-dark font-semibold text-sm uppercase md:text-[10px]">
+          the end
+        </h2>
+        <p className="font-lora-italic text-black-dark font-semibold uppercase">desenvolvido por</p>
+      </div>
       <div
         style={{
           transform: transformStyle,
