@@ -29,7 +29,7 @@ const Hero = () => {
   const divRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLDivElement>(null);
 
-  const getVideoSrc = (index: number) => `videos/Arcane-clip${index}.mp4`;
+  const getVideoSrc = (index: number) => `videos/clip-${index}.mp4`;
 
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
@@ -232,6 +232,11 @@ const Hero = () => {
                 playsInline
                 className="size-64 origin-center scale-150 object-cover object-center rounded-lg"
                 onLoadedData={handleVideoLoad}
+                poster={
+                  currentIndex === 1
+                    ? "/images/Temporadas/Temporada_2/episódio-7.webp"
+                    : ""
+                }
               />
             </div>
           </div>
@@ -244,6 +249,11 @@ const Hero = () => {
             id="current-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center filter brightness-75"
             onLoadedData={handleVideoLoad}
+            poster={
+              currentIndex === 2
+                ? "/images/Temporadas/Temporada_2/episódio-7.webp"
+                : ""
+            }
           />
           <video
             ref={fullSizeVideoRef}

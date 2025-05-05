@@ -162,7 +162,7 @@ const PrimeiraTemporada = () => {
           },
         })
         .set(firstSeasonContentRef.current, {
-          clipPath: "polygon(20% 25%, 80% 30%, 80% 75%, 20% 70%)",
+          clipPath: "polygon(20% 25%, 80% 30%, 80% 75%, 20% 75%)",
         })
         .to(firstSeasonContentRef.current, {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -222,7 +222,7 @@ const PrimeiraTemporada = () => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       ref={firstSeasonContainerRef}
-      className="h-[100dvh] w-full"
+      className="h-[100dvh] w-full bg-zaun-sageGreen"
     >
       <div
         ref={firstSeasonContentRef}

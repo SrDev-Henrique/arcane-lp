@@ -4,7 +4,7 @@ import SegundaTemporada from "./SegundaTemporada";
 const Temporadas = () => {
 
   return (
-    <div className="min-h-[100dvh] w-scree flex flex-col bg-zaun-sageGreen">
+    <div className="min-h-[100dvh] w-scree flex flex-col">
       <div className="h-screen w-screen relative">
         <PrimeiraTemporada />
       </div>

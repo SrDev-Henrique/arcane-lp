@@ -158,7 +158,7 @@ const SegundaTemporada = () => {
           },
         })
         .set(secondSeasonContentRef.current, {
-          clipPath: "polygon(20% 25%, 80% 30%, 80% 75%, 20% 70%)",
+          clipPath: "polygon(20% 25%, 80% 30%, 80% 75%, 20% 75%)",
         })
         .to(secondSeasonContentRef.current, {
           clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
@@ -218,7 +218,7 @@ const SegundaTemporada = () => {
       ref={secondSeasonContainerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="h-[100dvh] w-full bg-orange"
+      className="h-[100dvh] w-full bg-orange text-center"
     >
       <div
         ref={secondSeasonContentRef}
@@ -293,7 +293,7 @@ const SegundaTemporada = () => {
             />
           </div>
         )}
-        <div className="absolute inset-0 bg-netflix-dark second-mask mask-clip-path">
+        <div className="absolute inset-0 bg-accent-pink second-mask mask-clip-path">
           <div className="size-full bg-orange flex-center first-mask mask-clip-path relative">
             <div
               ref={itemRef}

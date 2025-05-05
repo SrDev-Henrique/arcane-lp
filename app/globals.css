@@ -222,7 +222,7 @@ html.lenis body {
 }
 
 .season-clip-path {
-  clip-path: polygon(20% 25%, 80% 30%, 80% 75%, 20% 70%);
+  clip-path: polygon(20% 25%, 80% 30%, 80% 75%, 20% 75%);
   perspective: 1000px;
 }
 
@@ -661,6 +661,15 @@ html.lenis body {
   max-width: 340px;
   max-height: 340px;
   border-radius: 0.5rem;
+}
+
+.this-is-arcane {
+  color: #FF4C4C;
+  background: linear-gradient(140deg, #FF6F61, #FF4C4C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-drop-shadow: 0 0 10px #FF4C4C;
+  background-clip: text;
 }
 
 /* From Uiverse.io by G4b413l */

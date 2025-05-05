@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 // const Piltover = dynamic(() => import("@/app/(sections)/piltover/page"));
 // const Zaun = dynamic(() => import("@/app/(sections)/zaun/page"));
 const Historia = dynamic(() => import("@/app/(sections)/historia/page"));
+const End = dynamic(() => import("@/components/End"));
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       {/* <Zaun /> */}
       <div className="h-[100dvh] bg-black-light"></div>
       <Historia />
+      <End />
     </main>
   );
 }
