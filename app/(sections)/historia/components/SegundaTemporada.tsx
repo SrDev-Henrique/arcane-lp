@@ -218,7 +218,7 @@ const SegundaTemporada = () => {
       ref={secondSeasonContainerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="h-[100dvh] w-full bg-orange text-center"
+      className="h-[100dvh] w-full bg-orange"
     >
       <div
         ref={secondSeasonContentRef}
