@@ -1,8 +1,42 @@
-'use client';
+"use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+
 const words = [{ content: "sr dev" }, { content: "henrique" }];
+
+const links = [
+  {
+    href: "https://github.com/SrDev-Henrique",
+    backgroundColor: "#0a0a0a",
+    textColor: "#F0F0F0",
+    color: "#c1c1ba",
+    icon: <FaGithub />,
+    label: "GitHub",
+  },
+  {
+    href: "https://www.instagram.com/hick.slv/",
+    backgroundColor: "#0a0a0a",
+    textColor: "#FF4C4C",
+    iconColor: "#FF4C4C",
+    color: "#c1c1ba",
+    icon: <FaInstagram />,
+    label: "instagram",
+  },
+  {
+    href: "mailto:halbuquerque2850@gmail.com?subject=Gostaria%20de%20montar%20um%20orçamento%20para%20um%20projeto",
+    backgroundColor: "#0a0a0a",
+    textColor: "#8f0b13",
+    iconColor: "#8f0b13",
+    color: "#c1c1ba",
+    icon: <MdOutlineEmail />,
+    label: "Email",
+  },
+];
 
 const End = () => {
   const wordsContainerRef = React.useRef<HTMLHeadingElement>(null);
@@ -40,7 +74,47 @@ const End = () => {
         <h2 className="font-general text-black-dark font-semibold text-sm uppercase md:text-[10px]">
           the end
         </h2>
-        <p className="font-lora-italic text-black-dark font-semibold uppercase">desenvolvido por</p>
+        <p className="font-lora-italic text-black-dark font-semibold uppercase">
+          desenvolvido por
+        </p>
+      </div>
+      <div className="absolute bottom-5 right-1/2 translate-x-1/2 w-[55%] flex items-center justify-between">
+        {links.map((link, index) => (
+          <Link
+            href={link.href}
+            target={"_blank"}
+            key={index}
+            className="w-fit rounded-lg relative end-link"
+          >
+            <button
+              style={{
+                backgroundColor: `${link.color}`,
+                color: `${link.backgroundColor}`,
+              }}
+              className="w-fit p-2 rounded-lg flex-center gap-2"
+            >
+              <p className="text-2xl">{link.icon}</p>
+              <p className="font-lora font-bold uppercase text-black-dark">
+                {link.label}
+              </p>
+            </button>
+            <button
+              style={{
+                backgroundColor: `${link.backgroundColor}`,
+                color: `${link.color}`,
+              }}
+              className="absolute-center w-fit border border-transparent p-2 rounded-lg flex-center gap-2 end-button"
+            >
+              <p style={{color: `${link.iconColor}`,}} className="text-2xl">{link.icon}</p>
+              <p
+                style={{ color: `${link.textColor}` }}
+                className="font-lora font-bold uppercase text-black-dark"
+              >
+                {link.label}
+              </p>
+            </button>
+          </Link>
+        ))}
       </div>
       <div
         style={{
@@ -50,7 +124,7 @@ const End = () => {
           willChange: "transform",
         }}
         ref={wordsContainerRef}
-        className="w-fit flex-center flex-col gap-12 lg:gap-0 this-is-arcane"
+        className="w-fit flex-center flex-col gap-12 lg:gap-0"
       >
         {words.map((word, index) => (
           <h4
