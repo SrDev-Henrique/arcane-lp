@@ -11,6 +11,7 @@ import { useMenu } from "@/contexts/MenuContext";
 import HighlightsList from "./HighlightsList";
 import Image from "next/image";
 import Button from "@/components/Button";
+import { sectionRefs } from "@/utils/sectionRefs";
 
 const firstNavTabs = [
   { id: "episódios", label: "Episódios" },
@@ -218,118 +219,125 @@ const PrimeiraTemporada = () => {
   }, [isSeasonActive, temporada]);
 
   return (
-    <div
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      ref={firstSeasonContainerRef}
+    <section
+      ref={(el) => {
+        if (el) sectionRefs.current["temp<b>o</b>radas-temporada 1"] = el as HTMLElement;
+      }}
       className="h-[100dvh] w-full bg-zaun-sageGreen"
     >
       <div
-        ref={firstSeasonContentRef}
-        className={`size-full relative flex flex-col items-center justify-between bg-black-lighter will-change-clip-path season-clip-path ${
-          isSeasonActive ? "z-[101]" : ""
-        }`}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        ref={firstSeasonContainerRef}
+        className="size-full"
       >
-        <Nav
-          navItems={firstNavTabs}
-          activeTab={firstSeasonActiveTab}
-          setActiveTab={setFirstSeasonActiveTab}
-          isEpisodeActive={isEpisodeActive}
-          setIsEpisodeActive={setIsEpisodeActive}
-          isTransitioning={isTransitioning}
-          setIsTransitioning={setIsTransitioning}
-          setIsEpisodeClicked={setIsEpisodeClicked}
-          setActiveEpisode={setActiveEpisode}
-          setActiveSeason={setActiveSeason}
-          isHighlightActive={isHighlightActive}
-          activeSeason={activeSeason}
-          isSeasonActive={isSeasonActive}
-          setTemporada={setTemporada}
-          temporada={temporada}
-        />
-        {firstSeasonActiveTab === "episódios" && (
-          <div className="absolute top-0 inset-0">
-            <EpisodesList
-              episodes={episodes}
-              setIsEpisodeActive={setIsEpisodeActive}
-              activeTab={firstSeasonActiveTab}
-              activeEpisode={activeEpisode}
-              setActiveEpisode={setActiveEpisode}
-              isEpisodeClicked={isEpisodeClicked}
-              setIsEpisodeClicked={setIsEpisodeClicked}
-              isTransitioning={isTransitioning}
-              setIsTransitioning={setIsTransitioning}
-              activeSeason={activeSeason}
-              prevIndexClicked={prevIndexClicked}
-              setPrevIndexClicked={setPrevIndexClicked}
-              activeEpisodeRef={activeEpisodeRef}
-              isSeasonActive={isSeasonActive}
-              temporada={temporada}
-            />
-            <Episodes
-              subject={seasons.firstSeason}
-              setActiveEpisode={setActiveEpisode}
-              activeEpisode={activeEpisode}
-              activeSeason={activeSeason}
-              isEpisodeActive={isEpisodeActive}
-              prevIndexClicked={prevIndexClicked}
-              activeEpisodeRef={activeEpisodeRef}
-              temporada={temporada}
-            />
-          </div>
-        )}
-        {firstSeasonActiveTab === "highlights" && (
-          <div className="absolute top-0 inset-0">
-            <HighlightsList
-              highlights={highlights}
-              activeSeason={activeSeason}
-              seasonActiveTab={firstSeasonActiveTab}
-              isHighlightActive={isHighlightActive}
-              setIsHighlightActive={setIsHighlightActive}
-              activeHighlight={activeHighlight}
-              setActiveHighlight={setActiveHighlight}
-              isTransitioning={isTransitioning}
-              setIsTransitioning={setIsTransitioning}
-              isFullScreen={isFullScreen}
-              setIsFullScreen={setIsFullScreen}
-              isSeasonActive={isSeasonActive}
-              temporada={temporada}
-            />
-          </div>
-        )}
-        <div className="absolute inset-0 bg-zaun-celadon second-mask mask-clip-path">
-          <div className="size-full bg-zaun-sageGreen flex-center first-mask mask-clip-path relative">
-            <div
-              ref={itemRef}
-              style={{
-                transform: transformStyle,
-                transition: isTransitioning ? "none" : "all 0.3s ease-out",
-              }}
-              className="absolute-center w-[90%] h-[90%] mask-image will-change-transform"
-            >
-              <Image
-                alt="Temporada 1 Background"
-                src="/images/Temporadas/Temporada_1/episódio-7.webp"
-                width={1920}
-                height={1080}
-                className="size-full object-cover object-center"
+        <div
+          ref={firstSeasonContentRef}
+          className={`size-full relative flex flex-col items-center justify-between bg-black-lighter will-change-clip-path season-clip-path ${
+            isSeasonActive ? "z-[101]" : ""
+          }`}
+        >
+          <Nav
+            navItems={firstNavTabs}
+            activeTab={firstSeasonActiveTab}
+            setActiveTab={setFirstSeasonActiveTab}
+            isEpisodeActive={isEpisodeActive}
+            setIsEpisodeActive={setIsEpisodeActive}
+            isTransitioning={isTransitioning}
+            setIsTransitioning={setIsTransitioning}
+            setIsEpisodeClicked={setIsEpisodeClicked}
+            setActiveEpisode={setActiveEpisode}
+            setActiveSeason={setActiveSeason}
+            isHighlightActive={isHighlightActive}
+            activeSeason={activeSeason}
+            isSeasonActive={isSeasonActive}
+            setTemporada={setTemporada}
+            temporada={temporada}
+          />
+          {firstSeasonActiveTab === "episódios" && (
+            <div className="absolute top-0 inset-0">
+              <EpisodesList
+                episodes={episodes}
+                setIsEpisodeActive={setIsEpisodeActive}
+                activeTab={firstSeasonActiveTab}
+                activeEpisode={activeEpisode}
+                setActiveEpisode={setActiveEpisode}
+                isEpisodeClicked={isEpisodeClicked}
+                setIsEpisodeClicked={setIsEpisodeClicked}
+                isTransitioning={isTransitioning}
+                setIsTransitioning={setIsTransitioning}
+                activeSeason={activeSeason}
+                prevIndexClicked={prevIndexClicked}
+                setPrevIndexClicked={setPrevIndexClicked}
+                activeEpisodeRef={activeEpisodeRef}
+                isSeasonActive={isSeasonActive}
+                temporada={temporada}
+              />
+              <Episodes
+                subject={seasons.firstSeason}
+                setActiveEpisode={setActiveEpisode}
+                activeEpisode={activeEpisode}
+                activeSeason={activeSeason}
+                isEpisodeActive={isEpisodeActive}
+                prevIndexClicked={prevIndexClicked}
+                activeEpisodeRef={activeEpisodeRef}
+                temporada={temporada}
               />
             </div>
-            <h1 className="text-black-dark text-2xl sm:text-4xl md:text-6xl uppercase mask-text font-lora font-semibold z-[2]">
-              Temporada 1
-            </h1>
+          )}
+          {firstSeasonActiveTab === "highlights" && (
+            <div className="absolute top-0 inset-0">
+              <HighlightsList
+                highlights={highlights}
+                activeSeason={activeSeason}
+                seasonActiveTab={firstSeasonActiveTab}
+                isHighlightActive={isHighlightActive}
+                setIsHighlightActive={setIsHighlightActive}
+                activeHighlight={activeHighlight}
+                setActiveHighlight={setActiveHighlight}
+                isTransitioning={isTransitioning}
+                setIsTransitioning={setIsTransitioning}
+                isFullScreen={isFullScreen}
+                setIsFullScreen={setIsFullScreen}
+                isSeasonActive={isSeasonActive}
+                temporada={temporada}
+              />
+            </div>
+          )}
+          <div className="absolute inset-0 bg-zaun-celadon second-mask mask-clip-path">
+            <div className="size-full bg-zaun-sageGreen flex-center first-mask mask-clip-path relative">
+              <div
+                ref={itemRef}
+                style={{
+                  transform: transformStyle,
+                  transition: isTransitioning ? "none" : "all 0.3s ease-out",
+                }}
+                className="absolute-center w-[90%] h-[90%] mask-image will-change-transform"
+              >
+                <Image
+                  alt="Temporada 1 Background"
+                  src="/images/Temporadas/Temporada_1/episódio-7.webp"
+                  width={1920}
+                  height={1080}
+                  className="size-full object-cover object-center"
+                />
+              </div>
+              <h1 className="text-black-dark text-2xl sm:text-4xl md:text-6xl uppercase mask-text font-lora font-semibold z-[2]">
+                Temporada 1
+              </h1>
+            </div>
           </div>
         </div>
+        <div className="absolute right-1/2 translate-x-1/2 bottom-[18%] w-fit season-button">
+          <Button
+            onClick={firstSeasonClick}
+            title="ver detalhes"
+            textClass="text-black-dark font-lora font-semibold text-base"
+            containerClass="flex-center p-2 border border-black-dark rounded-none"
+          />
+        </div>
       </div>
-      <div className="absolute right-1/2 translate-x-1/2 bottom-[18%] w-fit season-button">
-        <Button
-          onClick={firstSeasonClick}
-          title="ver detalhes"
-          textClass="text-black-dark font-lora font-semibold text-base"
-          containerClass="flex-center p-2 border border-black-dark rounded-none"
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 

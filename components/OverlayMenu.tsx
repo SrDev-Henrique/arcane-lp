@@ -23,8 +23,8 @@ const navitems = [
     conteudo: ["Apresentação", "História", "Personagens"],
   },
   {
-    title: "hist<b>o</b>ria",
-    conteudo: ["Temporada 1", "Temporada 2", "Teorias"],
+    title: "temp<b>o</b>radas",
+    conteudo: ["Temporada 1", "Temporada 2"],
   },
 ];
 
