@@ -107,7 +107,7 @@ const CharactersNavBar = memo(
       tl.current = gsap
         .timeline({
           paused: true,
-          defaults: { duration: 0.53, ease: "cubic-bezier(0.1, 0.7, 0.1)" },
+          defaults: { duration: 0.53, ease: "power1.inOut" },
         })
         .to(charactersNavRef.current, {
           width: "600px",
@@ -131,7 +131,7 @@ const CharactersNavBar = memo(
         tl.current = gsap
           .timeline({
             paused: true,
-            defaults: { duration: 0.53, ease: "cubic-bezier(0.1, 0.7, 0.1)" },
+            defaults: { duration: 0.53, ease: "power1.inOut" },
           })
           .to(charactersNavRef.current, {
             width: "95%",

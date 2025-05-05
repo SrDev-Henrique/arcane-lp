@@ -181,7 +181,7 @@ const Menu = ({
           paused: true,
           defaults: {
             duration: 0.53,
-            ease: "cubic-bezier(0.1, 0.7, 0.1)",
+            ease: "power1.inOut",
           },
         })
         .to(menuRef.current, {
@@ -238,7 +238,7 @@ const Menu = ({
           paused: true,
           defaults: {
             duration: 0.53,
-            ease: "cubic-bezier(0.1, 0.7, 0.1)",
+            ease: "power1.inOut",
           },
         })
         .to(menuRef.current, {
