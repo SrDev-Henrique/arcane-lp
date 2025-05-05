@@ -104,6 +104,7 @@ const StickyDiv = () => {
                   sizes={"(max-width: 250px)"}
                   style={{ objectFit: "cover" }}
                   className="rounded-lg"
+                  priority
                 />
               </div>
             ))}
