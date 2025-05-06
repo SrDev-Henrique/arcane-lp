@@ -1,6 +1,7 @@
 "use client";
 
-import { characters } from "@/data/Characters";
+import { CharacterData } from "../types/CharacterData";
+
 import { notFound } from "next/navigation";
 import Hero from "./components/Hero";
 import About from "./components/About";
