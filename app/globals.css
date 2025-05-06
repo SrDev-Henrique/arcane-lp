@@ -88,17 +88,17 @@ html.lenis body {
 
   @font-face {
     font-family: "cinzelDecorative-regular";
-    src: url("/fonts/cinzelDecorative-Regular.woff2") format("woff2");
+    src: url("/fonts/CinzelDecorative-Regular.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "cinzelDecorative-bold";
-    src: url("/fonts/cinzelDecorative-Bold.woff2") format("woff2");
+    src: url("/fonts/CinzelDecorative-Bold.woff2") format("woff2");
   }
 
   @font-face {
     font-family: "cinzelDecorative-black";
-    src: url("/fonts/cinzelDecorative-Black.woff2") format("woff2");
+    src: url("/fonts/CinzelDecorative-Black.woff2") format("woff2");
   }
 
   @font-face {
