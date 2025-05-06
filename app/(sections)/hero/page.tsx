@@ -29,7 +29,8 @@ const Hero = () => {
   const divRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLDivElement>(null);
 
-  const getVideoSrc = (index: number) => `videos/clip-${index}.mp4`;
+  const getVideoSrc = (index: number) =>
+    `https://d3v6dicq4pzaym.cloudfront.net/clip-${index}.mp4`;
 
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
