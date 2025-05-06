@@ -40,7 +40,15 @@ interface CharactersNavBarProps {
 }
 
 const CharactersNavBar = memo(
-  ({ color, secondaryColor, icon, name, lastName, playlist, theme }: CharactersNavBarProps) => {
+  ({
+    color,
+    secondaryColor,
+    icon,
+    name,
+    lastName,
+    playlist,
+    theme,
+  }: CharactersNavBarProps) => {
     const activeSection = useActiveSection();
 
     const [isCharNavVisible, setIsCharNavVisible] = useState(true);
@@ -71,7 +79,7 @@ const CharactersNavBar = memo(
       }, charactersNavRef);
 
       return () => ctx.revert();
-    }, [])
+    }, []);
 
     useEffect(() => {
       if (currentScrollY > lastScrollYRef.current) {
@@ -86,9 +94,7 @@ const CharactersNavBar = memo(
       if (isMenuOpen) {
         tl.current?.play();
       } else {
-        setTimeout(() => {
-          tl.current?.reverse();
-        }, 340);
+        tl.current?.reverse();
       }
     }, [isMenuOpen, isTransitioning]);
 

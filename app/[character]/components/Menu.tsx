@@ -78,7 +78,7 @@ const Menu = ({
   const upcomingAudioIndex = (currentIndex % totalSongs) + 1;
   const prevAudioIndex = currentIndex - 1 || totalSongs;
 
-  console.log(prevAudioIndex)
+  const isGif = playlist.some((item) => item.imgSrc.endsWith(".gif"));
 
   const { duration = 0 } = audioRef.current || {};
   const progressPercent = (currentTime / duration) * 100 || 0;
@@ -207,10 +207,6 @@ const Menu = ({
           buttonsRef.current,
           {
             opacity: 1,
-            stagger: {
-              amount: 0.4,
-            },
-            ease: "cubic-bezier(.15, 0, .333, 1)",
           },
           "<"
         )
@@ -218,7 +214,6 @@ const Menu = ({
           playlistHeadingRef.current,
           {
             y: 0,
-            ease: "cubic-bezier(.15, 0, .333, 1)",
           },
           "<"
         )
@@ -226,7 +221,6 @@ const Menu = ({
           playlistContainerRef.current,
           {
             opacity: 1,
-            ease: "cubic-bezier(.15, 0, .333, 1)",
           },
           "<"
         );
@@ -263,10 +257,6 @@ const Menu = ({
           buttonsRef.current,
           {
             opacity: 1,
-            stagger: {
-              amount: 0.4,
-            },
-            ease: "cubic-bezier(.15, 0, .333, 1)",
           },
           "<"
         )
@@ -274,7 +264,6 @@ const Menu = ({
           playlistHeadingRef.current,
           {
             y: 0,
-            ease: "cubic-bezier(.15, 0, .333, 1)",
           },
           "<"
         )
@@ -282,7 +271,6 @@ const Menu = ({
           playlistContainerRef.current,
           {
             opacity: 1,
-            ease: "cubic-bezier(.15, 0, .333, 1)",
           },
           "<"
         );
@@ -382,6 +370,7 @@ const Menu = ({
                       width={128}
                       height={128}
                       className="size-full object-cover rounded-full"
+                      unoptimized={isGif}
                     />
                   </div>
                 </div>
