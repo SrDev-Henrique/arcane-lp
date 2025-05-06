@@ -230,7 +230,6 @@ const Hero = () => {
                 src={getVideoSrc(upcomingVideoIndex)}
                 loop
                 muted
-                playsInline
                 className="size-64 origin-center scale-150 object-cover object-center rounded-lg"
                 onLoadedData={handleVideoLoad}
                 poster={
@@ -246,7 +245,6 @@ const Hero = () => {
             src={getVideoSrc(currentIndex)}
             loop
             muted
-            playsInline
             id="current-video"
             className="absolute-center invisible absolute z-20 size-64 object-cover object-center filter brightness-75"
             onLoadedData={handleVideoLoad}
