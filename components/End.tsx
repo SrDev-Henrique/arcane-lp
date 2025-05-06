@@ -78,43 +78,47 @@ const End = () => {
           desenvolvido por
         </p>
       </div>
-      <div className="absolute bottom-5 right-1/2 translate-x-1/2 w-[55%] flex items-center justify-between">
-        {links.map((link, index) => (
-          <Link
-            href={link.href}
-            target={"_blank"}
-            key={index}
-            className="w-fit rounded-lg relative end-link"
-          >
-            <button
-              style={{
-                backgroundColor: `${link.color}`,
-                color: `${link.backgroundColor}`,
-              }}
-              className="w-fit p-2 rounded-lg flex-center gap-2"
+      <div className="absolute bottom-5 right-1/2 translate-x-1/2 w-full flex-center">
+        <div className="w-[90%] max-w-[1080px] flex items-center justify-between">
+          {links.map((link, index) => (
+            <Link
+              href={link.href}
+              target={"_blank"}
+              key={index}
+              className="w-fit rounded-lg relative end-link"
             >
-              <p className="text-2xl">{link.icon}</p>
-              <p className="font-lora font-bold uppercase text-black-dark">
-                {link.label}
-              </p>
-            </button>
-            <button
-              style={{
-                backgroundColor: `${link.backgroundColor}`,
-                color: `${link.color}`,
-              }}
-              className="absolute-center w-fit border border-transparent p-2 rounded-lg flex-center gap-2 end-button"
-            >
-              <p style={{color: `${link.iconColor}`,}} className="text-2xl">{link.icon}</p>
-              <p
-                style={{ color: `${link.textColor}` }}
-                className="font-lora font-bold uppercase text-black-dark"
+              <button
+                style={{
+                  backgroundColor: `${link.color}`,
+                  color: `${link.backgroundColor}`,
+                }}
+                className="w-fit p-2 rounded-lg flex-center gap-2"
               >
-                {link.label}
-              </p>
-            </button>
-          </Link>
-        ))}
+                <p className="text-2xl">{link.icon}</p>
+                <p className="font-lora font-bold uppercase text-black-dark">
+                  {link.label}
+                </p>
+              </button>
+              <button
+                style={{
+                  backgroundColor: `${link.backgroundColor}`,
+                  color: `${link.color}`,
+                }}
+                className="absolute-center w-fit border border-transparent p-2 rounded-lg flex-center gap-2 end-button"
+              >
+                <p style={{ color: `${link.iconColor}` }} className="text-2xl">
+                  {link.icon}
+                </p>
+                <p
+                  style={{ color: `${link.textColor}` }}
+                  className="font-lora font-bold uppercase text-black-dark"
+                >
+                  {link.label}
+                </p>
+              </button>
+            </Link>
+          ))}
+        </div>
       </div>
       <div
         style={{
@@ -124,7 +128,7 @@ const End = () => {
           willChange: "transform",
         }}
         ref={wordsContainerRef}
-        className="w-fit flex-center flex-col gap-12 lg:gap-0"
+        className="w-fit flex-center flex-col gap-12 lg:gap-0 cursor-default"
       >
         {words.map((word, index) => (
           <h4
