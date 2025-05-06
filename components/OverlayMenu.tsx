@@ -164,11 +164,11 @@ const OverlayMenu = memo(() => {
 
   return (
     <div ref={overlayMenuRef} className="menu-nav flex-col md:flex-row">
-      <div className="flex flex-col pl-10 md:pl-0 gap-7 md:gap-8 h-full w-[100%] md:w-[30%] justify-center">
+      <div className="flex flex-col pl-10 md:pl-0 gap-7 md:gap-8 h-full w-[100%] md:w-[30%] justify-center overlay-menu-left">
         {navitems.map((item, index) => (
           <div key={item.title} className="flex w-full items-start">
             <div
-              className={`group flex cursor-pointer transition-brightness duration-300 ${
+              className={`group flex items-start cursor-pointer transition-brightness duration-300 ${
                 focusedTitle !== null && focusedTitle !== item.title
                   ? "filter brightness-50"
                   : ""
@@ -178,7 +178,7 @@ const OverlayMenu = memo(() => {
               <div className="flex flex-col">
                 <OverlayMenuTitle
                   title={item.title}
-                  containerClass={`px-5 md:px-10 overlay-menu-title special-font text-6xl lg:text-8xl transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
+                  containerClass={`px-5 md:px-10 overlay-menu-title special-font text-[3.10rem] sm:text-6xl lg:text-8xl transition-colors duration-300 md:group-hover:text-neutral-light tracking-wider ${
                     focusedTitle === item.title
                       ? "text-neutral-light"
                       : "text-blue-light"
@@ -218,7 +218,7 @@ const OverlayMenu = memo(() => {
                 )}
               </div>
               {item.conteudo && (
-                <div className="border-hsla icon w-[30px] h-[30px] flex-center rounded-full mt-2">
+                <div className="border-hsla icon w-[25px] h-[25px] sm:w-[30px] sm:h-[30px] flex-center rounded-full mt-4 sm:mt-2">
                   <TiArrowSortedDown
                     className={`overlay-menu-icon transform ${
                       openAccordion === item.title

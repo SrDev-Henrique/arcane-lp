@@ -888,8 +888,16 @@ html.lenis body {
   .menu-nav {
     flex-direction: row;
   }
+  .overlay-menu-left {
+    width: 90dvw;
+    margin-left: 70px;
+    z-index: 1001;
+  }
   .overlay-menu-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem!important;
+  }
+  .overlay-menu-icon {
+    margin-top: 0px;
   }
   .overlay-menu-content {
     font-size: 1.1rem;
