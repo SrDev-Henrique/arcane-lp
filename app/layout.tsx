@@ -2,10 +2,12 @@ import ClientSideScrollRestorer from "@/utils/ScrollRestoration";
 
 import { MenuProvider } from "@/contexts/MenuContext";
 
+import ConditionalNavbar from "@/components/ConditionalNavBar";
+import LenisProvider from "@/components/LenisProvider";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ConditionalNavbar from "@/components/ConditionalNavBar";
 import { Suspense } from "react";
 
 const geistSans = Geist({
@@ -43,8 +45,10 @@ export default function RootLayout({
         <Suspense>
           <ClientSideScrollRestorer />
           <MenuProvider>
-            <ConditionalNavbar />
-            {children}
+            <LenisProvider>
+              <ConditionalNavbar />
+              {children}
+            </LenisProvider>
           </MenuProvider>
         </Suspense>
       </body>

@@ -17,11 +17,19 @@ html, body, main, .episode-scroll {
   -ms-overflow-style: none;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   width: 100dvw;
   font-family: "General Sans", sans-serif;
   background-color: #000;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+main {
+  min-height: 100vh;
 }
 
 html.lenis,
