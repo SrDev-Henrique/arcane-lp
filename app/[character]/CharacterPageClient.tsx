@@ -11,15 +11,12 @@ import SecondSeason from "./components/SecondSeason";
 import Conclusion from "./components/Conclusion";
 import CharactersNavBar from "@/components/CharactersNavBar";
 
-interface CharacterPageClientProps {
-  character: string;
+interface Props {
+  characterKey: string;
+  data: CharacterData;
 }
 
-export default function CharacterPageClient({
-  character,
-}: CharacterPageClientProps) {
-  const data = characters[character as keyof typeof characters];
-
+export default function CharacterPageClient({ characterKey, data }: Props) {
   if (!data) {
     return notFound();
   }
@@ -36,7 +33,7 @@ export default function CharacterPageClient({
         theme={data.theme}
       />
       <Hero
-        key={character}
+        key={characterKey}
         heroImage={data.heroImage}
         name={data.name}
         lastName={data.lastName}
@@ -55,8 +52,7 @@ export default function CharacterPageClient({
       <Journey
         jornada={data.jornada}
         name={data.name}
-        color={data.color}
-      />
+        color={data.color} />
       <FirstSeason
         temporada1={data.temporada1}
         name={data.name}

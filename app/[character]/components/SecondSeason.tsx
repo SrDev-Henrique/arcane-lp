@@ -7,7 +7,7 @@ interface SecondSeasonItem {
 
 interface SecondSeasonData {
   title: string;
-  parte1: SecondSeasonItem[];
+  parte1?: SecondSeasonItem[];
   parte2?: SecondSeasonItem[];
   parte3?: SecondSeasonItem[];
   parte4?: SecondSeasonItem[];

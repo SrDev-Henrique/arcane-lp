@@ -7,9 +7,9 @@ interface FirstSeasonItem {
 
 interface FirstSeasonData {
   title: string;
-  parte1: FirstSeasonItem[];
-  parte2: FirstSeasonItem[];
-  parte3: FirstSeasonItem[];
+  parte1?: FirstSeasonItem[];
+  parte2?: FirstSeasonItem[];
+  parte3?: FirstSeasonItem[];
   parte4?: FirstSeasonItem[];
   parte5?: FirstSeasonItem[];
   parte6?: FirstSeasonItem[];

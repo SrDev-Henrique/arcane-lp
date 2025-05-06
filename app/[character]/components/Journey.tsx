@@ -7,8 +7,8 @@ interface JourneyItem {
 
 interface JourneyData {
   title: string;
-  parte1: JourneyItem[];
-  parte2: JourneyItem[];
+  parte1?: JourneyItem[];
+  parte2?: JourneyItem[];
   parte3?: JourneyItem[];
   parte4?: JourneyItem[];
   parte5?: JourneyItem[];
