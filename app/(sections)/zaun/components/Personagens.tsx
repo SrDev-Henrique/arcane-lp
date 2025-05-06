@@ -27,7 +27,6 @@ const Personagens = () => {
   };
 
   useEffect(() => {
-    const personagemRef = sectionRefs.current["<b>z</b>aun-personagens"];
 
     const ctx = gsap.context(() => {
       if (!mainContainerRef.current) return;
@@ -98,7 +97,7 @@ const Personagens = () => {
           rotate: 0,
         });
       });
-    }, personagemRef);
+    });
 
     return () => ctx.revert();
   }, [])

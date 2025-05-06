@@ -16,7 +16,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Personagens = () => {
   useEffect(() => {
-    const personagensRef = sectionRefs.current["pilto<b>v</b>er-personagens"];
 
     const ctx = gsap.context(() => {
       gsap.set(".name-wrapper", {
@@ -166,7 +165,7 @@ const Personagens = () => {
         scrub: true,
         invalidateOnRefresh: true,
       });
-    }, personagensRef);
+    });
     return () => ctx.revert();
   }, []);
 
