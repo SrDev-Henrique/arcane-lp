@@ -9,6 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useMenu } from "@/contexts/MenuContext";
 import { useGSAP } from "@gsap/react";
+import useDimension from "@/utils/UseDimension";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,6 +29,8 @@ const Hero = () => {
   const fullSizeVideoRef = useRef<HTMLVideoElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLDivElement>(null);
+
+  const { width } = useDimension();
 
   const getVideoSrc = (index: number) =>
     `https://d3v6dicq4pzaym.cloudfront.net/clip-${index}.mp4`;
@@ -89,7 +92,7 @@ const Hero = () => {
 
   useEffect(() => {
     const checkMobile = () => {
-      if (window.innerWidth <= 799) {
+      if (width! <= 799) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -101,7 +104,7 @@ const Hero = () => {
     return () => {
       window.removeEventListener("resize", checkMobile);
     };
-  }, []);
+  }, [width]);
 
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);

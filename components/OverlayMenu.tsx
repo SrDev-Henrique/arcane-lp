@@ -9,6 +9,7 @@ import Link from "next/link";
 import { sectionRefs } from "@/utils/sectionRefs";
 import OverlayMenuTitle from "./OverlayMenuTitle";
 import { useMenu } from "@/contexts/MenuContext";
+import useDimension from "@/utils/UseDimension";
 
 const navitems = [
   {
@@ -29,7 +30,9 @@ const navitems = [
 ];
 
 const OverlayMenu = memo(() => {
-  const isIphoneSE = window.innerWidth <= 340;
+  const { width } = useDimension();
+
+  const isIphoneSE = width! <= 340;
 
   const { isMenuOpen, setIsMenuOpen } = useMenu();
 

@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
 import Lenis from "lenis";
+import useDimension from "@/utils/UseDimension";
 
 interface EpisodesItems {
   id: number;
@@ -58,6 +59,8 @@ const EpisodesList = ({
   const clickedTl = useRef<gsap.core.Timeline | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
 
+  const { width } = useDimension();
+
   const total = 9;
 
   const addToTitleRefs = (el: HTMLHeadingElement | null, i: number) => {
@@ -110,7 +113,7 @@ const EpisodesList = ({
 
   useEffect(() => {
     const checkMobile = () => {
-      if (window.innerWidth <= 768 && activeSeason === temporada) {
+      if (width! <= 768 && activeSeason === temporada) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -124,7 +127,7 @@ const EpisodesList = ({
     return () => {
       window.removeEventListener("resize", checkMobile);
     };
-  }, [activeSeason, temporada]);
+  }, [activeSeason, temporada, width]);
 
   //todo lenis
 
