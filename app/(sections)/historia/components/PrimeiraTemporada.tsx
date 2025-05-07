@@ -105,7 +105,7 @@ const PrimeiraTemporada = () => {
     const target = firstSeasonContainerRef.current;
 
     const { top, bottom } = target!.getBoundingClientRect();
-    if (top < height || bottom > height) {
+    if (top < height! || bottom > height!) {
       setTimeout(() => {
         target!.scrollIntoView({ behavior: "instant", block: "start" });
       }, 200);

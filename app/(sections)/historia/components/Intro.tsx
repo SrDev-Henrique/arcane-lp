@@ -38,7 +38,7 @@ const Intro = () => {
           scrollTrigger: {
             trigger: firstLettersRef.current,
             start: "center center",
-            end: () => `+=${height * 0.6}`,
+            end: () => `+=${height! * 0.6}`,
             scrub: 1,
             invalidateOnRefresh: true,
           },

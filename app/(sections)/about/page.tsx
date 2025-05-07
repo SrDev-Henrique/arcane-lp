@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import AnimatedTitle from "@/components/AnimatedTitle";
@@ -13,7 +12,7 @@ const About: React.FC = () => {
   const clipRef = useRef<HTMLDivElement>(null);
   const isFullWidth = useRef(false);
 
-  useGSAP(() => {
+  useEffect(() => {
     const clipAnimation = gsap.timeline({
       scrollTrigger: {
         trigger: "#clip",
@@ -77,7 +76,7 @@ const About: React.FC = () => {
     return () => {
       clipElement.removeEventListener("mousemove", handleMouseMove);
     };
-  });
+  }, []);
 
   return (
     <div className="min-h-screen w-screen bg-piltover-light overflow-x-hidden">

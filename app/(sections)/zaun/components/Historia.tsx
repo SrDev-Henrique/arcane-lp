@@ -35,7 +35,7 @@ const Historia = () => {
           scrollTrigger: {
             trigger: ".story-container",
             start: "top top",
-            end: () => `+=${height}`,
+            end: () => `+=${height!}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -52,8 +52,8 @@ const Historia = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".story-container",
-              start: () => `top -${height}`,
-              end: () => `+=${height * 8}`,
+              start: () => `top -${height!}`,
+              end: () => `+=${height! * 8}`,
               scrub: true,
               invalidateOnRefresh: true,
             },
@@ -77,8 +77,8 @@ const Historia = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".story-container",
-              start: () => `top -${height}`,
-              end: () => `+=${height * 8}`,
+              start: () => `top -${height!}`,
+              end: () => `+=${height! * 8}`,
               scrub: true,
               invalidateOnRefresh: true,
             },
@@ -102,7 +102,7 @@ const Historia = () => {
         scrub: true,
         pin: true,
         start: "top top",
-        end: () => `+=${height * 9}`,
+        end: () => `+=${height! * 9}`,
         invalidateOnRefresh: true,
       });
     });

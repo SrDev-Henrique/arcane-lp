@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const DivPersonagens = () => {
   const { height } = useDimension();
   useEffect(() => {
-    const innerHeight = height;
+    const innerHeight = height!;
 
     const ctx = gsap.context(() => {
       gsap.set(".piltover-personagens", {

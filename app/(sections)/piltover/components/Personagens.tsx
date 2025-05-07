@@ -31,8 +31,8 @@ const Personagens = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".slider-wrapper",
-              start: () => `top -${height * i}`,
-              end: () => `+=${height}`,
+              start: () => `top -${height! * i}`,
+              end: () => `+=${height!}`,
               scrub: true,
               toggleActions: "play none reverse none",
               invalidateOnRefresh: true,
@@ -63,8 +63,8 @@ const Personagens = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".slider-wrapper",
-              start: () => `top -${height * i}`,
-              end: () => `+=${height}`,
+              start: () => `top -${height! * i}`,
+              end: () => `+=${height!}`,
               scrub: true,
               toggleActions: "play none reverse none",
               invalidateOnRefresh: true,
@@ -99,8 +99,8 @@ const Personagens = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".slider-wrapper",
-              start: () => `top -${i * height}`,
-              end: () => `+=${height}`,
+              start: () => `top -${i * height!}`,
+              end: () => `+=${height!}`,
               scrub: true,
               toggleActions: "play none reverse none",
               invalidateOnRefresh: true,
@@ -135,8 +135,8 @@ const Personagens = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".slider-wrapper",
-              start: () => `top -${height * i + 0.5}`,
-              end: () => `+=${height}`,
+              start: () => `top -${height! * i + 0.5}`,
+              end: () => `+=${height!}`,
               scrub: true,
               invalidateOnRefresh: true,
             },
@@ -162,7 +162,7 @@ const Personagens = () => {
       ScrollTrigger.create({
         trigger: ".slider-wrapper",
         start: "top top",
-        end: `+=${height * 5}`,
+        end: `+=${height! * 5}`,
         pin: true,
         scrub: true,
         invalidateOnRefresh: true,

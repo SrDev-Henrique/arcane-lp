@@ -17,7 +17,7 @@ const StickyDiv = () => {
   const { height } = useDimension();
 
   useEffect(() => {
-    const windowHeight = height;
+    const windowHeight = height!;
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: stickyRef.current,

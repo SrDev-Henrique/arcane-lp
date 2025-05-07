@@ -32,7 +32,7 @@ const Leave = () => {
         scrollTrigger: {
           trigger: leaveContainerRef.current,
           start: "top top",
-          end: () => `+=${height * 1.5}`,
+          end: () => `+=${height! * 1.5}`,
           scrub: 1,
           pin: true,
           pinSpacing: true,

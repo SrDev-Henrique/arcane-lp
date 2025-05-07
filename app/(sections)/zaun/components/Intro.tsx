@@ -32,7 +32,7 @@ const Intro = () => {
           scrollTrigger: {
             trigger: introContainerRef.current,
             start: "top top",
-            end: () => `+=${height}`,
+            end: () => `+=${height!}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -47,8 +47,8 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${height}`,
-            end: () => `+=${height * 2}`,
+            start: () => `top -${height!}`,
+            end: () => `+=${height! * 2}`,
             scrub: true,
             invalidateOnRefresh: true,
             onEnter: () => {
@@ -72,8 +72,8 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${height * 2}`,
-            end: () => `+=${height}`,
+            start: () => `top -${height! * 2}`,
+            end: () => `+=${height!}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -99,8 +99,8 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${height * 3}`,
-            end: () => `+=${height}`,
+            start: () => `top -${height! * 3}`,
+            end: () => `+=${height!}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -125,8 +125,8 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${height * 4}`,
-            end: () => `+=${height}`,
+            start: () => `top -${height! * 4}`,
+            end: () => `+=${height!}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -138,7 +138,7 @@ const Intro = () => {
       ScrollTrigger.create({
         trigger: introContainerRef.current,
         start: "top top",
-        end: () => `+=${height * 4}`,
+        end: () => `+=${height! * 4}`,
         pin: true,
         scrub: true,
         invalidateOnRefresh: true,
