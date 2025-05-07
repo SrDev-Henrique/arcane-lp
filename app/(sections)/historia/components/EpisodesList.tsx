@@ -1,10 +1,10 @@
 import Image from "next/image";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import gsap from "gsap";
 
 import Lenis from "lenis";
-// import useDimension from "@/utils/UseDimension";
+import useDimension from "@/utils/UseDimension";
 
 interface EpisodesItems {
   id: number;
@@ -48,7 +48,7 @@ const EpisodesList = ({
   isSeasonActive,
   temporada,
 }: EpisodesListProps) => {
-  // const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(true);
 
   const imageContainerRef = useRef<HTMLDivElement[]>([]);
   const clickedContainerRef = useRef<HTMLDivElement>(null);
@@ -59,7 +59,7 @@ const EpisodesList = ({
   const clickedTl = useRef<gsap.core.Timeline | null>(null);
   const lenisRef = useRef<Lenis | null>(null);
 
-  // const { width } = useDimension();
+  const { width } = useDimension();
 
   const total = 9;
 
@@ -111,23 +111,23 @@ const EpisodesList = ({
     }, 1200);
   };
 
-  // useEffect(() => {
-  //   const checkMobile = () => {
-  //     if (width! <= 768 && activeSeason === temporada) {
-  //       setIsMobile(true);
-  //     } else {
-  //       setIsMobile(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const checkMobile = () => {
+      if (width! <= 768 && activeSeason === temporada) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
 
-  //   checkMobile();
+    checkMobile();
 
-  //   window.addEventListener("resize", checkMobile);
+    window.addEventListener("resize", checkMobile);
 
-  //   return () => {
-  //     window.removeEventListener("resize", checkMobile);
-  //   };
-  // }, [activeSeason, temporada, width]);
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, [activeSeason, temporada, width]);
 
   //todo lenis
 
@@ -204,8 +204,8 @@ const EpisodesList = ({
         gsap.set(clickedContainerRef.current, {
           width: "20vw",
           height: "20vw",
-          // maxWidth: isMobile ? "340px" : "740px",
-          // maxHeight: isMobile ? "340px" : "740px",
+          maxWidth: isMobile ? "340px" : "740px",
+          maxHeight: isMobile ? "340px" : "740px",
           borderRadius: "0.5rem",
         });
         gsap.set(clickedTitleRef.current, {
@@ -221,7 +221,7 @@ const EpisodesList = ({
     return () => {
       clickedTl.current?.kill();
     };
-  }, [activeEpisode, prevIndexClicked]);
+  }, [activeEpisode, prevIndexClicked, isMobile]);
 
   useEffect(() => {
     if (!isEpisodeClicked) return;
@@ -340,8 +340,8 @@ const EpisodesList = ({
             ref={(el) => addToImagesRefs(el, index)}
             onClick={() => handleEpisodeClick(episode.id, index)}
             style={{
-              // minWidth: isMobile ? "340px" : "740px",
-              // minHeight: isMobile ? "340px" : "740px",
+              minWidth: isMobile ? "340px" : "740px",
+              minHeight: isMobile ? "340px" : "740px",
             }}
             className="w-[20dvw] aspect-square h-auto relative cursor-pointer overflow-hidden shrink-0 rounded-lg group opacity-0 translate-y-1/2 will-change-transform scale-50"
           >

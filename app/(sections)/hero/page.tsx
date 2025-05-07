@@ -9,7 +9,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useMenu } from "@/contexts/MenuContext";
 import { useGSAP } from "@gsap/react";
-// import useDimension from "@/utils/UseDimension";
+import useDimension from "@/utils/UseDimension";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,7 +21,7 @@ const Hero = () => {
   const [loadedVideos, setLoadedVideos] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [windowScrolled, setWindowScrolled] = useState(false);
-  // const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const { isAudioOn, setIsAudioOn } = useMenu();
 
   const totalVideos = 4;
@@ -30,7 +30,7 @@ const Hero = () => {
   const divRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLDivElement>(null);
 
-  // const { width } = useDimension();
+  const { width } = useDimension();
 
   const getVideoSrc = (index: number) =>
     `https://d3v6dicq4pzaym.cloudfront.net/clip-${index}.mp4`;
@@ -90,21 +90,21 @@ const Hero = () => {
     };
   }, [isLoading]);
 
-  // useEffect(() => {
-  //   const checkMobile = () => {
-  //     if (width! <= 799) {
-  //       setIsMobile(true);
-  //     } else {
-  //       setIsMobile(false);
-  //     }
-  //   };
+  useEffect(() => {
+    const checkMobile = () => {
+      if (width! <= 799) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
 
-  //   window.addEventListener("resize", checkMobile);
+    window.addEventListener("resize", checkMobile);
 
-  //   return () => {
-  //     window.removeEventListener("resize", checkMobile);
-  //   };
-  // }, [width]);
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, [width]);
 
   const handleVideoLoad = () => {
     setLoadedVideos((prev) => prev + 1);
@@ -132,14 +132,14 @@ const Hero = () => {
     });
   };
 
-  // const onMouseLeave = () => {
-  //   if (isMobile) return;
-  //   gsap.to(divRef.current, {
-  //     opacity: 0,
-  //     duration: 0.3,
-  //     ease: "power1.in",
-  //   });
-  // };
+  const onMouseLeave = () => {
+    if (isMobile) return;
+    gsap.to(divRef.current, {
+      opacity: 0,
+      duration: 0.3,
+      ease: "power1.in",
+    });
+  };
 
   useGSAP(
     () => {
@@ -215,7 +215,7 @@ const Hero = () => {
         id="video-frame"
         className="relative z-10 h-dvh w-screen overflow-hidden bg-black"
         onMouseMove={onMouseMove}
-        // onMouseLeave={onMouseLeave}
+        onMouseLeave={onMouseLeave}
       >
         <div>
           <div
