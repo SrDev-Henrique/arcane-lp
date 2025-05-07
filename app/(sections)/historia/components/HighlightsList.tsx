@@ -79,37 +79,37 @@ const HighlightsList = ({
     }, 600);
   };
 
-  useEffect(() => {
-    const idx = highlights.findIndex((h) => h.id === activeHighlight);
+  // useEffect(() => {
+  //   const idx = highlights.findIndex((h) => h.id === activeHighlight);
 
-    const target = highlightsRef.current[idx];
+  //   const target = highlightsRef.current[idx];
 
-    const videos = videoRefs.current;
-    videos.forEach((video) => {
-      video.addEventListener("fullscreenchange", () => {
-        setTimeout(() => {
-          target!.scrollIntoView({
-            behavior: "smooth",
-            block: "center",
-            inline: "center",
-          });
-        }, 350);
-      });
-    });
-    const scrollIntoView = () => {
-      target!.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
-      });
-    };
+  //   const videos = videoRefs.current;
+  //   videos.forEach((video) => {
+  //     video.addEventListener("fullscreenchange", () => {
+  //       setTimeout(() => {
+  //         target!.scrollIntoView({
+  //           behavior: "smooth",
+  //           block: "center",
+  //           inline: "center",
+  //         });
+  //       }, 350);
+  //     });
+  //   });
+  //   const scrollIntoView = () => {
+  //     target!.scrollIntoView({
+  //       behavior: "smooth",
+  //       block: "center",
+  //       inline: "center",
+  //     });
+  //   };
 
-    window.addEventListener("resize", scrollIntoView);
+  //   window.addEventListener("resize", scrollIntoView);
 
-    return () => {
-      window.removeEventListener("resize", scrollIntoView);
-    };
-  }, [activeHighlight, highlights, isFullScreen, setIsFullScreen]);
+  //   return () => {
+  //     window.removeEventListener("resize", scrollIntoView);
+  //   };
+  // }, [activeHighlight, highlights, isFullScreen, setIsFullScreen]);
 
   //todo animações
 

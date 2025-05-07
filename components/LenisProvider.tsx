@@ -57,17 +57,17 @@ export default function LenisProvider({
     }
   }, [isMenuOpen, isSeasonActive]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     ScrollTrigger.refresh();
+  //   };
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   useEffect(() => {
     lenisRef.current?.stop();

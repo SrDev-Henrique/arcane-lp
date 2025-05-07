@@ -12,7 +12,7 @@ import HighlightsList from "./HighlightsList";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { sectionRefs } from "@/utils/sectionRefs";
-import useDimension from "@/utils/UseDimension";
+// import useDimension from "@/utils/UseDimension";
 
 const firstNavTabs = [
   { id: "episódios", label: "Episódios" },
@@ -41,7 +41,7 @@ const PrimeiraTemporada = () => {
   const [prevIndexClicked, setPrevIndexClicked] = useState(0);
   const [temporada, setTemporada] = useState("");
 
-  const { height } = useDimension();
+  // const { height } = useDimension();
 
   const currentSeason = "Temporada_1";
 
@@ -100,27 +100,27 @@ const PrimeiraTemporada = () => {
     setTransformStyle("");
   };
 
-  useEffect(() => {
-    if (activeSeason !== temporada) return;
-    const target = firstSeasonContainerRef.current;
+  // useEffect(() => {
+  //   if (activeSeason !== temporada) return;
+  //   const target = firstSeasonContainerRef.current;
 
-    const { top, bottom } = target!.getBoundingClientRect();
-    if (top < height! || bottom > height!) {
-      setTimeout(() => {
-        target!.scrollIntoView({ behavior: "instant", block: "start" });
-      }, 200);
-    }
+  //   const { top, bottom } = target!.getBoundingClientRect();
+  //   if (top < height! || bottom > height!) {
+  //     setTimeout(() => {
+  //       target!.scrollIntoView({ behavior: "instant", block: "start" });
+  //     }, 200);
+  //   }
 
-    window.addEventListener("resize", () => {
-      target!.scrollIntoView({ behavior: "instant", block: "start" });
-    });
+  //   window.addEventListener("resize", () => {
+  //     target!.scrollIntoView({ behavior: "instant", block: "start" });
+  //   });
 
-    return () => {
-      window.removeEventListener("resize", () => {
-        target!.scrollIntoView({ behavior: "instant", block: "start" });
-      });
-    };
-  }, [activeSeason, temporada, isFullScreen, height]);
+  //   return () => {
+  //     window.removeEventListener("resize", () => {
+  //       target!.scrollIntoView({ behavior: "instant", block: "start" });
+  //     });
+  //   };
+  // }, [activeSeason, temporada, isFullScreen, height]);
 
   useEffect(() => {
     const el = document.body;
