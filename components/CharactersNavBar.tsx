@@ -4,7 +4,7 @@ import Menu from "@/app/[character]/components/Menu";
 import useActiveSection from "@/utils/useActiveSection";
 import useDimension from "@/utils/UseDimension";
 
-import { useGSAP } from "@gsap/react";
+// import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 // import gsap from "gsap";
 
@@ -107,57 +107,57 @@ const CharactersNavBar = memo(
       });
     }, [isCharNavVisible, currentScrollY]);
 
-    useGSAP(() => {
-      const mm = gsap.matchMedia();
+    // useGSAP(() => {
+    //   const mm = gsap.matchMedia();
 
-      tl.current = gsap
-        .timeline({
-          paused: true,
-          defaults: { duration: 0.53, ease: "power1.inOut" },
-        })
-        .to(charactersNavRef.current, {
-          width: "600px",
-        })
-        .to(
-          sectionsTitleRef.current,
-          {
-            y: 50,
-          },
-          "<"
-        )
-        .to(
-          openMenuRef.current,
-          {
-            rotate: 135,
-          },
-          "<"
-        );
+    //   tl.current = gsap
+    //     .timeline({
+    //       paused: true,
+    //       defaults: { duration: 0.53, ease: "power1.inOut" },
+    //     })
+    //     .to(charactersNavRef.current, {
+    //       width: "600px",
+    //     })
+    //     .to(
+    //       sectionsTitleRef.current,
+    //       {
+    //         y: 50,
+    //       },
+    //       "<"
+    //     )
+    //     .to(
+    //       openMenuRef.current,
+    //       {
+    //         rotate: 135,
+    //       },
+    //       "<"
+    //     );
 
-      mm.add("(max-width: 610px)", () => {
-        tl.current = gsap
-          .timeline({
-            paused: true,
-            defaults: { duration: 0.53, ease: "power1.inOut" },
-          })
-          .to(charactersNavRef.current, {
-            width: "95%",
-          })
-          .to(
-            sectionsTitleRef.current,
-            {
-              y: 50,
-            },
-            "<"
-          )
-          .to(
-            openMenuRef.current,
-            {
-              rotate: 135,
-            },
-            "<"
-          );
-      });
-    }, []);
+    //   mm.add("(max-width: 610px)", () => {
+    //     tl.current = gsap
+    //       .timeline({
+    //         paused: true,
+    //         defaults: { duration: 0.53, ease: "power1.inOut" },
+    //       })
+    //       .to(charactersNavRef.current, {
+    //         width: "95%",
+    //       })
+    //       .to(
+    //         sectionsTitleRef.current,
+    //         {
+    //           y: 50,
+    //         },
+    //         "<"
+    //       )
+    //       .to(
+    //         openMenuRef.current,
+    //         {
+    //           rotate: 135,
+    //         },
+    //         "<"
+    //       );
+    //   });
+    // }, []);
 
     const handleMenuClick = () => {
       if (isTransitioning) return;
