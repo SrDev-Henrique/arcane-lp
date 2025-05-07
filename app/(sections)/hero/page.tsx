@@ -30,7 +30,7 @@ const Hero = () => {
   const divRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLDivElement>(null);
 
-  const { width } = useDimension();
+  const { width, height } = useDimension();
 
   const getVideoSrc = (index: number) =>
     `https://d3v6dicq4pzaym.cloudfront.net/clip-${index}.mp4`;
@@ -46,7 +46,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = window.scrollY > 0;
+      const isScrolled = height! > 0;
       setWindowScrolled(isScrolled);
 
       if (isScrolled) {
