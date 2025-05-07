@@ -8,6 +8,7 @@ import { FaVolumeUp, FaVolumeMute } from "react-icons/fa";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useMenu } from "@/contexts/MenuContext";
+import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -137,34 +138,40 @@ const Hero = () => {
     });
   };
 
-  useEffect(() => {
-    if (hasClicked) {
-      gsap.set("#current-video", {
-        visibility: "visible",
-        borderRadius: "8px",
-      });
-      gsap.to("#current-video", {
-        transformOrigin: "center center",
-        scale: 1,
-        width: "100%",
-        height: "100%",
-        duration: 1,
-        ease: "power4.out",
-        onStart: () => {
-          setTimeout(() => {
-            nextVideoRef.current?.play();
-          }, 600);
-        },
-      });
+  useGSAP(
+    () => {
+      if (hasClicked) {
+        gsap.set("#current-video", {
+          visibility: "visible",
+          borderRadius: "8px",
+        });
+        gsap.to("#current-video", {
+          transformOrigin: "center center",
+          scale: 1,
+          width: "100%",
+          height: "100%",
+          duration: 1,
+          ease: "power4.out",
+          onStart: () => {
+            setTimeout(() => {
+              nextVideoRef.current?.play();
+            }, 600);
+          },
+        });
 
-      gsap.from("#next-video", {
-        transformOrigin: "center center",
-        scale: 0,
-        duration: 1.5,
-        ease: "power2.out",
-      });
+        gsap.from("#next-video", {
+          transformOrigin: "center center",
+          scale: 0,
+          duration: 1.5,
+          ease: "power2.out",
+        });
+      }
+    },
+    {
+      dependencies: [currentIndex, hasClicked],
+      revertOnUpdate: true,
     }
-  }, [currentIndex, hasClicked]);
+  );
 
   useEffect(() => {
     gsap.set("#video-frame", {

@@ -26,8 +26,8 @@ const PiltoverHistoria = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".black-section",
-            start: () => `top -${height * i}`,
-            end: () => `+=${height}`,
+            start: () => `top -${height! * i}`,
+            end: () => `+=${height!}`,
             scrub: true,
           },
         })
@@ -53,8 +53,8 @@ const PiltoverHistoria = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".black-section",
-            start: () => `top -${height * i}`,
-            end: () => `+=${height}`,
+            start: () => `top -${height! * i}`,
+            end: () => `+=${height!}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -103,7 +103,7 @@ const PiltoverHistoria = () => {
       pin: true,
       pinSpacing: true,
       start: "top top",
-      end: () => `+=${(images.length + 1.5) * height}`,
+      end: () => `+=${(images.length + 1.5) * height!}`,
       invalidateOnRefresh: true,
     });
 
