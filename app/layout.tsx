@@ -2,7 +2,7 @@ import ClientSideScrollRestorer from "@/utils/ScrollRestoration";
 
 import { MenuProvider } from "@/contexts/MenuContext";
 
-import ConditionalNavbar from "@/components/ConditionalNavBar";
+// import ConditionalNavbar from "@/components/ConditionalNavBar";
 import LenisProvider from "@/components/LenisProvider";
 
 import type { Metadata } from "next";
@@ -46,7 +46,7 @@ export default function RootLayout({
           <ClientSideScrollRestorer />
           <MenuProvider>
             <LenisProvider>
-              <ConditionalNavbar />
+              {/* <ConditionalNavbar /> */}
               {children}
             </LenisProvider>
           </MenuProvider>
