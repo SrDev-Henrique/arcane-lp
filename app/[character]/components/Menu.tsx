@@ -15,7 +15,7 @@ import gsap from "gsap";
 import Image from "next/image";
 
 import { useEffect, useRef, useState } from "react";
-// import { useGSAP } from "@gsap/react";
+import { useGSAP } from "@gsap/react";
 import { useWindowScroll } from "react-use";
 
 interface PlaylistItem {
@@ -172,110 +172,110 @@ const Menu = ({
     }
   }, [isAudioPlaying]);
 
-  // useGSAP(() => {
-  //   const mm = gsap.matchMedia();
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
 
-  //   mm.add("(min-width: 610px)", () => {
-  //     tl.current = gsap
-  //       .timeline({
-  //         paused: true,
-  //         defaults: {
-  //           duration: 0.53,
-  //           ease: "power1.inOut",
-  //         },
-  //       })
-  //       .to(menuRef.current, {
-  //         width: "600px",
-  //         borderRadius: "16px",
-  //       })
-  //       .to(
-  //         nameRef.current,
-  //         {
-  //           y: 0,
-  //           ease: "power2.out",
-  //         },
-  //         "<"
-  //       )
-  //       .to(
-  //         menuRef.current,
-  //         {
-  //           height: "505px",
-  //         },
-  //         "<"
-  //       )
-  //       .to(
-  //         buttonsRef.current,
-  //         {
-  //           opacity: 1,
-  //         },
-  //         "<"
-  //       )
-  //       .to(
-  //         playlistHeadingRef.current,
-  //         {
-  //           y: 0,
-  //         },
-  //         "<"
-  //       )
-  //       .to(
-  //         playlistContainerRef.current,
-  //         {
-  //           opacity: 1,
-  //         },
-  //         "<"
-  //       );
-  //   })
+    mm.add("(min-width: 610px)", () => {
+      tl.current = gsap
+        .timeline({
+          paused: true,
+          defaults: {
+            duration: 0.53,
+            ease: "power1.inOut",
+          },
+        })
+        .to(menuRef.current, {
+          width: "600px",
+          borderRadius: "16px",
+        })
+        .to(
+          nameRef.current,
+          {
+            y: 0,
+            ease: "power2.out",
+          },
+          "<"
+        )
+        .to(
+          menuRef.current,
+          {
+            height: "505px",
+          },
+          "<"
+        )
+        .to(
+          buttonsRef.current,
+          {
+            opacity: 1,
+          },
+          "<"
+        )
+        .to(
+          playlistHeadingRef.current,
+          {
+            y: 0,
+          },
+          "<"
+        )
+        .to(
+          playlistContainerRef.current,
+          {
+            opacity: 1,
+          },
+          "<"
+        );
+    })
 
-  //   mm.add("(max-width: 610px)", () => {
-  //     tl.current = gsap
-  //       .timeline({
-  //         paused: true,
-  //         defaults: {
-  //           duration: 0.53,
-  //           ease: "power1.inOut",
-  //         },
-  //       })
-  //       .to(menuRef.current, {
-  //         width: "98%",
-  //         borderRadius: "16px",
-  //       })
-  //       .to(
-  //         nameRef.current,
-  //         {
-  //           y: 0,
-  //         },
-  //         "<"
-  //       )
-  //       .to(
-  //         menuRef.current,
-  //         {
-  //           height: "510px",
-  //         },
-  //         "<"
-  //       )
-  //       .to(
-  //         buttonsRef.current,
-  //         {
-  //           opacity: 1,
-  //         },
-  //         "<"
-  //       )
-  //       .to(
-  //         playlistHeadingRef.current,
-  //         {
-  //           y: 0,
-  //         },
-  //         "<"
-  //       )
-  //       .to(
-  //         playlistContainerRef.current,
-  //         {
-  //           opacity: 1,
-  //         },
-  //         "<"
-  //       );
-  //   });
-  // });
+    mm.add("(max-width: 610px)", () => {
+      tl.current = gsap
+        .timeline({
+          paused: true,
+          defaults: {
+            duration: 0.53,
+            ease: "power1.inOut",
+          },
+        })
+        .to(menuRef.current, {
+          width: "98%",
+          borderRadius: "16px",
+        })
+        .to(
+          nameRef.current,
+          {
+            y: 0,
+          },
+          "<"
+        )
+        .to(
+          menuRef.current,
+          {
+            height: "510px",
+          },
+          "<"
+        )
+        .to(
+          buttonsRef.current,
+          {
+            opacity: 1,
+          },
+          "<"
+        )
+        .to(
+          playlistHeadingRef.current,
+          {
+            y: 0,
+          },
+          "<"
+        )
+        .to(
+          playlistContainerRef.current,
+          {
+            opacity: 1,
+          },
+          "<"
+        );
+    });
+  });
 
   return (
     <div

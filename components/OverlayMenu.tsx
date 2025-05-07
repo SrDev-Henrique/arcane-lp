@@ -2,7 +2,7 @@
 
 import React, { memo, useEffect, useRef, useState } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
-// import { useGSAP } from "@gsap/react";
+import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Link from "next/link";
 
@@ -103,54 +103,54 @@ const OverlayMenu = memo(() => {
     });
   }, [openAccordion]);
 
-  // useGSAP(
-  //   () => {
-  //     gsap.set([".overlay-menu-title", ".icon"], {
-  //       opacity: 0,
-  //       y: 35,
-  //     });
+  useGSAP(
+    () => {
+      gsap.set([".overlay-menu-title", ".icon"], {
+        opacity: 0,
+        y: 35,
+      });
 
-  //     gsap.set(".arcane", {
-  //       x: "100%",
-  //     });
+      gsap.set(".arcane", {
+        x: "100%",
+      });
 
-  //     gsap.set(".dev", {
-  //       clipPath: "circle(0% at 50% 50%)",
-  //     });
+      gsap.set(".dev", {
+        clipPath: "circle(0% at 50% 50%)",
+      });
 
-  //     if (!overlayMenuRef.current) return;
+      if (!overlayMenuRef.current) return;
 
-  //     tl.current = gsap
-  //       .timeline({ paused: true })
-  //       .to([".overlay-menu-title", ".icon"], {
-  //         opacity: 1,
-  //         y: 0,
-  //         stagger: 0.08,
-  //         duration: 0.8,
-  //         ease: "power2.out",
-  //         invalidateOnRefresh: true,
-  //       })
-  //       .to(
-  //         ".dev",
-  //         {
-  //           clipPath: "circle(100% at 50% 50%)",
-  //           duration: 0.8,
-  //           ease: "power2.inOut",
-  //         },
-  //         "-=0.8"
-  //       )
-  //       .to(
-  //         ".arcane",
-  //         {
-  //           x: 0,
-  //           duration: 1.35,
-  //           ease: "power2.out",
-  //         },
-  //         "-=0.8"
-  //       );
-  //   },
-  //   { scope: overlayMenuRef }
-  // );
+      tl.current = gsap
+        .timeline({ paused: true })
+        .to([".overlay-menu-title", ".icon"], {
+          opacity: 1,
+          y: 0,
+          stagger: 0.08,
+          duration: 0.8,
+          ease: "power2.out",
+          invalidateOnRefresh: true,
+        })
+        .to(
+          ".dev",
+          {
+            clipPath: "circle(100% at 50% 50%)",
+            duration: 0.8,
+            ease: "power2.inOut",
+          },
+          "-=0.8"
+        )
+        .to(
+          ".arcane",
+          {
+            x: 0,
+            duration: 1.35,
+            ease: "power2.out",
+          },
+          "-=0.8"
+        );
+    },
+    { scope: overlayMenuRef }
+  );
 
   useEffect(() => {
     if (isMenuOpen) {
