@@ -10,6 +10,7 @@ import { ScrollTrigger } from "gsap/all";
 import { useMenu } from "@/contexts/MenuContext";
 import { useGSAP } from "@gsap/react";
 import useDimension from "@/utils/UseDimension";
+import { useWindowScroll } from "react-use";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,7 +31,8 @@ const Hero = () => {
   const divRef = useRef<HTMLDivElement>(null);
   const audioRef = useRef<HTMLDivElement>(null);
 
-  const { width, height } = useDimension();
+  const { width } = useDimension();
+  const { y: currentScrollY } = useWindowScroll();
 
   const getVideoSrc = (index: number) =>
     `https://d3v6dicq4pzaym.cloudfront.net/clip-${index}.mp4`;
@@ -46,7 +48,7 @@ const Hero = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const isScrolled = height! > 0;
+      const isScrolled = currentScrollY > 0;
       setWindowScrolled(isScrolled);
 
       if (isScrolled) {
@@ -77,7 +79,7 @@ const Hero = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [height, setIsAudioOn, windowScrolled]);
+  }, [currentScrollY, setIsAudioOn]);
 
   useEffect(() => {
     if (isLoading) {
