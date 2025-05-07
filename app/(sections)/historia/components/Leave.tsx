@@ -95,7 +95,7 @@ const Leave = () => {
           className="size-full object-cover object-center"
         />
       </div>
-      <div className="absolute inset-0 flex-center">
+      <div className="absolute inset-0 flex-center m-h-[100dvh] max-w-[100dvw] overflow-hidden">
         <div className="size-full relative">
           <p
             ref={firstLettersRef}
