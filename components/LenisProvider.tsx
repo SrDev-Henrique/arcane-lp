@@ -15,7 +15,6 @@ export default function LenisProvider({
   children: React.ReactNode;
 }) {
   const lenisRef = useRef<Lenis | null>(null);
-  const rafId = useRef<number | null>(null);
   const { isMenuOpen, isSeasonActive } = useMenu();
   const pathname = usePathname();
 
@@ -36,14 +35,14 @@ export default function LenisProvider({
     });
     gsap.ticker.lagSmoothing(0);
 
-    const raf = (time: number) => {
+    function raf(time: number) {
       lenis.raf(time);
-      rafId.current = requestAnimationFrame(raf);
-    };
-    rafId.current = requestAnimationFrame(raf);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
 
     return () => {
-      cancelAnimationFrame(rafId.current!);
       lenis.destroy();
     };
   }, []);
