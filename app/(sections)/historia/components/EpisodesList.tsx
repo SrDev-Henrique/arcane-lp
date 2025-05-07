@@ -348,8 +348,6 @@ const EpisodesList = ({
               width={3840}
               height={1632}
               className="size-full object-cover object-center brightness-50"
-              priority
-              loading="eager"
             />
             <div className="absolute top-0 right-0 inset-0 flex flex-col items-center px-2">
               <div className="w-full h-[50%] flex justify-center pt-8">

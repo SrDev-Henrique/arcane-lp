@@ -198,7 +198,6 @@ const Episodes = ({
                     index + 1 === prevIndex
                   }
                   className="object-cover object-center size-full"
-                  loading="eager"
                 />
               </div>
               <div className="absolute w-full bottom-0 flex-center">
