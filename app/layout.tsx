@@ -2,7 +2,7 @@ import ClientSideScrollRestorer from "@/utils/ScrollRestoration";
 
 import { MenuProvider } from "@/contexts/MenuContext";
 
-// import ConditionalNavbar from "@/components/ConditionalNavBar";
+import ConditionalNavbar from "@/components/ConditionalNavBar";
 import LenisProvider from "@/components/LenisProvider";
 
 import type { Metadata } from "next";
@@ -42,11 +42,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Suspense>
+        <Suspense fallback={<div>Carregando...</div>}>
           <ClientSideScrollRestorer />
           <MenuProvider>
             <LenisProvider>
-              {/* <ConditionalNavbar /> */}
+              <ConditionalNavbar />
               {children}
             </LenisProvider>
           </MenuProvider>

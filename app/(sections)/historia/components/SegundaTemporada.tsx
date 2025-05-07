@@ -234,7 +234,7 @@ const SegundaTemporada = () => {
         <div
           ref={secondSeasonContentRef}
           className={`size-full relative flex flex-col items-center justify-between bg-black-lighter will-change-clip-path season-clip-path ${
-            isSeasonActive ? "z-[101]" : ""
+            isSeasonActive ? "z-[101]" : "z-[2]"
           }`}
         >
           <Nav
