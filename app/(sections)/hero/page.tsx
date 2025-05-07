@@ -57,7 +57,7 @@ const Hero = () => {
           width: "0",
           height: "0",
           duration: 0.1,
-          ease: "power4.out",
+          ease: "power1.out",
         });
         gsap.to(audioRef.current, {
           opacity: 0,
@@ -68,7 +68,7 @@ const Hero = () => {
           width: "128px",
           height: "128px",
           duration: 0.3,
-          ease: "power1.in",
+          ease: "power1.out",
           clearProps: "all",
         });
         gsap.to(audioRef.current, {
