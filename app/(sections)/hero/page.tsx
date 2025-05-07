@@ -77,7 +77,7 @@ const Hero = () => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, [height, setIsAudioOn]);
 
   useEffect(() => {
     if (isLoading) {
