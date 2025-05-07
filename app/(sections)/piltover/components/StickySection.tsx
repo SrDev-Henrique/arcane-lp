@@ -79,7 +79,7 @@ const StickyDiv = () => {
   return (
     <section
       ref={stickyRef}
-      className="sticky-section -mt-[210vh] h-screen w-screen bg-piltover-fadedBrown sticky top-0 flex-center z-[11]"
+      className="sticky-section -mt-[210dvh] h-[100dvh] w-[100dvw] bg-piltover-fadedBrown sticky top-0 flex-center z-[11]"
     >
       <div className="relative w-full h-[100dvh] z-[1]">
         <div className="flex-center size-full overflow-hidden">

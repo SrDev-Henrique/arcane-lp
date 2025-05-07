@@ -110,7 +110,7 @@ const Apresentacao = () => {
         if (el)
           sectionRefs.current["<b>z</b>aun-apresentação"] = el as HTMLElement;
       }}
-      className="min-h-screen w-full relative bg-black-dark"
+      className="min-h-[100dvh] w-full relative bg-black-dark"
     >
       <Intro />
       <div
@@ -135,7 +135,7 @@ const Apresentacao = () => {
           </h3>
         </div>
       </div>
-      <div className="min-h-screen w-full flex-center flex-col pb-24 pt-80 gap-24">
+      <div className="min-h-[100dvh] w-full flex-center flex-col pb-24 pt-80 gap-24">
         {apresentacao.map((item, index) => (
           <div key={index} className="h-[100dvh] w-[90%] max-w-[1724px] relative">
             <div

@@ -273,7 +273,7 @@ const HighlightsList = ({
     return (
       <div
         ref={scrollRef}
-        className={`size-full overflow-y-auto flex flex-col items-center gap-32 episode-scroll pb-[40dvh] min-h-screen transition-all duration-300 ${
+        className={`size-full overflow-y-auto flex flex-col items-center gap-32 episode-scroll pb-[40dvh] min-h-[100dvh] transition-all duration-300 ${
           activeHighlight === 1 ? "pt-72" : "pt-44"
         }`}
       >

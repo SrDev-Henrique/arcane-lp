@@ -115,7 +115,7 @@ const Intro = () => {
     }, [height]);
 
   return (
-    <div ref={introContainerRef} className="min-h-[80dvh] w-screen relative bg-zaun-sageGreen">
+    <div ref={introContainerRef} className="min-h-[80dvh] w-[100dvw] relative bg-zaun-sageGreen">
       <div className="absolute h-[40dvh] sm:h-[60dvh] lg:h-[75dvh] w-full flex-center bg-black-dark z-[1] overflow-hidden">
         {letters.map((letter, index) => (
           <h1

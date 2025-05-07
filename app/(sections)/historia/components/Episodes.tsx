@@ -185,7 +185,7 @@ const Episodes = ({
                 : "hidden-clip-path pointer-events-none"
             }`}
           >
-            <div className="relative h-screen w-screen">
+            <div className="relative h-[100dvh] w-[100dvw]">
               <div className="size-full brightness-low">
                 <Image
                   alt={`temporada-1 episódio-${episode.episode}`}

@@ -80,7 +80,7 @@ const Leave = () => {
     <div
       ref={leaveContainerRef}
       style={{ perspective: "1000px" }}
-      className="min-h-[100dvh] w-screen bg-zaun-celadon flex-center relative z-[20]"
+      className="min-h-[100dvh] w-[100dvw] bg-zaun-celadon flex-center relative z-[20]"
     >
       <div
         ref={imageContainerRef}

@@ -167,7 +167,7 @@ const OverlayMenu = memo(() => {
 
   return (
     <div ref={overlayMenuRef} className="menu-nav flex-col md:flex-row">
-      <div className="flex flex-col pl-10 md:pl-0 gap-7 md:gap-8 h-full w-[100%] md:w-[30%] justify-center overlay-menu-left">
+      <div className="flex flex-col pl-10 md:pl-0 gap-7 md:gap-8 h-[100%] w-[100%] md:w-[30%] justify-center overlay-menu-left">
         {navitems.map((item, index) => (
           <div key={item.title} className="flex w-full items-start">
             <div

@@ -115,7 +115,7 @@ const Historia = () => {
       ref={(el) => {
         if (el) sectionRefs.current["<b>z</b>aun-história"] = el as HTMLElement;
       }}
-      className="min-h-screen w-full relative bg-black-dark story-container"
+      className="min-h-[100dvh] max-w-[100dvw] relative bg-black-dark story-container overflow-hidden"
     >
       <div
         ref={storyIntroRef}

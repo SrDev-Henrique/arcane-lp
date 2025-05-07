@@ -113,7 +113,7 @@ const PiltoverHistoria = () => {
   }, [height]);
 
   return (
-    <section className="black-section bg-black-dark z-10 h-screen flex flex-col justify-around items-center">
+    <section className="black-section bg-black-dark z-10 h-[100dvh] flex flex-col justify-around items-center">
       <div className="text-wrap relative w-full h-[80dvh] -mb-20 overflow-hidden">
         {historiaItems.map(({ title, content }, i) => (
           <div

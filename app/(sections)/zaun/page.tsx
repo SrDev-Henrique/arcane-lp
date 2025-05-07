@@ -4,7 +4,7 @@ import Personagens from "./components/Personagens";
 
 const Zaun = () => {
   return (
-    <div className="relative min-h-screen w-screen">
+    <div className="relative min-h-[100dvh] w-[100dvw]">
       <Apresentacao />
       <Historia />
       <Personagens />

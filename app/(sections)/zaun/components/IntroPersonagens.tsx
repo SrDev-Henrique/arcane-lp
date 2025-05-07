@@ -63,7 +63,7 @@ const IntroPersonagens = () => {
   return (
     <div
       ref={charsIntroContainerRef}
-      className="h-[50dvh] sm:h-[85dvh] md:h-[95dvh] lg:h-[120vh] xl:h-[175dvh] w-full flex gap-[1vw] px-[1vw] relative rounded-3xl bg-zaun-sageGreen overflow-hidden filter brightness-75"
+      className="h-[50dvh] sm:h-[85dvh] md:h-[95dvh] lg:h-[120dvh] xl:h-[175dvh] w-full flex gap-[1dvw] px-[1dvw] relative rounded-3xl bg-zaun-sageGreen overflow-hidden filter brightness-75"
     >
       {charsIntroImages.map((personagens, i) => (
         <div

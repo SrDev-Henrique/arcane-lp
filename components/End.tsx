@@ -67,7 +67,7 @@ const End = () => {
     <div
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="h-[100dvh] w-screen bg-zaun-celadon flex-center relative"
+      className="h-[100dvh] w-[100dvw] bg-zaun-celadon flex-center relative"
       style={{ perspective: "1000px" }}
     >
       <div className="absolute top-2 right-1/2 translate-x-1/2 flex-center flex-col gap-14">

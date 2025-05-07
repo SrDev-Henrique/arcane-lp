@@ -79,7 +79,7 @@ const About: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-screen bg-piltover-light overflow-x-hidden">
+    <div className="min-h-[100dvh] w-[100dvw] bg-piltover-light overflow-x-hidden">
       <div className="relative mb-8 pt-36 flex flex-col items-center gap-5">
         <h2 className="font-general text-black-dark font-semibold text-sm uppercase md:text-[10px]">
           Bem-vindos a Runeterra
@@ -103,7 +103,7 @@ const About: React.FC = () => {
         </div>
       </div>
 
-      <div className="h-dvh w-full flex justify-center" id="clip" ref={clipRef}>
+      <div className="h-[100dvh] w-full flex justify-center" id="clip" ref={clipRef}>
         <div className="mask-clip-path about-image border border-black-intense">
           <Image
             src={"/images/piltover.jpg"}

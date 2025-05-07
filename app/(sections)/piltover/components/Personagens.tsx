@@ -172,9 +172,9 @@ const Personagens = () => {
   }, [height]);
 
   return (
-    <section id="personagens-section" className="min-h-screen mt-[100vh]">
+    <section id="personagens-section" className="min-h-[100dvh] mt-[100dvh]">
       <div
-        className="slider-wrapper z-[12] w-screen h-screen relative bg-piltover-fadedBrown"
+        className="slider-wrapper z-[12] w-[100dvw] h-[100dvh] relative bg-piltover-fadedBrown"
         id="pilto<b>v</b>er-personagens"
         ref={(el) => {
           if (el) sectionRefs.current["pilto<b>v</b>er-personagens"] = el;
@@ -214,7 +214,7 @@ const Personagens = () => {
             </div>
           ))}
 
-          <div className="w-screen h-screen">
+          <div className="w-[100dvw] h-[100dvh]">
             {personagensInfo.map((personagens, index) => {
               const slug = personagens.nome.toLowerCase();
               return (
