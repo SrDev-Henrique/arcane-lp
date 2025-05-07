@@ -16,12 +16,12 @@ export default function useDimension() {
   );
 
   useEffect(() => {
-    function handleResize() {
+    // function handleResize() {
       setWindowDimensions(getWindowDimensions());
-    }
+    // }
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    // window.addEventListener("resize", handleResize);
+    // return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return windowDimensions;
