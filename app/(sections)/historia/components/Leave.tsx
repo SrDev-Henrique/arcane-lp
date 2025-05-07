@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useDimension from "@/utils/UseDimension";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -12,6 +13,8 @@ const Leave = () => {
   const imageRef = useRef<HTMLImageElement>(null);
   const firstLettersRef = useRef<HTMLParagraphElement>(null);
   const secondLettersRef = useRef<HTMLParagraphElement>(null);
+
+  const { height } = useDimension();
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -29,7 +32,7 @@ const Leave = () => {
         scrollTrigger: {
           trigger: leaveContainerRef.current,
           start: "top top",
-          end: () => `+=${window.innerHeight * 1.5}`,
+          end: () => `+=${height * 1.5}`,
           scrub: 1,
           pin: true,
           pinSpacing: true,
@@ -71,7 +74,7 @@ const Leave = () => {
     }, leaveContainerRef);
 
     return () => ctx.revert();
-  }, [])
+  }, [height])
 
   return (
     <div

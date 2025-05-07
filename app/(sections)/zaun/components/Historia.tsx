@@ -3,6 +3,7 @@
 import { historia } from "@/data/zaun";
 import { historiaImgs } from "@/data/zaun";
 import { sectionRefs } from "@/utils/sectionRefs";
+import useDimension from "@/utils/UseDimension";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -19,6 +20,8 @@ const Historia = () => {
   const storyRef = useRef<HTMLDivElement>(null);
   const storyIntroRef = useRef<HTMLDivElement>(null);
 
+  const { height } = useDimension();
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (!storyIntroRef.current) return;
@@ -32,7 +35,7 @@ const Historia = () => {
           scrollTrigger: {
             trigger: ".story-container",
             start: "top top",
-            end: () => `+=${window.innerHeight}`,
+            end: () => `+=${height}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -49,8 +52,8 @@ const Historia = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".story-container",
-              start: () => `top -${window.innerHeight}`,
-              end: () => `+=${window.innerHeight * 8}`,
+              start: () => `top -${height}`,
+              end: () => `+=${height * 8}`,
               scrub: true,
               invalidateOnRefresh: true,
             },
@@ -74,8 +77,8 @@ const Historia = () => {
           .timeline({
             scrollTrigger: {
               trigger: ".story-container",
-              start: () => `top -${window.innerHeight}`,
-              end: () => `+=${window.innerHeight * 8}`,
+              start: () => `top -${height}`,
+              end: () => `+=${height * 8}`,
               scrub: true,
               invalidateOnRefresh: true,
             },
@@ -99,13 +102,13 @@ const Historia = () => {
         scrub: true,
         pin: true,
         start: "top top",
-        end: () => `+=${window.innerHeight * 9}`,
+        end: () => `+=${height * 9}`,
         invalidateOnRefresh: true,
       });
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [height]);
 
   return (
     <section

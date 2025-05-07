@@ -1,9 +1,6 @@
-import React from "react";
-import dynamic from "next/dynamic";
-
-const Apresentacao = dynamic(() => import("./components/Apresentacao"));
-const Historia = dynamic(() => import("./components/Historia"));
-const Personagens = dynamic(() => import("./components/Personagens"));
+import Apresentacao from "./components/Apresentacao";
+import Historia from "./components/Historia";
+import Personagens from "./components/Personagens";
 
 const Zaun = () => {
   return (

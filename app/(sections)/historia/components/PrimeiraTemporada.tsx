@@ -12,6 +12,7 @@ import HighlightsList from "./HighlightsList";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { sectionRefs } from "@/utils/sectionRefs";
+import useDimension from "@/utils/UseDimension";
 
 const firstNavTabs = [
   { id: "episódios", label: "Episódios" },
@@ -39,6 +40,8 @@ const PrimeiraTemporada = () => {
   const [activeEpisode, setActiveEpisode] = useState(0);
   const [prevIndexClicked, setPrevIndexClicked] = useState(0);
   const [temporada, setTemporada] = useState("");
+
+  const { height } = useDimension();
 
   const currentSeason = "Temporada_1";
 
@@ -102,7 +105,7 @@ const PrimeiraTemporada = () => {
     const target = firstSeasonContainerRef.current;
 
     const { top, bottom } = target!.getBoundingClientRect();
-    if (top < window.innerHeight || bottom > window.innerHeight) {
+    if (top < height || bottom > height) {
       setTimeout(() => {
         target!.scrollIntoView({ behavior: "instant", block: "start" });
       }, 200);
@@ -117,7 +120,7 @@ const PrimeiraTemporada = () => {
         target!.scrollIntoView({ behavior: "instant", block: "start" });
       });
     };
-  }, [activeSeason, temporada, isFullScreen]);
+  }, [activeSeason, temporada, isFullScreen, height]);
 
   useEffect(() => {
     const el = document.body;

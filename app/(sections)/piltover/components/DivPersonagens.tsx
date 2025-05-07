@@ -1,5 +1,6 @@
 "use client";
 import { backgroundImages } from "@/data/piltover";
+import useDimension from "@/utils/UseDimension";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,8 +11,9 @@ import { useEffect } from "react";
 gsap.registerPlugin(ScrollTrigger);
 
 const DivPersonagens = () => {
+  const { height } = useDimension();
   useEffect(() => {
-    const innerHeight = window.innerHeight;
+    const innerHeight = height;
 
     const ctx = gsap.context(() => {
       gsap.set(".piltover-personagens", {
@@ -62,7 +64,7 @@ const DivPersonagens = () => {
       ctx.revert();
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [height]);
 
   return (
     <section className="mt-[-250vh] min-h-[100dvh] piltover-personagens z-[1]">

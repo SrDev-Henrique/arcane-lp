@@ -1,11 +1,8 @@
-import dynamic from "next/dynamic";
-
-const Apresentacao = dynamic(() => import("./components/Apresentacao"));
-const Historia = dynamic(() => import("./components/Historia"));
-const PiltoverHistoria = dynamic(() => import("@/components/PiltoverHistoria"));
-// const DivPersonagens = dynamic(() => import("./components/DivPersonagens"));
-const Personagens = dynamic(() => import("./components/Personagens"));
-const StickySection = dynamic(() => import("./components/StickySection"));
+import Apresentacao from "./components/Apresentacao";
+import Historia from "./components/Historia";
+import PiltoverHistoria from "@/components/PiltoverHistoria";
+import Personagens from "./components/Personagens";
+import StickySection from "./components/StickySection";
 
 const Piltover = () => {
   return (

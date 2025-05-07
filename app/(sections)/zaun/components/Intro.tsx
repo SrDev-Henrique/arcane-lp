@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useDimension from "@/utils/UseDimension";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,6 +17,8 @@ const Intro = () => {
   const zaunHeadingsContainerRef = useRef<HTMLDivElement>(null);
   const zaunIntroRef = useRef<HTMLDivElement>(null);
 
+  const { height  } = useDimension();
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (!circleUpRef.current) return;
@@ -29,7 +32,7 @@ const Intro = () => {
           scrollTrigger: {
             trigger: introContainerRef.current,
             start: "top top",
-            end: () => `+=${window.innerHeight}`,
+            end: () => `+=${height}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -44,8 +47,8 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${window.innerHeight}`,
-            end: () => `+=${window.innerHeight * 2}`,
+            start: () => `top -${height}`,
+            end: () => `+=${height * 2}`,
             scrub: true,
             invalidateOnRefresh: true,
             onEnter: () => {
@@ -69,8 +72,8 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${window.innerHeight * 2}`,
-            end: () => `+=${window.innerHeight}`,
+            start: () => `top -${height * 2}`,
+            end: () => `+=${height}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -96,8 +99,8 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${window.innerHeight * 3}`,
-            end: () => `+=${window.innerHeight}`,
+            start: () => `top -${height * 3}`,
+            end: () => `+=${height}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -122,8 +125,8 @@ const Intro = () => {
         .timeline({
           scrollTrigger: {
             trigger: introContainerRef.current,
-            start: () => `top -${window.innerHeight * 4}`,
-            end: () => `+=${window.innerHeight}`,
+            start: () => `top -${height * 4}`,
+            end: () => `+=${height}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -135,7 +138,7 @@ const Intro = () => {
       ScrollTrigger.create({
         trigger: introContainerRef.current,
         start: "top top",
-        end: () => `+=${window.innerHeight * 4}`,
+        end: () => `+=${height * 4}`,
         pin: true,
         scrub: true,
         invalidateOnRefresh: true,
@@ -143,7 +146,7 @@ const Intro = () => {
     }, introContainerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [height]);
 
   return (
     <>

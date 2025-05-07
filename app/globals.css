@@ -19,6 +19,8 @@ html, body, main, .episode-scroll {
 
 html, body {
   height: 100%;
+  width: 100%;
+  overflow-anchor: none;
 }
 
 body {
@@ -26,10 +28,6 @@ body {
   font-family: "General Sans", sans-serif;
   background-color: #000;
   overflow-x: hidden;
-}
-
-main {
-  min-height: 100dvh;
 }
 
 html.lenis,

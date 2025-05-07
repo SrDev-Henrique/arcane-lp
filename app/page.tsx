@@ -1,21 +1,14 @@
-import dynamic from "next/dynamic";
+import PageClient from "@/components/PageClient";
 
-const Hero = dynamic(() => import("@/app/(sections)/hero/page"));
-const About = dynamic(() => import("@/app/(sections)/about/page"));
-const Piltover = dynamic(() => import("@/app/(sections)/piltover/page"));
-const Zaun = dynamic(() => import("@/app/(sections)/zaun/page"));
-const Historia = dynamic(() => import("@/app/(sections)/historia/page"));
-const End = dynamic(() => import("@/components/End"));
+// import Hero from "@/app/(sections)/hero/page";
+// import About from "@/app/(sections)/about/page";
+// import Piltover from "@/app/(sections)/piltover/page";
+// import Zaun from "@/app/(sections)/zaun/page";
+// import Historia from "@/app/(sections)/historia/page";
+// import End from "@/components/End";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen w-screen">
-      <Hero />
-      <About />
-      <Piltover />
-      <Zaun />
-      <Historia />
-      <End />
-    </main>
+    <PageClient />
   );
 }

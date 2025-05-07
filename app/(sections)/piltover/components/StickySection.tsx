@@ -7,14 +7,17 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import useDimension from "@/utils/UseDimension";
 
 const StickyDiv = () => {
   const rotatingDiv = useRef<HTMLDivElement>(null);
   const upText = useRef<HTMLDivElement>(null);
   const stickyRef = useRef<HTMLElement>(null);
 
+  const { height } = useDimension();
+
   useEffect(() => {
-    const windowHeight = window.innerHeight;
+    const windowHeight = height;
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: stickyRef.current,
@@ -71,7 +74,7 @@ const StickyDiv = () => {
       );
     }, stickyRef);
     return () => ctx.revert();
-  }, []);
+  }, [height]);
 
   return (
     <section

@@ -1,3 +1,4 @@
+import useDimension from "@/utils/UseDimension";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
@@ -8,7 +9,8 @@ const letters = ["A", "R", "C", "A", "N", "E"];
 const Intro = () => {
   const introContainerRef = useRef<HTMLDivElement>(null);
     const firstLettersRef = useRef<HTMLHeadingElement[]>([]);
-    const secondLettersRef = useRef<HTMLHeadingElement[]>([]);
+  const secondLettersRef = useRef<HTMLHeadingElement[]>([]);
+  const { height } = useDimension();
 
     const addToFirstRefs = (el: HTMLHeadingElement) => {
       if (el && !firstLettersRef.current.includes(el)) {
@@ -36,7 +38,7 @@ const Intro = () => {
           scrollTrigger: {
             trigger: firstLettersRef.current,
             start: "center center",
-            end: () => `+=${window.innerHeight * 0.6}`,
+            end: () => `+=${height * 0.6}`,
             scrub: 1,
             invalidateOnRefresh: true,
           },
@@ -110,7 +112,7 @@ const Intro = () => {
       }, introContainerRef);
 
       return () => ctx.revert();
-    }, []);
+    }, [height]);
 
   return (
     <div ref={introContainerRef} className="min-h-[80dvh] w-screen relative bg-zaun-sageGreen">

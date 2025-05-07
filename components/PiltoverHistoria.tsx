@@ -7,10 +7,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BentoTilt from "./BentoTilt";
 import Image from "next/image";
+import useDimension from "@/utils/UseDimension";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const PiltoverHistoria = () => {
+  const { height } = useDimension();
+
   useEffect(() => {
     
     ScrollTrigger.defaults({ scroller: window });
@@ -23,8 +26,8 @@ const PiltoverHistoria = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".black-section",
-            start: () => `top -${window.innerHeight * i}`,
-            end: () => `+=${window.innerHeight}`,
+            start: () => `top -${height * i}`,
+            end: () => `+=${height}`,
             scrub: true,
           },
         })
@@ -50,8 +53,8 @@ const PiltoverHistoria = () => {
         .timeline({
           scrollTrigger: {
             trigger: ".black-section",
-            start: () => `top -${window.innerHeight * i}`,
-            end: () => `+=${window.innerHeight}`,
+            start: () => `top -${height * i}`,
+            end: () => `+=${height}`,
             scrub: true,
             invalidateOnRefresh: true,
           },
@@ -84,8 +87,8 @@ const PiltoverHistoria = () => {
     //   .timeline({
     //     scrollTrigger: {
     //       trigger: ".black-section",
-    //       start: () => `top -${images.length * window.innerHeight}`,
-    //       end: () => `+=${window.innerHeight * 1.5}`,
+    //       start: () => `top -${images.length * height}`,
+    //       end: () => `+=${height * 1.5}`,
     //       scrub: true,
     //       invalidateOnRefresh: true,
     //     },
@@ -100,14 +103,14 @@ const PiltoverHistoria = () => {
       pin: true,
       pinSpacing: true,
       start: "top top",
-      end: () => `+=${(images.length + 1.5) * window.innerHeight}`,
+      end: () => `+=${(images.length + 1.5) * height}`,
       invalidateOnRefresh: true,
     });
 
     return () => {
       ScrollTrigger.getAll().forEach((t) => t.kill());
     };
-  }, []);
+  }, [height]);
 
   return (
     <section className="black-section bg-black-dark z-10 h-screen flex flex-col justify-around items-center">

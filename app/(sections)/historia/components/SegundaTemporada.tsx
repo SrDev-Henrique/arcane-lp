@@ -9,6 +9,7 @@ import gsap from "gsap";
 import Image from "next/image";
 import Button from "@/components/Button";
 import { sectionRefs } from "@/utils/sectionRefs";
+import useDimension from "@/utils/UseDimension";
 
 const secondNavTabs = [
   { id: "episódios", label: "Episódios" },
@@ -39,6 +40,7 @@ const SegundaTemporada = () => {
   const currentSeason = "Temporada_2";
 
   const { isSeasonActive, setIsSeasonActive } = useMenu();
+  const { height } = useDimension();
 
   const episodes = seasons.secondSeasonEpisodes;
   const highlights = seasons.secondSeasonHighlights;
@@ -98,7 +100,7 @@ const SegundaTemporada = () => {
     const target = secondSeasonContainerRef.current;
 
     const { top, bottom } = target!.getBoundingClientRect();
-    if (top < window.innerHeight || bottom > window.innerHeight) {
+    if (top < height || bottom > height) {
       setTimeout(() => {
         target!.scrollIntoView({ behavior: "instant", block: "start" });
       }, 200);
@@ -113,7 +115,7 @@ const SegundaTemporada = () => {
         target!.scrollIntoView({ behavior: "instant", block: "start" });
       });
     };
-  }, [activeSeason, temporada, isFullScreen]);
+  }, [activeSeason, temporada, isFullScreen, height]);
 
   useEffect(() => {
     const el = document.body;
