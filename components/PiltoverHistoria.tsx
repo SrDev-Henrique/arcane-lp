@@ -113,8 +113,8 @@ const PiltoverHistoria = () => {
   }, [height]);
 
   return (
-    <section className="black-section bg-black-dark z-10 h-[100dvh] flex flex-col justify-around items-center">
-      <div className="text-wrap relative w-full h-[80dvh] -mb-20 overflow-hidden">
+    <section className="black-section bg-black-dark z-10 h-[100lvh] flex flex-col justify-around items-center">
+      <div className="text-wrap relative w-full h-[80lvh] -mb-20 overflow-hidden">
         {historiaItems.map(({ title, content }, i) => (
           <div
             key={i}
@@ -131,7 +131,7 @@ const PiltoverHistoria = () => {
         ))}
       </div>
 
-      <div className="p-wrap relative flex items-center w-[80%] md:max-w-[650px] h-[50dvh] md:h-[80dvh] overflow-hidden">
+      <div className="p-wrap relative flex items-center w-[80%] md:max-w-[650px] h-[50lvh] md:h-[80lvh] overflow-hidden">
         {historiaItems.map(({ imagePath }, i) => (
           <BentoTilt
             key={i}

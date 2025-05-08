@@ -148,7 +148,7 @@ html.lenis body {
   }
 
   .about-subtext {
-    @apply absolute bottom-[-80dvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
+    @apply absolute bottom-[-80lvh] left-1/2 w-full max-w-96 -translate-x-1/2 text-center font-circular-web text-lg md:max-w-[34rem];
   }
 
   .about-image {
@@ -178,7 +178,7 @@ html.lenis body {
     @apply uppercase md:text-6xl text-4xl font-black font-zentry;
   }
   .story-img-container {
-    @apply relative md:h-dvh h-[90vh] w-full;
+    @apply relative md:h-lvh h-[90vh] w-full;
     filter: url("#flt_tag");
   }
 
@@ -188,7 +188,7 @@ html.lenis body {
   }
 
   .story-img-content {
-    @apply absolute w-full md:h-dvh h-[50dvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
+    @apply absolute w-full md:h-lvh h-[50lvh] opacity-100 left-10 top-16 md:left-0 md:top-10 lg:left-[-300px] lg:top-[-100px];
     transform: translate3d(0, 0, 0) rotateX(0) rotateY(0) rotateZ(0) scale(1);
   }
 
@@ -936,7 +936,7 @@ html.lenis body {
   .zaun-chars-container {
     padding-top: 50px;
     padding-bottom: 50px;
-    height: 100dvh;
+    height: 100lvh;
   }
   .season-button {
     bottom: 14%;

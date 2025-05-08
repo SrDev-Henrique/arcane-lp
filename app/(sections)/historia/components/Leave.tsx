@@ -80,11 +80,11 @@ const Leave = () => {
     <div
       ref={leaveContainerRef}
       style={{ perspective: "1000px" }}
-      className="min-h-[100dvh] w-[100dvw] bg-zaun-celadon flex-center relative z-[20]"
+      className="min-h-[100lvh] w-[100dvw] bg-zaun-celadon flex-center relative z-[20]"
     >
       <div
         ref={imageContainerRef}
-        className="w-[100dvw] h-[100dvh] relative overflow-hidden mask-clip-path"
+        className="w-[100dvw] h-[100lvh] relative overflow-hidden mask-clip-path"
       >
         <Image
           ref={imageRef}
@@ -95,7 +95,7 @@ const Leave = () => {
           className="size-full object-cover object-center"
         />
       </div>
-      <div className="absolute inset-0 flex-center m-h-[100dvh] max-w-[100dvw] overflow-hidden">
+      <div className="absolute inset-0 flex-center m-h-[100lvh] max-w-[100dvw] overflow-hidden">
         <div className="size-full relative">
           <p
             ref={firstLettersRef}

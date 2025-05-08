@@ -172,9 +172,9 @@ const Personagens = () => {
   }, [height]);
 
   return (
-    <section id="personagens-section" className="min-h-[100dvh] mt-[100dvh]">
+    <section id="personagens-section" className="min-h-[100lvh] mt-[100lvh]">
       <div
-        className="slider-wrapper z-[12] w-[100dvw] h-[100dvh] relative bg-piltover-fadedBrown"
+        className="slider-wrapper z-[12] w-[100dvw] h-[100lvh] relative bg-piltover-fadedBrown"
         id="pilto<b>v</b>er-personagens"
         ref={(el) => {
           if (el) sectionRefs.current["pilto<b>v</b>er-personagens"] = el;
@@ -214,13 +214,13 @@ const Personagens = () => {
             </div>
           ))}
 
-          <div className="w-[100dvw] h-[100dvh]">
+          <div className="w-[100dvw] h-[100lvh]">
             {personagensInfo.map((personagens, index) => {
               const slug = personagens.nome.toLowerCase();
               return (
                 <div
                   key={index}
-                  className="image-container absolute bottom-5 right-6 w-[85dvw] h-[60dvh] lg:bottom-14 lg:right-6 lg:w-[65dvw] lg:h-[80dvh] transform will-change-transform translate-y-[110%]"
+                  className="image-container absolute bottom-5 right-6 w-[85dvw] h-[60lvh] lg:bottom-14 lg:right-6 lg:w-[65dvw] lg:h-[80lvh] transform will-change-transform translate-y-[110%]"
                 >
                   <div className="size-full rounded-[3%] fadingBlack-background">
                     <Image

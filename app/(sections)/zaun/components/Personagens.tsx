@@ -108,10 +108,10 @@ const Personagens = () => {
         if (el)
           sectionRefs.current["<b>z</b>aun-personagens"] = el as HTMLElement;
       }}
-      className="min-h-[100dvh] w-full relative pb-64 bg-black-dark"
+      className="min-h-[100lvh] w-full relative pb-64 bg-black-dark"
     >
       <IntroPersonagens />
-      <div ref={mainContainerRef} className="min-h-[100dvh] mt-64 flex flex-col gap-64 md:gap-96">
+      <div ref={mainContainerRef} className="min-h-[100lvh] mt-64 flex flex-col gap-64 md:gap-96">
         {personagens.map((personagem, index) => {
           const slug = personagem.nome.toLowerCase();
           return (
@@ -119,9 +119,9 @@ const Personagens = () => {
               ref={addToDivRefs}
               style={{ color: `${personagem.color}` }}
               key={index}
-              className="h-[100dvh] flex-center w-full relative"
+              className="h-[100lvh] flex-center w-full relative"
             >
-              <div className="h-[80dvh] max-h-[730px] py-32 lg:py-20 w-full flex flex-col items-center justify-between zaun-chars-container">
+              <div className="h-[80lvh] max-h-[730px] py-32 lg:py-20 w-full flex flex-col items-center justify-between zaun-chars-container">
                 <div className="text-lg">
                   <h2 className="font-playfair-italic">{personagem.title}</h2>
                 </div>
@@ -153,7 +153,7 @@ const Personagens = () => {
                   className="w-52 h-4 rounded-full"
                 />
               </div>
-              <div className="absolute-center flex-center w-full h-[80dvh] pointer-events-none">
+              <div className="absolute-center flex-center w-full h-[80lvh] pointer-events-none">
                 {personagem.imagens.map((src, index) => {
                   return (
                     <div

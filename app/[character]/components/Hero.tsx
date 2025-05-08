@@ -63,8 +63,8 @@ const Hero = ({
   }, [heroRef]);
 
   return (
-    <section ref={heroRef} className="w-full h-[99dvh] flex-center">
-      <div className="w-[95dvw] lg:w-[85dvw] max-w-[1920px] h-[90dvh] flex justify-end items-start relative">
+    <section ref={heroRef} className="w-full h-[99lvh] flex-center">
+      <div className="w-[95dvw] lg:w-[85dvw] max-w-[1920px] h-[90lvh] flex justify-end items-start relative">
         <div className="w-[75%] max-w-[590px] h-[65%] xl:h-[75%] flex gap-3 mt-9 mr-5 xl:mr-0 py-1 relative">
           {[...Array(3)].map((_, i) => (
             <div

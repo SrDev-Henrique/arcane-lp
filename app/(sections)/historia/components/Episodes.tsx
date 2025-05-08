@@ -185,7 +185,7 @@ const Episodes = ({
                 : "hidden-clip-path pointer-events-none"
             }`}
           >
-            <div className="relative h-[100dvh] w-[100dvw]">
+            <div className="relative h-[100lvh] w-[100dvw]">
               <div className="size-full brightness-low">
                 <Image
                   alt={`temporada-1 episódio-${episode.episode}`}
@@ -285,7 +285,7 @@ const Episodes = ({
                       </div>
                       <div
                         onClick={handleNextEpisodeClick}
-                        className="w-[12dvh] min-w-20 aspect-square relative cursor-pointer transition duration-300 hover:scale-90"
+                        className="w-[12lvh] min-w-20 aspect-square relative cursor-pointer transition duration-300 hover:scale-90"
                       >
                         <Image
                           alt={`Temporada-1 episódio-${nextEpisode}`}

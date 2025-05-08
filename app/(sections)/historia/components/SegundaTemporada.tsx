@@ -223,7 +223,7 @@ const SegundaTemporada = () => {
           sectionRefs.current["temp<b>o</b>radas-temporada 2"] =
             el as HTMLElement;
       }}
-      className="h-[100dvh] w-full bg-orange"
+      className="h-[100lvh] w-full bg-orange"
     >
       <div
         ref={secondSeasonContainerRef}

@@ -67,7 +67,7 @@ const DivPersonagens = () => {
   }, [height]);
 
   return (
-    <section className="mt-[-250vh] min-h-[100dvh] piltover-personagens z-[1]">
+    <section className="mt-[-250vh] min-h-[100lvh] piltover-personagens z-[1]">
       <div className="h-screen w-screen relative bg-piltover-light">
         <div className="overflow-hidden fog h-screen md:flex filter brightness-100 bg-piltover-light">
           <div className="absolute-center h-[150vh] lg:h-[300vh] size-full transform -rotate-45 -translate-y-20 -translate-x-20 flex gap-[5.7%] lg:gap-[1.7%] justify-center">

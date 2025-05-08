@@ -44,14 +44,14 @@ const Historia = () => {
   return (
     <>
       <section
-        className="min-h-[100dvh] piltover-dark-background"
+        className="min-h-[100lvh] piltover-dark-background"
         id="pilto<b>v</b>er-história"
         ref={(el) => {
           if (el)
             sectionRefs.current["pilto<b>v</b>er-história"] = el as HTMLElement;
         }}
       >
-        <div className="mx-auto flex items-center text-center h-[100dvh] max-w-96 md:max-w-[70%] pt-36">
+        <div className="mx-auto flex items-center text-center h-[100lvh] max-w-96 md:max-w-[70%] pt-36">
           <h1 className="font-cinzel font-bold text-piltover-title text-[7dvw] uppercase letter-up">
             A História de Piltover
           </h1>

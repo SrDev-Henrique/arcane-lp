@@ -22,7 +22,7 @@ export default function CharacterPageClient({ characterKey, data }: Props) {
   }
 
   return (
-    <main className="min-h-[100dvh] bg-black-dark">
+    <main className="min-h-[100lvh] bg-black-dark">
       <CharactersNavBar
         color={data.color}
         secondaryColor={data.secondaryColor}

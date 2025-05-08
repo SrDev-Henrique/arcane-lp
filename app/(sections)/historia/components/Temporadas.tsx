@@ -4,11 +4,11 @@ import SegundaTemporada from "./SegundaTemporada";
 const Temporadas = () => {
 
   return (
-    <div className="min-h-[100dvh] w-[100dvw]">
-      <div className="h-[100dvh] w-[100dvw] relative">
+    <div className="min-h-[100lvh] w-[100dvw]">
+      <div className="h-[100lvh] w-[100dvw] relative">
         <PrimeiraTemporada />
       </div>
-      <div className="h-[100dvh] w-[100dvw] relative">
+      <div className="h-[100lvh] w-[100dvw] relative">
         <SegundaTemporada />
       </div>
     </div>

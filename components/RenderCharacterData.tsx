@@ -202,7 +202,7 @@ const CharacterSection = (
   return (
     <section
       style={{ backgroundColor: `${color}` }}
-      className="min-h-[100dvh] w-[100dvw]"
+      className="min-h-[100lvh] w-[100dvw]"
       ref={(el) => {
         if (el) sectionRefs.current[subject.title] = el as HTMLElement;
       }}

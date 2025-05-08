@@ -79,9 +79,9 @@ const StickyDiv = () => {
   return (
     <section
       ref={stickyRef}
-      className="sticky-section -mt-[210dvh] h-[100dvh] w-[100dvw] bg-piltover-fadedBrown sticky top-0 flex-center z-[11]"
+      className="sticky-section -mt-[210lvh] h-[100lvh] w-[100dvw] bg-piltover-fadedBrown sticky top-0 flex-center z-[11]"
     >
-      <div className="relative w-full h-[100dvh] z-[1]">
+      <div className="relative w-full h-[100lvh] z-[1]">
         <div className="flex-center size-full overflow-hidden">
           <div
             ref={rotatingDiv}

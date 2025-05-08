@@ -30,7 +30,7 @@ const End = dynamic(() => import("@/components/End"), {
 
 const PageClient = () => {
   return (
-    <main className="relative min-h-[100dvh] w-[100dvw]">
+    <main className="relative min-h-[100lvh] w-[100dvw]">
       <Hero />
       <About />
       <Piltover />

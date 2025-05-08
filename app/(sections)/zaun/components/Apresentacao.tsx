@@ -110,12 +110,12 @@ const Apresentacao = () => {
         if (el)
           sectionRefs.current["<b>z</b>aun-apresentação"] = el as HTMLElement;
       }}
-      className="min-h-[100dvh] w-full relative bg-black-dark"
+      className="min-h-[100lvh] w-full relative bg-black-dark"
     >
       <Intro />
       <div
         ref={apContainerRef}
-        className="h-[100dvh] w-full flex justify-center pt-[2%] relative"
+        className="h-[100lvh] w-full flex justify-center pt-[2%] relative"
       >
         <div
           ref={apImageContainerRef}
@@ -135,9 +135,9 @@ const Apresentacao = () => {
           </h3>
         </div>
       </div>
-      <div className="min-h-[100dvh] w-full flex-center flex-col pb-24 pt-80 gap-24">
+      <div className="min-h-[100lvh] w-full flex-center flex-col pb-24 pt-80 gap-24">
         {apresentacao.map((item, index) => (
-          <div key={index} className="h-[100dvh] w-[90%] max-w-[1724px] relative">
+          <div key={index} className="h-[100lvh] w-[90%] max-w-[1724px] relative">
             <div
               ref={addToContainerRefs}
               className={`${

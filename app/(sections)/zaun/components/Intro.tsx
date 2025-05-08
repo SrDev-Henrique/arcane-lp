@@ -151,7 +151,7 @@ const Intro = () => {
   return (
     <>
       <div ref={introContainerRef} className="relative size-full">
-        <div className="h-[100dvh] w-full flex justify-center bg-black-dark">
+        <div className="h-[100lvh] w-full flex justify-center bg-black-dark">
           <div className="sticky top-0 left-0 right-0 flex-center">
             <h1
               ref={zaunTitleRef}
@@ -163,7 +163,7 @@ const Intro = () => {
         </div>
         <div
           ref={zaunHeadingsContainerRef}
-          className="absolute top-0 left-0 h-[100dvh] w-full z-[1] zaun-headings-container"
+          className="absolute top-0 left-0 h-[100lvh] w-full z-[1] zaun-headings-container"
         >
           <div className="size-full flex flex-col z-[1] justify-center">
             <div
@@ -190,10 +190,10 @@ const Intro = () => {
             </div>
           </div>
         </div>
-        <div className="absolute top-0 left-0 h-[100dvh] w-full">
+        <div className="absolute top-0 left-0 h-[100lvh] w-full">
           <div
             ref={circleUpRef}
-            className="h-[100dvh] w-full absolute top-0 left-0 flex-center z-[3] zaun-circle-up will-change-transform"
+            className="h-[100lvh] w-full absolute top-0 left-0 flex-center z-[3] zaun-circle-up will-change-transform"
           >
             <div className="size-full bg-[radial-gradient(circle,_#8A9A5B_0%,_#0a0a0a_100%)] filter brightness-75 flex-center flex-col text-center text-[20vw] xl:text-[16vw] text-black-dark leading-none z-[3]">
               <h2 className="special-font font-zentry stained-background">

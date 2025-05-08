@@ -256,16 +256,16 @@ const EpisodesList = ({
         })
         .set(target, {
           width: "20dvw",
-          height: "20dvh",
+          height: "20lvh",
           maxWidth: "100dvw",
-          maxHeight: "100dvh",
+          maxHeight: "100lvh",
           borderRadius: "0.5rem",
         })
         .to(target, {
           width: "100dvw",
-          height: "100dvh",
+          height: "100lvh",
           maxWidth: "100dvw",
-          maxHeight: "100dvh",
+          maxHeight: "100lvh",
           borderRadius: "0rem",
         })
         .to(title, {
@@ -288,16 +288,16 @@ const EpisodesList = ({
         })
         .set(target, {
           width: "20dvw",
-          height: "20dvh",
+          height: "20lvh",
           maxWidth: "100dvw",
-          maxHeight: "100dvh",
+          maxHeight: "100lvh",
           borderRadius: "0.5rem",
         })
         .to(target, {
           width: "100dvw",
-          height: "100dvh",
+          height: "100lvh",
           maxWidth: "100dvw",
-          maxHeight: "100dvh",
+          maxHeight: "100lvh",
           borderRadius: "0rem",
         })
         .to(title, {
@@ -332,7 +332,7 @@ const EpisodesList = ({
     return (
       <div
         ref={scrollRef}
-        className="size-full overflow-y-auto flex flex-col items-center gap-16 md:gap-32 episode-scroll pt-28 pb-[60dvh]"
+        className="size-full overflow-y-auto flex flex-col items-center gap-16 md:gap-32 episode-scroll pt-28 pb-[60lvh]"
       >
         {episodes.map((episode, index) => (
           <div

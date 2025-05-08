@@ -120,7 +120,7 @@ const Apresentacao = React.memo(() => {
           </div>
         </div>
 
-        <BentoTilt className="bento-reveal relative border-piltover border-[3px] mb-7 h-96 w-full overflow-hidden rounded-lg md:h-[65dvh] transition-transform duration-300 ease-out">
+        <BentoTilt className="bento-reveal relative border-piltover border-[3px] mb-7 h-96 w-full overflow-hidden rounded-lg md:h-[65lvh] transition-transform duration-300 ease-out">
           <BentoCard
             videosrc="videos/piltoverclip.mp4"
             title={<>Piltover</>}
@@ -135,7 +135,7 @@ const Apresentacao = React.memo(() => {
           />
         </BentoTilt>
 
-        <div className="grid h-[145dvh] lg:h-[125dvh] grid-cols-2 grid-rows-3 lg:grid-rows-2 gap-7">
+        <div className="grid h-[145lvh] lg:h-[125lvh] grid-cols-2 grid-rows-3 lg:grid-rows-2 gap-7">
           <BentoTilt className="bento-reveal bento-tilt_1 row-span-1 lg:col-span-1 lg:row-span-2">
             <BentoCard
               imgsrc="/images/arcane_piltover/piltover-large.jpeg"

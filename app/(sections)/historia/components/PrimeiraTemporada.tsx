@@ -226,7 +226,7 @@ const PrimeiraTemporada = () => {
       ref={(el) => {
         if (el) sectionRefs.current["temp<b>o</b>radas-temporada 1"] = el as HTMLElement;
       }}
-      className="h-[100dvh] w-full bg-zaun-sageGreen"
+      className="h-[100lvh] w-full bg-zaun-sageGreen"
     >
       <div
         onMouseMove={handleMouseMove}

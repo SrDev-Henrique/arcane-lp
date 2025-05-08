@@ -115,7 +115,7 @@ const Historia = () => {
       ref={(el) => {
         if (el) sectionRefs.current["<b>z</b>aun-história"] = el as HTMLElement;
       }}
-      className="min-h-[100dvh] max-w-[100dvw] relative bg-black-dark story-container overflow-hidden"
+      className="min-h-[100lvh] max-w-[100dvw] relative bg-black-dark story-container overflow-hidden"
     >
       <div
         ref={storyIntroRef}
@@ -138,11 +138,11 @@ const Historia = () => {
       </div>
       <div
         ref={storyContainerRef}
-        className="h-[100dvh] w-full filter relative"
+        className="h-[100lvh] w-full filter relative"
       >
         <div
           ref={storyImagesRef}
-          className="absolute filter brightness-50 top-20 md:top-0 h-[100dvh] w-[60%] flex items-start gap-14 xl:gap-32 transform translate-x-[10%] will-change-transform"
+          className="absolute filter brightness-50 top-20 md:top-0 h-[100lvh] w-[60%] flex items-start gap-14 xl:gap-32 transform translate-x-[10%] will-change-transform"
         >
           {historiaImgs.map((item) =>
             item.imagePath.map((src, imgIndex) => (
@@ -170,7 +170,7 @@ const Historia = () => {
           {historia.map((item, index) => (
             <div
               key={index}
-              className="h-[100dvh] min-w-[100dvw] flex items-end justify-center"
+              className="h-[100lvh] min-w-[100dvw] flex items-end justify-center"
             >
               <div className="size-full max-h-[50%] flex flex-col gap-10 py-6 px-10 md:px-24 text-zaun-sageGreen select-none">
                 <h1 className="text-xl sm:text-3xl text-zaun-celadon w-fit leading-none font-cinzelDecorative-bold font-bold">
