@@ -100,7 +100,9 @@ const Tabs = ({ personalidade, aparencia, habilidades, name }: TabsProps) => {
                           : i === 1
                           ? "-translate-y-[1.5rem] animate-tab-image2"
                           : "rotate-12 animate-tab-image3"
-                      }`}
+                        }`}
+                      priority
+                      loading="eager"
                     />
                   </div>
                 ))
