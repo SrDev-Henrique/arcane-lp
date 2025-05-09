@@ -113,7 +113,7 @@ const EpisodesList = ({
 
   useEffect(() => {
     const checkMobile = () => {
-      if (width! <= 768 && activeSeason === temporada) {
+      if (width! <= 768) {
         setIsMobile(true);
       } else {
         setIsMobile(false);
@@ -127,7 +127,7 @@ const EpisodesList = ({
     return () => {
       window.removeEventListener("resize", checkMobile);
     };
-  }, [activeSeason, temporada, width]);
+  }, [width]);
 
   //todo lenis
 
